@@ -1,152 +1,266 @@
-Section 1 — Hero
+# Homepage Wireframe — GaryMariner.com
 
-Goal: Establish authority in the first screen.
+## Experience Objective
 
-Content:
+Create a premium, executive-level homepage experience that:
 
-Eyebrow: AI Systems Architect for Business Operations
+- establishes authority within the first 3 seconds
+- communicates value without overwhelming the user
+- builds trust through proof and clarity
+- guides the user toward booking a consultation
 
-Headline: I Help Organizations Build Smarter Systems, Modernize Digital Infrastructure, and Reduce Operational Overhead.
+The experience should feel intentional, structured, and high-level.
 
-Supporting text: From strategy to implementation, I design AI-assisted systems, websites, and operational frameworks that improve speed, clarity, and margin.
+---
 
-Primary CTA: Book a Consultation
+## Section 1 — Hero (Above the Fold)
 
-Secondary CTA: View Selected Work
+### Goal
+Immediate clarity + authority
 
-Visual: premium portrait / crest / abstract tech-forward visual treatment
+### Layout
+- Left-aligned text block
+- Right side visual (portrait, crest, or abstract tech visual)
 
-Section 2 — Authority Strip
+### Content
+- Eyebrow (small text):
+  AI Systems Architect for Business Operations
 
-Goal: Build immediate trust.
+- Headline (large, bold):
+  I Help Businesses Replace Operational Complexity with Smarter Systems and AI-Assisted Infrastructure.
 
-Content ideas:
+- Supporting text (short, 1–2 lines max):
+  Reduce overhead, improve execution, and build systems that scale without unnecessary complexity.
 
-Operations leader
+- Primary CTA:
+  Book a Consultation
 
-AI systems strategist
+- Secondary CTA:
+  View Selected Work
 
-Communications background
+### Visual Direction
+- Clean, dark background
+- Subtle gradient or lighting effect
+- Premium feel, not flashy
 
-Digital transformation mindset
+---
 
-Certifications / experience / business transformation examples
+## Section 2 — Authority Strip
 
-Example line:
-Strategy. Systems. Communication. Execution.
+### Goal
+Build trust quickly
 
-Section 3 — Positioning Block
+### Layout
+Horizontal strip or grid
 
-Goal: Explain what Gary actually does.
+### Content
+- Operations Leader with Proven Performance Gains  
+- AI Systems & Workflow Optimization  
+- Cross-Functional Leadership & Process Design  
+- Experience Driving Measurable Business Outcomes  
 
-Layout: 2-column
+### Visual Direction
+- Minimal icons or simple text
+- Clean spacing
+- Subtle separators
 
-Left: short brand statement
+---
 
-Right: 3 or 4 short value pillars
+## Section 3 — Positioning Block
 
-Value pillars:
+### Goal
+Explain the problem and your role
 
-Reduce friction
+### Layout
+2-column (desktop), stacked (mobile)
 
-Improve clarity
+### Content
 
-Modernize infrastructure
+**Left (headline):**
+Most businesses don’t need more tools — they need better systems.
 
-Replace unnecessary overhead with smarter systems
+**Right (body):**
+Disconnected workflows, unnecessary complexity, and poor system design create friction across operations.
 
-Section 4 — Services Preview
+I help organizations replace that friction with structured systems, AI-assisted workflows, and modern infrastructure that improve clarity, speed, and performance.
 
-Goal: Make the offer tangible.
+---
 
-Cards:
+## Section 4 — Services Preview
 
-AI Systems Strategy
+### Goal
+Make your offer tangible
 
-Digital Infrastructure Design
+### Layout
+4-card grid
 
-Operations Optimization
+### Cards
 
-Executive Communication Systems
+**1. AI Systems Strategy**  
+For businesses that need smarter workflows and better operational clarity.
 
-Each card should include:
+**2. Digital Infrastructure Design**  
+Modern websites and systems built to support both brand and operations.
 
-Name
+**3. Operations Optimization**  
+Reduce friction and improve execution through better system design.
 
-One-sentence outcome-driven description
+**4. Executive Communication Systems**  
+Align teams and decisions through clearer communication structures.
 
-Optional link to full services page
+### Visual Direction
+- Card-based layout
+- Subtle hover effects
+- Clean typography
 
-Section 5 — Outcomes / Proof Section
+---
 
-Goal: Show this is grounded in execution.
+## Section 5 — Proof Section
 
-Formats:
+### Goal
+Establish credibility with real results
 
-Metrics cards
+### Layout
+Split or stacked metrics
 
-Short business outcome statements
+### Content
 
-Leadership / systems examples
+#### Digital Harmony (Primary Highlight)
+- 70% reduction in live agent dependency  
+- 90% increase in customer satisfaction  
+- Revenue growth from $75K → $130K  
 
-Examples:
+#### Radco (Supporting Proof)
+- Occupancy increase (~80% → 93%)  
+- Work order reduction (360 → 23)  
 
-Reduced operational friction through AI-assisted workflows
+### Visual Direction
+- Bold numbers
+- High contrast
+- Easy to scan
 
-Improved reporting, communication, and process clarity
+---
 
-Built scalable systems across service, operations, and digital infrastructure
+## Section 6 — Case Study Preview
 
-Section 6 — Selected Work / Case Studies Preview
+### Goal
+Show transformation, not just metrics
 
-Goal: Transition from claim to evidence.
+### Layout
+Featured card or section
 
-Featured items:
+### Content
 
-Personal brand system build
+**Title:**
+Scaling Customer Operations with AI-Driven Systems and Automation
 
-Undugu ecosystem work
+**Summary:**
+A global customer service transformation that reduced operational dependency, improved efficiency, and increased revenue through structured systems and AI-assisted workflows.
 
-AI workflow and operations examples
+**CTA:**
+View Full Case Study
 
-Future partner/client case studies
+### Visual Direction
+- Larger section
+- Image or visual anchor
+- Elevated styling
 
-Card structure:
+---
 
-Project name
+## Section 7 — Operating Philosophy
 
-Short summary
+### Goal
+Differentiate mindset
 
-Strategic challenge
+### Layout
+Centered or 3-column
 
-Outcome / direction
+### Content
 
-Link to case study
+**Statement:**
+The best systems do more than look modern.
 
-Section 7 — Operating Philosophy
+They reduce friction.  
+They improve decision-making.  
+They create space for real growth.
 
-Goal: Differentiate Gary from generic consultants.
+### Supporting principles
+- Simplicity over complexity  
+- Strategy before tools  
+- Systems that serve the business  
 
-Suggested framing:
-I believe the best systems do more than look modern — they reduce friction, sharpen decision-making, and create room for real growth.
+---
 
-Add 3 principle blocks:
+## Section 8 — Final CTA
 
-Simplicity over clutter
+### Goal
+Convert
 
-Strategy before software
+### Layout
+Centered, strong contrast section
 
-Systems that serve the business
+### Content
 
-Section 8 — Final CTA
+**Headline:**
+If your business is carrying too much friction, overhead, or complexity, let’s fix that.
 
-Goal: Convert warm visitors.
+**Buttons:**
+- Book a Consultation  
+- Start a Conversation  
 
-Headline:
-If your business is carrying too much friction, too much overhead, or too much digital chaos, let’s fix that.
+### Visual Direction
+- High contrast background
+- Clear focus on CTA
+- Minimal distractions
 
-Buttons:
+---
 
-Book a Consultation
+## Visual Flow & Pacing
 
-Start a Conversation
+- Hero: bold and spacious  
+- Authority: tight and clean  
+- Positioning: readable and structured  
+- Services: modular and scannable  
+- Proof: high impact  
+- Case Study: narrative shift  
+- Philosophy: reflective pause  
+- CTA: decisive close  
+
+---
+
+## Mobile Experience Considerations
+
+- Stack all sections cleanly
+- Keep text concise
+- Ensure CTAs are always visible
+- Maintain spacing and readability
+- Avoid overcrowding
+
+---
+
+## Interaction & Motion
+
+- Subtle fade-in transitions
+- Smooth hover states on cards
+- No heavy animations
+- Motion should support clarity, not distract
+
+---
+
+## What This Wireframe Should Feel Like
+
+- Premium  
+- Structured  
+- Strategic  
+- Intentional  
+- Executive-level  
+
+---
+
+## What This Wireframe Should Avoid
+
+- Generic landing page layouts  
+- Overloaded content  
+- Unclear hierarchy  
+- Flashy animations  
+- Template-style sections  
