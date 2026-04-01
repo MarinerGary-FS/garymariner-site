@@ -1,58 +1,113 @@
-Hero
+# Homepage Copy — GaryMariner.com
 
-Eyebrow
+## Hero Section
+
+**Eyebrow**  
 AI Systems Architect for Business Operations
 
-Headline
+**Headline**  
 I Help Businesses Replace Operational Complexity with Smarter Systems and AI-Assisted Infrastructure.
 
-Supporting Copy
-I work at the intersection of strategy, communication, and implementation — helping businesses improve clarity, strengthen execution, and replace unnecessary complexity with intelligent systems.
+**Supporting Copy**  
+I work at the intersection of strategy, communication, and implementation — helping organizations reduce overhead, improve execution, and build systems that scale without unnecessary complexity.
 
-Primary CTA
+**Primary CTA**  
 Book a Consultation
 
-Secondary CTA
+**Secondary CTA**  
 View Selected Work
 
-Positioning Block
+---
 
-Businesses do not need more disconnected tools, bloated workflows, or expensive complexity. They need systems that make the work clearer, faster, and easier to scale.
+## Authority Strip
 
-I help organizations design the digital infrastructure, operational workflows, and AI-assisted systems that support stronger execution and better business outcomes.
+Strategy. Systems. Communication. Execution.
 
-Services Preview
+- Operations Leader with Proven Performance Gains  
+- AI Systems & Workflow Optimization  
+- Cross-Functional Leadership & Process Design  
+- Experience Driving Measurable Business Outcomes  
 
-AI Systems Strategy
+---
+
+## Positioning Block
+
+Most businesses don’t suffer from a lack of tools — they suffer from too much friction.
+
+Disconnected systems, unclear workflows, and unnecessary complexity slow execution, reduce visibility, and increase operational cost.
+
+I help organizations design smarter systems — combining AI, structured workflows, and modern infrastructure to improve clarity, speed, and performance.
+
+---
+
+## Services Preview
+
+**AI Systems Strategy for Growing Businesses and Operators**  
 Align your business goals with practical AI-assisted systems that improve speed, consistency, and visibility.
 
-Digital Infrastructure Design
-Build modern websites and business systems that are clean, scalable, and aligned with your brand and operations.
+**Modern Websites and Digital Infrastructure Built for Clarity and Scale**  
+Design and build clean, scalable platforms that support both your brand and your operations.
 
-Operations Optimization
-Reduce friction across communication, reporting, and workflow execution with better system design.
+**Operations Optimization Through System Design and Workflow Clarity**  
+Reduce friction across communication, reporting, and execution by restructuring how work gets done.
 
-Executive Communication Systems
-Create clearer internal and external communication frameworks that support trust, efficiency, and growth.
+**Executive Communication Systems for Alignment and Efficiency**  
+Translate complex ideas into clear, actionable communication that drives alignment across teams and stakeholders.
 
-Proof Section
+---
 
-I bring a rare combination of operational leadership, communication strength, and AI systems thinking.
+## Proof Section
 
-My approach is grounded in real-world execution — not hype. I focus on building systems that improve clarity, reduce strain, and make organizations more effective.
-Increased occupancy from ~80% → 93%
-	•	Reduced work orders from 360 → 23
-	•	Improved operational efficiency through structured workflows 
+I bring a combination of operational leadership, communication strategy, and AI systems thinking — grounded in real-world execution.
 
-Operating Philosophy
+### Digital Harmony (AI-Driven Transformation)
+- Reduced live agent dependency by **70%**  
+- Increased customer satisfaction by **90%**  
+- Grew monthly revenue from **$75K to $130K**  
+- Implemented AI-driven workflows and multi-channel support systems  
+
+### Radco (Operational Performance)
+- Increased occupancy from **~80% to 93% (pre-leased at 96%)**  
+- Reduced work orders from **360 to 23**  
+- Improved operational efficiency through structured workflows and communication systems  
+
+These results were driven by system design, workflow optimization, and the strategic use of AI — not additional overhead.
+
+---
+
+## Selected Work / Case Study Preview
+
+**Scaling Customer Operations with AI-Driven Systems and Automation**  
+A global customer service transformation that reduced dependency on manual labor, improved efficiency, and increased revenue through structured systems and AI-assisted workflows.
+
+**Key Outcomes:**
+- 70% reduction in live agent dependency  
+- 90% increase in customer satisfaction  
+- Significant revenue growth  
+
+**CTA:**  
+View Full Case Study
+
+---
+
+## Operating Philosophy
 
 The best systems do more than look modern.
-They reduce friction.
-They improve decisions.
-They make growth easier to sustain.
 
-That is the standard I build toward.
+They reduce friction.  
+They improve decision-making.  
+They create space for real growth.
 
-Final CTA
+I focus on building systems that are not only functional — but intentional, scalable, and aligned with how businesses actually operate.
 
-If your business is carrying too much friction, too much overhead, or too much digital chaos, let’s fix that.
+---
+
+## Final CTA
+
+If your business is carrying too much friction, too much overhead, or too much digital complexity, let’s fix that.
+
+**Primary CTA:**  
+Book a Consultation
+
+**Secondary CTA:**  
+Start a Conversation
