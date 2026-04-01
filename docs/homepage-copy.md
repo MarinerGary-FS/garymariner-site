@@ -4,7 +4,7 @@ Eyebrow
 AI Systems Architect for Business Operations
 
 Headline
-I Help Organizations Build Smarter Systems, Modernize Digital Infrastructure, and Reduce Operational Overhead.
+I Help Businesses Replace Operational Complexity with Smarter Systems and AI-Assisted Infrastructure.
 
 Supporting Copy
 I work at the intersection of strategy, communication, and implementation — helping businesses improve clarity, strengthen execution, and replace unnecessary complexity with intelligent systems.
