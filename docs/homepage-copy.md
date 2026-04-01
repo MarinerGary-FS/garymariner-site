@@ -40,6 +40,9 @@ Proof Section
 I bring a rare combination of operational leadership, communication strength, and AI systems thinking.
 
 My approach is grounded in real-world execution — not hype. I focus on building systems that improve clarity, reduce strain, and make organizations more effective.
+Increased occupancy from ~80% → 93%
+	•	Reduced work orders from 360 → 23
+	•	Improved operational efficiency through structured workflows 
 
 Operating Philosophy
 
