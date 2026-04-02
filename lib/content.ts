@@ -159,14 +159,14 @@ export const siteContent = {
   footer: {
     tagline: 'AI Systems Architect for Business Operations',
     location: 'Atlanta, GA',
-    email: 'gary@garymariner.com',
+    email: 'gary.mariner@gmail.com',
     links: [
       { label: 'About', href: '/about' },
       { label: 'Services', href: '/services' },
       { label: 'Work', href: '/case-studies' },
       { label: 'Contact', href: '/contact' },
     ],
-    social: [{ label: 'LinkedIn', href: 'https://linkedin.com/in/garymariner' }],
+    social: [{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/gary-mariner-ii/' }],
     legal: `© ${new Date().getFullYear()} Gary L. Mariner II. All rights reserved.`,
   },
 }

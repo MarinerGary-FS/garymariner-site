@@ -119,7 +119,7 @@ export default function ContactPage() {
                   Also available on LinkedIn
                 </span>
                 <a
-                  href="https://linkedin.com/in/garymariner"
+                  href="https://www.linkedin.com/in/gary-mariner-ii/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-xs font-sans text-white/40 hover:text-gold transition-colors duration-200 tracking-wide"
