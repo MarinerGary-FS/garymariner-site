@@ -40,11 +40,11 @@ export function ProofSection() {
           <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-border/50">
             {digitalHarmony.metrics.map((m, mi) => (
               <Reveal key={m.label} delay={80 + mi * 100}>
-                <div className="flex flex-col gap-3 px-8 md:px-10 py-10 md:py-12">
+                <div className="flex flex-col gap-5 px-8 md:px-10 py-12 md:py-14">
                   <span className="font-display font-bold text-display-3xl text-gold-gradient leading-none">
                     {m.value}
                   </span>
-                  <span className="font-sans text-sm text-white/50 leading-snug max-w-[180px]">
+                  <span className="font-sans text-sm text-white/60 leading-snug max-w-[200px]">
                     {m.label}
                   </span>
                 </div>
@@ -72,11 +72,11 @@ export function ProofSection() {
           <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-border/40">
             {radco.metrics.map((m, mi) => (
               <Reveal key={m.label} delay={200 + mi * 80}>
-                <div className="flex flex-col gap-2.5 px-8 md:px-10 py-8 md:py-10">
+                <div className="flex flex-col gap-4 px-8 md:px-10 py-10 md:py-12">
                   <span className="font-display font-bold text-display-xl text-white/85 leading-none">
                     {m.value}
                   </span>
-                  <span className="font-sans text-sm text-white/50 leading-snug max-w-[220px]">
+                  <span className="font-sans text-sm text-white/60 leading-snug max-w-[220px]">
                     {m.label}
                   </span>
                 </div>

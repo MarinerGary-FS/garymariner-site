@@ -17,7 +17,7 @@ export function CaseStudyPreview() {
               Selected Work
             </p>
             <h2 className="font-display font-bold text-display-md text-white">
-              How the Work Gets Done
+              Transformation in Practice
             </h2>
           </div>
           <Link

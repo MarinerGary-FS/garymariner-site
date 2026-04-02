@@ -16,7 +16,7 @@ export function ServicesPreview() {
               Services
             </p>
             <h2 className="font-display font-bold text-display-md text-white">
-              What I Build
+              Built to Perform
             </h2>
           </div>
           <Link
