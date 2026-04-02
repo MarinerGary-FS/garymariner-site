@@ -69,7 +69,7 @@ export default function AboutPage() {
 
       {/* Bio narrative */}
       <SectionWrapper className="bg-background">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-14 lg:gap-24 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-10 lg:gap-24 items-start">
 
           {/* Left — sticky identity block */}
           <Reveal>
@@ -151,7 +151,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0 md:divide-x md:divide-border/50">
           {differentiators.map((item, i) => (
             <Reveal key={item.title} delay={i * 100}>
-              <div className="group flex flex-col gap-5 md:px-10 first:pl-0 last:pr-0 py-2">
+              <div className="group flex flex-col gap-5 md:px-10 first:pl-0 last:pr-0 py-8 md:py-2 border-b border-border/30 md:border-b-0 last:border-b-0">
                 <div className="w-8 h-0.5 bg-gold/35 group-hover:bg-gold/65 group-hover:w-14 transition-all duration-500 rounded-full" />
                 <h3 className="font-display font-semibold text-lg text-white leading-snug">
                   {item.title}

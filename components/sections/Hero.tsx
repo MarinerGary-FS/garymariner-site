@@ -42,7 +42,7 @@ export function Hero() {
           <div className="flex flex-col max-w-2xl">
             {/* Eyebrow */}
             <div
-              className="inline-flex items-center gap-3 mb-10"
+              className="inline-flex items-center gap-3 mb-6 md:mb-10"
               style={{ animation: 'fadeUp 0.6s ease 0.05s both' }}
             >
               <span className="w-8 h-px bg-gold" />

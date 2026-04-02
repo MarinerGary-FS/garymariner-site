@@ -21,7 +21,7 @@ export function CaseStudyPreview() {
             </h2>
           </div>
           <Link
-            href="/work"
+            href="/case-studies"
             className="inline-flex items-center gap-2 text-sm font-sans text-white/40 hover:text-white/80 transition-colors duration-200 group self-start md:self-auto pb-1 border-b border-transparent hover:border-white/20"
           >
             View all work
@@ -37,9 +37,9 @@ export function CaseStudyPreview() {
           {/* Top gold line — visible immediately, intensifies on hover */}
           <div className="h-px bg-gradient-to-r from-transparent via-gold/35 to-transparent group-hover:via-gold/60 transition-all duration-500" />
 
-          <div className="p-8 md:p-10 lg:p-14">
+          <div className="p-6 md:p-10 lg:p-14">
             {/* Label row */}
-            <div className="flex flex-wrap items-center gap-3 mb-10">
+            <div className="flex flex-wrap items-center gap-3 mb-7 md:mb-10">
               <span className="text-xs font-sans font-medium text-gold uppercase tracking-[0.16em]">
                 {caseStudy.label}
               </span>

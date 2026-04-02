@@ -40,7 +40,7 @@ export function Button({
   }
 
   const sizes = {
-    sm: 'px-5 py-2.5 text-sm rounded-md gap-2',
+    sm: 'px-5 py-3 text-sm rounded-md gap-2',
     md: 'px-6 py-3.5 text-sm rounded-lg gap-2',
     lg: 'px-9 py-4 text-base rounded-lg gap-2.5',
   }

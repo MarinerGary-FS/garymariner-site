@@ -120,7 +120,7 @@ export default function ServicesPage() {
             <Reveal key={service.id} delay={i * 60}>
               <div
                 id={service.id}
-                className="group grid grid-cols-1 lg:grid-cols-[1fr_1.8fr] gap-10 lg:gap-20 py-16 md:py-20 border-b border-border/40 last:border-0 scroll-mt-24"
+                className="group grid grid-cols-1 lg:grid-cols-[1fr_1.8fr] gap-8 lg:gap-20 py-12 md:py-16 lg:py-20 border-b border-border/40 last:border-0 scroll-mt-24"
               >
                 {/* Left: label + meta */}
                 <div className="flex flex-col gap-5">
@@ -194,7 +194,7 @@ export default function ServicesPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 lg:divide-x lg:divide-border/50">
           {approach.map((step, i) => (
             <Reveal key={step.step} delay={i * 80}>
-              <div className="group flex flex-col gap-5 lg:px-8 first:pl-0 last:pr-0 pb-10 lg:pb-0">
+              <div className="group flex flex-col gap-5 lg:px-8 first:pl-0 last:pr-0 pb-8 sm:pb-10 lg:pb-0 border-b border-border/25 sm:border-b-0 last:border-b-0">
                 <span className="font-display font-bold text-4xl text-white/[0.07] leading-none select-none tabular-nums group-hover:text-white/[0.12] transition-colors duration-300">
                   {step.step}
                 </span>

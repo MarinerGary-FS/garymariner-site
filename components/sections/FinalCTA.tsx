@@ -13,7 +13,7 @@ export function FinalCTA() {
       <div className="relative max-w-site mx-auto">
         <Reveal>
           {/* Contained frame — creates intentionality and finality */}
-          <div className="max-w-3xl mx-auto rounded-2xl border border-gold/20 bg-surface/30 backdrop-blur-sm px-10 md:px-16 py-14 md:py-20 flex flex-col items-center text-center gap-10">
+          <div className="max-w-3xl mx-auto rounded-2xl border border-gold/20 bg-surface/30 backdrop-blur-sm px-6 sm:px-10 md:px-16 py-12 md:py-20 flex flex-col items-center text-center gap-8 md:gap-10">
 
             {/* Eyebrow */}
             <div className="flex items-center gap-3">

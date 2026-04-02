@@ -64,7 +64,7 @@ export function Nav() {
 
           {/* Mobile menu toggle */}
           <button
-            className="md:hidden flex flex-col justify-center items-center gap-1.5 w-8 h-8 focus:outline-none"
+            className="md:hidden flex flex-col justify-center items-center gap-1.5 w-8 h-8 -m-2 p-2 focus:outline-none"
             onClick={() => setMenuOpen((v) => !v)}
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           >
