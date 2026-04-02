@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { Button } from '@/components/ui/Button'
+import { BookingButton } from '@/components/ui/BookingButton'
 import { siteContent } from '@/lib/content'
 
 export function Hero() {
@@ -83,10 +84,10 @@ export function Hero() {
               className="flex flex-col sm:flex-row gap-4"
               style={{ animation: 'fadeUp 0.75s ease 0.50s both' }}
             >
-              <Button href={hero.primaryCTA.href} size="lg" variant="primary" external={hero.primaryCTA.external}>
+              <BookingButton size="lg" variant="primary">
                 {hero.primaryCTA.label}
                 <ArrowRight className="w-4 h-4" />
-              </Button>
+              </BookingButton>
               <Button href={hero.secondaryCTA.href} variant="ghost" size="lg">
                 {hero.secondaryCTA.label}
               </Button>

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Button } from '@/components/ui/Button'
+import { BookingButton } from '@/components/ui/BookingButton'
 import { siteContent } from '@/lib/content'
 import { cn } from '@/lib/utils'
 
@@ -57,9 +57,9 @@ export function Nav() {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center">
-            <Button href={nav.cta.href} size="sm" external={nav.cta.external}>
+            <BookingButton size="sm">
               {nav.cta.label}
-            </Button>
+            </BookingButton>
           </div>
 
           {/* Mobile menu toggle */}
@@ -113,9 +113,7 @@ export function Nav() {
             </Link>
           ))}
         </nav>
-        <Button
-          href={nav.cta.href}
-          external={nav.cta.external}
+        <BookingButton
           size="lg"
           className={cn(
             'w-full justify-center transition-all duration-300',
@@ -125,7 +123,7 @@ export function Nav() {
           onClick={() => setMenuOpen(false)}
         >
           {nav.cta.label}
-        </Button>
+        </BookingButton>
       </div>
     </>
   )

@@ -3,6 +3,7 @@ import { PageHero } from '@/components/ui/PageHero'
 import { SectionWrapper } from '@/components/ui/SectionWrapper'
 import { Reveal } from '@/components/ui/Reveal'
 import { Button } from '@/components/ui/Button'
+import { BookingButton } from '@/components/ui/BookingButton'
 
 export const metadata: Metadata = {
   title: 'Services — Gary L. Mariner II',
@@ -230,9 +231,9 @@ export default function ServicesPage() {
                 we&apos;ll identify where systems can create the most impact.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button href="https://cal.com/garymariner" size="lg" external>
+                <BookingButton size="lg">
                   Book a Consultation
-                </Button>
+                </BookingButton>
                 <Button href="/contact" variant="ghost" size="lg">
                   Send a Message
                 </Button>

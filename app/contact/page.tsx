@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { SectionWrapper } from '@/components/ui/SectionWrapper'
 import { Reveal } from '@/components/ui/Reveal'
-import { Button } from '@/components/ui/Button'
+import { BookingButton } from '@/components/ui/BookingButton'
 import { ContactForm } from '@/components/sections/ContactForm'
 
 export const metadata: Metadata = {
@@ -80,9 +80,9 @@ export default function ContactPage() {
                   <p className="font-sans text-sm text-white/50 leading-[1.8] mb-7">
                     30 minutes. Focused on your business. No templates, no pitch decks — just a direct conversation about what you&apos;re trying to solve.
                   </p>
-                  <Button href="https://cal.com/garymariner" size="md" external>
-                    Book via Cal.com →
-                  </Button>
+                  <BookingButton size="md">
+                    Choose a Meeting Type →
+                  </BookingButton>
                 </div>
               </div>
             </Reveal>

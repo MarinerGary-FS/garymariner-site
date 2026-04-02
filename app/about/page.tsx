@@ -3,6 +3,7 @@ import { PageHero } from '@/components/ui/PageHero'
 import { SectionWrapper } from '@/components/ui/SectionWrapper'
 import { Reveal } from '@/components/ui/Reveal'
 import { Button } from '@/components/ui/Button'
+import { BookingButton } from '@/components/ui/BookingButton'
 import { siteContent } from '@/lib/content'
 
 export const metadata: Metadata = {
@@ -101,9 +102,9 @@ export default function AboutPage() {
               </div>
 
               <div className="mt-4">
-                <Button href="https://cal.com/garymariner" size="sm" external>
+                <BookingButton size="sm">
                   Book a Consultation
-                </Button>
+                </BookingButton>
               </div>
             </div>
           </Reveal>
@@ -213,9 +214,9 @@ export default function AboutPage() {
                 If your business is carrying too much friction, let&apos;s fix that.
               </h2>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button href="https://cal.com/garymariner" size="lg" external>
+                <BookingButton size="lg">
                   Book a Consultation
-                </Button>
+                </BookingButton>
                 <Button href="/contact" variant="ghost" size="lg">
                   Start a Conversation
                 </Button>

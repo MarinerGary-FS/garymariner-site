@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/Button'
+import { BookingButton } from '@/components/ui/BookingButton'
 import { Reveal } from '@/components/ui/Reveal'
 import { siteContent } from '@/lib/content'
 
@@ -31,10 +32,10 @@ export function FinalCTA() {
 
             {/* CTAs — clear hierarchy: primary dominates */}
             <div className="flex flex-col sm:flex-row items-center gap-4 pt-2">
-              <Button href={finalCTA.primaryCTA.href} size="lg" external={finalCTA.primaryCTA.external}>
+              <BookingButton size="lg" variant="primary">
                 {finalCTA.primaryCTA.label}
                 <ArrowRight className="w-4 h-4" />
-              </Button>
+              </BookingButton>
               <Button href={finalCTA.secondaryCTA.href} variant="ghost" size="lg">
                 {finalCTA.secondaryCTA.label}
               </Button>
