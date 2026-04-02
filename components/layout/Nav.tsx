@@ -38,15 +38,15 @@ export function Nav() {
           {/* Logo */}
           <Link
             href="/"
-            className="shrink-0 flex items-center opacity-90 hover:opacity-100 transition-opacity duration-200"
+            className="shrink-0 flex items-center transition-all duration-200 rounded-lg ring-1 ring-gold/30 shadow-[0_0_14px_rgba(201,168,76,0.18)] hover:ring-gold/50 hover:shadow-[0_0_20px_rgba(201,168,76,0.28)]"
             aria-label="Gary L. Mariner II — Home"
           >
             <Image
               src="/images/glm-signature.png"
               alt="Gary L. Mariner II"
-              width={38}
-              height={38}
-              className="rounded-md"
+              width={40}
+              height={40}
+              className="rounded-lg"
               priority
             />
           </Link>

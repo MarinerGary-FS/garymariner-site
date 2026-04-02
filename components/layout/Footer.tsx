@@ -14,9 +14,9 @@ export function Footer() {
             <Image
               src="/images/glm-signature.png"
               alt="Gary L. Mariner II"
-              width={52}
-              height={52}
-              className="rounded-lg shrink-0 opacity-80"
+              width={56}
+              height={56}
+              className="rounded-xl shrink-0 ring-1 ring-gold/25 shadow-[0_0_18px_rgba(201,168,76,0.16)]"
             />
             <div className="flex flex-col gap-1.5">
               <span className="font-display font-bold text-sm text-white tracking-tight">
