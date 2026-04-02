@@ -4,10 +4,10 @@ export const siteContent = {
     links: [
       { label: 'About', href: '/about' },
       { label: 'Services', href: '/services' },
-      { label: 'Work', href: '/work' },
+      { label: 'Work', href: '/case-studies' },
       { label: 'Contact', href: '/contact' },
     ],
-    cta: { label: 'Book a Consultation', href: '/contact' },
+    cta: { label: 'Book a Consultation', href: 'https://cal.com/garymariner', external: true },
   },
 
   hero: {
@@ -15,8 +15,8 @@ export const siteContent = {
     headline: 'I Help Businesses Replace Operational Complexity with Smarter Systems.',
     supporting:
       'I work at the intersection of strategy, communication, and implementation — helping organizations reduce overhead, improve execution, and build systems that scale without unnecessary complexity.',
-    primaryCTA: { label: 'Book a Consultation', href: '/contact' },
-    secondaryCTA: { label: 'View Selected Work', href: '/work' },
+    primaryCTA: { label: 'Book a Consultation', href: 'https://cal.com/garymariner', external: true },
+    secondaryCTA: { label: 'View Selected Work', href: '/case-studies' },
   },
 
   authority: {
@@ -119,7 +119,7 @@ export const siteContent = {
       { value: '90%', label: 'CSAT increase' },
       { value: '$130K', label: 'Monthly revenue' },
     ],
-    href: '/work/digital-harmony',
+    href: '/case-studies',
     cta: 'View Full Case Study',
   },
 
@@ -151,8 +151,8 @@ export const siteContent = {
   finalCTA: {
     headline:
       "If your business is carrying too much friction, too much overhead, or too much digital complexity, let\u2019s fix that.",
-    primaryCTA: { label: 'Book a Consultation', href: '/contact' },
-    secondaryCTA: { label: 'Start a Conversation', href: '/contact#form' },
+    primaryCTA: { label: 'Book a Consultation', href: 'https://cal.com/garymariner', external: true },
+    secondaryCTA: { label: 'Start a Conversation', href: '/contact' },
   },
 
   footer: {
@@ -160,7 +160,7 @@ export const siteContent = {
     links: [
       { label: 'About', href: '/about' },
       { label: 'Services', href: '/services' },
-      { label: 'Work', href: '/work' },
+      { label: 'Work', href: '/case-studies' },
       { label: 'Contact', href: '/contact' },
     ],
     social: [{ label: 'LinkedIn', href: 'https://linkedin.com/in/garymariner' }],

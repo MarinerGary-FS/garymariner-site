@@ -31,7 +31,7 @@ export function FinalCTA() {
 
             {/* CTAs — clear hierarchy: primary dominates */}
             <div className="flex flex-col sm:flex-row items-center gap-4 pt-2">
-              <Button href={finalCTA.primaryCTA.href} size="lg">
+              <Button href={finalCTA.primaryCTA.href} size="lg" external={finalCTA.primaryCTA.external}>
                 {finalCTA.primaryCTA.label}
                 <ArrowRight className="w-4 h-4" />
               </Button>

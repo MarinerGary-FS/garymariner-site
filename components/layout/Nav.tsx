@@ -57,7 +57,7 @@ export function Nav() {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center">
-            <Button href={nav.cta.href} size="sm">
+            <Button href={nav.cta.href} size="sm" external={nav.cta.external}>
               {nav.cta.label}
             </Button>
           </div>
@@ -115,6 +115,7 @@ export function Nav() {
         </nav>
         <Button
           href={nav.cta.href}
+          external={nav.cta.external}
           size="lg"
           className={cn(
             'w-full justify-center transition-all duration-300',

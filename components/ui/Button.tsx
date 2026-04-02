@@ -4,22 +4,26 @@ import { cn } from '@/lib/utils'
 interface ButtonProps {
   href?: string
   onClick?: () => void
+  type?: 'button' | 'submit' | 'reset'
   variant?: 'primary' | 'ghost' | 'text'
   size?: 'sm' | 'md' | 'lg'
   children: React.ReactNode
   className?: string
   external?: boolean
+  disabled?: boolean
   style?: React.CSSProperties
 }
 
 export function Button({
   href,
   onClick,
+  type = 'button',
   variant = 'primary',
   size = 'md',
   children,
   className,
   external,
+  disabled,
   style,
 }: ButtonProps) {
   const base =
@@ -62,7 +66,7 @@ export function Button({
   }
 
   return (
-    <button onClick={onClick} className={classes} style={style}>
+    <button type={type} onClick={onClick} className={classes} style={style} disabled={disabled}>
       {children}
     </button>
   )

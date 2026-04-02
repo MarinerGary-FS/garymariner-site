@@ -72,7 +72,7 @@ export function Hero() {
               className="flex flex-col sm:flex-row gap-4"
               style={{ animation: 'fadeUp 0.75s ease 0.42s both' }}
             >
-              <Button href={hero.primaryCTA.href} size="lg" variant="primary">
+              <Button href={hero.primaryCTA.href} size="lg" variant="primary" external={hero.primaryCTA.external}>
                 {hero.primaryCTA.label}
                 <ArrowRight className="w-4 h-4" />
               </Button>
