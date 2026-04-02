@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { BookingButton } from '@/components/ui/BookingButton'
 import { siteContent } from '@/lib/content'
 import { cn } from '@/lib/utils'
@@ -37,9 +38,17 @@ export function Nav() {
           {/* Logo */}
           <Link
             href="/"
-            className="font-display font-bold text-base tracking-tight text-white hover:text-gold transition-colors duration-200"
+            className="shrink-0 flex items-center opacity-90 hover:opacity-100 transition-opacity duration-200"
+            aria-label="Gary L. Mariner II — Home"
           >
-            {nav.name}
+            <Image
+              src="/images/glm-signature.png"
+              alt="Gary L. Mariner II"
+              width={38}
+              height={38}
+              className="rounded-md"
+              priority
+            />
           </Link>
 
           {/* Desktop nav */}

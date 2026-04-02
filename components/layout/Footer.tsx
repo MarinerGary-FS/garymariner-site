@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { siteContent } from '@/lib/content'
 
 export function Footer() {
@@ -9,22 +10,31 @@ export function Footer() {
       <div className="max-w-site mx-auto">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
           {/* Brand */}
-          <div className="flex flex-col gap-1.5">
-            <span className="font-display font-bold text-sm text-white tracking-tight">
-              Gary L. Mariner II
-            </span>
-            <span className="text-xs text-white/40 font-sans tracking-wide">
-              {footer.tagline}
-            </span>
-            <span className="text-xs text-white/25 font-sans tracking-wide mt-0.5">
-              {footer.location}&nbsp;&middot;&nbsp;
-              <a
-                href={`mailto:${footer.email}`}
-                className="hover:text-white/45 transition-colors duration-200"
-              >
-                {footer.email}
-              </a>
-            </span>
+          <div className="flex items-center gap-4">
+            <Image
+              src="/images/glm-signature.png"
+              alt="Gary L. Mariner II"
+              width={52}
+              height={52}
+              className="rounded-lg shrink-0 opacity-80"
+            />
+            <div className="flex flex-col gap-1.5">
+              <span className="font-display font-bold text-sm text-white tracking-tight">
+                Gary L. Mariner II
+              </span>
+              <span className="text-xs text-white/40 font-sans tracking-wide">
+                {footer.tagline}
+              </span>
+              <span className="text-xs text-white/25 font-sans tracking-wide mt-0.5">
+                {footer.location}&nbsp;&middot;&nbsp;
+                <a
+                  href={`mailto:${footer.email}`}
+                  className="hover:text-white/45 transition-colors duration-200"
+                >
+                  {footer.email}
+                </a>
+              </span>
+            </div>
           </div>
 
           {/* Nav links */}

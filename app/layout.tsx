@@ -30,12 +30,21 @@ export const metadata: Metadata = {
     url: 'https://garymariner.com',
     siteName: 'Gary L. Mariner II',
     type: 'website',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 600,
+        height: 600,
+        alt: 'Gary L. Mariner II — AI Systems Architect for Business Operations',
+      },
+    ],
   },
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary',
     title: 'Gary L. Mariner II — AI Systems Architect for Business Operations',
     description:
       'I help businesses replace operational complexity with smarter systems and AI-assisted infrastructure. Results driven by system design, not additional overhead.',
+    images: ['/og-image.png'],
   },
   metadataBase: new URL('https://garymariner.com'),
 }
