@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "garymariner-site",
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": ["/Users/garymariner/garymariner-site/.claude/start-dev.sh"],
+      "port": 3000
+    }
+  ]
+}

@@ -5,8 +5,8 @@
 **Eyebrow**  
 AI Systems Architect for Business Operations
 
-**Headline**  
-I Help Businesses Replace Operational Complexity with Smarter Systems and AI-Assisted Infrastructure.
+**Headline**
+I Help Businesses Replace Operational Complexity with Smarter Systems.
 
 **Supporting Copy**  
 I work at the intersection of strategy, communication, and implementation — helping organizations reduce overhead, improve execution, and build systems that scale without unnecessary complexity.

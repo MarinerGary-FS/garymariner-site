@@ -1,0 +1,97 @@
+import { Reveal } from '@/components/ui/Reveal'
+import { SectionWrapper } from '@/components/ui/SectionWrapper'
+import { siteContent } from '@/lib/content'
+
+export function ProofSection() {
+  const { proof } = siteContent
+
+  const [digitalHarmony, radco] = proof.cases
+
+  return (
+    <SectionWrapper className="bg-background border-t border-border/40">
+      {/* Section header */}
+      <Reveal className="mb-16">
+        <p className="text-xs font-sans text-white/30 uppercase tracking-[0.18em] mb-5">
+          Outcomes
+        </p>
+        <h2 className="font-display font-bold text-display-md text-white max-w-lg">
+          Grounded in Real Execution
+        </h2>
+        <p className="font-sans text-base text-white/60 leading-[1.8] mt-5 max-w-xl">
+          {proof.intro}
+        </p>
+      </Reveal>
+
+      {/* ── Digital Harmony — Primary, dominant ── */}
+      <Reveal delay={50}>
+        <div className="rounded-2xl border border-border bg-surface overflow-hidden mb-4">
+
+          {/* Case label */}
+          <div className="flex items-center gap-4 px-8 md:px-10 pt-8 pb-6 border-b border-border/50">
+            <h3 className="font-display font-semibold text-base text-white">
+              {digitalHarmony.name}
+            </h3>
+            <span className="text-[11px] font-sans text-gold/60 uppercase tracking-[0.14em] px-2.5 py-1 rounded-full border border-gold/20">
+              {digitalHarmony.label}
+            </span>
+          </div>
+
+          {/* Metrics — hero-scale numbers */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-border/50">
+            {digitalHarmony.metrics.map((m, mi) => (
+              <Reveal key={m.label} delay={80 + mi * 100}>
+                <div className="flex flex-col gap-3 px-8 md:px-10 py-10 md:py-12">
+                  <span className="font-display font-bold text-display-3xl text-gold-gradient leading-none">
+                    {m.value}
+                  </span>
+                  <span className="font-sans text-sm text-white/50 leading-snug max-w-[180px]">
+                    {m.label}
+                  </span>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </Reveal>
+
+      {/* ── Radco — Supporting, smaller ── */}
+      <Reveal delay={150}>
+        <div className="rounded-2xl border border-border/60 bg-surface/50 overflow-hidden">
+
+          {/* Case label */}
+          <div className="flex items-center gap-4 px-8 md:px-10 pt-6 pb-5 border-b border-border/40">
+            <h3 className="font-display font-semibold text-sm text-white/80">
+              {radco.name}
+            </h3>
+            <span className="text-[11px] font-sans text-white/30 uppercase tracking-[0.14em] px-2.5 py-1 rounded-full border border-border/60">
+              {radco.label}
+            </span>
+          </div>
+
+          {/* Metrics — smaller scale than Digital Harmony, still clearly readable */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-border/40">
+            {radco.metrics.map((m, mi) => (
+              <Reveal key={m.label} delay={200 + mi * 80}>
+                <div className="flex flex-col gap-2.5 px-8 md:px-10 py-8 md:py-10">
+                  <span className="font-display font-bold text-display-xl text-white/85 leading-none">
+                    {m.value}
+                  </span>
+                  <span className="font-sans text-sm text-white/50 leading-snug max-w-[220px]">
+                    {m.label}
+                  </span>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </Reveal>
+
+      {/* Closing statement — executive, not defensive */}
+      <Reveal delay={250}>
+        <p className="font-sans text-sm text-white/40 leading-relaxed mt-8 max-w-2xl">
+          {proof.closing}
+        </p>
+      </Reveal>
+    </SectionWrapper>
+  )
+}
