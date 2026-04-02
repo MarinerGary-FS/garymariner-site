@@ -21,11 +21,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'Gary L. Mariner II — AI Systems Architect for Business Operations',
   description:
-    'I help businesses replace operational complexity with smarter systems, modern infrastructure, and AI-assisted workflows that improve execution and reduce overhead.',
+    'I help businesses replace operational complexity with smarter systems, modern infrastructure, and AI-assisted workflows that improve execution and reduce overhead. Based in Atlanta, GA.',
   openGraph: {
     title: 'Gary L. Mariner II — AI Systems Architect for Business Operations',
     description:
-      'I help businesses replace operational complexity with smarter systems and AI-assisted infrastructure.',
+      'I help businesses replace operational complexity with smarter systems and AI-assisted infrastructure. Results driven by system design, not additional overhead.',
     url: 'https://garymariner.com',
     siteName: 'Gary L. Mariner II',
     type: 'website',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Gary L. Mariner II — AI Systems Architect for Business Operations',
     description:
-      'I help businesses replace operational complexity with smarter systems and AI-assisted infrastructure.',
+      'I help businesses replace operational complexity with smarter systems and AI-assisted infrastructure. Results driven by system design, not additional overhead.',
   },
   metadataBase: new URL('https://garymariner.com'),
 }

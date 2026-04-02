@@ -61,16 +61,27 @@ export function Hero() {
 
             {/* Supporting copy */}
             <p
-              className="font-sans text-base md:text-lg text-white/65 leading-[1.85] max-w-[540px] mb-12"
+              className="font-sans text-base md:text-lg text-white/65 leading-[1.85] max-w-[540px] mb-6"
               style={{ animation: 'fadeUp 0.75s ease 0.3s both' }}
             >
               {hero.supporting}
             </p>
 
+            {/* Proof tagline */}
+            <div
+              className="flex items-center gap-3 mb-12"
+              style={{ animation: 'fadeUp 0.75s ease 0.38s both' }}
+            >
+              <span className="w-5 h-px bg-gold/55 shrink-0" />
+              <span className="font-sans text-sm text-white/40 tracking-wide">
+                {hero.tagline}
+              </span>
+            </div>
+
             {/* CTAs */}
             <div
               className="flex flex-col sm:flex-row gap-4"
-              style={{ animation: 'fadeUp 0.75s ease 0.42s both' }}
+              style={{ animation: 'fadeUp 0.75s ease 0.50s both' }}
             >
               <Button href={hero.primaryCTA.href} size="lg" variant="primary" external={hero.primaryCTA.external}>
                 {hero.primaryCTA.label}

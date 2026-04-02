@@ -16,6 +16,15 @@ export function Footer() {
             <span className="text-xs text-white/40 font-sans tracking-wide">
               {footer.tagline}
             </span>
+            <span className="text-xs text-white/25 font-sans tracking-wide mt-0.5">
+              {footer.location}&nbsp;&middot;&nbsp;
+              <a
+                href={`mailto:${footer.email}`}
+                className="hover:text-white/45 transition-colors duration-200"
+              >
+                {footer.email}
+              </a>
+            </span>
           </div>
 
           {/* Nav links */}

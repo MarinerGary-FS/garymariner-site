@@ -44,7 +44,7 @@ export function ProofSection() {
                   <span className="font-display font-bold text-display-3xl text-gold-gradient leading-none">
                     {m.value}
                   </span>
-                  <span className="font-sans text-sm text-white/60 leading-snug max-w-[200px]">
+                  <span className="font-sans text-xs text-white/50 leading-snug max-w-[200px]">
                     {m.label}
                   </span>
                 </div>
@@ -72,11 +72,11 @@ export function ProofSection() {
           <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-border/40">
             {radco.metrics.map((m, mi) => (
               <Reveal key={m.label} delay={200 + mi * 80}>
-                <div className="flex flex-col gap-4 px-8 md:px-10 py-10 md:py-12">
-                  <span className="font-display font-bold text-display-xl text-white/85 leading-none">
+                <div className="flex flex-col gap-4 px-8 md:px-10 py-12 md:py-14">
+                  <span className="font-display font-bold text-display-2xl text-white/85 leading-none">
                     {m.value}
                   </span>
-                  <span className="font-sans text-sm text-white/60 leading-snug max-w-[220px]">
+                  <span className="font-sans text-xs text-white/50 leading-snug max-w-[220px]">
                     {m.label}
                   </span>
                 </div>
@@ -88,7 +88,7 @@ export function ProofSection() {
 
       {/* Closing statement — executive, not defensive */}
       <Reveal delay={250}>
-        <p className="font-sans text-sm text-white/40 leading-relaxed mt-8 max-w-2xl">
+        <p className="font-sans text-sm text-white/50 leading-[1.85] mt-10 max-w-2xl">
           {proof.closing}
         </p>
       </Reveal>

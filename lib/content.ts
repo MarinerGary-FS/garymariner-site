@@ -15,6 +15,7 @@ export const siteContent = {
     headline: 'I Help Businesses Replace Operational Complexity with Smarter Systems.',
     supporting:
       'I work at the intersection of strategy, communication, and implementation — helping organizations reduce overhead, improve execution, and build systems that scale without unnecessary complexity.',
+    tagline: 'Results driven by system design, not additional overhead.',
     primaryCTA: { label: 'Book a Consultation', href: 'https://cal.com/garymariner', external: true },
     secondaryCTA: { label: 'View Selected Work', href: '/case-studies' },
   },
@@ -157,6 +158,8 @@ export const siteContent = {
 
   footer: {
     tagline: 'AI Systems Architect for Business Operations',
+    location: 'Atlanta, GA',
+    email: 'gary@garymariner.com',
     links: [
       { label: 'About', href: '/about' },
       { label: 'Services', href: '/services' },

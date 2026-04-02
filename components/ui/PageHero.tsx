@@ -24,8 +24,8 @@ export function PageHero({
         className
       )}
     >
-      {/* Subtle warm ambient — carries the hero tone across pages */}
-      <div className="absolute top-0 left-0 w-[500px] h-[400px] rounded-full bg-gold/[0.03] blur-[120px] pointer-events-none" />
+      {/* Warm ambient — consistent with homepage hero depth */}
+      <div className="absolute top-0 left-0 w-[500px] h-[400px] rounded-full bg-gold/[0.04] blur-[100px] pointer-events-none" />
       {/* Bottom separator */}
       <div className="absolute bottom-0 left-0 right-0 divider-gold" />
 
