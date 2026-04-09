@@ -18,13 +18,13 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Gary L. Mariner II — AI Systems Architect for Business Operations',
+  title: 'Gary L. Mariner II — AI Transformation & Communications Leader',
   description:
-    'I help businesses replace operational complexity with smarter systems, modern infrastructure, and AI-assisted workflows that improve execution and reduce overhead. Based in Atlanta, GA.',
+    'Bridging AI, people, and operations. Helping organizations navigate the intersection of technology, communication, and execution. Based in Atlanta, GA.',
   openGraph: {
-    title: 'Gary L. Mariner II — AI Systems Architect for Business Operations',
+    title: 'Gary L. Mariner II — AI Transformation & Communications Leader',
     description:
-      'I help businesses replace operational complexity with smarter systems and AI-assisted infrastructure. Results driven by system design, not additional overhead.',
+      'Bridging AI, people, and operations. Helping organizations navigate the intersection of technology, communication, and execution.',
     url: 'https://garymariner.com',
     siteName: 'Gary L. Mariner II',
     type: 'website',
@@ -33,15 +33,15 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 600,
         height: 600,
-        alt: 'Gary L. Mariner II — AI Systems Architect for Business Operations',
+        alt: 'Gary L. Mariner II — AI Transformation & Communications Leader',
       },
     ],
   },
   twitter: {
     card: 'summary',
-    title: 'Gary L. Mariner II — AI Systems Architect for Business Operations',
+    title: 'Gary L. Mariner II — AI Transformation & Communications Leader',
     description:
-      'I help businesses replace operational complexity with smarter systems and AI-assisted infrastructure. Results driven by system design, not additional overhead.',
+      'Bridging AI, people, and operations. Helping organizations navigate the intersection of technology, communication, and execution.',
     images: ['/og-image.png'],
   },
   metadataBase: new URL('https://garymariner.com'),

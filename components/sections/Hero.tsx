@@ -84,10 +84,10 @@ export function Hero() {
               className="flex flex-col sm:flex-row gap-4"
               style={{ animation: 'fadeUp 0.75s ease 0.50s both' }}
             >
-              <BookingButton size="lg" variant="primary">
+              <Button href={hero.primaryCTA.href} size="lg">
                 {hero.primaryCTA.label}
                 <ArrowRight className="w-4 h-4" />
-              </BookingButton>
+              </Button>
               <Button href={hero.secondaryCTA.href} variant="ghost" size="lg">
                 {hero.secondaryCTA.label}
               </Button>

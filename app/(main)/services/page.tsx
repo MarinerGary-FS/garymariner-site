@@ -3,54 +3,53 @@ import { PageHero } from '@/components/ui/PageHero'
 import { SectionWrapper } from '@/components/ui/SectionWrapper'
 import { Reveal } from '@/components/ui/Reveal'
 import { Button } from '@/components/ui/Button'
-import { BookingButton } from '@/components/ui/BookingButton'
 
 export const metadata: Metadata = {
-  title: 'Services — Gary L. Mariner II',
+  title: 'Focus Areas — Gary L. Mariner II',
   description:
-    'AI Systems Strategy, Digital Infrastructure Design, Operations Optimization, and Executive Communication Systems. Built for business performance.',
+    'AI Transformation Strategy, Digital Infrastructure, Operations & Workflow Design, and Strategic Communications. Built for organizational impact.',
 }
 
-const services = [
+const domains = [
   {
     id: 'ai-systems',
     number: '01',
-    label: 'AI Systems Strategy',
-    headline: 'Align AI to Your Business — Not the Other Way Around',
+    label: 'AI Transformation Strategy',
+    headline: 'Align AI to Your Organization — Not the Other Way Around',
     summary:
-      'Most businesses adopt AI tools reactively — chasing trends without a clear systems strategy. The result is disconnected tools, duplicated effort, and no measurable ROI.',
-    what: "We start with how your business actually operates. I map your workflows, identify where AI creates real leverage, and design an implementation roadmap that fits your operations — not a vendor's pitch deck.",
+      'Most organizations adopt AI reactively — chasing trends without a clear systems strategy. The result is disconnected tools, duplicated effort, and no measurable impact. The problem is rarely the technology. It\u2019s the absence of strategy connecting it to how the organization actually operates.',
+    what: 'I start with how your organization runs. I map workflows, identify where AI creates real leverage, and design an implementation strategy that fits your operations and your people — not a vendor\u2019s pitch deck.',
     outcomes: [
-      'A clear AI implementation plan tied to business outcomes',
+      'A clear AI implementation strategy tied to operational outcomes',
       'Identified automation opportunities that reduce manual overhead',
       'Workflow redesigns that improve speed and consistency',
-      'AI tooling aligned to your team, not just your industry',
+      'AI adoption aligned to your team\u2019s capacity, not just your industry\u2019s hype cycle',
     ],
-    for: 'Founders and operators who want to use AI strategically — not just experimentally.',
+    for: 'Leaders navigating AI adoption who need strategy, not experimentation.',
   },
   {
     id: 'digital-infrastructure',
     number: '02',
-    label: 'Digital Infrastructure Design',
-    headline: 'Infrastructure That Reflects How Your Business Operates',
+    label: 'Digital Infrastructure',
+    headline: 'Infrastructure That Reflects How Your Organization Operates',
     summary:
-      "A weak digital presence signals weak operations. If your website, systems, or digital tools don't reflect your actual capabilities, you're leaving credibility — and revenue — on the table.",
-    what: 'I design and build modern digital infrastructure from the ground up — websites, systems architecture, and operational tooling that are clean, scalable, and aligned with your brand and business model.',
+      'A weak digital presence signals weak operations. If your website, systems, or digital tools don\u2019t reflect your actual capabilities, you\u2019re leaving credibility — and opportunity — on the table.',
+    what: 'I design and build modern digital infrastructure from the ground up — websites, systems architecture, and operational tooling that are clean, scalable, and aligned with your brand and operational model.',
     outcomes: [
       'A professional digital presence that builds trust immediately',
-      'Systems architecture that supports real business workflows',
-      'Scalable infrastructure that grows with the business',
+      'Systems architecture that supports real organizational workflows',
+      'Scalable infrastructure that grows with the organization',
       'Technical implementation without unnecessary complexity',
     ],
-    for: 'Businesses with a digital presence that no longer reflects their operations or positioning.',
+    for: 'Organizations with a digital presence that no longer reflects their capabilities or positioning.',
   },
   {
     id: 'operations',
     number: '03',
-    label: 'Operations Optimization',
+    label: 'Operations & Workflow Design',
     headline: 'Replace Friction with Structure',
     summary:
-      'Operational friction compounds quietly — until it becomes expensive. Unclear processes, manual workarounds, and fragmented communication create overhead that grows faster than the business.',
+      'Operational friction compounds quietly — until it becomes expensive. Unclear processes, manual workarounds, and fragmented communication create overhead that grows faster than the organization.',
     what: 'I map how work actually flows across your organization, identify friction points, and redesign the processes, tools, and accountability structures that remove overhead and improve execution speed.',
     outcomes: [
       'Streamlined workflows that reduce manual intervention',
@@ -58,23 +57,23 @@ const services = [
       'Reduced operational overhead without adding headcount',
       'Systems designed for how your team actually works',
     ],
-    for: 'Operations-heavy organizations where manual processes and unclear ownership are limiting growth.',
+    for: 'Operations-heavy organizations where manual processes and unclear ownership are limiting performance.',
   },
   {
     id: 'communications',
     number: '04',
-    label: 'Executive Communication Systems',
-    headline: 'Communication That Builds Trust and Drives Action',
+    label: 'Strategic Communications',
+    headline: 'Communication That Creates Alignment and Drives Action',
     summary:
-      "Poor communication systems are invisible until they're expensive. Misaligned teams, unclear messaging, and inconsistent client communication quietly erode performance and relationships.",
-    what: 'I design internal and external communication frameworks that create alignment, reduce friction in client relationships, and give leadership teams the structure they need to operate at scale.',
+      'Poor communication systems are invisible until they\u2019re expensive. Misaligned teams, unclear messaging, and inconsistent stakeholder communication quietly erode performance and trust.',
+    what: 'I design internal and external communication frameworks that create alignment, reduce friction in stakeholder relationships, and give leadership teams the structure they need to operate at scale.',
     outcomes: [
       'Internal communication systems that create team clarity',
-      'Client-facing frameworks that build trust and reduce friction',
-      'Messaging architecture aligned to the brand and business goals',
+      'Stakeholder-facing frameworks that build trust and reduce friction',
+      'Messaging architecture aligned to the brand and organizational goals',
       'Operational communication that scales with the organization',
     ],
-    for: 'Leadership teams where communication gaps are limiting performance, client relationships, or organizational growth.',
+    for: 'Leadership teams where communication gaps are limiting performance, trust, or organizational growth.',
   },
 ]
 
@@ -83,25 +82,25 @@ const approach = [
     step: '01',
     title: 'Diagnosis',
     description:
-      'Every engagement starts with understanding how your business actually operates — not how it looks on paper. We map workflows, identify friction points, and clarify business objectives before recommending anything.',
+      'Every engagement starts with understanding how your organization actually operates — not how it looks on paper. I map workflows, identify friction points, and clarify objectives before recommending anything.',
   },
   {
     step: '02',
     title: 'Strategy',
     description:
-      'Based on the diagnosis, we design a clear systems strategy. This includes what gets built, what gets optimized, and what gets removed. No tools until the strategy is sound.',
+      'Based on the diagnosis, I design a clear systems strategy. This includes what gets built, what gets optimized, and what gets removed. No tools until the strategy is sound.',
   },
   {
     step: '03',
     title: 'Implementation',
     description:
-      'Strategy becomes infrastructure. We build, integrate, and configure the systems — ensuring they are aligned to how your team works, not just technically functional.',
+      'Strategy becomes infrastructure. I build, integrate, and configure the systems — ensuring they are aligned to how your team works, not just technically functional.',
   },
   {
     step: '04',
     title: 'Optimization',
     description:
-      'Systems require iteration. We monitor performance, identify gaps, and refine until the infrastructure is operating at the level your business needs.',
+      'Systems require iteration. I monitor performance, identify gaps, and refine until the infrastructure is operating at the level your organization needs.',
   },
 ]
 
@@ -109,62 +108,59 @@ export default function ServicesPage() {
   return (
     <>
       <PageHero
-        eyebrow="Services"
-        headline="Systems Built for Business Performance"
-        supporting="Four focused service areas. Each one designed to reduce friction, improve execution, and create the infrastructure your business needs to scale."
+        eyebrow="Focus Areas"
+        headline="Where Strategy Meets Implementation"
+        supporting="Four interconnected domains. Each one focused on reducing friction, improving alignment, and building the infrastructure organizations need to operate at the next level."
       />
 
-      {/* Services list */}
+      {/* Domains */}
       <SectionWrapper className="bg-background" as="div">
         <div className="flex flex-col gap-0">
-          {services.map((service, i) => (
-            <Reveal key={service.id} delay={i * 60}>
+          {domains.map((domain, i) => (
+            <Reveal key={domain.id} delay={i * 60}>
               <div
-                id={service.id}
+                id={domain.id}
                 className="group grid grid-cols-1 lg:grid-cols-[1fr_1.8fr] gap-8 lg:gap-20 py-12 md:py-16 lg:py-20 border-b border-border/40 last:border-0 scroll-mt-24"
               >
                 {/* Left: label + meta */}
                 <div className="flex flex-col gap-5">
                   <div className="flex items-baseline gap-4">
                     <span className="font-display font-bold text-4xl text-white/[0.06] leading-none select-none tabular-nums">
-                      {service.number}
+                      {domain.number}
                     </span>
                     <span className="text-xs font-sans text-gold/70 uppercase tracking-[0.16em]">
-                      {service.label}
+                      {domain.label}
                     </span>
                   </div>
                   <h2 className="font-display font-bold text-display-md text-white leading-[1.15]">
-                    {service.headline}
+                    {domain.headline}
                   </h2>
                   <p className="text-xs font-sans text-white/35 leading-[1.8] italic">
-                    For: {service.for}
+                    For: {domain.for}
                   </p>
                 </div>
 
                 {/* Right: detail */}
                 <div className="flex flex-col gap-8">
-                  {/* Problem statement */}
                   <p className="font-sans text-base text-white/65 leading-[1.85]">
-                    {service.summary}
+                    {domain.summary}
                   </p>
 
-                  {/* What I do */}
                   <div className="border-l border-gold/25 pl-6">
                     <p className="text-xs font-sans text-white/30 uppercase tracking-[0.15em] mb-3">
                       The Approach
                     </p>
                     <p className="font-sans text-sm text-white/60 leading-[1.85]">
-                      {service.what}
+                      {domain.what}
                     </p>
                   </div>
 
-                  {/* Outcomes */}
                   <div>
                     <p className="text-xs font-sans text-white/30 uppercase tracking-[0.15em] mb-4">
                       What You Get
                     </p>
                     <ul className="flex flex-col gap-3">
-                      {service.outcomes.map((outcome) => (
+                      {domain.outcomes.map((outcome) => (
                         <li key={outcome} className="flex items-start gap-3">
                           <span className="mt-[0.4em] w-1.5 h-1.5 rounded-full bg-gold/50 shrink-0" />
                           <span className="font-sans text-sm text-white/60 leading-[1.7]">
@@ -219,23 +215,23 @@ export default function ServicesPage() {
           <Reveal>
             <div className="max-w-2xl">
               <p className="text-xs font-sans text-white/30 uppercase tracking-[0.18em] mb-6">
-                Ready to Start
+                What&apos;s Next
               </p>
               <h2 className="font-display font-bold text-display-xl text-white leading-[1.06] mb-8">
-                Not sure which service fits?
+                Not sure where to start?
                 <br />
-                <span className="text-white/55">Let&apos;s talk through it.</span>
+                <span className="text-white/55">That&apos;s usually the right place.</span>
               </h2>
               <p className="font-sans text-base text-white/45 leading-[1.85] mb-10 max-w-lg">
-                Most engagements start with a single conversation. Bring your operational challenges —
-                we&apos;ll identify where systems can create the most impact.
+                Most engagements begin with a single conversation. Bring your operational challenges —
+                I&apos;ll help identify where systems thinking can create the most impact.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <BookingButton size="lg">
-                  Book a Consultation
-                </BookingButton>
-                <Button href="/contact" variant="ghost" size="lg">
-                  Send a Message
+                <Button href="/contact" size="lg">
+                  Start a Conversation
+                </Button>
+                <Button href="/case-studies" variant="ghost" size="lg">
+                  Explore My Work
                 </Button>
               </div>
             </div>

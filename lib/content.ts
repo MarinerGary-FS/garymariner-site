@@ -3,88 +3,88 @@ export const siteContent = {
     name: 'Gary L. Mariner II',
     links: [
       { label: 'About', href: '/about' },
-      { label: 'Services', href: '/services' },
+      { label: 'Focus Areas', href: '/services' },
       { label: 'Work', href: '/case-studies' },
       { label: 'Contact', href: '/contact' },
     ],
-    cta: { label: 'Book a Consultation', href: 'https://cal.com/garymariner', external: true },
+    cta: { label: 'Start a Conversation', href: '/contact' },
   },
 
   hero: {
-    eyebrow: 'AI Systems Architect for Business Operations',
-    headline: 'I Help Businesses Replace Operational Complexity with Smarter Systems.',
+    eyebrow: 'AI Transformation & Communications Leader',
+    headline: 'I Help Organizations Navigate the Intersection of AI, People, and Operations.',
     supporting:
-      'I work at the intersection of strategy, communication, and implementation — helping organizations reduce overhead, improve execution, and build systems that scale without unnecessary complexity.',
-    tagline: 'Results driven by system design, not additional overhead.',
-    primaryCTA: { label: 'Book a Consultation', href: 'https://cal.com/garymariner', external: true },
-    secondaryCTA: { label: 'View Selected Work', href: '/case-studies' },
+      'Most transformation efforts fail because they treat technology, communication, and execution as separate problems. I bring them together — aligning leadership vision with operational reality to create systems that actually work.',
+    tagline: 'Strategy grounded in real operations. Implementation shaped by people.',
+    primaryCTA: { label: 'Explore My Work', href: '/case-studies' },
+    secondaryCTA: { label: 'Start a Conversation', href: '/contact' },
   },
 
   authority: {
-    tagline: 'Strategy. Systems. Communication. Execution.',
+    tagline: 'AI. People. Operations. Communication.',
     items: [
-      '15+ Years in Operations & Business Systems',
-      'AI Systems Implementation',
-      'Cross-Functional Leadership',
-      'Measurable Business Outcomes',
+      '15+ Years in Operational Leadership',
+      'AI-Driven Transformation',
+      'Cross-Functional Communication',
+      'Measurable Business Impact',
     ],
   },
 
   positioning: {
     headline:
-      "Most businesses don't suffer from a lack of tools — they suffer from too much friction.",
-    body: 'Disconnected workflows, unnecessary complexity, and poor system design create friction across operations. I help organizations replace that friction with structured systems, AI-assisted workflows, and modern infrastructure that improve clarity, speed, and performance.',
+      "Technology alone doesn't transform organizations. People, systems, and clear communication do.",
+    body: 'The gap between executive vision and operational reality is where most transformation stalls. Disconnected workflows, unclear communication, and poorly integrated tools create friction that compounds faster than growth. I work in that gap — designing systems that align how organizations think with how they actually operate.',
     pillars: [
       {
-        title: 'Reduce Friction',
-        description: 'Eliminate disconnected tools and unclear processes that slow execution.',
+        title: 'Align Leadership & Execution',
+        description: 'Bridge the gap between strategic intent and frontline reality so decisions translate into action.',
       },
       {
-        title: 'Improve Decisions',
+        title: 'Design Human-Centered Systems',
         description:
-          'Build visibility into operations so choices are faster and better informed.',
+          'Build AI-assisted infrastructure that works with how people actually operate — not against it.',
       },
       {
-        title: 'Scale with Clarity',
-        description: 'Design infrastructure that grows with the business without adding complexity.',
+        title: 'Create Operational Clarity',
+        description: 'Replace ambiguity with structured workflows, clear ownership, and visible accountability.',
       },
       {
-        title: 'Systems that Last',
-        description: 'Build for long-term operational integrity — not just the current quarter.',
+        title: 'Build for Lasting Impact',
+        description: 'Design infrastructure for long-term organizational health — not just the next quarter.',
       },
     ],
   },
 
   services: [
     {
-      title: 'AI Systems Strategy',
+      title: 'AI Transformation Strategy',
       description:
-        'Align your business goals with practical AI-assisted systems that improve speed, consistency, and operational visibility.',
+        'Aligning AI adoption with business reality — starting with how your organization actually operates, not how vendors think it should.',
       href: '/services#ai-systems',
     },
     {
-      title: 'Digital Infrastructure Design',
+      title: 'Digital Infrastructure',
       description:
-        'Build modern websites and business systems that are clean, scalable, and aligned with your brand and operations.',
+        'Designing and building the systems, platforms, and digital presence that reflect operational maturity and support real growth.',
       href: '/services#digital-infrastructure',
     },
     {
-      title: 'Operations Optimization',
+      title: 'Operations & Workflow Design',
       description:
-        'Reduce friction across communication, reporting, and execution by restructuring how work actually gets done.',
+        'Restructuring how work flows across teams — reducing friction, clarifying ownership, and improving speed without adding complexity.',
       href: '/services#operations',
     },
     {
-      title: 'Executive Communication Systems',
+      title: 'Strategic Communications',
       description:
-        'Create clearer internal and external communication frameworks that support trust, efficiency, and organizational growth.',
+        'Building communication systems that create alignment between leadership, teams, and external stakeholders.',
       href: '/services#communications',
     },
   ],
 
   proof: {
     intro:
-      'A combination of operational leadership, communication strategy, and AI systems thinking — grounded in real-world execution.',
+      'A track record built on operational leadership, communication strategy, and AI systems thinking — grounded in execution, not theory.',
     cases: [
       {
         name: 'Digital Harmony',
@@ -97,19 +97,19 @@ export const siteContent = {
       },
       {
         name: 'Radco',
-        label: 'Operational Performance',
+        label: 'Operational Restructuring',
         metrics: [
           { value: '93%', label: 'Portfolio occupancy (from ~80%)' },
-          { value: '23', label: 'Work orders resolved (down from 360)' },
+          { value: '94%', label: 'Reduction in maintenance backlog' },
         ],
       },
     ],
     closing:
-      'These results were driven by system design, workflow optimization, and the strategic use of AI — not additional overhead.',
+      'These outcomes came from redesigning how organizations operate — not from adding headcount or buying more tools.',
   },
 
   caseStudy: {
-    label: 'Featured Case Study',
+    label: 'Featured Work',
     company: 'Digital Harmony',
     title: 'Scaling Customer Operations with AI-Driven Systems',
     summary:
@@ -121,7 +121,7 @@ export const siteContent = {
       { value: '$130K', label: 'Monthly revenue' },
     ],
     href: '/case-studies',
-    cta: 'View Full Case Study',
+    cta: 'Read the Full Story',
   },
 
   philosophy: {
@@ -129,7 +129,7 @@ export const siteContent = {
     elaboration:
       'They reduce friction. They improve decision-making. They create space for real growth.',
     closing:
-      'I focus on building systems that are not only functional — but intentional, scalable, and aligned with how businesses actually operate.',
+      'I focus on building systems that are not only functional — but intentional, scalable, and aligned with how organizations actually operate.',
     principles: [
       {
         title: 'Strategy Before Tools',
@@ -142,27 +142,27 @@ export const siteContent = {
           'Complexity is often a symptom of unclear thinking. Clarity is the standard, and simplicity is how you sustain it.',
       },
       {
-        title: 'Systems That Serve',
+        title: 'Systems That Serve People',
         description:
-          'Infrastructure should make the work easier — not become the work itself. If it adds friction, it needs to change.',
+          'Infrastructure should make work easier for the people doing it — not become the work itself. If it adds friction, it needs to change.',
       },
     ],
   },
 
   finalCTA: {
     headline:
-      "If your business is carrying too much friction, too much overhead, or too much digital complexity, let\u2019s fix that.",
-    primaryCTA: { label: 'Book a Consultation', href: 'https://cal.com/garymariner', external: true },
-    secondaryCTA: { label: 'Start a Conversation', href: '/contact' },
+      "If your organization is navigating AI adoption, operational complexity, or the gap between strategy and execution — let\u2019s talk.",
+    primaryCTA: { label: 'Start a Conversation', href: '/contact' },
+    secondaryCTA: { label: 'Explore My Work', href: '/case-studies' },
   },
 
   footer: {
-    tagline: 'AI Systems Architect for Business Operations',
+    tagline: 'AI Transformation & Communications Leader',
     location: 'Atlanta, GA',
     email: 'gary.mariner@gmail.com',
     links: [
       { label: 'About', href: '/about' },
-      { label: 'Services', href: '/services' },
+      { label: 'Focus Areas', href: '/services' },
       { label: 'Work', href: '/case-studies' },
       { label: 'Contact', href: '/contact' },
     ],

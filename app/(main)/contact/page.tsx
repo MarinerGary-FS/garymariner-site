@@ -7,7 +7,7 @@ import { ContactForm } from '@/components/sections/ContactForm'
 export const metadata: Metadata = {
   title: 'Contact — Gary L. Mariner II',
   description:
-    'Book a consultation or send a message. Focused on AI systems, operations optimization, and digital infrastructure for business.',
+    'Start a conversation about AI transformation, operations, communications, or organizational systems design.',
 }
 
 const expectations = [

@@ -13,17 +13,17 @@ export function ServicesPreview() {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           <div>
             <p className="text-xs font-sans text-white/30 uppercase tracking-[0.18em] mb-5">
-              Services
+              Focus Areas
             </p>
             <h2 className="font-display font-bold text-display-md text-white">
-              How I Help Businesses Operate Smarter
+              Where I Create Value
             </h2>
           </div>
           <Link
             href="/services"
             className="inline-flex items-center gap-2 text-sm font-sans text-white/40 hover:text-white/80 transition-colors duration-200 group self-start md:self-auto pb-1 border-b border-transparent hover:border-white/20"
           >
-            View all services
+            View all focus areas
             <span className="group-hover:translate-x-1 transition-transform duration-200">→</span>
           </Link>
         </div>

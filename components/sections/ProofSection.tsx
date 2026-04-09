@@ -15,7 +15,7 @@ export function ProofSection() {
           Outcomes
         </p>
         <h2 className="font-display font-bold text-display-md text-white max-w-lg">
-          Grounded in Real Execution
+          Outcomes Grounded in Execution
         </h2>
         <p className="font-sans text-base text-white/60 leading-[1.8] mt-5 max-w-xl">
           {proof.intro}

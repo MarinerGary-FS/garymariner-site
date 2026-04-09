@@ -3,69 +3,68 @@ import { PageHero } from '@/components/ui/PageHero'
 import { SectionWrapper } from '@/components/ui/SectionWrapper'
 import { Reveal } from '@/components/ui/Reveal'
 import { Button } from '@/components/ui/Button'
-import { BookingButton } from '@/components/ui/BookingButton'
 import { siteContent } from '@/lib/content'
 
 export const metadata: Metadata = {
   title: 'About — Gary L. Mariner II',
   description:
-    'AI Systems Architect for Business Operations. 15+ years in operational leadership, process design, and AI-assisted systems implementation.',
+    'AI Transformation & Communications Leader. 15+ years in operational leadership, cross-functional communication, and systems thinking.',
 }
 
 const background = [
   {
     period: '15+ Years',
-    title: 'Operations & Business Leadership',
+    title: 'Operational Leadership Across Industries',
     description:
-      'Built and managed teams across sales, customer operations, and business development. Developed a ground-level understanding of how organizations run — where friction accumulates, where decisions break down, and what it actually takes to change them.',
+      'Built and led teams across sales, customer operations, and business development. Developed a ground-level understanding of how organizations run — where friction accumulates, where communication breaks down, and what it actually takes to move people and systems in the same direction.',
   },
   {
-    period: 'Cross-Industry',
-    title: 'Global Team Leadership',
+    period: 'Global',
+    title: 'Cross-Functional & Cross-Cultural Leadership',
     description:
-      'Led cross-functional operations across multiple industries and geographies — including global customer service teams spanning the USA, Europe, and Asia. Learned that operational problems are consistent regardless of industry: disconnected systems, unclear processes, and poor visibility.',
+      'Led operations spanning the USA, Europe, and Asia — coordinating across time zones, languages, and team cultures. Learned that the gap between strategy and execution is almost always a communication problem, not a capability one.',
   },
   {
     period: 'The Shift',
-    title: 'From Operations to Systems Architecture',
+    title: 'From Running Operations to Redesigning Them',
     description:
-      "When AI tools matured beyond experimentation, the opportunity became clear. Not just new tools — but a fundamental rethinking of how business systems could be designed. Shifted focus from running operations to redesigning them through structured AI-assisted workflows and modern infrastructure.",
+      'When AI matured beyond experimentation, the opportunity became clear. Not just new tools — but a fundamental rethinking of how organizational systems could be designed. Shifted focus from managing operations to transforming them through structured AI-assisted workflows, human-centered design, and modern infrastructure.',
   },
   {
     period: 'Today',
-    title: 'AI Systems Architecture for Business',
+    title: 'AI Transformation & Communications Leadership',
     description:
-      'Works with founders, operators, and executives to replace operational friction with structured systems. Every engagement starts with understanding how the business actually runs — then designing infrastructure that improves execution, reduces overhead, and scales without adding complexity.',
+      'Works at the intersection of AI, people, and operations — helping organizations navigate transformation by aligning technology with how people actually work and communicate. Every engagement starts with understanding the human side of the system, not just the technical one.',
   },
 ]
 
 const differentiators = [
   {
-    title: 'Systems Thinking Over Tool Usage',
+    title: 'Translator, Not Just Implementer',
     description:
-      'Most AI adoption fails because it starts with tools, not systems. Every engagement begins with how work actually flows — then identifies where AI creates real leverage.',
+      'The ability to bridge executive vision and frontline reality — translating strategy into language and systems that teams can actually execute on. Most transformation fails in that gap.',
   },
   {
-    title: 'Operator Background',
+    title: 'People-First Systems Thinking',
     description:
-      '15+ years running operations means the work is grounded in how businesses actually function. Not theory. Not vendor pitches. Practical design from real execution experience.',
+      'AI that ignores how people work doesn\u2019t work. Every system I design starts with the humans who will use it — their workflows, their communication patterns, their constraints.',
   },
   {
     title: 'Communication + Operations + Technology',
     description:
-      'The ability to bridge all three disciplines — strategic communication, operational design, and technical systems — is what makes implementation actually stick.',
+      'Most operators don\u2019t communicate well. Most communicators don\u2019t understand operations. The ability to bridge all three disciplines is what makes transformation stick.',
   },
 ]
 
 export default function AboutPage() {
-  const { philosophy, finalCTA } = siteContent
+  const { philosophy } = siteContent
 
   return (
     <>
       <PageHero
         eyebrow="About Gary"
-        headline="Built on Operations. Focused on Systems."
-        supporting="15+ years in operational leadership — now applied to AI systems architecture, workflow design, and modern business infrastructure."
+        headline="Built on Operations. Driven by Communication. Focused on Transformation."
+        supporting="15+ years of operational leadership — now applied to AI transformation, systems design, and the human side of organizational change."
       />
 
       {/* Bio narrative */}
@@ -80,20 +79,20 @@ export default function AboutPage() {
                   Gary L. Mariner II
                 </p>
                 <p className="text-sm font-sans text-gold/80 tracking-wide">
-                  AI Systems Architect for Business Operations
+                  AI Transformation & Communications Leader
                 </p>
               </div>
 
               <div className="divider" />
 
               <p className="font-sans text-sm text-white/45 leading-[1.85]">
-                Gary works at the intersection of strategy, communication, and implementation —
-                helping organizations reduce overhead, improve execution, and build systems that
-                scale without unnecessary complexity.
+                Gary works at the intersection of AI, people, and operations —
+                helping organizations navigate transformation by aligning technology
+                with how teams actually work and communicate.
               </p>
 
               <div className="flex flex-col gap-3 mt-2">
-                {['15+ Years in Operations', 'AI Systems Implementation', 'Global Team Leadership', 'Cross-Industry Experience'].map((item) => (
+                {['15+ Years in Operational Leadership', 'AI-Driven Transformation', 'Global Cross-Functional Teams', 'Strategic Communications'].map((item) => (
                   <div key={item} className="flex items-center gap-3">
                     <span className="w-1.5 h-1.5 rounded-full bg-gold/50 shrink-0" />
                     <span className="text-xs font-sans text-white/50 tracking-wide">{item}</span>
@@ -102,9 +101,9 @@ export default function AboutPage() {
               </div>
 
               <div className="mt-4">
-                <BookingButton size="sm">
-                  Book a Consultation
-                </BookingButton>
+                <Button href="/contact" size="sm">
+                  Start a Conversation
+                </Button>
               </div>
             </div>
           </Reveal>
@@ -114,14 +113,11 @@ export default function AboutPage() {
             {background.map((item, i) => (
               <Reveal key={item.title} delay={i * 80}>
                 <div className="group flex gap-6 md:gap-8 py-8 border-b border-border/50 last:border-0">
-                  {/* Period */}
                   <div className="shrink-0 w-20">
                     <span className="text-xs font-sans text-gold/60 tracking-[0.12em] uppercase leading-none">
                       {item.period}
                     </span>
                   </div>
-
-                  {/* Content */}
                   <div className="flex flex-col gap-2.5">
                     <div className="w-6 h-0.5 bg-gold/35 group-hover:bg-gold/65 group-hover:w-10 transition-all duration-400 rounded-full mb-1" />
                     <h3 className="font-display font-semibold text-base md:text-lg text-white">
@@ -145,7 +141,7 @@ export default function AboutPage() {
             The Difference
           </p>
           <h2 className="font-display font-bold text-display-md text-white max-w-xl">
-            Why This Approach Produces Results
+            Why This Approach Works
           </h2>
         </Reveal>
 
@@ -164,6 +160,27 @@ export default function AboutPage() {
             </Reveal>
           ))}
         </div>
+      </SectionWrapper>
+
+      {/* Beyond Work — Undugu */}
+      <SectionWrapper className="bg-background border-t border-border/40">
+        <Reveal className="max-w-2xl">
+          <p className="text-xs font-sans text-white/30 uppercase tracking-[0.18em] mb-8">
+            Beyond Work
+          </p>
+          <h2 className="font-display font-bold text-display-md text-white leading-tight mb-6">
+            Systems thinking extends beyond business.
+          </h2>
+          <p className="font-sans text-sm text-white/55 leading-[1.85] mb-4">
+            I believe the same principles that transform organizations — clarity, structure, human-centered design — can create impact far beyond the boardroom.
+          </p>
+          <p className="font-sans text-sm text-white/55 leading-[1.85] mb-8">
+            I support the Undugu Society, an organization in Nairobi dedicated to empowering street children and vulnerable youth through education, vocational training, and community integration. It&apos;s a reminder that the most important systems are the ones that serve people who need them most.
+          </p>
+          <Button href="https://undugu.org" variant="text" size="sm" external>
+            Learn about Undugu Society &rarr;
+          </Button>
+        </Reveal>
       </SectionWrapper>
 
       {/* Philosophy */}
@@ -208,17 +225,17 @@ export default function AboutPage() {
           <Reveal>
             <div className="max-w-2xl">
               <p className="text-xs font-sans text-white/30 uppercase tracking-[0.18em] mb-6">
-                Work Together
+                What&apos;s Next
               </p>
               <h2 className="font-display font-bold text-display-xl text-white leading-[1.06] mb-8">
-                If your business is carrying too much friction, let&apos;s fix that.
+                Interested in working together?
               </h2>
               <div className="flex flex-col sm:flex-row gap-4">
-                <BookingButton size="lg">
-                  Book a Consultation
-                </BookingButton>
-                <Button href="/contact" variant="ghost" size="lg">
+                <Button href="/contact" size="lg">
                   Start a Conversation
+                </Button>
+                <Button href="/case-studies" variant="ghost" size="lg">
+                  Explore My Work
                 </Button>
               </div>
             </div>
