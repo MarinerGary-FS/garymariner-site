@@ -7,7 +7,7 @@ export function Hero() {
   const { hero } = siteContent
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-background">
+    <section className="relative min-h-screen flex items-center overflow-x-hidden bg-background">
       {/* Architectural grid — very subtle */}
       <div className="absolute inset-0 pointer-events-none bg-grid opacity-25" />
 
