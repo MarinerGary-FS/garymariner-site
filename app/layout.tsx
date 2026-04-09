@@ -2,8 +2,6 @@ import type { Metadata } from 'next'
 import { Syne, Inter } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
-import { Nav } from '@/components/layout/Nav'
-import { Footer } from '@/components/layout/Footer'
 
 const syne = Syne({
   subsets: ['latin'],
@@ -53,9 +51,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${syne.variable} ${inter.variable}`}>
       <body className="bg-background text-white font-sans antialiased">
-        <Nav />
         <main>{children}</main>
-        <Footer />
         {/* Cal.com embed — loaded after interactive, no layout impact */}
         <Script
           id="cal-embed"

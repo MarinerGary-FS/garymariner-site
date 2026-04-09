@@ -44,6 +44,9 @@ const config: Config = {
         section: '7rem',
         'section-sm': '5rem',
       },
+      transitionDuration: {
+        '400': '400ms',
+      },
       animation: {
         'fade-up': 'fadeUp 0.7s ease forwards',
         'fade-in': 'fadeIn 0.6s ease forwards',

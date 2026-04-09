@@ -68,7 +68,17 @@ export function Footer() {
 
         {/* Divider + Legal */}
         <div className="divider mt-8 mb-6" />
-        <p className="text-xs font-sans text-white/25 tracking-wide">{footer.legal}</p>
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <p className="text-xs font-sans text-white/25 tracking-wide">{footer.legal}</p>
+          <a
+            href="https://marinernexus.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[10px] font-sans text-white/15 hover:text-white/35 transition-colors duration-200 tracking-[0.08em]"
+          >
+            Built by Mariner Nexus
+          </a>
+        </div>
       </div>
     </footer>
   )

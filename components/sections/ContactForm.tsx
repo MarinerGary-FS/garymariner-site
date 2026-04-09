@@ -163,7 +163,7 @@ function Field({ label, name, type, placeholder, value, onChange, required }: Fi
         onChange={onChange}
         placeholder={placeholder}
         required={required}
-        className="w-full bg-surface border border-border rounded-lg px-4 py-3.5 font-sans text-sm text-white/80 placeholder:text-white/20 focus:outline-none focus:border-gold/40 focus:ring-1 focus:ring-gold/20 transition-colors duration-200"
+        className="w-full bg-surface border border-border rounded-lg px-4 py-3.5 min-h-[48px] font-sans text-sm text-white/80 placeholder:text-white/20 focus:outline-none focus:border-gold/40 focus:ring-1 focus:ring-gold/20 transition-colors duration-200"
       />
     </div>
   )

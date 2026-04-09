@@ -36,7 +36,7 @@ export function Button({
     // Ghost: controlled border — secondary action
     ghost:
       'border border-white/20 text-white hover:border-white/35 hover:bg-white/[0.04] active:bg-white/[0.08]',
-    text: 'text-gold hover:text-gold-light underline-offset-4 hover:underline p-0',
+    text: 'text-gold hover:text-gold-light underline-offset-4 hover:underline p-0 rounded-sm',
   }
 
   const sizes = {

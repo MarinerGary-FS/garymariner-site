@@ -73,26 +73,26 @@ export function Nav() {
 
           {/* Mobile menu toggle */}
           <button
-            className="md:hidden flex flex-col justify-center items-center gap-1.5 w-8 h-8 -m-2 p-2 focus:outline-none"
+            className="md:hidden flex flex-col justify-center items-center gap-[5px] w-10 h-10 -m-1 p-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60 rounded-md"
             onClick={() => setMenuOpen((v) => !v)}
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           >
             <span
               className={cn(
-                'block w-5 h-px bg-white transition-all duration-300',
-                menuOpen && 'rotate-45 translate-y-[7px]'
+                'block w-5 h-px bg-white transition-all duration-300 origin-center',
+                menuOpen && 'rotate-45 translate-y-[6px]'
               )}
             />
             <span
               className={cn(
                 'block w-5 h-px bg-white transition-all duration-300',
-                menuOpen && 'opacity-0'
+                menuOpen && 'opacity-0 scale-x-0'
               )}
             />
             <span
               className={cn(
-                'block w-5 h-px bg-white transition-all duration-300',
-                menuOpen && '-rotate-45 -translate-y-[7px]'
+                'block w-5 h-px bg-white transition-all duration-300 origin-center',
+                menuOpen && '-rotate-45 -translate-y-[6px]'
               )}
             />
           </button>

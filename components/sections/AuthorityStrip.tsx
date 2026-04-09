@@ -18,14 +18,14 @@ export function AuthorityStrip() {
           </p>
 
           {/* Credential row — editorial separator style */}
-          <div className="flex flex-wrap items-center justify-center gap-y-4">
+          <div className="flex flex-wrap items-center justify-center gap-y-3 gap-x-0">
             {authority.items.map((item, i) => (
               <span key={i} className="flex items-center">
-                <span className="text-sm font-sans text-white/55 tracking-wide px-5 md:px-6 whitespace-nowrap">
+                <span className="text-xs sm:text-sm font-sans text-white/50 tracking-wide px-3 sm:px-5 md:px-6">
                   {item}
                 </span>
                 {i < authority.items.length - 1 && (
-                  <span className="w-1.5 h-1.5 rounded-full bg-gold/45 shrink-0" />
+                  <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-gold/40 shrink-0" />
                 )}
               </span>
             ))}
