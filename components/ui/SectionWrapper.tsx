@@ -16,7 +16,7 @@ export function SectionWrapper({
   as: Tag = 'section',
 }: SectionWrapperProps) {
   return (
-    <Tag id={id} className={cn('px-6 md:px-10 lg:px-16 py-24 md:py-32', className)}>
+    <Tag id={id} className={cn('px-6 md:px-10 lg:px-16 py-28 md:py-36', className)}>
       <div className={cn('max-w-site mx-auto', innerClassName)}>{children}</div>
     </Tag>
   )

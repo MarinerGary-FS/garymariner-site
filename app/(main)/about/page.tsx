@@ -138,15 +138,15 @@ export default function AboutPage() {
           <p className="text-xs font-sans text-white/30 uppercase tracking-[0.18em] mb-5">
             The Difference
           </p>
-          <h2 className="font-display font-bold text-display-md text-white max-w-xl">
+          <h2 className="font-display font-bold text-display-lg text-white max-w-xl">
             Why This Approach Works
           </h2>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 md:divide-x md:divide-border/50">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           {differentiators.map((item, i) => (
             <Reveal key={item.title} delay={i * 100}>
-              <div className="group flex flex-col gap-5 md:px-10 first:pl-0 last:pr-0 py-8 md:py-2 border-b border-border/30 md:border-b-0 last:border-b-0">
+              <div className="group flex flex-col gap-5 py-8 md:py-0 border-b border-border/30 md:border-b-0 last:border-b-0">
                 <div className="w-8 h-0.5 bg-gold/35 group-hover:bg-gold/65 group-hover:w-14 transition-all duration-500 rounded-full" />
                 <h3 className="font-display font-semibold text-lg text-white leading-snug">
                   {item.title}
@@ -166,10 +166,10 @@ export default function AboutPage() {
           <p className="text-xs font-sans text-white/30 uppercase tracking-[0.18em] mb-8">
             Beyond Work
           </p>
-          <h2 className="font-display font-bold text-display-md text-white leading-tight mb-6">
+          <h2 className="font-display font-bold text-display-lg text-white mb-8">
             Systems thinking extends beyond business.
           </h2>
-          <p className="font-sans text-sm text-white/55 leading-[1.85] mb-8">
+          <p className="font-sans text-base text-white/55 leading-[1.85] mb-10">
             I serve as Technology Committee Chair for the Undugu Society in Nairobi, helping integrate technology and AI into community-focused initiatives for street children and vulnerable youth. The same principles that transform organizations can serve the people who need them most.
           </p>
           <Button href="https://undugu.org" variant="text" size="sm" external>
@@ -214,7 +214,7 @@ export default function AboutPage() {
       </SectionWrapper>
 
       {/* CTA */}
-      <section className="relative px-6 md:px-10 lg:px-16 py-24 md:py-32 bg-background border-t border-border/40 overflow-hidden">
+      <section className="relative px-6 md:px-10 lg:px-16 py-28 md:py-36 bg-background border-t border-border/40 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-gold/[0.06] blur-[120px] pointer-events-none" />
         <div className="relative max-w-site mx-auto">
           <Reveal>
@@ -222,7 +222,7 @@ export default function AboutPage() {
               <p className="text-xs font-sans text-white/30 uppercase tracking-[0.18em] mb-6">
                 What&apos;s Next
               </p>
-              <h2 className="font-display font-bold text-display-xl text-white mb-8">
+              <h2 className="font-display font-bold text-display-xl text-white mb-10">
                 Interested in working together?
               </h2>
               <div className="flex flex-col sm:flex-row gap-4">

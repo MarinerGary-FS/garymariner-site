@@ -30,7 +30,7 @@ export function ServicesPreview() {
       </Reveal>
 
       {/* Service cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
         {services.map((service, i) => (
           <Reveal key={service.title} delay={i * 75}>
             <ServiceCard service={service} index={i} />

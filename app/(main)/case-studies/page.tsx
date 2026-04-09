@@ -290,7 +290,7 @@ export default function CaseStudiesPage() {
       </SectionWrapper>
 
       {/* CTA */}
-      <section className="relative px-6 md:px-10 lg:px-16 py-24 md:py-32 bg-background border-t border-border/40 overflow-hidden">
+      <section className="relative px-6 md:px-10 lg:px-16 py-28 md:py-36 bg-background border-t border-border/40 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-gold/[0.06] blur-[120px] pointer-events-none" />
         <div className="relative max-w-site mx-auto">
           <Reveal>

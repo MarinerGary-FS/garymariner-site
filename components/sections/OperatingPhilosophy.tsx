@@ -48,10 +48,10 @@ export function OperatingPhilosophy() {
       <div className="divider mb-12 md:mb-24" />
 
       {/* Principle columns — clean, no visual noise */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-0 md:divide-x md:divide-border/50">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
         {philosophy.principles.map((p, i) => (
           <Reveal key={p.title} delay={i * 100}>
-            <div className="group flex flex-col gap-5 md:px-10 first:pl-0 last:pr-0 py-8 md:py-2 border-b border-border/30 md:border-b-0 last:border-b-0">
+            <div className="group flex flex-col gap-5 py-8 md:py-0 border-b border-border/30 md:border-b-0 last:border-b-0">
               {/* Gold accent — expands on hover */}
               <div className="w-8 h-0.5 bg-gold/35 group-hover:bg-gold/65 group-hover:w-14 transition-all duration-500 rounded-full" />
 
