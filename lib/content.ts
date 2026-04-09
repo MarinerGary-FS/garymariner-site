@@ -12,9 +12,9 @@ export const siteContent = {
 
   hero: {
     eyebrow: 'AI Transformation & Communications Leader',
-    headline: 'I Help Organizations Navigate the Intersection of AI, People, and Operations.',
+    headline: 'AI Doesn\u2019t Fail Because of the Technology. It Fails Because Organizations Aren\u2019t Ready for It.',
     supporting:
-      'Most transformation efforts fail because they treat technology, communication, and execution as separate problems. I bring them together — aligning leadership vision with operational reality to create systems that actually work.',
+      'The gap between executive vision and operational reality is where most transformation stalls. I work in that gap — aligning AI, people, and communication so organizations don\u2019t just adopt technology, they actually change how they operate.',
     tagline: 'Strategy grounded in real operations. Implementation shaped by people.',
     primaryCTA: { label: 'Explore My Work', href: '/case-studies' },
     secondaryCTA: { label: 'Start a Conversation', href: '/contact' },
@@ -30,9 +30,16 @@ export const siteContent = {
     ],
   },
 
+  // Signature POV — the gravity point
+  pov: {
+    statement: 'Most companies don\u2019t fail at AI because of the technology. They fail because no one translated the strategy into something the organization could actually execute.',
+    belief: 'AI exposes every misalignment an organization has been tolerating — broken workflows, unclear ownership, poor communication between leadership and frontline teams. The technology works. The question is whether the organization is structured to use it.',
+    role: 'I sit between strategy and execution. Between leadership and the people doing the work. Between the technology and the humans it\u2019s supposed to serve. That\u2019s where transformation either happens or doesn\u2019t.',
+  },
+
   positioning: {
     headline:
-      "Technology alone doesn't transform organizations. People, systems, and clear communication do.",
+      'Technology alone doesn\u2019t transform organizations. People, systems, and clear communication do.',
     body: 'The gap between executive vision and operational reality is where most transformation stalls. Disconnected workflows, unclear communication, and poorly integrated tools create friction that compounds faster than growth. I work in that gap — designing systems that align how organizations think with how they actually operate.',
     pillars: [
       {
@@ -84,14 +91,14 @@ export const siteContent = {
 
   proof: {
     intro:
-      'A track record built on operational leadership, communication strategy, and AI systems thinking — grounded in execution, not theory.',
+      'Transformation measured in outcomes, not slide decks. Each engagement started with a real operational problem and ended with measurable change.',
     cases: [
       {
         name: 'Digital Harmony',
-        label: 'AI-Driven Transformation',
+        label: 'Flagship Transformation',
         metrics: [
+          { value: '8x', label: 'Customer base growth (500 to 4,000)' },
           { value: '70%', label: 'Reduction in live agent dependency' },
-          { value: '90%', label: 'Increase in customer satisfaction' },
           { value: '$130K', label: 'Monthly revenue (up from $75K)' },
         ],
       },
@@ -109,15 +116,15 @@ export const siteContent = {
   },
 
   caseStudy: {
-    label: 'Featured Work',
+    label: 'Flagship Transformation',
     company: 'Digital Harmony',
-    title: 'Scaling Customer Operations with AI-Driven Systems',
+    title: 'From 500 Customers to 4,000 — While Reducing Operational Dependency by 70%',
     summary:
-      'A global customer service transformation that reduced operational dependency, improved efficiency, and grew revenue — through structured systems and AI-assisted workflows.',
+      'A global customer service operation transformed through AI-driven systems, structured workflows, and close collaboration with leadership. The result: 8x customer growth, dramatically improved satisfaction, and a business model that no longer depended on scaling headcount.',
     quote: 'The real leverage is in systems, not headcount.',
     outcomes: [
+      { value: '8x', label: 'Customer growth' },
       { value: '70%', label: 'Agent reduction' },
-      { value: '90%', label: 'CSAT increase' },
       { value: '$130K', label: 'Monthly revenue' },
     ],
     href: '/case-studies',
@@ -151,7 +158,7 @@ export const siteContent = {
 
   finalCTA: {
     headline:
-      "If your organization is navigating AI adoption, operational complexity, or the gap between strategy and execution — let\u2019s talk.",
+      'If your organization is navigating AI adoption, operational complexity, or the gap between strategy and execution \u2014 let\u2019s talk.',
     primaryCTA: { label: 'Start a Conversation', href: '/contact' },
     secondaryCTA: { label: 'Explore My Work', href: '/case-studies' },
   },

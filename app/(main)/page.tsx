@@ -1,5 +1,6 @@
 import { Hero } from '@/components/sections/Hero'
 import { AuthorityStrip } from '@/components/sections/AuthorityStrip'
+import { SignaturePOV } from '@/components/sections/SignaturePOV'
 import { PositioningBlock } from '@/components/sections/PositioningBlock'
 import { ServicesPreview } from '@/components/sections/ServicesPreview'
 import { ProofSection } from '@/components/sections/ProofSection'
@@ -12,6 +13,7 @@ export default function HomePage() {
     <>
       <Hero />
       <AuthorityStrip />
+      <SignaturePOV />
       <PositioningBlock />
       <ServicesPreview />
       <ProofSection />

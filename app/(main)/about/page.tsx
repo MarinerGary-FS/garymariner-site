@@ -14,45 +14,45 @@ export const metadata: Metadata = {
 const background = [
   {
     period: '15+ Years',
-    title: 'Operational Leadership Across Industries',
+    title: 'Frontline to Leadership — Across Industries',
     description:
-      'Built and led teams across sales, customer operations, and business development. Developed a ground-level understanding of how organizations run — where friction accumulates, where communication breaks down, and what it actually takes to move people and systems in the same direction.',
+      'Built and led teams across sales, customer operations, and business development. Spent enough time on the frontline to know what leadership decisions look like when they actually reach the people doing the work. Developed an instinct for where friction hides, where communication fails, and where the gap between strategy and execution quietly costs organizations more than they realize.',
   },
   {
     period: 'Global',
-    title: 'Cross-Functional & Cross-Cultural Leadership',
+    title: 'The Communication Problem Nobody Talks About',
     description:
-      'Led operations spanning the USA, Europe, and Asia — coordinating across time zones, languages, and team cultures. Learned that the gap between strategy and execution is almost always a communication problem, not a capability one.',
+      'Led operations spanning the USA, Europe, and Asia. Coordinated across time zones, languages, and team cultures. The consistent lesson: most organizational failure isn\u2019t a competence problem or a technology problem. It\u2019s a communication problem. The strategy was sound. The execution was capable. What was missing was the translation layer between them.',
   },
   {
     period: 'The Shift',
-    title: 'From Running Operations to Redesigning Them',
+    title: 'From Managing Operations to Redesigning Them',
     description:
-      'When AI matured beyond experimentation, the opportunity became clear. Not just new tools — but a fundamental rethinking of how organizational systems could be designed. Shifted focus from managing operations to transforming them through structured AI-assisted workflows, human-centered design, and modern infrastructure.',
+      'When AI matured beyond experimentation, the opportunity wasn\u2019t just new tools — it was a fundamental rethinking of how organizations could be designed. Not incremental improvement. Structural transformation. Shifted focus from running operations to rebuilding them through AI-assisted workflows, human-centered design, and infrastructure that actually matches how people work.',
   },
   {
     period: 'Today',
-    title: 'AI Transformation & Communications Leadership',
+    title: 'Where AI, People, and Communication Converge',
     description:
-      'Works at the intersection of AI, people, and operations — helping organizations navigate transformation by aligning technology with how people actually work and communicate. Every engagement starts with understanding the human side of the system, not just the technical one.',
+      'Works at the intersection that most people avoid — where technology meets human behavior, where leadership vision meets operational reality, and where communication either makes or breaks the system. Every engagement starts with understanding people, not deploying tools.',
   },
 ]
 
 const differentiators = [
   {
-    title: 'Translator, Not Just Implementer',
+    title: 'Translator Between Floors',
     description:
-      'The ability to bridge executive vision and frontline reality — translating strategy into language and systems that teams can actually execute on. Most transformation fails in that gap.',
+      'I\u2019ve been in the room with the executive team and on the floor with the people doing the work. Most transformation fails because nobody translates between those two realities. I do.',
   },
   {
-    title: 'People-First Systems Thinking',
+    title: 'AI Serves People — Not the Other Way Around',
     description:
-      'AI that ignores how people work doesn\u2019t work. Every system I design starts with the humans who will use it — their workflows, their communication patterns, their constraints.',
+      'Every AI initiative I\u2019ve seen fail had the same root cause: it was designed around the technology, not the humans. Systems that ignore how people actually work don\u2019t work. Full stop.',
   },
   {
-    title: 'Communication + Operations + Technology',
+    title: 'Three Disciplines. One Person.',
     description:
-      'Most operators don\u2019t communicate well. Most communicators don\u2019t understand operations. The ability to bridge all three disciplines is what makes transformation stick.',
+      'Communication. Operations. Technology. Most people are strong in one, competent in two, absent in the third. I bridge all three — and that\u2019s where lasting organizational change actually lives.',
   },
 ]
 
@@ -172,10 +172,10 @@ export default function AboutPage() {
             Systems thinking extends beyond business.
           </h2>
           <p className="font-sans text-sm text-white/55 leading-[1.85] mb-4">
-            I believe the same principles that transform organizations — clarity, structure, human-centered design — can create impact far beyond the boardroom.
+            The same principles that transform organizations — clarity, structure, human-centered design — can create impact far beyond the boardroom.
           </p>
           <p className="font-sans text-sm text-white/55 leading-[1.85] mb-8">
-            I support the Undugu Society, an organization in Nairobi dedicated to empowering street children and vulnerable youth through education, vocational training, and community integration. It&apos;s a reminder that the most important systems are the ones that serve people who need them most.
+            I serve as Technology Committee Chair for the Undugu Society, an organization in Nairobi dedicated to empowering street children and vulnerable youth through education, vocational training, and community integration. In that role, I help integrate technology and AI into community-focused initiatives — ensuring that the same systems thinking applied to business transformation also serves the people who need it most.
           </p>
           <Button href="https://undugu.org" variant="text" size="sm" external>
             Learn about Undugu Society &rarr;

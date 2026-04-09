@@ -113,8 +113,59 @@ export default function ServicesPage() {
         supporting="Four interconnected domains. Each one focused on reducing friction, improving alignment, and building the infrastructure organizations need to operate at the next level."
       />
 
+      {/* Why AI Fails — Authority section */}
+      <SectionWrapper className="bg-surface border-t border-border/40">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-14 lg:gap-20 items-start">
+          <Reveal>
+            <div className="lg:sticky lg:top-36">
+              <p className="text-xs font-sans text-gold/70 uppercase tracking-[0.18em] mb-8">
+                A Point of View on AI
+              </p>
+              <h2 className="font-display font-bold text-display-lg text-white leading-[1.1]">
+                Why Most AI Initiatives Fail — and What Actually Works
+              </h2>
+            </div>
+          </Reveal>
+
+          <div className="flex flex-col gap-10">
+            <Reveal delay={60}>
+              <div className="flex flex-col gap-4">
+                <h3 className="font-display font-semibold text-lg text-white">
+                  What leaders get wrong
+                </h3>
+                <p className="font-sans text-sm text-white/55 leading-[1.85]">
+                  Most AI adoption starts with the technology — a tool demo, a vendor pitch, a competitor announcement. Leadership buys in. IT implements. And then nothing changes. Because the organization was never prepared for the tool, the tool was never designed for the workflow, and nobody translated the strategy into something frontline teams could actually use.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal delay={120}>
+              <div className="flex flex-col gap-4">
+                <h3 className="font-display font-semibold text-lg text-white">
+                  Why it keeps happening
+                </h3>
+                <p className="font-sans text-sm text-white/55 leading-[1.85]">
+                  AI exposes every misalignment an organization has been tolerating. Broken handoffs between teams. Unclear ownership. Communication that works at 50 people but collapses at 200. The technology doesn&apos;t create these problems — it makes them impossible to ignore. And organizations that don&apos;t address them first will fail at AI regardless of which tools they choose.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal delay={180}>
+              <div className="flex flex-col gap-4 border-l border-gold/25 pl-6">
+                <h3 className="font-display font-semibold text-lg text-white">
+                  What actually works
+                </h3>
+                <p className="font-sans text-sm text-white/55 leading-[1.85]">
+                  Start with people and workflows, not tools. Map how work actually moves through the organization. Identify where communication breaks down and where decisions stall. Then — and only then — design AI systems that fit the reality of how your teams operate. The organizations that succeed at AI transformation are the ones that treat it as an organizational design problem, not a technology procurement exercise.
+                </p>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </SectionWrapper>
+
       {/* Domains */}
-      <SectionWrapper className="bg-background" as="div">
+      <SectionWrapper className="bg-background border-t border-border/40" as="div">
         <div className="flex flex-col gap-0">
           {domains.map((domain, i) => (
             <Reveal key={domain.id} delay={i * 60}>

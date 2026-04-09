@@ -13,52 +13,53 @@ export const metadata: Metadata = {
 // ─── Digital Harmony Data ─────────────────────────────────────────────────
 
 const digitalHarmony = {
-  label: 'Featured Case Study',
+  label: 'Flagship Transformation',
   company: 'Digital Harmony',
   industry: 'Global Customer Operations',
-  engagement: 'AI Systems Implementation',
-  headline: 'Scaling Customer Operations with AI-Driven Systems',
+  engagement: 'AI Systems Implementation & Growth',
+  headline: 'From 500 Customers to 4,000 — While Reducing Operational Dependency by 70%',
   context:
-    'Digital Harmony was managing a global customer support operation across multiple regions, channels, and time zones. Growth was creating compounding pressure: more customers, more complexity, more cost — with no clear path to scalable performance.',
+    'Digital Harmony was a growing customer service operation with a base of roughly 500 customers across multiple global regions. The business was scaling, but the operational model — built on live agent handling — couldn\u2019t keep pace. Every new customer meant more staff, more cost, and more complexity. Growth was becoming a liability.',
   problem: {
-    headline: 'The Problem',
-    body: 'The operation depended heavily on live agents to handle volume. As the customer base grew, so did headcount requirements. Response times were inconsistent, operational complexity was increasing, and the cost structure was becoming unsustainable. Retention and revenue growth were limited by how fast they could hire and train people.',
+    body: 'The operation was entirely dependent on live agents to handle incoming volume. As the customer base grew, headcount requirements grew proportionally. Response times were inconsistent across channels and regions, the cost structure was unsustainable, and there was no mechanism for retention or upsell beyond the initial service interaction. The company needed to grow 8x without scaling the team 8x.',
     signals: [
-      'High and growing dependency on live agents',
-      'Inconsistent response times across channels',
-      'Increasing operational cost without proportional revenue growth',
-      'Missed opportunities in customer retention and upsell',
+      'Complete dependency on live agents for all customer interactions',
+      'No self-service infrastructure or AI-assisted workflows',
+      'Inconsistent response times across channels and time zones',
+      'Rising operational cost without proportional revenue growth',
+      'No structured approach to customer retention or expansion',
     ],
   },
   strategy: {
-    headline: 'The Strategy',
-    body: 'Instead of adding more staff, the strategy shifted to system redesign. The goal was to implement AI-driven automation that could handle volume, reduce agent dependency, and improve consistency — without sacrificing the quality of the customer experience.',
+    body: 'Working directly with the founder and leadership team, the strategy was to fundamentally redesign how the operation worked — not to patch it with incremental improvements. The approach: implement AI-driven automation and chatbot systems to handle volume at scale, build self-service infrastructure to deflect routine inquiries, and create structured communication workflows that turned reactive support into proactive customer experience.',
     moves: [
-      'Expand to multi-channel support (chat, social, SMS) with integrated workflows',
-      'Implement AI-driven ticketing and communication automation',
-      'Design self-service layers to deflect routine inquiries',
-      'Build KPI and performance tracking infrastructure',
-      'Align customer experience systems with operational efficiency goals',
+      'Design and deploy AI chatbot systems to handle frontline customer interactions',
+      'Build multi-channel support infrastructure (chat, social, SMS, email)',
+      'Implement automated ticketing, routing, and escalation workflows',
+      'Create self-service layers to deflect routine inquiries',
+      'Develop KPI tracking and performance visibility systems',
+      'Align customer experience systems with retention and revenue goals',
     ],
   },
   execution: {
-    headline: 'The Execution',
-    body: 'Implementation spanned global operations across the USA, France, and Pakistan. The work required coordinating across time zones, languages, and team cultures — while maintaining service continuity throughout the transition.',
+    body: 'Implementation spanned global operations across the USA, France, and Pakistan. This wasn\u2019t a technology deployment — it was an organizational transformation that required coordinating across time zones, languages, and team cultures while maintaining service continuity throughout the transition. Close collaboration with the owner ensured every systems decision aligned with the business vision, not just operational convenience.',
     items: [
-      'Built scalable AI-assisted workflows across all three global locations',
-      'Integrated automation into live support operations without disruption',
-      'Reduced reliance on manual processes through structured automation layers',
-      'Optimized escalation paths and response handling across channels',
-      'Deployed AI tooling to streamline decision-making and workflow routing',
+      'Built and deployed AI chatbot handling the majority of frontline interactions',
+      'Scaled operations from 500 to 4,000 customers without proportional headcount growth',
+      'Integrated automation into live support operations without service disruption',
+      'Reduced live agent dependency by 70% through structured AI-assisted workflows',
+      'Established customer experience systems that drove retention and upsell',
+      'Created operational visibility through real-time performance dashboards',
     ],
   },
   results: [
-    { value: '70%', label: 'Reduction in live agent dependency', context: 'Automated workflows replaced manual handling for the majority of incoming volume' },
+    { value: '8x', label: 'Customer base growth', context: 'Scaled from 500 to 4,000 customers through systems — not headcount' },
+    { value: '70%', label: 'Reduction in live agent dependency', context: 'AI chatbot and automated workflows replaced manual handling for the majority of volume' },
     { value: '90%', label: 'Increase in customer satisfaction', context: 'Faster response times and consistent handling improved CSAT significantly' },
-    { value: '$130K', label: 'Monthly revenue', context: 'Up from $75K — a $55K/month increase driven by improved retention and operational capacity' },
+    { value: '$130K', label: 'Monthly revenue', context: 'Up from $75K — driven by improved retention, capacity, and customer experience' },
   ],
   insight:
-    'Most organizations try to scale customer operations by adding people. This transformation proved that the real leverage is in systems, not headcount. By redesigning workflows and introducing AI-assisted processes, Digital Harmony was able to operate faster, reduce costs, improve customer experience, and increase revenue — simultaneously.',
+    'Digital Harmony didn\u2019t just need better tools. They needed a fundamentally different operating model. By redesigning workflows, implementing AI-driven automation, and building systems that could scale independently of headcount, the business grew 8x while becoming more efficient, more responsive, and more profitable. The transformation worked because it started with how the organization actually operated — not with what technology was available.',
   quote: 'The real leverage is in systems, not headcount.',
 }
 
@@ -142,9 +143,9 @@ export default function CaseStudiesPage() {
         <Reveal delay={100}>
           <div className="rounded-2xl border border-border bg-surface overflow-hidden mb-16">
             <div className="h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
-            <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-border/50">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-border/50">
               {digitalHarmony.results.map((r) => (
-                <div key={r.label} className="flex flex-col gap-4 px-8 md:px-10 py-12">
+                <div key={r.label} className="flex flex-col gap-4 px-6 md:px-8 py-12">
                   <span className="font-display font-bold text-display-3xl text-gold-gradient leading-none">
                     {r.value}
                   </span>
@@ -252,11 +253,11 @@ export default function CaseStudiesPage() {
         </Reveal>
       </SectionWrapper>
 
-      {/* ── Radco ────────────────────────────────────────────────────────── */}
+      {/* ── Radco — Supporting Case Study ──────────────────────────────── */}
       <SectionWrapper className="bg-surface border-t border-border/40" id="radco">
         <Reveal className="mb-12">
           <div className="flex flex-wrap items-center gap-3">
-            <span className="text-xs font-sans font-medium text-gold uppercase tracking-[0.16em]">
+            <span className="text-xs font-sans font-medium text-white/50 uppercase tracking-[0.16em]">
               {radco.label}
             </span>
             <span className="w-1 h-1 rounded-full bg-white/15" />
@@ -270,109 +271,59 @@ export default function CaseStudiesPage() {
           </div>
         </Reveal>
 
-        {/* Headline + context */}
-        <Reveal delay={60} className="mb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-10 lg:gap-20 items-start">
-            <h2 className="font-display font-bold text-display-xl text-white leading-[1.06]">
-              {radco.headline}
-            </h2>
-            <p className="font-sans text-base text-white/60 leading-[1.85] lg:pt-2">
-              {radco.context}
-            </p>
-          </div>
-        </Reveal>
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-14 lg:gap-20 items-start">
+          {/* Left: narrative */}
+          <Reveal>
+            <div className="flex flex-col gap-8">
+              <h2 className="font-display font-bold text-display-md text-white leading-[1.12]">
+                {radco.headline}
+              </h2>
+              <p className="font-sans text-base text-white/60 leading-[1.85]">
+                {radco.context}
+              </p>
+              <div>
+                <p className="text-xs font-sans text-white/30 uppercase tracking-[0.15em] mb-3">
+                  The Approach
+                </p>
+                <p className="font-sans text-sm text-white/55 leading-[1.85]">
+                  {radco.strategy}
+                </p>
+              </div>
+              <div className="border-l border-gold/25 pl-5">
+                <p className="font-display font-semibold text-base text-white/80 leading-snug mb-2">
+                  &ldquo;{radco.quote}&rdquo;
+                </p>
+                <p className="font-sans text-xs text-white/40 leading-[1.8]">
+                  {radco.insight}
+                </p>
+              </div>
+            </div>
+          </Reveal>
 
-        {/* Results */}
-        <Reveal delay={100}>
-          <div className="rounded-2xl border border-border bg-background overflow-hidden mb-16">
-            <div className="h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
-            <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-border/50">
-              {radco.results.map((r) => (
-                <div key={r.label} className="flex flex-col gap-4 px-8 md:px-10 py-12">
-                  <span className="font-display font-bold text-display-3xl text-gold-gradient leading-none">
-                    {r.value}
-                  </span>
-                  <div className="flex flex-col gap-1.5">
-                    <span className="font-sans text-sm font-medium text-white/75">
-                      {r.label}
+          {/* Right: metrics */}
+          <Reveal delay={100}>
+            <div className="rounded-xl border border-border bg-background overflow-hidden">
+              <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-border/40">
+                {radco.results.map((r) => (
+                  <div key={r.label} className="flex flex-col gap-4 px-8 py-10">
+                    <span className="font-display font-bold text-display-xl text-white/85 leading-none">
+                      {r.value}
                     </span>
-                    <span className="font-sans text-xs text-white/40 leading-[1.6]">
-                      {r.context}
-                    </span>
+                    <div className="flex flex-col gap-1">
+                      <span className="font-sans text-sm font-medium text-white/70">
+                        {r.label}
+                      </span>
+                      <span className="font-sans text-xs text-white/35 leading-[1.6]">
+                        {r.context}
+                      </span>
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </Reveal>
-
-        {/* Problem / Strategy / Execution */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 lg:divide-x lg:divide-border/40">
-          <Reveal delay={80}>
-            <div className="flex flex-col gap-6 lg:pr-10 pb-12 lg:pb-0">
-              <p className="text-xs font-sans text-white/30 uppercase tracking-[0.15em] mb-2">
-                The Challenge
-              </p>
-              <p className="font-sans text-sm text-white/60 leading-[1.85] mb-4">
-                {radco.problem.body}
-              </p>
-              <ul className="flex flex-col gap-3">
-                {radco.problem.signals.map((s) => (
-                  <li key={s} className="flex items-start gap-3">
-                    <span className="mt-[0.45em] w-1 h-1 rounded-full bg-white/20 shrink-0" />
-                    <span className="font-sans text-xs text-white/45 leading-[1.7]">{s}</span>
-                  </li>
                 ))}
-              </ul>
-            </div>
-          </Reveal>
-
-          <Reveal delay={140}>
-            <div className="flex flex-col gap-6 lg:px-10 py-12 lg:py-0 border-t lg:border-0 border-border/30">
-              <p className="text-xs font-sans text-white/30 uppercase tracking-[0.15em] mb-2">
-                The Strategy
-              </p>
-              <p className="font-sans text-sm text-white/60 leading-[1.85]">
-                {radco.strategy}
-              </p>
-            </div>
-          </Reveal>
-
-          <Reveal delay={200}>
-            <div className="flex flex-col gap-6 lg:pl-10 pt-12 lg:pt-0 border-t lg:border-0 border-border/30">
-              <p className="text-xs font-sans text-white/30 uppercase tracking-[0.15em] mb-2">
-                The Execution
-              </p>
-              <ul className="flex flex-col gap-3">
-                {radco.execution.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <span className="mt-[0.45em] w-1 h-1 rounded-full bg-gold/40 shrink-0" />
-                    <span className="font-sans text-xs text-white/50 leading-[1.7]">{item}</span>
-                  </li>
-                ))}
-              </ul>
+              </div>
             </div>
           </Reveal>
         </div>
-
-        {/* Insight */}
-        <Reveal delay={100}>
-          <div className="mt-16 pt-14 border-t border-border/40">
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-10 lg:gap-20 items-center">
-              <blockquote>
-                <p className="font-display font-bold text-display-lg text-white leading-[1.12] mb-6">
-                  &ldquo;{radco.quote}&rdquo;
-                </p>
-                <p className="text-xs font-sans text-white/30 uppercase tracking-[0.15em]">
-                  Key Insight — Radco Transformation
-                </p>
-              </blockquote>
-              <p className="font-sans text-sm text-white/55 leading-[1.9]">
-                {radco.insight}
-              </p>
-            </div>
-          </div>
-        </Reveal>
       </SectionWrapper>
 
       {/* CTA */}
