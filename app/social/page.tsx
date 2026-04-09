@@ -71,12 +71,12 @@ const socials = [
   },
   {
     label: 'Instagram',
-    href: 'https://instagram.com/garymariner',
+    href: 'https://www.instagram.com/theleodynasty/',
     icon: InstagramIcon,
   },
   {
     label: 'TikTok',
-    href: 'https://tiktok.com/@garymariner',
+    href: 'https://www.tiktok.com/@theleodynasty',
     icon: TikTokIcon,
   },
   {
