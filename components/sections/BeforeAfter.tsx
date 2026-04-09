@@ -18,13 +18,10 @@ export function BeforeAfter() {
   return (
     <section className="px-6 md:px-10 lg:px-16 py-28 md:py-36 bg-background border-t border-border/40">
       <div className="max-w-site mx-auto">
-        <Reveal className="text-center mb-14 md:mb-20">
-          <p className="text-xs font-sans text-gold/70 uppercase tracking-[0.2em] mb-5">
+        <Reveal className="text-center mb-12 md:mb-16">
+          <p className="text-xs font-sans text-gold/70 uppercase tracking-[0.2em]">
             The Shift
           </p>
-          <h2 className="font-display font-bold text-display-lg text-white max-w-xl mx-auto">
-            From friction to alignment.
-          </h2>
         </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-8 md:gap-6 items-center max-w-3xl mx-auto">

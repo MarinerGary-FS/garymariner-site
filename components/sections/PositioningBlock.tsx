@@ -15,12 +15,9 @@ export function PositioningBlock() {
             <p className="text-xs font-sans text-white/30 uppercase tracking-[0.18em] mb-8">
               The Problem
             </p>
-            <h2 className="font-display font-bold text-display-lg text-white leading-[1.1]">
+            <h2 className="font-display font-bold text-display-lg text-white">
               {positioning.headline}
             </h2>
-            <p className="font-sans text-base text-white/60 leading-[1.85] mt-7">
-              {positioning.body}
-            </p>
           </div>
         </Reveal>
 
