@@ -111,7 +111,7 @@ export default function CaseStudiesPage() {
         {/* Headline + context */}
         <Reveal delay={60} className="mb-16">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-10 lg:gap-20 items-start">
-            <h2 className="font-display font-bold text-display-xl text-white leading-[1.06]">
+            <h2 className="font-display font-bold text-display-xl text-white">
               {digitalHarmony.headline}
             </h2>
             <p className="font-sans text-base text-white/60 leading-[1.85] lg:pt-2">
@@ -219,7 +219,7 @@ export default function CaseStudiesPage() {
           <div className="mt-16 pt-14 border-t border-border/40">
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-10 lg:gap-20 items-center">
               <blockquote>
-                <p className="font-display font-bold text-display-lg text-white leading-[1.12] mb-6">
+                <p className="font-display font-bold text-display-lg text-white mb-6">
                   &ldquo;{digitalHarmony.quote}&rdquo;
                 </p>
                 <p className="text-xs font-sans text-white/30 uppercase tracking-[0.15em]">
@@ -255,7 +255,7 @@ export default function CaseStudiesPage() {
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-14 lg:gap-20 items-start">
           <Reveal>
             <div className="flex flex-col gap-6">
-              <h2 className="font-display font-bold text-display-md text-white leading-[1.12]">
+              <h2 className="font-display font-bold text-display-md text-white">
                 {radco.headline}
               </h2>
               <p className="font-sans text-sm text-white/55 leading-[1.85]">
@@ -298,7 +298,7 @@ export default function CaseStudiesPage() {
               <p className="text-xs font-sans text-white/30 uppercase tracking-[0.18em] mb-6">
                 What&apos;s Next
               </p>
-              <h2 className="font-display font-bold text-display-xl text-white leading-[1.06] mb-8">
+              <h2 className="font-display font-bold text-display-xl text-white mb-8">
                 These outcomes came from systems thinking.
                 <br />
                 <span className="text-white/55">Yours can too.</span>

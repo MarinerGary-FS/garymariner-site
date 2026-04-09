@@ -184,7 +184,7 @@ export default function AboutPage() {
           <p className="text-xs font-sans text-white/30 uppercase tracking-[0.18em] mb-10">
             Operating Philosophy
           </p>
-          <h2 className="font-display font-bold text-display-xl text-white leading-[1.06] mb-8">
+          <h2 className="font-display font-bold text-display-xl text-white mb-8">
             {philosophy.statement}
           </h2>
           <p className="font-sans text-base text-white/55 leading-[1.85] mb-12">
@@ -222,7 +222,7 @@ export default function AboutPage() {
               <p className="text-xs font-sans text-white/30 uppercase tracking-[0.18em] mb-6">
                 What&apos;s Next
               </p>
-              <h2 className="font-display font-bold text-display-xl text-white leading-[1.06] mb-8">
+              <h2 className="font-display font-bold text-display-xl text-white mb-8">
                 Interested in working together?
               </h2>
               <div className="flex flex-col sm:flex-row gap-4">

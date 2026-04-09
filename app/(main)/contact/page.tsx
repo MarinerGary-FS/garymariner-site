@@ -45,7 +45,7 @@ export default function ContactPage() {
           </div>
 
           <h1
-            className="font-display font-bold text-display-2xl text-white leading-[1.06] max-w-2xl mb-7"
+            className="font-display font-bold text-display-2xl text-white max-w-2xl mb-7"
             style={{ animation: 'fadeUp 0.75s ease 0.18s both' }}
           >
             Start a Conversation.

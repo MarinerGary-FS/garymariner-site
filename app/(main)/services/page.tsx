@@ -260,7 +260,7 @@ export default function ServicesPage() {
               <p className="text-xs font-sans text-white/30 uppercase tracking-[0.18em] mb-6">
                 What&apos;s Next
               </p>
-              <h2 className="font-display font-bold text-display-xl text-white leading-[1.06] mb-8">
+              <h2 className="font-display font-bold text-display-xl text-white mb-8">
                 Not sure where to start?
                 <br />
                 <span className="text-white/55">That&apos;s usually the right place.</span>

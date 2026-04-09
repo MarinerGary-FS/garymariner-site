@@ -25,7 +25,7 @@ export function FinalCTA() {
             </div>
 
             {/* Headline — conversational and direct */}
-            <h2 className="font-display font-bold text-display-xl text-white leading-[1.08]">
+            <h2 className="font-display font-bold text-display-xl text-white">
               {finalCTA.headline}
             </h2>
 

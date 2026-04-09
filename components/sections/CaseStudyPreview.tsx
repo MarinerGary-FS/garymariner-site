@@ -53,7 +53,7 @@ export function CaseStudyPreview() {
               {/* Left: Narrative */}
               <div className="flex flex-col gap-8">
                 <div>
-                  <h3 className="font-display font-bold text-display-md text-white leading-[1.12] mb-5">
+                  <h3 className="font-display font-bold text-display-md text-white mb-5">
                     {caseStudy.title}
                   </h3>
                   <p className="font-sans text-base text-white/60 leading-[1.8]">
@@ -70,7 +70,7 @@ export function CaseStudyPreview() {
               <div className="flex flex-col gap-8 lg:border-l lg:border-border/50 lg:pl-14">
                 {/* Pull quote — typographically dominant */}
                 <blockquote>
-                  <p className="font-display font-bold text-display-lg text-white leading-[1.12]">
+                  <p className="font-display font-bold text-display-lg text-white">
                     &ldquo;{caseStudy.quote}&rdquo;
                   </p>
                 </blockquote>

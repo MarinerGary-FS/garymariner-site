@@ -31,11 +31,11 @@ const config: Config = {
         sans: ['var(--font-inter)', 'sans-serif'],
       },
       fontSize: {
-        'display-3xl': ['clamp(3.75rem, 8vw, 7rem)', { lineHeight: '1.0', letterSpacing: '-0.04em' }],
-        'display-2xl': ['clamp(2.75rem, 5.5vw, 5rem)', { lineHeight: '1.04', letterSpacing: '-0.03em' }],
-        'display-xl': ['clamp(2.25rem, 4.5vw, 4rem)', { lineHeight: '1.06', letterSpacing: '-0.025em' }],
-        'display-lg': ['clamp(1.75rem, 3vw, 2.75rem)', { lineHeight: '1.12', letterSpacing: '-0.02em' }],
-        'display-md': ['clamp(1.375rem, 2vw, 2rem)', { lineHeight: '1.2', letterSpacing: '-0.015em' }],
+        'display-3xl': ['clamp(3.75rem, 8vw, 7rem)', { lineHeight: '1.1', letterSpacing: '-0.04em' }],
+        'display-2xl': ['clamp(2.75rem, 5.5vw, 5rem)', { lineHeight: '1.12', letterSpacing: '-0.03em' }],
+        'display-xl': ['clamp(2.25rem, 4.5vw, 4rem)', { lineHeight: '1.14', letterSpacing: '-0.025em' }],
+        'display-lg': ['clamp(1.75rem, 3vw, 2.75rem)', { lineHeight: '1.18', letterSpacing: '-0.02em' }],
+        'display-md': ['clamp(1.375rem, 2vw, 2rem)', { lineHeight: '1.25', letterSpacing: '-0.015em' }],
       },
       maxWidth: {
         site: '1280px',

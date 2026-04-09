@@ -21,7 +21,7 @@ export function OperatingPhilosophy() {
         </p>
 
         {/* Primary statement */}
-        <h2 className="font-display font-bold text-display-2xl text-white text-center leading-[1.06] mb-8 md:mb-12">
+        <h2 className="font-display font-bold text-display-2xl text-white text-center mb-8 md:mb-12">
           {philosophy.statement}
         </h2>
 

@@ -47,7 +47,7 @@ export function PageHero({
         {/* Headline */}
         <h1
           className={cn(
-            'font-display font-bold text-display-2xl text-white leading-[1.06]',
+            'font-display font-bold text-display-2xl text-white ',
             isCenter ? 'max-w-3xl mx-auto' : 'max-w-3xl'
           )}
           style={{ animation: 'fadeUp 0.75s ease 0.18s both' }}

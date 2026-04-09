@@ -12,7 +12,7 @@ export function SignaturePOV() {
 
       <div className="relative max-w-3xl mx-auto flex flex-col items-center text-center gap-12 md:gap-16">
         <Reveal>
-          <h2 className="font-display font-bold text-display-xl md:text-display-2xl text-white leading-[1.06]">
+          <h2 className="font-display font-bold text-display-xl md:text-display-2xl text-white ">
             {line1}
             <br />
             <span className="text-gold-light">{line2}</span>
