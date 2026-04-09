@@ -16,50 +16,47 @@ const digitalHarmony = {
   label: 'Flagship Transformation',
   company: 'Digital Harmony',
   industry: 'Global Customer Operations',
-  engagement: 'AI Systems Implementation & Growth',
-  headline: 'From 500 Customers to 4,000 — While Reducing Operational Dependency by 70%',
+  engagement: 'AI Systems & Growth',
+  headline: 'From 500 Customers to 4,000 \u2014 While Cutting Agent Dependency 70%',
   context:
-    'Digital Harmony was a growing customer service operation with a base of roughly 500 customers across multiple global regions. The business was scaling, but the operational model — built on live agent handling — couldn\u2019t keep pace. Every new customer meant more staff, more cost, and more complexity. Growth was becoming a liability.',
+    'A global customer service operation with ~500 customers. The model was built on live agents \u2014 every new customer meant more staff, more cost, more complexity. Growth was becoming a liability.',
   problem: {
-    body: 'The operation was entirely dependent on live agents to handle incoming volume. As the customer base grew, headcount requirements grew proportionally. Response times were inconsistent across channels and regions, the cost structure was unsustainable, and there was no mechanism for retention or upsell beyond the initial service interaction. The company needed to grow 8x without scaling the team 8x.',
+    body: 'The company needed to grow 8x without scaling the team 8x. The operation had no self-service infrastructure, inconsistent response times, and no structured approach to retention.',
     signals: [
-      'Complete dependency on live agents for all customer interactions',
-      'No self-service infrastructure or AI-assisted workflows',
-      'Inconsistent response times across channels and time zones',
-      'Rising operational cost without proportional revenue growth',
-      'No structured approach to customer retention or expansion',
+      'Complete dependency on live agents',
+      'No AI or self-service infrastructure',
+      'Inconsistent response times across regions',
+      'Rising cost without proportional revenue',
     ],
   },
   strategy: {
-    body: 'Working directly with the founder and leadership team, the strategy was to fundamentally redesign how the operation worked — not to patch it with incremental improvements. The approach: implement AI-driven automation and chatbot systems to handle volume at scale, build self-service infrastructure to deflect routine inquiries, and create structured communication workflows that turned reactive support into proactive customer experience.',
+    body: 'Working directly with the founder, the strategy was to redesign the entire operation \u2014 not patch it. Deploy AI chatbot systems, build multi-channel infrastructure, and turn reactive support into proactive customer experience.',
     moves: [
-      'Design and deploy AI chatbot systems to handle frontline customer interactions',
-      'Build multi-channel support infrastructure (chat, social, SMS, email)',
-      'Implement automated ticketing, routing, and escalation workflows',
-      'Create self-service layers to deflect routine inquiries',
-      'Develop KPI tracking and performance visibility systems',
-      'Align customer experience systems with retention and revenue goals',
+      'AI chatbot systems for frontline interactions',
+      'Multi-channel support (chat, social, SMS, email)',
+      'Automated ticketing, routing, and escalation',
+      'Self-service layers for routine inquiries',
+      'KPI tracking and performance visibility',
     ],
   },
   execution: {
-    body: 'Implementation spanned global operations across the USA, France, and Pakistan. This wasn\u2019t a technology deployment — it was an organizational transformation that required coordinating across time zones, languages, and team cultures while maintaining service continuity throughout the transition. Close collaboration with the owner ensured every systems decision aligned with the business vision, not just operational convenience.',
+    body: 'Implementation spanned the USA, France, and Pakistan. Close collaboration with the owner ensured every decision aligned with the business vision, not just operational convenience.',
     items: [
-      'Built and deployed AI chatbot handling the majority of frontline interactions',
-      'Scaled operations from 500 to 4,000 customers without proportional headcount growth',
-      'Integrated automation into live support operations without service disruption',
-      'Reduced live agent dependency by 70% through structured AI-assisted workflows',
-      'Established customer experience systems that drove retention and upsell',
-      'Created operational visibility through real-time performance dashboards',
+      'Deployed AI chatbot handling majority of frontline volume',
+      'Scaled from 500 to 4,000 customers without proportional headcount',
+      'Integrated automation without service disruption',
+      'Reduced agent dependency 70% through AI-assisted workflows',
+      'Built customer experience systems driving retention and upsell',
     ],
   },
   results: [
-    { value: '8x', label: 'Customer base growth', context: 'Scaled from 500 to 4,000 customers through systems — not headcount' },
-    { value: '70%', label: 'Reduction in live agent dependency', context: 'AI chatbot and automated workflows replaced manual handling for the majority of volume' },
-    { value: '90%', label: 'Increase in customer satisfaction', context: 'Faster response times and consistent handling improved CSAT significantly' },
-    { value: '$130K', label: 'Monthly revenue', context: 'Up from $75K — driven by improved retention, capacity, and customer experience' },
+    { value: '8x', label: 'Customer growth', context: '500 to 4,000 through systems, not headcount' },
+    { value: '70%', label: 'Agent reduction', context: 'AI chatbot replaced manual handling' },
+    { value: '90%', label: 'CSAT increase', context: 'Faster, more consistent handling' },
+    { value: '$130K', label: 'Monthly revenue', context: 'Up from $75K' },
   ],
   insight:
-    'Digital Harmony didn\u2019t just need better tools. They needed a fundamentally different operating model. By redesigning workflows, implementing AI-driven automation, and building systems that could scale independently of headcount, the business grew 8x while becoming more efficient, more responsive, and more profitable. The transformation worked because it started with how the organization actually operated — not with what technology was available.',
+    'They didn\u2019t need better tools. They needed a different operating model. The transformation worked because it started with how the organization operated \u2014 not what technology was available.',
   quote: 'The real leverage is in systems, not headcount.',
 }
 
@@ -70,32 +67,16 @@ const radco = {
   company: 'Radco',
   industry: 'Property Operations',
   engagement: 'Operational Restructuring',
-  headline: 'Turning Operational Friction into Measurable Performance',
+  headline: 'From 80% Occupancy and 360 Open Work Orders to Operational Clarity',
   context:
-    'A multi-property management portfolio was underperforming across two critical operational dimensions — occupancy rates and maintenance responsiveness. Leadership assumed the answer was more resources. The real issue was how work was structured.',
-  problem: {
-    body: 'Portfolio occupancy had stagnated near 80%, well below market potential. Simultaneously, the maintenance team was managing 360 open work orders at any given time — creating resident frustration, staff burnout, and compounding operational drag. Both problems traced to the same root cause: workflows that had grown organically without structure or accountability.',
-    signals: [
-      'Occupancy stagnant at ~80% despite strong market demand',
-      '360+ open maintenance work orders creating operational backlog',
-      'Leasing workflows disconnected from maintenance timelines',
-      'No structured accountability across teams or functions',
-    ],
-  },
+    'A multi-property portfolio underperforming on occupancy and maintenance. Leadership assumed they needed more people. The real issue was how work was structured.',
   strategy:
-    'Rather than adding headcount, the approach focused on operational restructuring — mapping how work actually flowed across leasing and maintenance, identifying where bottlenecks were concentrated, and redesigning the systems that governed both. The goal was to create clarity, not add capacity.',
-  execution: [
-    'Mapped end-to-end workflows across leasing and maintenance operations',
-    'Redesigned work order prioritization and escalation systems',
-    'Aligned leasing pipeline with unit-readiness timelines',
-    'Established structured accountability and visibility for both teams',
-    'Implemented tracking systems to surface bottlenecks in real time',
-  ],
+    'Mapped how work actually flowed, identified bottlenecks, and redesigned the systems governing leasing and maintenance. The goal: clarity, not capacity.',
   results: [
-    { value: '93%', label: 'Portfolio occupancy', context: 'Up from ~80%, with pre-leasing reaching 96% — driven by workflow alignment' },
-    { value: '94%', label: 'Backlog reduction', context: 'Open work orders reduced from 360 to 23 through restructured prioritization' },
+    { value: '93%', label: 'Portfolio occupancy', context: 'Up from ~80%, pre-leasing reached 96%' },
+    { value: '94%', label: 'Backlog reduction', context: '360 work orders reduced to 23' },
   ],
-  insight: 'Operational problems that look like staffing problems are usually systems problems. Radco didn\u2019t need more people — it needed structured workflows, clear accountability, and visibility into how work actually moved across the organization.',
+  insight: 'Operational problems that look like staffing problems are usually systems problems.',
   quote: 'The problem was never capacity. It was clarity.',
 }
 
@@ -271,56 +252,38 @@ export default function CaseStudiesPage() {
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-14 lg:gap-20 items-start">
-          {/* Left: narrative */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-14 lg:gap-20 items-start">
           <Reveal>
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-6">
               <h2 className="font-display font-bold text-display-md text-white leading-[1.12]">
                 {radco.headline}
               </h2>
-              <p className="font-sans text-base text-white/60 leading-[1.85]">
+              <p className="font-sans text-sm text-white/55 leading-[1.85]">
                 {radco.context}
               </p>
-              <div>
-                <p className="text-xs font-sans text-white/30 uppercase tracking-[0.15em] mb-3">
-                  The Approach
-                </p>
-                <p className="font-sans text-sm text-white/55 leading-[1.85]">
-                  {radco.strategy}
-                </p>
-              </div>
-              <div className="border-l border-gold/25 pl-5">
-                <p className="font-display font-semibold text-base text-white/80 leading-snug mb-2">
+              <p className="font-sans text-sm text-white/55 leading-[1.85]">
+                {radco.strategy}
+              </p>
+              <div className="border-l border-gold/25 pl-5 mt-2">
+                <p className="font-display font-semibold text-base text-white/75 leading-snug">
                   &ldquo;{radco.quote}&rdquo;
-                </p>
-                <p className="font-sans text-xs text-white/40 leading-[1.8]">
-                  {radco.insight}
                 </p>
               </div>
             </div>
           </Reveal>
 
-          {/* Right: metrics */}
           <Reveal delay={100}>
             <div className="rounded-xl border border-border bg-background overflow-hidden">
               <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-              <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-border/40">
-                {radco.results.map((r) => (
-                  <div key={r.label} className="flex flex-col gap-4 px-8 py-10">
-                    <span className="font-display font-bold text-display-xl text-white/85 leading-none">
-                      {r.value}
-                    </span>
-                    <div className="flex flex-col gap-1">
-                      <span className="font-sans text-sm font-medium text-white/70">
-                        {r.label}
-                      </span>
-                      <span className="font-sans text-xs text-white/35 leading-[1.6]">
-                        {r.context}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              {radco.results.map((r) => (
+                <div key={r.label} className="flex flex-col gap-3 px-8 py-8 border-b border-border/30 last:border-0">
+                  <span className="font-display font-bold text-display-lg text-white/85 leading-none">
+                    {r.value}
+                  </span>
+                  <span className="font-sans text-sm text-white/60">{r.label}</span>
+                  <span className="font-sans text-xs text-white/30">{r.context}</span>
+                </div>
+              ))}
             </div>
           </Reveal>
         </div>

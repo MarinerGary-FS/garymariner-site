@@ -15,33 +15,31 @@ const domains = [
     id: 'ai-systems',
     number: '01',
     label: 'AI Transformation Strategy',
-    headline: 'Align AI to Your Organization — Not the Other Way Around',
+    headline: 'Align AI to Your Organization',
     summary:
-      'Most organizations adopt AI reactively — chasing trends without a clear systems strategy. The result is disconnected tools, duplicated effort, and no measurable impact. The problem is rarely the technology. It\u2019s the absence of strategy connecting it to how the organization actually operates.',
-    what: 'I start with how your organization runs. I map workflows, identify where AI creates real leverage, and design an implementation strategy that fits your operations and your people — not a vendor\u2019s pitch deck.',
+      'Most AI adoption fails not because of the technology, but because there\u2019s no strategy connecting it to how the organization actually operates.',
+    what: 'I map workflows, identify where AI creates real leverage, and design implementation strategy that fits your operations and your people.',
     outcomes: [
-      'A clear AI implementation strategy tied to operational outcomes',
-      'Identified automation opportunities that reduce manual overhead',
-      'Workflow redesigns that improve speed and consistency',
-      'AI adoption aligned to your team\u2019s capacity, not just your industry\u2019s hype cycle',
+      'AI strategy tied to operational outcomes',
+      'Automation opportunities that reduce manual overhead',
+      'Workflow redesigns for speed and consistency',
     ],
-    for: 'Leaders navigating AI adoption who need strategy, not experimentation.',
+    for: 'Leaders who need AI strategy, not experimentation.',
   },
   {
     id: 'digital-infrastructure',
     number: '02',
     label: 'Digital Infrastructure',
-    headline: 'Infrastructure That Reflects How Your Organization Operates',
+    headline: 'Infrastructure That Reflects Operational Maturity',
     summary:
-      'A weak digital presence signals weak operations. If your website, systems, or digital tools don\u2019t reflect your actual capabilities, you\u2019re leaving credibility — and opportunity — on the table.',
-    what: 'I design and build modern digital infrastructure from the ground up — websites, systems architecture, and operational tooling that are clean, scalable, and aligned with your brand and operational model.',
+      'If your digital presence doesn\u2019t reflect your capabilities, you\u2019re leaving credibility and opportunity on the table.',
+    what: 'Modern digital infrastructure \u2014 websites, systems architecture, and tooling that are clean, scalable, and aligned with how the organization operates.',
     outcomes: [
-      'A professional digital presence that builds trust immediately',
-      'Systems architecture that supports real organizational workflows',
-      'Scalable infrastructure that grows with the organization',
-      'Technical implementation without unnecessary complexity',
+      'Digital presence that builds trust immediately',
+      'Architecture supporting real workflows',
+      'Scalable without unnecessary complexity',
     ],
-    for: 'Organizations with a digital presence that no longer reflects their capabilities or positioning.',
+    for: 'Organizations whose digital presence no longer reflects their capabilities.',
   },
   {
     id: 'operations',
@@ -49,31 +47,29 @@ const domains = [
     label: 'Operations & Workflow Design',
     headline: 'Replace Friction with Structure',
     summary:
-      'Operational friction compounds quietly — until it becomes expensive. Unclear processes, manual workarounds, and fragmented communication create overhead that grows faster than the organization.',
-    what: 'I map how work actually flows across your organization, identify friction points, and redesign the processes, tools, and accountability structures that remove overhead and improve execution speed.',
+      'Operational friction compounds quietly until it becomes expensive. Unclear processes and fragmented communication create overhead that grows faster than the organization.',
+    what: 'I map how work actually flows, identify friction points, and redesign the processes and accountability structures that remove overhead.',
     outcomes: [
-      'Streamlined workflows that reduce manual intervention',
-      'Clearer accountability and faster decision-making',
-      'Reduced operational overhead without adding headcount',
-      'Systems designed for how your team actually works',
+      'Streamlined workflows with less manual intervention',
+      'Clearer accountability and faster decisions',
+      'Reduced overhead without adding headcount',
     ],
-    for: 'Operations-heavy organizations where manual processes and unclear ownership are limiting performance.',
+    for: 'Organizations where manual processes and unclear ownership limit performance.',
   },
   {
     id: 'communications',
     number: '04',
     label: 'Strategic Communications',
-    headline: 'Communication That Creates Alignment and Drives Action',
+    headline: 'Communication That Creates Alignment',
     summary:
-      'Poor communication systems are invisible until they\u2019re expensive. Misaligned teams, unclear messaging, and inconsistent stakeholder communication quietly erode performance and trust.',
-    what: 'I design internal and external communication frameworks that create alignment, reduce friction in stakeholder relationships, and give leadership teams the structure they need to operate at scale.',
+      'Misaligned teams, unclear messaging, and inconsistent stakeholder communication quietly erode performance and trust.',
+    what: 'Communication frameworks that create alignment, reduce friction, and give leadership the structure to operate at scale.',
     outcomes: [
-      'Internal communication systems that create team clarity',
-      'Stakeholder-facing frameworks that build trust and reduce friction',
-      'Messaging architecture aligned to the brand and organizational goals',
-      'Operational communication that scales with the organization',
+      'Internal systems that create team clarity',
+      'Stakeholder frameworks that build trust',
+      'Communication that scales with the organization',
     ],
-    for: 'Leadership teams where communication gaps are limiting performance, trust, or organizational growth.',
+    for: 'Leadership teams where communication gaps limit growth.',
   },
 ]
 
@@ -81,26 +77,22 @@ const approach = [
   {
     step: '01',
     title: 'Diagnosis',
-    description:
-      'Every engagement starts with understanding how your organization actually operates — not how it looks on paper. I map workflows, identify friction points, and clarify objectives before recommending anything.',
+    description: 'Understand how the organization actually operates. Map workflows, identify friction, clarify objectives.',
   },
   {
     step: '02',
     title: 'Strategy',
-    description:
-      'Based on the diagnosis, I design a clear systems strategy. This includes what gets built, what gets optimized, and what gets removed. No tools until the strategy is sound.',
+    description: 'Design a clear systems strategy. What gets built, what gets optimized, what gets removed.',
   },
   {
     step: '03',
     title: 'Implementation',
-    description:
-      'Strategy becomes infrastructure. I build, integrate, and configure the systems — ensuring they are aligned to how your team works, not just technically functional.',
+    description: 'Strategy becomes infrastructure. Built for how your team works, not just technically functional.',
   },
   {
     step: '04',
     title: 'Optimization',
-    description:
-      'Systems require iteration. I monitor performance, identify gaps, and refine until the infrastructure is operating at the level your organization needs.',
+    description: 'Monitor, identify gaps, refine. Systems require iteration.',
   },
 ]
 
@@ -110,7 +102,7 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="Focus Areas"
         headline="Where Strategy Meets Implementation"
-        supporting="Four interconnected domains. Each one focused on reducing friction, improving alignment, and building the infrastructure organizations need to operate at the next level."
+        supporting="Four interconnected domains. Each focused on reducing friction, improving alignment, and building infrastructure that works."
       />
 
       {/* Why AI Fails — Authority section */}
@@ -134,7 +126,7 @@ export default function ServicesPage() {
                   What leaders get wrong
                 </h3>
                 <p className="font-sans text-sm text-white/55 leading-[1.85]">
-                  Most AI adoption starts with the technology — a tool demo, a vendor pitch, a competitor announcement. Leadership buys in. IT implements. And then nothing changes. Because the organization was never prepared for the tool, the tool was never designed for the workflow, and nobody translated the strategy into something frontline teams could actually use.
+                  AI adoption starts with the technology \u2014 a vendor pitch, a competitor announcement. Leadership buys in. IT implements. Nothing changes. The organization wasn&apos;t ready, and nobody translated the strategy into something teams could use.
                 </p>
               </div>
             </Reveal>
@@ -145,7 +137,7 @@ export default function ServicesPage() {
                   Why it keeps happening
                 </h3>
                 <p className="font-sans text-sm text-white/55 leading-[1.85]">
-                  AI exposes every misalignment an organization has been tolerating. Broken handoffs between teams. Unclear ownership. Communication that works at 50 people but collapses at 200. The technology doesn&apos;t create these problems — it makes them impossible to ignore. And organizations that don&apos;t address them first will fail at AI regardless of which tools they choose.
+                  AI exposes every misalignment an organization has been tolerating. Broken handoffs. Unclear ownership. Communication that works at 50 people but collapses at 200. The technology doesn&apos;t create these problems \u2014 it makes them impossible to ignore.
                 </p>
               </div>
             </Reveal>
@@ -156,7 +148,7 @@ export default function ServicesPage() {
                   What actually works
                 </h3>
                 <p className="font-sans text-sm text-white/55 leading-[1.85]">
-                  Start with people and workflows, not tools. Map how work actually moves through the organization. Identify where communication breaks down and where decisions stall. Then — and only then — design AI systems that fit the reality of how your teams operate. The organizations that succeed at AI transformation are the ones that treat it as an organizational design problem, not a technology procurement exercise.
+                  Start with people and workflows, not tools. Map how work actually moves. Identify where communication breaks down. Then design AI that fits the reality of how your teams operate. Treat it as an organizational design problem, not a procurement exercise.
                 </p>
               </div>
             </Reveal>
@@ -274,8 +266,7 @@ export default function ServicesPage() {
                 <span className="text-white/55">That&apos;s usually the right place.</span>
               </h2>
               <p className="font-sans text-base text-white/45 leading-[1.85] mb-10 max-w-lg">
-                Most engagements begin with a single conversation. Bring your operational challenges —
-                I&apos;ll help identify where systems thinking can create the most impact.
+                Most engagements begin with a single conversation.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button href="/contact" size="lg">

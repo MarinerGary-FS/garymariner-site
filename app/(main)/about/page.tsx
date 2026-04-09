@@ -14,27 +14,27 @@ export const metadata: Metadata = {
 const background = [
   {
     period: '15+ Years',
-    title: 'Frontline to Leadership — Across Industries',
+    title: 'Frontline to Leadership',
     description:
-      'Built and led teams across sales, customer operations, and business development. Spent enough time on the frontline to know what leadership decisions look like when they actually reach the people doing the work. Developed an instinct for where friction hides, where communication fails, and where the gap between strategy and execution quietly costs organizations more than they realize.',
+      'Built and led teams across sales, customer operations, and business development. Learned what leadership decisions actually look like when they reach the people doing the work.',
   },
   {
     period: 'Global',
-    title: 'The Communication Problem Nobody Talks About',
+    title: 'The Communication Gap',
     description:
-      'Led operations spanning the USA, Europe, and Asia. Coordinated across time zones, languages, and team cultures. The consistent lesson: most organizational failure isn\u2019t a competence problem or a technology problem. It\u2019s a communication problem. The strategy was sound. The execution was capable. What was missing was the translation layer between them.',
+      'Led operations spanning the USA, Europe, and Asia. The consistent lesson: most failure isn\u2019t competence or technology. It\u2019s communication. The strategy was sound. What was missing was the translation layer.',
   },
   {
     period: 'The Shift',
-    title: 'From Managing Operations to Redesigning Them',
+    title: 'From Managing to Redesigning',
     description:
-      'When AI matured beyond experimentation, the opportunity wasn\u2019t just new tools — it was a fundamental rethinking of how organizations could be designed. Not incremental improvement. Structural transformation. Shifted focus from running operations to rebuilding them through AI-assisted workflows, human-centered design, and infrastructure that actually matches how people work.',
+      'When AI matured, the opportunity was clear: not new tools, but a rethinking of how organizations could be structured. Shifted from running operations to rebuilding them.',
   },
   {
     period: 'Today',
-    title: 'Where AI, People, and Communication Converge',
+    title: 'AI + People + Communication',
     description:
-      'Works at the intersection that most people avoid — where technology meets human behavior, where leadership vision meets operational reality, and where communication either makes or breaks the system. Every engagement starts with understanding people, not deploying tools.',
+      'Works where technology meets human behavior, and where leadership vision meets operational reality. Every engagement starts with understanding people.',
   },
 ]
 
@@ -42,17 +42,17 @@ const differentiators = [
   {
     title: 'Translator Between Floors',
     description:
-      'I\u2019ve been in the room with the executive team and on the floor with the people doing the work. Most transformation fails because nobody translates between those two realities. I do.',
+      'Most transformation fails because nobody translates between the executive room and the frontline. I do.',
   },
   {
-    title: 'AI Serves People — Not the Other Way Around',
+    title: 'AI Serves People',
     description:
-      'Every AI initiative I\u2019ve seen fail had the same root cause: it was designed around the technology, not the humans. Systems that ignore how people actually work don\u2019t work. Full stop.',
+      'Systems designed around the technology instead of the humans don\u2019t work. Full stop.',
   },
   {
     title: 'Three Disciplines. One Person.',
     description:
-      'Communication. Operations. Technology. Most people are strong in one, competent in two, absent in the third. I bridge all three — and that\u2019s where lasting organizational change actually lives.',
+      'Communication. Operations. Technology. I bridge all three \u2014 that\u2019s where lasting change lives.',
   },
 ]
 
@@ -63,8 +63,8 @@ export default function AboutPage() {
     <>
       <PageHero
         eyebrow="About Gary"
-        headline="Built on Operations. Driven by Communication. Focused on Transformation."
-        supporting="15+ years of operational leadership — now applied to AI transformation, systems design, and the human side of organizational change."
+        headline="Built on Operations. Driven by Communication."
+        supporting="15+ years of operational leadership, now applied to AI transformation and the human side of organizational change."
       />
 
       {/* Bio narrative */}
@@ -86,9 +86,7 @@ export default function AboutPage() {
               <div className="divider" />
 
               <p className="font-sans text-sm text-white/45 leading-[1.85]">
-                Gary works at the intersection of AI, people, and operations —
-                helping organizations navigate transformation by aligning technology
-                with how teams actually work and communicate.
+                Works at the intersection of AI, people, and operations \u2014 aligning technology with how teams actually work and communicate.
               </p>
 
               <div className="flex flex-col gap-3 mt-2">
@@ -171,11 +169,8 @@ export default function AboutPage() {
           <h2 className="font-display font-bold text-display-md text-white leading-tight mb-6">
             Systems thinking extends beyond business.
           </h2>
-          <p className="font-sans text-sm text-white/55 leading-[1.85] mb-4">
-            The same principles that transform organizations — clarity, structure, human-centered design — can create impact far beyond the boardroom.
-          </p>
           <p className="font-sans text-sm text-white/55 leading-[1.85] mb-8">
-            I serve as Technology Committee Chair for the Undugu Society, an organization in Nairobi dedicated to empowering street children and vulnerable youth through education, vocational training, and community integration. In that role, I help integrate technology and AI into community-focused initiatives — ensuring that the same systems thinking applied to business transformation also serves the people who need it most.
+            I serve as Technology Committee Chair for the Undugu Society in Nairobi, helping integrate technology and AI into community-focused initiatives for street children and vulnerable youth. The same principles that transform organizations can serve the people who need them most.
           </p>
           <Button href="https://undugu.org" variant="text" size="sm" external>
             Learn about Undugu Society &rarr;
