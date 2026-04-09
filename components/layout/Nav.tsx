@@ -57,7 +57,7 @@ export function Nav() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-sans text-white/60 hover:text-white transition-colors duration-200 tracking-wide"
+                className="relative text-sm font-sans text-white/60 hover:text-white transition-colors duration-300 tracking-wide after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-px after:bg-gold/40 hover:after:w-full after:transition-all after:duration-300"
               >
                 {link.label}
               </Link>

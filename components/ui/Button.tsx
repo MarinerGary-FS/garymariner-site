@@ -27,15 +27,13 @@ export function Button({
   style,
 }: ButtonProps) {
   const base =
-    'inline-flex items-center justify-center font-sans font-semibold tracking-wide transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60'
+    'inline-flex items-center justify-center font-sans font-semibold tracking-wide transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background'
 
   const variants = {
-    // Primary: gold fill — the decision point
     primary:
-      'bg-gold text-background hover:bg-gold-light hover:-translate-y-px hover:shadow-[0_6px_24px_rgba(201,168,76,0.30)] active:translate-y-0 active:shadow-none active:bg-gold-dark',
-    // Ghost: controlled border — secondary action
+      'bg-gold text-background hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(201,168,76,0.25)] active:translate-y-0 active:shadow-[0_2px_8px_rgba(201,168,76,0.15)] active:bg-gold-dark',
     ghost:
-      'border border-white/20 text-white hover:border-white/35 hover:bg-white/[0.04] active:bg-white/[0.08]',
+      'border border-white/15 text-white hover:border-white/30 hover:bg-white/[0.04] hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(0,0,0,0.3)] active:translate-y-0 active:bg-white/[0.06]',
     text: 'text-gold hover:text-gold-light underline-offset-4 hover:underline p-0 rounded-sm',
   }
 

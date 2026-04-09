@@ -5,6 +5,9 @@
 @layer base {
   :root {
     --gold: #C9A84C;
+    /* Standard easing — used across all transitions for consistency */
+    --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   * {
@@ -29,12 +32,12 @@
 }
 
 @layer utilities {
-  /* Scroll reveal utilities — driven by Reveal component via IntersectionObserver */
+  /* Scroll reveal — driven by Reveal component via IntersectionObserver */
   .reveal {
     opacity: 0;
     transform: translateY(16px);
-    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-                transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: opacity 0.65s var(--ease-out-expo),
+                transform 0.65s var(--ease-out-expo);
   }
 
   .reveal.is-visible {
@@ -42,7 +45,7 @@
     transform: translateY(0);
   }
 
-  /* Gold gradient text utility */
+  /* Gold gradient text */
   .text-gold-gradient {
     background: linear-gradient(135deg, #D4B86A 0%, #C9A84C 50%, #A8892E 100%);
     -webkit-background-clip: text;
@@ -58,27 +61,26 @@
     background-size: 64px 64px;
   }
 
-  /* Horizontal divider with gradient fade */
+  /* Dividers */
   .divider {
     height: 1px;
     background: linear-gradient(to right, transparent, #222222 20%, #222222 80%, transparent);
   }
 
-  /* Gold accent divider */
   .divider-gold {
     height: 1px;
     background: linear-gradient(to right, transparent, #C9A84C44 30%, #C9A84C44 70%, transparent);
   }
 }
 
-/* Reduced motion — accessibility requirement */
+/* Reduced motion — accessibility */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
+    animation-duration: 0ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    transition-duration: 0ms !important;
     scroll-behavior: auto !important;
   }
 

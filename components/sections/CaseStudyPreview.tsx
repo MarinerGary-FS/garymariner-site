@@ -32,7 +32,7 @@ export function CaseStudyPreview() {
 
       {/* Featured case study */}
       <Reveal delay={80}>
-        <div className="rounded-2xl border border-border bg-surface overflow-hidden group hover:border-white/10 transition-colors duration-400">
+        <div className="rounded-2xl border border-border bg-surface overflow-hidden group hover:border-white/10 hover:shadow-[0_8px_40px_rgba(0,0,0,0.4)] transition-all duration-400">
 
           {/* Top gold line — visible immediately, intensifies on hover */}
           <div className="h-px bg-gradient-to-r from-transparent via-gold/35 to-transparent group-hover:via-gold/60 transition-all duration-500" />

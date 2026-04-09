@@ -82,7 +82,7 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
   return (
     <Link
       href={service.href}
-      className="group relative flex flex-col gap-5 p-6 md:p-8 rounded-xl border border-border bg-surface hover:border-gold/30 transition-all duration-300 overflow-hidden"
+      className="group relative flex flex-col gap-5 p-6 md:p-8 rounded-xl border border-border bg-surface hover:border-gold/25 hover:-translate-y-0.5 hover:shadow-[0_6px_24px_rgba(0,0,0,0.35)] transition-all duration-300 overflow-hidden"
     >
       {/* Gold top accent — faint at rest, intensifies on hover */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/15 to-transparent group-hover:via-gold/45 transition-all duration-500" />

@@ -28,11 +28,11 @@ export function PositioningBlock() {
         <div className="flex flex-col">
           {positioning.pillars.map((pillar, i) => (
             <Reveal key={pillar.title} delay={100 + i * 80}>
-              <div className="group flex gap-6 md:gap-8 py-8 border-b border-border/50 last:border-0 hover:border-border transition-colors duration-300">
+              <div className="group flex gap-6 md:gap-8 py-8 border-b border-border/50 last:border-0 hover:border-border transition-all duration-300">
 
                 {/* Number — large, structural */}
                 <div className="shrink-0 pt-0.5">
-                  <span className="font-display font-bold text-4xl leading-none text-white/[0.07] group-hover:text-white/[0.12] transition-colors duration-300 select-none tabular-nums">
+                  <span className="font-display font-bold text-4xl leading-none text-white/[0.07] group-hover:text-white/[0.12] transition-all duration-300 select-none tabular-nums">
                     {String(i + 1).padStart(2, '0')}
                   </span>
                 </div>

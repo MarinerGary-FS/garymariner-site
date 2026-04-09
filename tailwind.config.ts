@@ -48,9 +48,9 @@ const config: Config = {
         '400': '400ms',
       },
       animation: {
-        'fade-up': 'fadeUp 0.7s ease forwards',
-        'fade-in': 'fadeIn 0.6s ease forwards',
-        'line-grow': 'lineGrow 0.8s ease forwards',
+        'fade-up': 'fadeUp 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards',
+        'fade-in': 'fadeIn 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards',
+        'line-grow': 'lineGrow 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards',
       },
       keyframes: {
         fadeUp: {
