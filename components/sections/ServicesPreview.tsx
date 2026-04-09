@@ -41,6 +41,36 @@ export function ServicesPreview() {
   )
 }
 
+const serviceIcons = [
+  // AI Transformation Strategy
+  (p: { className?: string }) => (
+    <svg className={p.className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="8" y="8" width="8" height="8" rx="1" />
+      <path d="M12 2v6M12 16v6M2 12h6M16 12h6" />
+    </svg>
+  ),
+  // Digital Infrastructure
+  (p: { className?: string }) => (
+    <svg className={p.className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="3" width="18" height="18" rx="2" />
+      <path d="M3 9h18M9 3v18" />
+    </svg>
+  ),
+  // Operations & Workflow
+  (p: { className?: string }) => (
+    <svg className={p.className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="3" />
+      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+    </svg>
+  ),
+  // Strategic Communications
+  (p: { className?: string }) => (
+    <svg className={p.className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+    </svg>
+  ),
+]
+
 interface Service {
   title: string
   description: string
@@ -48,6 +78,7 @@ interface Service {
 }
 
 function ServiceCard({ service, index }: { service: Service; index: number }) {
+  const Icon = serviceIcons[index]
   return (
     <Link
       href={service.href}
@@ -58,9 +89,9 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
 
       {/* Header row */}
       <div className="flex items-start justify-between gap-4">
-        <span className="font-display font-bold text-[2.5rem] leading-none text-white/[0.04] group-hover:text-white/[0.07] transition-colors duration-300 select-none tabular-nums mt-1">
-          {String(index + 1).padStart(2, '0')}
-        </span>
+        <div className="w-10 h-10 rounded-lg border border-white/[0.06] bg-white/[0.02] flex items-center justify-center group-hover:border-gold/20 group-hover:bg-gold/[0.04] transition-all duration-300">
+          <Icon className="w-5 h-5 text-white/30 group-hover:text-gold/60 transition-colors duration-300" />
+        </div>
         <span className="text-white/20 group-hover:text-gold/60 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 text-base leading-none mt-1">
           ↗
         </span>
