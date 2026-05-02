@@ -8,19 +8,33 @@ interface RevealProps {
   className?: string
   delay?: number
   as?: keyof React.JSX.IntrinsicElements
+  [key: string]: unknown
 }
 
-export function Reveal({ children, className, delay = 0, as: Tag = 'div' }: RevealProps) {
+export function Reveal({ children, className, delay = 0, as: Tag = 'div', ...props }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const el = ref.current
     if (!el) return
 
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      el.classList.add('is-visible')
+      return
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          const trigger = () => el.classList.add('is-visible')
+          const trigger = async () => {
+            const { gsap } = await import('gsap')
+            el.classList.add('is-visible')
+            gsap.fromTo(
+              el,
+              { autoAlpha: 0, y: 18 },
+              { autoAlpha: 1, y: 0, duration: 0.7, ease: 'power3.out' }
+            )
+          }
           if (delay > 0) {
             setTimeout(trigger, delay)
           } else {
@@ -38,7 +52,7 @@ export function Reveal({ children, className, delay = 0, as: Tag = 'div' }: Reve
 
   return (
     // @ts-expect-error — dynamic tag assignment is safe here
-    <Tag ref={ref} className={cn('reveal', className)}>
+    <Tag ref={ref} className={cn('reveal', className)} {...props}>
       {children}
     </Tag>
   )

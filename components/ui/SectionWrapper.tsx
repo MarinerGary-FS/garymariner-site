@@ -1,3 +1,4 @@
+import { forwardRef } from 'react'
 import { cn } from '@/lib/utils'
 
 interface SectionWrapperProps {
@@ -8,16 +9,16 @@ interface SectionWrapperProps {
   as?: 'section' | 'div' | 'article'
 }
 
-export function SectionWrapper({
+export const SectionWrapper = forwardRef<HTMLElement, SectionWrapperProps>(function SectionWrapper({
   children,
   className,
   innerClassName,
   id,
   as: Tag = 'section',
-}: SectionWrapperProps) {
+}, ref) {
   return (
-    <Tag id={id} className={cn('px-6 md:px-10 lg:px-16 py-28 md:py-36', className)}>
+    <Tag ref={ref as never} id={id} className={cn('px-6 md:px-10 lg:px-16 py-28 md:py-36', className)}>
       <div className={cn('max-w-site mx-auto', innerClassName)}>{children}</div>
     </Tag>
   )
-}
+})

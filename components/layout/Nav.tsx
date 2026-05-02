@@ -66,7 +66,7 @@ export function Nav() {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center">
-            <BookingButton size="sm">
+            <BookingButton size="sm" trackingEvent="booking_cta_click" trackingLabel={nav.cta.label}>
               {nav.cta.label}
             </BookingButton>
           </div>
@@ -130,6 +130,8 @@ export function Nav() {
           )}
           style={{ transitionDelay: menuOpen ? `${nav.links.length * 60 + 60}ms` : '0ms' } as React.CSSProperties}
           onClick={() => setMenuOpen(false)}
+          trackingEvent="booking_cta_click"
+          trackingLabel={nav.cta.label}
         >
           {nav.cta.label}
         </BookingButton>

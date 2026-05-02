@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Syne, Inter } from 'next/font/google'
 import Script from 'next/script'
+import { EventTracker } from '@/components/analytics/EventTracker'
 import './globals.css'
 
 const syne = Syne({
@@ -51,6 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${syne.variable} ${inter.variable}`}>
       <body className="bg-background text-white font-sans antialiased">
+        <EventTracker />
         <main>{children}</main>
         {/* Cal.com embed — loaded after interactive, no layout impact */}
         <Script

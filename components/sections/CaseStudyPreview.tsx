@@ -1,120 +1,145 @@
-import Link from 'next/link'
+'use client'
+
+import { useEffect, useRef } from 'react'
 import { Button } from '@/components/ui/Button'
 import { Reveal } from '@/components/ui/Reveal'
-import { SectionWrapper } from '@/components/ui/SectionWrapper'
 import { siteContent } from '@/lib/content'
 
 export function CaseStudyPreview() {
   const { caseStudy } = siteContent
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const root = sectionRef.current
+    if (!root) return
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      root.querySelectorAll<HTMLElement>('.case-result').forEach((el) => {
+        el.style.opacity = '1'
+        el.style.transform = 'none'
+      })
+      return
+    }
+
+    let ctx: { revert: () => void } | undefined
+    const observer = new IntersectionObserver(
+      async ([entry]) => {
+        if (!entry.isIntersecting) return
+
+        const { gsap } = await import('gsap')
+        ctx = gsap.context(() => {
+          gsap.fromTo(
+            '.case-result',
+            { autoAlpha: 0, y: 14 },
+            {
+              autoAlpha: 1,
+              y: 0,
+              duration: 0.6,
+              ease: 'power3.out',
+              stagger: 0.1,
+            }
+          )
+        }, root)
+        observer.disconnect()
+      },
+      { threshold: 0.25 }
+    )
+
+    observer.observe(root)
+    return () => {
+      observer.disconnect()
+      ctx?.revert()
+    }
+  }, [])
 
   return (
-    <SectionWrapper className="bg-background border-t border-border/40">
-      {/* Header */}
-      <Reveal className="mb-12">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-          <div>
-            <p className="text-xs font-sans text-white/30 uppercase tracking-[0.18em] mb-5">
-              Case Study Engine
-            </p>
-            <h2 className="font-display font-bold text-display-md text-white">
-              Proof built as a conversion system.
-            </h2>
-          </div>
-          <Link
-            href="/case-studies"
-            className="inline-flex items-center gap-2 text-sm font-sans text-white/40 hover:text-white/80 transition-colors duration-200 group self-start md:self-auto pb-1 border-b border-transparent hover:border-white/20"
-          >
-            View full case study
-            <span className="group-hover:translate-x-1 transition-transform duration-200">→</span>
-          </Link>
-        </div>
-      </Reveal>
+    <section
+      ref={sectionRef}
+      id="selected-work"
+      className="relative overflow-hidden bg-background px-6 py-28 md:px-10 md:py-40 lg:px-16"
+    >
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_32%,rgba(91,164,255,0.08),transparent_32%)]" />
 
-      {/* Featured case study */}
-      <Reveal delay={80}>
-        <div className="rounded-2xl border border-border bg-surface overflow-hidden group hover:border-white/10 hover:shadow-[0_8px_40px_rgba(0,0,0,0.4)] transition-all duration-400">
+      <div className="relative mx-auto grid max-w-site gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
+        <Reveal className="max-w-xl">
+          <p className="mb-5 font-sans text-xs font-medium uppercase tracking-[0.22em] text-gold">
+            {caseStudy.company}
+          </p>
+          <h2 className="font-display text-[clamp(2.4rem,5vw,5.4rem)] font-bold leading-[1.02] text-white">
+            {caseStudy.hook}
+          </h2>
+        </Reveal>
 
-          {/* Top gold line — visible immediately, intensifies on hover */}
-          <div className="h-px bg-gradient-to-r from-transparent via-gold/35 to-transparent group-hover:via-gold/60 transition-all duration-500" />
+        <Reveal delay={120}>
+          <div className="relative min-h-[620px] overflow-hidden rounded-xl border border-white/[0.08] bg-[#040404] shadow-[0_30px_120px_rgba(0,0,0,0.45)]">
+            <CaseBackdrop />
 
-          <div className="p-6 md:p-10 lg:p-14">
-            {/* Label row */}
-            <div className="flex flex-wrap items-center gap-3 mb-7 md:mb-10">
-              <span className="text-xs font-sans font-medium text-gold uppercase tracking-[0.16em]">
-                {caseStudy.label}
-              </span>
-              <span className="w-1 h-1 rounded-full bg-white/15" />
-              <span className="text-xs font-sans text-white/35 tracking-wide">
-                {caseStudy.company}
-              </span>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-10 lg:gap-16">
-              {/* Left: Narrative */}
-              <div className="flex flex-col gap-8">
-                <div>
-                  <h3 className="font-display font-bold text-display-md text-white mb-5">
-                    {caseStudy.hook}
-                  </h3>
-                  <p className="font-sans text-base text-white/60 leading-[1.8]">
-                    {caseStudy.summary}
-                  </p>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="border-l border-gold/30 pl-5">
-                    <p className="text-[10px] font-sans font-medium text-white/30 uppercase tracking-[0.18em] mb-3">
-                      Breakdown
-                    </p>
-                    <p className="font-sans text-sm text-white/55 leading-[1.75]">
-                      Disconnected support workflows were forcing growth to depend on manual labor.
-                    </p>
-                  </div>
-                  <div className="border-l border-gold/30 pl-5">
-                    <p className="text-[10px] font-sans font-medium text-white/30 uppercase tracking-[0.18em] mb-3">
+            <div className="absolute inset-x-5 bottom-5 md:inset-x-8 md:bottom-8">
+              <div className="liquid-glass rounded-lg p-5 md:p-7">
+                <div className="mb-6 flex flex-col gap-2 border-b border-white/[0.08] pb-6 sm:flex-row sm:items-end sm:justify-between">
+                  <div>
+                    <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-white/36">
                       System Built
                     </p>
-                    <p className="font-sans text-sm text-white/55 leading-[1.75]">
+                    <p className="mt-2 font-display text-2xl font-semibold text-white">
                       {caseStudy.systemBuilt}
                     </p>
                   </div>
+                  <Button
+                    href={caseStudy.href}
+                    external
+                    variant="ghost"
+                    size="sm"
+                    className="self-start sm:self-auto"
+                    trackingEvent="case_study_click"
+                    trackingLabel={caseStudy.cta}
+                  >
+                    {caseStudy.cta}
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </Button>
                 </div>
 
-                <Button href={caseStudy.href} variant="ghost" size="md" className="self-start">
-                  {caseStudy.cta} →
-                </Button>
-              </div>
-
-              {/* Right: Pull quote + outcomes */}
-              <div className="flex flex-col gap-8 lg:border-l lg:border-border/50 lg:pl-14">
-                {/* Pull quote — typographically dominant */}
-                <blockquote>
-                  <p className="font-display font-bold text-display-lg text-white">
-                    &ldquo;{caseStudy.quote}&rdquo;
-                  </p>
-                </blockquote>
-
-                {/* Outcome metrics */}
-                <div className="flex flex-col gap-0 border-t border-border/50 pt-8">
-                  {caseStudy.outcomes.map((o, i) => (
-                    <div
-                      key={o.label}
-                      className="flex items-baseline justify-between py-4 border-b border-border/30 last:border-0"
-                    >
-                      <span className="font-sans text-sm text-white/45 tracking-wide">
-                        {o.label}
-                      </span>
-                      <span className="font-display font-bold text-xl text-gold tabular-nums">
-                        {o.value}
-                      </span>
+                <div className="grid gap-4 sm:grid-cols-3">
+                  {caseStudy.outcomes.map((outcome) => (
+                    <div key={outcome.label} className="case-result">
+                      <p className="font-display text-3xl font-bold leading-none text-gold md:text-4xl">
+                        {outcome.value}
+                      </p>
+                      <p className="mt-3 text-xs leading-5 text-white/50">
+                        {outcome.label}
+                      </p>
                     </div>
                   ))}
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </Reveal>
-    </SectionWrapper>
+        </Reveal>
+      </div>
+    </section>
+  )
+}
+
+function CaseBackdrop() {
+  return (
+    <div className="absolute inset-0">
+      <div className="absolute inset-0 bg-grid opacity-20" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_22%,rgba(201,168,76,0.13),transparent_25%),radial-gradient(circle_at_75%_40%,rgba(88,166,255,0.12),transparent_26%)]" />
+      <div className="absolute left-[12%] top-[15%] h-[320px] w-[320px] rounded-full border border-gold/15" />
+      <div className="absolute left-[22%] top-[25%] h-px w-[56%] rotate-12 bg-gradient-to-r from-gold/30 via-white/18 to-transparent" />
+      <div className="absolute right-[12%] top-[22%] h-24 w-48 rounded-lg border border-white/[0.07] bg-white/[0.025] backdrop-blur-[2px]" />
+      <div className="absolute left-[14%] top-[44%] h-28 w-56 rounded-lg border border-white/[0.07] bg-white/[0.025] backdrop-blur-[2px]" />
+      <div className="absolute bottom-[36%] right-[16%] h-20 w-40 rounded-lg border border-gold/10 bg-gold/[0.025] backdrop-blur-[2px]" />
+      <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black via-black/82 to-transparent" />
+    </div>
+  )
+}
+
+function ArrowRight({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 8h10M9 4l4 4-4 4" />
+    </svg>
   )
 }

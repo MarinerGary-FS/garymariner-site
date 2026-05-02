@@ -4,8 +4,6 @@ import { useEffect, useRef } from 'react'
 import { Reveal } from '@/components/ui/Reveal'
 import { siteContent } from '@/lib/content'
 
-const icons = [AlertIcon, BreakIcon, CircuitIcon, TargetIcon]
-
 export function SystemFlow() {
   const { systemFlow } = siteContent
   const lineRef = useRef<HTMLDivElement>(null)
@@ -14,7 +12,6 @@ export function SystemFlow() {
     const el = lineRef.current
     if (!el) return
 
-    // Respect reduced motion
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       el.style.transform = 'scaleX(1)'
       return
@@ -29,136 +26,57 @@ export function SystemFlow() {
       },
       { threshold: 0.3 }
     )
+
     observer.observe(el)
     return () => observer.disconnect()
   }, [])
 
   return (
-    <section id="system-flow" className="relative px-6 md:px-10 lg:px-16 py-32 md:py-44 bg-background border-t border-border/40 overflow-hidden">
-      {/* Ambient glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-gold/[0.025] blur-[120px] pointer-events-none" />
+    <section id="system-flow" className="relative overflow-hidden bg-background px-6 py-28 md:px-10 md:py-40 lg:px-16">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(201,168,76,0.065),transparent_34%)]" />
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
-      <div className="relative max-w-site mx-auto">
-        <Reveal className="mb-16 md:mb-20 max-w-2xl">
-          <p className="text-xs font-sans text-white/30 uppercase tracking-[0.18em] mb-5">
-            System Thinking
-          </p>
-          <h2 className="font-display font-bold text-display-lg text-white">
+      <div className="relative mx-auto max-w-site">
+        <Reveal className="mx-auto mb-14 max-w-4xl text-center md:mb-20">
+          <h2 className="font-display text-[clamp(2.3rem,5vw,5.2rem)] font-bold leading-[1.02] text-white">
             {systemFlow.title}
           </h2>
         </Reveal>
 
-        {/* Flow diagram */}
-        <div className="relative flex flex-col md:flex-row items-stretch gap-6 md:gap-0">
-
-          {/* Animated connecting line — desktop */}
+        <div className="relative grid grid-cols-1 gap-4 md:grid-cols-4 md:gap-5">
           <div
             ref={lineRef}
-            className="hidden md:block absolute top-10 left-[12%] right-[12%] h-px z-0 origin-left"
+            className="absolute left-[10%] right-[10%] top-1/2 z-0 hidden h-px origin-left md:block"
             style={{
-              background: 'linear-gradient(90deg, rgba(201,168,76,0.4) 0%, rgba(201,168,76,0.15) 50%, rgba(201,168,76,0.4) 100%)',
+              background: 'linear-gradient(90deg, rgba(201,168,76,0.08), rgba(201,168,76,0.7), rgba(94,174,255,0.36), rgba(201,168,76,0.08))',
               transform: 'scaleX(0)',
-              transition: 'transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+              transition: 'transform 1.25s cubic-bezier(0.16, 1, 0.3, 1)',
             }}
           />
 
-          {systemFlow.steps.map((stage, i) => {
-            const Icon = icons[i]
-            return (
-            <Reveal key={stage.label} delay={200 + i * 150} className="flex-1 relative z-10">
-              <div className="group flex h-full flex-col items-center text-center gap-5 px-4">
-                {/* Node */}
-                <div className="relative">
-                  <div className="absolute -inset-2 rounded-full bg-gold/[0.04] blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="relative w-20 h-20 rounded-full border border-gold/20 bg-background flex items-center justify-center shadow-[0_0_24px_rgba(201,168,76,0.05)] group-hover:border-gold/40 group-hover:shadow-[0_0_32px_rgba(201,168,76,0.10)] transition-all duration-400">
-                    <Icon className="w-7 h-7 text-gold/60 group-hover:text-gold/90 transition-colors duration-300" />
-                  </div>
-                  {/* Step indicator */}
-                  <span className="absolute -top-0.5 -right-0.5 w-5 h-5 rounded-full bg-gold/10 border border-gold/25 flex items-center justify-center text-[9px] font-sans font-medium text-gold/70">
-                    {i + 1}
+          {systemFlow.steps.map((stage, i) => (
+            <Reveal key={stage.label} delay={100 + i * 100} className="relative z-10">
+              <div className="liquid-glass group flex min-h-[240px] flex-col justify-between rounded-lg p-6 transition-all duration-300 hover:-translate-y-1 hover:border-gold/25 hover:bg-white/[0.04] md:min-h-[300px] md:p-7">
+                <div className="flex items-start justify-between">
+                  <span className="font-sans text-[10px] font-medium uppercase tracking-[0.22em] text-white/28">
+                    0{i + 1}
                   </span>
+                  <span className="flex h-3 w-3 rounded-full bg-gold/70 shadow-[0_0_22px_rgba(201,168,76,0.55)]" />
                 </div>
 
-                {/* Mobile connector */}
-                {i < systemFlow.steps.length - 1 && (
-                  <div className="md:hidden flex flex-col items-center gap-1">
-                    <div className="w-px h-4 bg-gradient-to-b from-gold/25 to-transparent" />
-                    <ChevronDown className="w-3 h-3 text-gold/30" />
-                  </div>
-                )}
-
-                {/* Label */}
-                <h3 className="font-display font-semibold text-lg text-white/85 tracking-wide">
-                  {stage.label}
-                </h3>
-                <p className="font-sans text-sm leading-[1.75] text-white/48 max-w-[220px]">
-                  {stage.description}
-                </p>
+                <div>
+                  <h3 className="font-display text-3xl font-semibold text-white md:text-4xl">
+                    {stage.label}
+                  </h3>
+                  <p className="mt-4 max-w-[16rem] font-sans text-sm leading-7 text-white/56">
+                    {stage.description}
+                  </p>
+                </div>
               </div>
             </Reveal>
-            )
-          })}
+          ))}
         </div>
-
-        {/* Tagline */}
-        <Reveal delay={800}>
-          <p className="text-center font-sans text-xs text-white/20 tracking-wider mt-14 md:mt-16">
-            {systemFlow.closing}
-          </p>
-        </Reveal>
       </div>
     </section>
-  )
-}
-
-/* ── Icons ── */
-
-function ChevronDown({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M3 4.5l3 3 3-3" />
-    </svg>
-  )
-}
-
-function AlertIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 3 2.5 20h19L12 3Z" />
-      <path d="M12 9v5" />
-      <path d="M12 17h.01" />
-    </svg>
-  )
-}
-
-function BreakIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M4 6h7" />
-      <path d="M13 6h7" />
-      <path d="M4 12h4" />
-      <path d="M10 12h10" />
-      <path d="M4 18h10" />
-      <path d="M16 18h4" />
-    </svg>
-  )
-}
-
-function CircuitIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <rect x="8" y="8" width="8" height="8" rx="1" />
-      <path d="M12 2v6M12 16v6M2 12h6M16 12h6" />
-    </svg>
-  )
-}
-
-function TargetIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="12" cy="12" r="10" />
-      <circle cx="12" cy="12" r="6" />
-      <circle cx="12" cy="12" r="2" fill="currentColor" opacity="0.3" />
-    </svg>
   )
 }

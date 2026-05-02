@@ -6,8 +6,9 @@ export function Footer() {
   const { footer } = siteContent
 
   return (
-    <footer className="border-t border-border px-6 md:px-10 lg:px-16 py-12">
+    <footer className="border-t border-white/[0.08] bg-background px-6 py-10 md:px-10 lg:px-16">
       <div className="max-w-site mx-auto">
+        <div className="liquid-glass rounded-xl px-5 py-6 md:px-7 md:py-7">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
           {/* Brand */}
           <div className="flex items-center gap-4">
@@ -78,6 +79,7 @@ export function Footer() {
           >
             Built by Mariner Nexus
           </a>
+        </div>
         </div>
       </div>
     </footer>

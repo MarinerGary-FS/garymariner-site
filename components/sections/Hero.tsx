@@ -1,183 +1,153 @@
+'use client'
+
+import { useEffect, useRef } from 'react'
 import { Button } from '@/components/ui/Button'
 import { siteContent } from '@/lib/content'
 
 export function Hero() {
   const { hero } = siteContent
+  const heroRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const root = heroRef.current
+    if (!root) return
+
+    let ctx: { revert: () => void } | undefined
+
+    const run = async () => {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        root.querySelectorAll<HTMLElement>('.hero-reveal').forEach((el) => {
+          el.style.opacity = '1'
+          el.style.transform = 'none'
+        })
+        return
+      }
+
+      const { gsap } = await import('gsap')
+      ctx = gsap.context(() => {
+        gsap.fromTo(
+          '.hero-reveal',
+          { autoAlpha: 0, y: 18 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.85,
+            ease: 'power3.out',
+            stagger: 0.1,
+          }
+        )
+      }, root)
+    }
+
+    run()
+
+    return () => ctx?.revert()
+  }, [])
 
   return (
-    <section className="relative min-h-[88vh] flex items-center overflow-x-hidden bg-background">
-      {/* Architectural grid — very subtle */}
-      <div className="absolute inset-0 pointer-events-none bg-grid opacity-25" />
+    <section
+      ref={heroRef}
+      className="relative flex min-h-screen items-center overflow-hidden bg-background px-6 pb-8 pt-24 md:px-10 lg:px-16"
+    >
+      <SystemBackdrop />
 
-      {/* Cinematic depth fields */}
-      <div className="absolute left-0 top-0 bottom-0 w-[55%] pointer-events-none">
-        <div className="absolute top-1/2 -translate-y-1/2 left-[-10%] w-[680px] h-[680px] rounded-full bg-gold/[0.04] blur-[130px]" />
-      </div>
-      <div className="absolute -bottom-32 right-[8%] w-[640px] h-[520px] rounded-full bg-gold/[0.055] blur-[150px] pointer-events-none" />
-      <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none" />
-
-      <div className="relative w-full max-w-site mx-auto px-6 md:px-10 lg:px-16 pt-28 pb-20 md:pt-32 md:pb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_440px] xl:grid-cols-[minmax(0,1fr)_500px] gap-14 lg:gap-16 items-center">
-
-          {/* Left: Content */}
-          <div className="flex flex-col max-w-2xl">
-            <div
-              className="inline-flex items-center gap-3 mb-6 md:mb-10"
-              style={{ animation: 'fadeUp 0.6s ease 0.05s both' }}
-            >
-              <span className="w-8 h-px bg-gold" />
-              <span className="text-xs font-sans font-medium text-gold uppercase tracking-[0.18em]">
-                {hero.eyebrow}
-              </span>
-            </div>
-
-            {/* Headline */}
-            <h1
-              className="font-display font-bold text-display-lg lg:text-display-xl text-white mb-6 max-w-[760px]"
-              style={{ animation: 'fadeUp 0.75s ease 0.18s both' }}
-            >
-              {hero.headline}
-            </h1>
-
-            {/* Supporting copy */}
-            <p
-              className="font-sans text-base md:text-lg text-white/65 leading-[1.75] max-w-[520px] mb-5"
-              style={{ animation: 'fadeUp 0.75s ease 0.3s both' }}
-            >
-              {hero.supporting}
+      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-8rem)] w-full max-w-[min(1280px,calc(100vw-3rem))] flex-col justify-center">
+        <div className="max-w-4xl">
+          <div className="hero-reveal mb-6 flex items-center gap-3">
+            <span className="h-px w-10 bg-gold/70" />
+            <p className="text-xs font-medium uppercase tracking-[0.22em] text-gold">
+              {hero.eyebrow}
             </p>
-
-            {/* Proof tagline */}
-            <div
-              className="flex items-center gap-3 mb-9"
-              style={{ animation: 'fadeUp 0.75s ease 0.38s both' }}
-            >
-              <span className="w-5 h-px bg-gold/55 shrink-0" />
-              <span className="font-sans text-sm text-white/40 tracking-wide">
-                {hero.tagline}
-              </span>
-            </div>
-
-            {/* CTAs */}
-            <div
-              className="flex flex-col sm:flex-row gap-4"
-              style={{ animation: 'fadeUp 0.75s ease 0.50s both' }}
-            >
-              <Button href={hero.primaryCTA.href} size="lg">
-                {hero.primaryCTA.label}
-                <ArrowRight className="w-4 h-4" />
-              </Button>
-              <Button href={hero.secondaryCTA.href} variant="ghost" size="lg">
-                {hero.secondaryCTA.label}
-              </Button>
-            </div>
           </div>
 
-          <div
-            className="hidden lg:block"
-            style={{ animation: 'fadeIn 1.0s ease 0.45s both' }}
-          >
-            <SystemSignal />
+          <h1 className="hero-reveal max-w-5xl whitespace-pre-line break-words font-display text-[clamp(2.55rem,12vw,4.5rem)] font-bold leading-[0.98] text-white md:text-[clamp(4.5rem,8vw,7.6rem)] md:leading-[0.95]">
+            {hero.headline}
+          </h1>
+
+          <p className="hero-reveal mt-7 max-w-2xl font-sans text-base leading-8 text-white/68 md:text-xl">
+            {hero.supporting}
+          </p>
+
+          <div className="hero-reveal mobile-hero-control mt-10 flex flex-col gap-3 sm:flex-row">
+            <Button
+              href={hero.primaryCTA.href}
+              size="lg"
+              className="w-full max-w-full sm:w-auto"
+              trackingEvent="hero_cta_click"
+              trackingLabel={hero.primaryCTA.label}
+            >
+              {hero.primaryCTA.label}
+              <ArrowRight className="h-4 w-4" />
+            </Button>
+            <Button
+              href={hero.secondaryCTA.href}
+              variant="ghost"
+              size="lg"
+              className="w-full max-w-full sm:w-auto"
+              trackingEvent="selected_work_click"
+              trackingLabel={hero.secondaryCTA.label}
+            >
+              {hero.secondaryCTA.label}
+            </Button>
           </div>
         </div>
-      </div>
 
-      {/* Bottom gold line */}
-      <div className="absolute bottom-0 left-0 right-0 divider-gold" />
+        <div className="pointer-events-none mobile-hero-control mt-12 grid gap-4 sm:w-full md:absolute md:bottom-10 md:left-0 md:right-0 md:mt-0 md:grid-cols-[minmax(220px,360px)_minmax(0,1fr)_minmax(220px,320px)] md:items-end">
+          <div className="hero-reveal liquid-glass pointer-events-auto rounded-lg p-4 md:p-5">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-2 md:gap-3">
+              <ProofStat value="70%" marker="↓" label="Support Load" />
+              <ProofStat value="90%" marker="↑" label="Satisfaction" />
+              <ProofStat value="$130K/mo" label="Revenue" />
+            </div>
+          </div>
+
+          <div className="hidden md:block" />
+
+          <a
+            href="https://www.marinernexus.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-track-event="bridge_cta_click"
+            data-track-label="Enter the System"
+            className="hero-reveal liquid-glass pointer-events-auto group flex items-center justify-between gap-4 rounded-lg p-4 text-white transition-all duration-300 hover:border-gold/35 hover:bg-white/[0.04] md:p-5"
+          >
+            <span className="font-display text-xl font-semibold">Enter the System</span>
+            <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-gold transition-all duration-300 group-hover:translate-x-1 group-hover:border-gold/50">
+              <ArrowRight className="h-4 w-4" />
+            </span>
+          </a>
+        </div>
+      </div>
     </section>
   )
 }
 
-function SystemSignal() {
+function SystemBackdrop() {
   return (
-    <div className="relative aspect-square">
-      <div className="absolute inset-4 rounded-full border border-gold/10 bg-gold/[0.015]" />
-      <div className="absolute inset-16 rounded-full border border-white/[0.06]" />
-      <div className="absolute inset-28 rounded-full border border-gold/20 bg-background/80 shadow-[0_0_80px_rgba(201,168,76,0.08)]" />
-
-      <div className="absolute left-10 right-10 top-1/2 h-px bg-gradient-to-r from-transparent via-gold/45 to-transparent" />
-      <div className="absolute top-10 bottom-10 left-1/2 w-px bg-gradient-to-b from-transparent via-gold/30 to-transparent" />
-
-      <div className="absolute left-2 top-[18%] h-px w-[42%] bg-gradient-to-r from-transparent to-white/15" />
-      <div className="absolute right-2 bottom-[24%] h-px w-[38%] bg-gradient-to-l from-transparent to-white/15" />
-      <div className="absolute left-[18%] bottom-10 h-[34%] w-px bg-gradient-to-t from-transparent to-white/10" />
-
-      <SignalNode className="left-[8%] top-[16%]" label="Ops" />
-      <SignalNode className="right-[4%] top-[38%]" label="AI" />
-      <SignalNode className="left-[20%] bottom-[8%]" label="CX" />
-      <SignalNode className="right-[18%] bottom-[14%]" label="Rev" />
-
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="flex h-28 w-28 items-center justify-center rounded-full border border-gold/25 bg-surface/90 shadow-[0_0_48px_rgba(201,168,76,0.12)]">
-          <span className="font-display text-4xl font-bold text-gold-gradient">GM</span>
-        </div>
-      </div>
-
-      <MetricCard
-        position="absolute bottom-8 -left-4 xl:-left-8"
-        label="Monthly Revenue"
-        value="$130K"
-        subtext="Digital Harmony"
-        delta="↑ from $75K"
-      />
-      <MetricCard
-        position="absolute top-8 -right-4 xl:-right-8"
-        label="Agent Dependency"
-        value="70%"
-        subtext="Reduction"
-      />
+    <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 bg-grid opacity-25" />
+      <div className="absolute inset-0 cinematic-vignette" />
+      <div className="absolute left-1/2 top-1/2 h-[88vw] max-h-[920px] min-h-[520px] w-[88vw] min-w-[520px] max-w-[920px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-70 system-orbit" />
+      <div className="absolute left-1/2 top-1/2 h-[54vw] max-h-[620px] min-h-[360px] w-[54vw] min-w-[360px] max-w-[620px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.07]" />
+      <div className="absolute left-1/2 top-1/2 h-px w-[120vw] -translate-x-1/2 bg-gradient-to-r from-transparent via-gold/25 to-transparent" />
+      <div className="absolute left-1/2 top-0 h-full w-px bg-gradient-to-b from-transparent via-white/12 to-transparent" />
+      <div className="scan-line absolute left-0 right-0 top-1/2 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent" />
+      <div className="slow-float absolute right-[12%] top-[22%] h-28 w-56 rounded-lg border border-white/[0.06] bg-white/[0.018] backdrop-blur-[3px]" />
+      <div className="slow-float-delayed absolute bottom-[24%] left-[10%] hidden h-24 w-44 rounded-lg border border-gold/10 bg-gold/[0.025] backdrop-blur-[3px] md:block" />
+      <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black via-black/80 to-transparent" />
     </div>
   )
 }
 
-function SignalNode({ className, label }: { className: string; label: string }) {
+function ProofStat({ value, marker, label }: { value: string; marker?: string; label: string }) {
   return (
-    <div className={`absolute ${className} flex h-14 w-14 items-center justify-center rounded-full border border-white/[0.08] bg-surface/80 backdrop-blur-sm`}>
-      <span className="font-sans text-[10px] font-medium uppercase tracking-[0.16em] text-white/45">
+    <div className="min-w-0">
+      <p className="font-display text-[1.15rem] font-bold leading-none text-white sm:text-xl md:text-2xl">
+        {value} {marker && <span className="text-gold">{marker}</span>}
+      </p>
+      <p className="mt-2 text-[9px] font-medium uppercase tracking-[0.14em] text-white/42 sm:text-[10px] sm:tracking-[0.16em]">
         {label}
-      </span>
-    </div>
-  )
-}
-
-function MetricCard({
-  position,
-  label,
-  value,
-  subtext,
-  delta,
-}: {
-  position: string
-  label: string
-  value: string
-  subtext: string
-  delta?: string
-}) {
-  return (
-    <div className={`${position} z-10 bg-[#0D0D0D]/95 backdrop-blur-md border border-white/[0.10] rounded-xl shadow-2xl shadow-black/70 overflow-hidden`}>
-      {/* Gold top accent line — makes it read as a data card, not a UI widget */}
-      <div className="h-px w-full bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
-
-      <div className="px-5 py-4">
-        <p className="text-[9px] font-sans text-white/35 uppercase tracking-[0.2em] mb-2.5">
-          {label}
-        </p>
-        {/* Value — the focal point */}
-        <p className="font-display font-bold text-[1.75rem] leading-none text-white tracking-tight">
-          {value}
-        </p>
-        <p className="text-[11px] font-sans text-white/50 mt-2 leading-none">
-          {subtext}
-        </p>
-        {delta && (
-          <div className="mt-2.5 pt-2.5 border-t border-white/[0.07] flex items-center gap-1.5">
-            <span className="text-gold text-xs leading-none">↑</span>
-            <span className="text-[9px] font-sans text-white/30 uppercase tracking-widest">
-              {delta.replace('↑ ', '')}
-            </span>
-          </div>
-        )}
-      </div>
+      </p>
     </div>
   )
 }

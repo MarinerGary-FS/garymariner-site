@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { cn } from '@/lib/utils'
 import { MEETING_TYPES, DEFAULT_CAL_LINK, type MeetingType } from '@/lib/cal-config'
+import { trackEvent } from '@/lib/analytics'
 
 // Extend window with Cal embed API
 declare global {
@@ -20,6 +21,8 @@ interface BookingButtonProps {
   calLink?: string
   style?: React.CSSProperties
   onClick?: () => void
+  trackingEvent?: string
+  trackingLabel?: string
 }
 
 export function BookingButton({
@@ -30,6 +33,8 @@ export function BookingButton({
   calLink,
   style,
   onClick,
+  trackingEvent,
+  trackingLabel,
 }: BookingButtonProps) {
   const [open, setOpen] = useState(false)
   const [selected, setSelected] = useState<MeetingType | null>(null)
@@ -89,6 +94,9 @@ export function BookingButton({
 
   const handleClick = () => {
     onClick?.()
+    if (trackingEvent) {
+      trackEvent({ event: trackingEvent, label: trackingLabel })
+    }
     if (calLink) {
       // Direct open — no qualifier needed
       openCal(calLink)
@@ -108,7 +116,12 @@ export function BookingButton({
 
   return (
     <>
-      <button type="button" className={classes} style={style} onClick={handleClick}>
+      <button
+        type="button"
+        className={classes}
+        style={style}
+        onClick={handleClick}
+      >
         {children}
       </button>
 

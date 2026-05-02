@@ -12,6 +12,8 @@ interface ButtonProps {
   external?: boolean
   disabled?: boolean
   style?: React.CSSProperties
+  trackingEvent?: string
+  trackingLabel?: string
 }
 
 export function Button({
@@ -25,6 +27,8 @@ export function Button({
   external,
   disabled,
   style,
+  trackingEvent,
+  trackingLabel,
 }: ButtonProps) {
   const base =
     'inline-flex items-center justify-center font-sans font-semibold tracking-wide transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background'
@@ -56,6 +60,9 @@ export function Button({
         href={href}
         className={classes}
         style={style}
+        data-track-event={trackingEvent}
+        data-track-label={trackingLabel}
+        data-track-href={href}
         {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
       >
         {children}

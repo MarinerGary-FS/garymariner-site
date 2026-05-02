@@ -9,11 +9,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: '#0A0A0A',
+        background: '#000000',
         surface: {
-          DEFAULT: '#111111',
-          raised: '#161616',
-          elevated: '#1C1C1C',
+          DEFAULT: '#080808',
+          raised: '#101010',
+          elevated: '#171717',
         },
         gold: {
           DEFAULT: '#C9A84C',

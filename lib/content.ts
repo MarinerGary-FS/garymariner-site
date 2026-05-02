@@ -7,17 +7,17 @@ export const siteContent = {
       { label: 'Work', href: '/case-studies' },
       { label: 'Contact', href: '/contact' },
     ],
-    cta: { label: 'Book a Consultation', href: '/contact' },
+    cta: { label: 'Build Your System', href: '/contact' },
   },
 
   hero: {
-    eyebrow: 'AI Systems Architect for Business Operations',
-    headline: 'Most businesses don\u2019t have a marketing problem. They have a system problem.',
+    eyebrow: 'AI Systems Architect',
+    headline: 'Business chaos is expensive.\nSystems make it scalable.',
     supporting:
-      'I build AI-powered systems that turn operations into autonomous growth engines.',
+      'I design AI-powered operating systems that turn complexity into growth infrastructure.',
     tagline: 'Strategy grounded in operations. Systems built for measurable growth.',
     primaryCTA: { label: 'See How This Works', href: '#system-flow' },
-    secondaryCTA: { label: 'View the Case Study', href: '/case-studies' },
+    secondaryCTA: { label: 'View Selected Work', href: '#selected-work' },
   },
 
   authority: {
@@ -60,26 +60,26 @@ export const siteContent = {
   },
 
   systemFlow: {
-    title: 'How the system gets built',
+    title: 'This isn\u2019t web design. It\u2019s system architecture.',
     steps: [
       {
-        label: 'Problem',
-        description: 'Disconnected tools. Manual processes. Lost revenue.',
+        label: 'Chaos',
+        description: 'Disconnected tools. Manual processes.',
       },
       {
         label: 'Breakdown',
-        description: 'Map the friction, handoffs, ownership gaps, and places where execution slows down.',
+        description: 'Identify friction and inefficiencies.',
       },
       {
         label: 'System',
-        description: 'Unified AI + automation layer connected to the workflows that actually run the business.',
+        description: 'Build unified AI + automation layer.',
       },
       {
         label: 'Outcome',
-        description: 'Faster ops. Higher conversions. Scalable growth.',
+        description: 'Faster execution. Higher conversion.',
       },
     ],
-    closing: 'Skip a layer, and the system breaks.',
+    closing: 'Chaos \u2192 Breakdown \u2192 System \u2192 Outcome',
   },
 
   services: [
@@ -132,23 +132,25 @@ export const siteContent = {
   caseStudy: {
     label: 'Flagship Transformation',
     company: 'Digital Harmony',
-    hook: 'Digital Harmony didn\u2019t need another website. They needed a system.',
+    hook: 'They didn\u2019t need more staff. They needed a system.',
     title: 'A customer operation rebuilt around AI-driven workflows and automation.',
-    summary: 'Disconnected support processes were limiting growth. The solution was a structured operating layer that connected AI workflows, multi-channel communication, and execution logic.',
-    systemBuilt: 'AI-driven workflows, multi-channel support systems, and operational logic that reduced dependency on manual labor.',
+    problem: 'Growth was constrained by disconnected support workflows, manual handoffs, and customer experience friction.',
+    summary: 'The solution was a structured operating layer that connected AI workflows, multi-channel communication, analytics, and execution logic.',
+    systemBuilt: 'AI chatbot + automation workflows',
+    outcome: 'A leaner customer operation with faster response paths, stronger satisfaction, and revenue growth without proportional headcount.',
     quote: 'The real leverage is in systems, not headcount.',
     outcomes: [
-      { value: '8x', label: 'Customer growth' },
-      { value: '70%', label: 'Agent reduction' },
-      { value: '$130K', label: 'Monthly revenue' },
+      { value: '70%', label: 'Reduction in live agent dependency' },
+      { value: '90%', label: 'Increase in customer satisfaction' },
+      { value: '$130K', label: 'Monthly revenue, up from $75K' },
     ],
-    href: '/case-studies',
+    href: 'https://www.marinernexus.com/',
     cta: 'Build a system like this',
   },
 
   philosophy: {
     statement: 'Websites don\u2019t scale. Systems do.',
-    elaboration: 'If it can\u2019t run without you, it\u2019s broken. Design without conversion is decoration. The best systems reduce friction before they add features.',
+    elaboration: 'If it requires constant effort, it\u2019s broken. Design without conversion is decoration. Tools don\u2019t fix problems. Systems do.',
     closing: 'I build systems that are intentional, scalable, and aligned with how businesses actually operate.',
     principles: [
       {
@@ -167,10 +169,10 @@ export const siteContent = {
   },
 
   finalCTA: {
-    headline: 'If this feels different\u2026 it should.',
+    headline: 'If this feels different, it should.',
     supporting: 'Most businesses don\u2019t need another website. They need a system that actually works.',
-    primaryCTA: { label: 'Apply This To Your Business', href: '/contact' },
-    secondaryCTA: { label: 'Build Your System', href: '/services#ai-systems' },
+    primaryCTA: { label: 'Apply This To Your Business', href: 'https://www.marinernexus.com/' },
+    secondaryCTA: { label: 'Start Optimization', href: 'https://www.marinernexus.com/' },
   },
 
   footer: {
