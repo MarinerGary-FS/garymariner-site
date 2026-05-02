@@ -34,7 +34,7 @@ export function Nav() {
             : 'bg-transparent'
         )}
       >
-        <div className="max-w-site mx-auto px-6 md:px-10 lg:px-16 h-16 md:h-[4.5rem] flex items-center justify-between">
+        <div className="max-w-site mx-auto px-5 md:px-8 lg:px-10 h-16 md:h-[4.5rem] flex items-center justify-between">
           {/* Logo */}
           <Link
             href="/"

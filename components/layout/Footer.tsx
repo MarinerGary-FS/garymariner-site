@@ -6,10 +6,10 @@ export function Footer() {
   const { footer } = siteContent
 
   return (
-    <footer className="border-t border-white/[0.08] bg-background px-6 py-10 md:px-10 lg:px-16">
+    <footer className="border-t border-white/[0.08] bg-background px-5 py-10 md:px-8 md:py-14 lg:px-10">
       <div className="max-w-site mx-auto">
-        <div className="liquid-glass rounded-xl px-5 py-6 md:px-7 md:py-7">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+        <div className="liquid-glass rounded-lg px-5 py-5 md:px-6 md:py-6">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           {/* Brand */}
           <div className="flex items-center gap-4">
             <Image
@@ -39,12 +39,12 @@ export function Footer() {
           </div>
 
           {/* Nav links */}
-          <nav className="flex flex-wrap gap-6">
+          <nav className="flex flex-wrap gap-4">
             {footer.links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-xs font-sans text-white/40 hover:text-white/70 transition-colors duration-200 tracking-wide"
+                className="text-xs font-sans text-white/60 hover:text-white/80 transition-colors duration-200 tracking-wide"
               >
                 {link.label}
               </Link>
@@ -68,7 +68,7 @@ export function Footer() {
         </div>
 
         {/* Divider + Legal */}
-        <div className="divider mt-8 mb-6" />
+        <div className="divider mt-6 mb-4" />
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <p className="text-xs font-sans text-white/25 tracking-wide">{footer.legal}</p>
           <a

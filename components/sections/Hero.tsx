@@ -27,7 +27,7 @@ export function Hero() {
       ctx = gsap.context(() => {
         gsap.fromTo(
           '.hero-reveal',
-          { autoAlpha: 0, y: 18 },
+          { autoAlpha: 0, y: 14 },
           {
             autoAlpha: 1,
             y: 0,
@@ -47,28 +47,28 @@ export function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative flex min-h-screen items-center overflow-hidden bg-background px-6 pb-8 pt-24 md:px-10 lg:px-16"
+      className="relative flex min-h-screen items-center overflow-hidden bg-background px-5 pb-8 pt-24 md:px-8 lg:px-10"
     >
       <SystemBackdrop />
 
-      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-8rem)] w-full max-w-[min(1280px,calc(100vw-3rem))] flex-col justify-center">
-        <div className="max-w-4xl">
-          <div className="hero-reveal mb-6 flex items-center gap-3">
+      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-8rem)] w-full max-w-[calc(100vw-2.5rem)] flex-col justify-center md:max-w-site">
+        <div className="max-w-2xl">
+          <div className="hero-reveal mb-4 flex items-center gap-2">
             <span className="h-px w-10 bg-gold/70" />
             <p className="text-xs font-medium uppercase tracking-[0.22em] text-gold">
               {hero.eyebrow}
             </p>
           </div>
 
-          <h1 className="hero-reveal max-w-5xl whitespace-pre-line break-words font-display text-[clamp(2.55rem,12vw,4.5rem)] font-bold leading-[0.98] text-white md:text-[clamp(4.5rem,8vw,7.6rem)] md:leading-[0.95]">
+          <h1 className="hero-reveal max-w-2xl whitespace-pre-line break-words font-display text-[2.45rem] font-bold leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
             {hero.headline}
           </h1>
 
-          <p className="hero-reveal mt-7 max-w-2xl font-sans text-base leading-8 text-white/68 md:text-xl">
+          <p className="hero-reveal mt-4 max-w-[19rem] font-sans text-base leading-7 text-white/70 sm:max-w-md">
             {hero.supporting}
           </p>
 
-          <div className="hero-reveal mobile-hero-control mt-10 flex flex-col gap-3 sm:flex-row">
+          <div className="hero-reveal mobile-hero-control mt-4 flex w-[calc(100vw-2.5rem)] max-w-[calc(100vw-2.5rem)] flex-col gap-2 sm:w-auto sm:max-w-full sm:flex-row">
             <Button
               href={hero.primaryCTA.href}
               size="lg"
@@ -92,9 +92,9 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="pointer-events-none mobile-hero-control mt-12 grid gap-4 sm:w-full md:absolute md:bottom-10 md:left-0 md:right-0 md:mt-0 md:grid-cols-[minmax(220px,360px)_minmax(0,1fr)_minmax(220px,320px)] md:items-end">
-          <div className="hero-reveal liquid-glass pointer-events-auto rounded-lg p-4 md:p-5">
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-2 md:gap-3">
+        <div className="pointer-events-none mobile-hero-control mt-6 grid w-[calc(100vw-2.5rem)] max-w-[calc(100vw-2.5rem)] gap-3 sm:w-full sm:max-w-full md:absolute md:bottom-10 md:left-0 md:right-0 md:mt-0 md:grid-cols-[minmax(220px,340px)_minmax(0,1fr)_minmax(220px,300px)] md:items-end">
+          <div className="hero-reveal liquid-glass pointer-events-auto rounded-lg p-4">
+            <div className="grid grid-cols-1 gap-2 sm:grid-cols-3 sm:gap-2 md:gap-3">
               <ProofStat value="70%" marker="↓" label="Support Load" />
               <ProofStat value="90%" marker="↑" label="Satisfaction" />
               <ProofStat value="$130K/mo" label="Revenue" />
@@ -109,9 +109,9 @@ export function Hero() {
             rel="noopener noreferrer"
             data-track-event="bridge_cta_click"
             data-track-label="Enter the System"
-            className="hero-reveal liquid-glass pointer-events-auto group flex items-center justify-between gap-4 rounded-lg p-4 text-white transition-all duration-300 hover:border-gold/35 hover:bg-white/[0.04] md:p-5"
+            className="hero-reveal liquid-glass pointer-events-auto group flex items-center justify-between gap-3 rounded-lg p-4 text-white transition-all duration-300 hover:border-gold/35 hover:bg-white/[0.04]"
           >
-            <span className="font-display text-xl font-semibold">Enter the System</span>
+            <span className="font-display text-base font-semibold">Enter the System</span>
             <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-gold transition-all duration-300 group-hover:translate-x-1 group-hover:border-gold/50">
               <ArrowRight className="h-4 w-4" />
             </span>
@@ -142,7 +142,7 @@ function SystemBackdrop() {
 function ProofStat({ value, marker, label }: { value: string; marker?: string; label: string }) {
   return (
     <div className="min-w-0">
-      <p className="font-display text-[1.15rem] font-bold leading-none text-white sm:text-xl md:text-2xl">
+      <p className="font-display text-xl font-bold leading-none text-white">
         {value} {marker && <span className="text-gold">{marker}</span>}
       </p>
       <p className="mt-2 text-[9px] font-medium uppercase tracking-[0.14em] text-white/42 sm:text-[10px] sm:tracking-[0.16em]">

@@ -122,7 +122,7 @@ export default function CaseStudiesPage() {
 
         {/* Results — lead with proof */}
         <Reveal delay={100}>
-          <div className="rounded-2xl border border-border bg-surface overflow-hidden mb-16">
+          <div className="rounded-lg border border-border bg-surface overflow-hidden mb-16">
             <div className="h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-border/50">
               {digitalHarmony.results.map((r) => (
@@ -184,7 +184,7 @@ export default function CaseStudiesPage() {
                 {digitalHarmony.strategy.moves.map((m) => (
                   <li key={m} className="flex items-start gap-3">
                     <span className="mt-[0.45em] w-1 h-1 rounded-full bg-gold/40 shrink-0" />
-                    <span className="font-sans text-xs text-white/50 leading-[1.7]">{m}</span>
+                    <span className="font-sans text-xs text-white/60 leading-[1.7]">{m}</span>
                   </li>
                 ))}
               </ul>
@@ -238,7 +238,7 @@ export default function CaseStudiesPage() {
       <SectionWrapper className="bg-surface border-t border-border/40" id="radco">
         <Reveal className="mb-12">
           <div className="flex flex-wrap items-center gap-3">
-            <span className="text-xs font-sans font-medium text-white/50 uppercase tracking-[0.16em]">
+            <span className="text-xs font-sans font-medium text-white/60 uppercase tracking-[0.16em]">
               {radco.label}
             </span>
             <span className="w-1 h-1 rounded-full bg-white/15" />
@@ -290,7 +290,7 @@ export default function CaseStudiesPage() {
       </SectionWrapper>
 
       {/* CTA */}
-      <section className="relative px-6 md:px-10 lg:px-16 py-28 md:py-36 bg-background border-t border-border/40 overflow-hidden">
+      <section className="relative px-5 md:px-8 lg:px-10 py-20 md:py-24 bg-background border-t border-border/40 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-gold/[0.06] blur-[120px] pointer-events-none" />
         <div className="relative max-w-site mx-auto">
           <Reveal>

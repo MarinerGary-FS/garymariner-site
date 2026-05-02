@@ -56,33 +56,33 @@ export function CaseStudyPreview() {
     <section
       ref={sectionRef}
       id="selected-work"
-      className="relative overflow-hidden bg-background px-6 py-28 md:px-10 md:py-40 lg:px-16"
+      className="relative overflow-hidden bg-background px-5 py-20 md:px-8 md:py-24 lg:px-10"
     >
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_32%,rgba(91,164,255,0.08),transparent_32%)]" />
 
-      <div className="relative mx-auto grid max-w-site gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
+      <div className="relative mx-auto grid max-w-site gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-8">
         <Reveal className="max-w-xl">
           <p className="mb-5 font-sans text-xs font-medium uppercase tracking-[0.22em] text-gold">
             {caseStudy.company}
           </p>
-          <h2 className="font-display text-[clamp(2.4rem,5vw,5.4rem)] font-bold leading-[1.02] text-white">
+          <h2 className="max-w-2xl font-display text-4xl font-bold leading-[1.1] text-white md:text-5xl">
             {caseStudy.hook}
           </h2>
         </Reveal>
 
         <Reveal delay={120}>
-          <div className="relative min-h-[620px] overflow-hidden rounded-xl border border-white/[0.08] bg-[#040404] shadow-[0_30px_120px_rgba(0,0,0,0.45)]">
+          <div className="relative min-h-[520px] overflow-hidden rounded-xl border border-white/[0.08] bg-[#040404] shadow-[0_24px_90px_rgba(0,0,0,0.42)]">
             <CaseBackdrop />
 
-            <div className="absolute inset-x-5 bottom-5 md:inset-x-8 md:bottom-8">
-              <div className="liquid-glass rounded-lg p-5 md:p-7">
-                <div className="mb-6 flex flex-col gap-2 border-b border-white/[0.08] pb-6 sm:flex-row sm:items-end sm:justify-between">
+            <div className="absolute inset-x-4 bottom-4 md:inset-x-5 md:bottom-5">
+              <div className="liquid-glass rounded-lg p-4">
+                <div className="mb-4 flex flex-col gap-2 border-b border-white/[0.08] pb-4 sm:flex-row sm:items-end sm:justify-between">
                   <div>
                     <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-white/36">
                       System Built
                     </p>
-                    <p className="mt-2 font-display text-2xl font-semibold text-white">
+                    <p className="mt-2 font-display text-lg font-semibold text-white">
                       {caseStudy.systemBuilt}
                     </p>
                   </div>
@@ -100,13 +100,13 @@ export function CaseStudyPreview() {
                   </Button>
                 </div>
 
-                <div className="grid gap-4 sm:grid-cols-3">
+                <div className="grid gap-2 sm:grid-cols-3">
                   {caseStudy.outcomes.map((outcome) => (
                     <div key={outcome.label} className="case-result">
-                      <p className="font-display text-3xl font-bold leading-none text-gold md:text-4xl">
+                      <p className="font-display text-2xl font-bold leading-none text-gold md:text-3xl">
                         {outcome.value}
                       </p>
-                      <p className="mt-3 text-xs leading-5 text-white/50">
+                      <p className="mt-2 text-xs leading-5 text-white/60">
                         {outcome.label}
                       </p>
                     </div>

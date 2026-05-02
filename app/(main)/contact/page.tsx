@@ -29,7 +29,7 @@ export default function ContactPage() {
   return (
     <>
       {/* Page header */}
-      <section className="relative px-6 md:px-10 lg:px-16 pt-36 pb-16 md:pt-44 md:pb-20 bg-background overflow-hidden">
+      <section className="relative px-5 md:px-8 lg:px-10 pt-36 pb-16 md:pt-44 md:pb-20 bg-background overflow-hidden">
         <div className="absolute top-0 left-0 w-[500px] h-[400px] rounded-full bg-gold/[0.03] blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 right-0 divider-gold" />
 
@@ -51,7 +51,7 @@ export default function ContactPage() {
             Start a Conversation.
           </h1>
           <p
-            className="font-sans text-base text-white/50 leading-[1.85] max-w-xl"
+            className="font-sans text-base text-white/60 leading-[1.85] max-w-xl"
             style={{ animation: 'fadeUp 0.75s ease 0.3s both' }}
           >
             Whether you&apos;re ready to move or just exploring what&apos;s possible — this is where it starts.
@@ -77,7 +77,7 @@ export default function ContactPage() {
                   <h2 className="font-display font-bold text-display-md text-white leading-tight mb-3">
                     Schedule a Consultation
                   </h2>
-                  <p className="font-sans text-sm text-white/50 leading-[1.8] mb-7">
+                  <p className="font-sans text-sm text-white/60 leading-[1.8] mb-7">
                     30 minutes. Focused on your business. No templates, no pitch decks — just a direct conversation about what you&apos;re trying to solve.
                   </p>
                   <BookingButton size="md">

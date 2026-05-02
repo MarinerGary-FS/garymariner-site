@@ -31,7 +31,7 @@ export function Reveal({ children, className, delay = 0, as: Tag = 'div', ...pro
             el.classList.add('is-visible')
             gsap.fromTo(
               el,
-              { autoAlpha: 0, y: 18 },
+              { autoAlpha: 0, y: 14 },
               { autoAlpha: 1, y: 0, duration: 0.7, ease: 'power3.out' }
             )
           }

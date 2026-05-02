@@ -53,7 +53,7 @@ export function BookingButton({
   const sizes = {
     sm: 'px-5 py-3 text-sm rounded-md gap-2',
     md: 'px-6 py-3.5 text-sm rounded-lg gap-2',
-    lg: 'px-9 py-4 text-base rounded-lg gap-2.5',
+    lg: 'px-6 py-3 text-sm rounded-lg gap-2',
   }
 
   const classes = cn(
@@ -140,7 +140,7 @@ export function BookingButton({
           />
 
           {/* Panel */}
-          <div className="relative w-full sm:max-w-lg bg-[#111111] border border-white/10 rounded-t-2xl sm:rounded-2xl shadow-2xl shadow-black/80 overflow-hidden max-h-[90vh] overflow-y-auto">
+          <div className="relative w-full sm:max-w-lg bg-[#111111] border border-white/10 rounded-t-lg sm:rounded-lg shadow-2xl shadow-black/80 overflow-hidden max-h-[90vh] overflow-y-auto">
             {/* Gold top accent */}
             <div className="h-px w-full bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
 
@@ -237,7 +237,7 @@ export function BookingButton({
                 <button
                   type="button"
                   onClick={() => setOpen(false)}
-                  className="sm:w-auto inline-flex items-center justify-center font-sans text-sm text-white/40 hover:text-white/70 transition-colors duration-200 px-4 py-3.5"
+                  className="sm:w-auto inline-flex items-center justify-center font-sans text-sm text-white/40 hover:text-white/80 transition-colors duration-200 px-4 py-3.5"
                 >
                   Cancel
                 </button>

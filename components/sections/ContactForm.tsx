@@ -42,7 +42,7 @@ export function ContactForm() {
 
   if (status === 'success') {
     return (
-      <div className="flex flex-col gap-5 p-8 md:p-10 rounded-2xl border border-gold/25 bg-surface">
+      <div className="flex flex-col gap-3 p-5 md:p-6 rounded-lg border border-gold/25 bg-surface">
         <div className="h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
         <div className="flex flex-col gap-4 py-4">
           <div className="flex items-center gap-3">
@@ -69,7 +69,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
       {/* Name + Email */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <Field

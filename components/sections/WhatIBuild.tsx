@@ -15,24 +15,24 @@ const services = [
 
 export function WhatIBuild() {
   return (
-    <section className="relative overflow-hidden bg-background px-6 py-28 md:px-10 md:py-40 lg:px-16">
+    <section className="relative overflow-hidden bg-background px-5 py-20 md:px-8 md:py-24 lg:px-10">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
       <div className="relative mx-auto max-w-site">
-        <div className="grid gap-5 lg:grid-cols-2">
+        <div className="grid gap-4 lg:grid-cols-2">
           {services.map((service, index) => (
             <Reveal key={service.title} delay={index * 120}>
-              <article className="group relative min-h-[460px] overflow-hidden rounded-xl border border-white/[0.08] bg-[#050505] transition-all duration-500 hover:-translate-y-1 hover:border-gold/25 hover:shadow-[0_28px_90px_rgba(0,0,0,0.45)]">
+              <article className="group relative min-h-[400px] overflow-hidden rounded-xl border border-white/[0.08] bg-[#050505] transition-all duration-500 hover:-translate-y-0.5 hover:scale-[1.02] hover:border-gold/25 hover:shadow-[0_22px_70px_rgba(0,0,0,0.42)]">
                 <ServiceVisual variant={index} />
-                <div className="absolute inset-x-5 bottom-5 md:inset-x-7 md:bottom-7">
-                  <div className="liquid-glass rounded-lg p-6 md:p-7">
+                <div className="absolute inset-x-4 bottom-4 md:inset-x-5 md:bottom-5">
+                  <div className="liquid-glass rounded-lg p-5">
                     <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-gold">
                       {service.tag}
                     </p>
-                    <h2 className="mt-4 font-display text-4xl font-bold leading-none text-white md:text-5xl">
+                    <h2 className="mt-3 font-display text-3xl font-bold leading-none text-white md:text-4xl">
                       {service.title}
                     </h2>
-                    <p className="mt-4 max-w-md text-sm leading-7 text-white/58 md:text-base">
+                    <p className="mt-3 max-w-md text-sm leading-6 text-white/60 md:text-base">
                       {service.description}
                     </p>
                   </div>

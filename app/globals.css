@@ -23,6 +23,7 @@
   body {
     background-color: #000000;
     color: #ffffff;
+    overflow-x: hidden;
   }
 
   ::selection {
@@ -97,7 +98,7 @@
   }
 
   .mobile-hero-control {
-    width: calc(100vw - 4rem);
+    width: calc(100vw - 2.5rem);
     max-width: 100%;
   }
 

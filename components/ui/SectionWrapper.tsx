@@ -17,7 +17,7 @@ export const SectionWrapper = forwardRef<HTMLElement, SectionWrapperProps>(funct
   as: Tag = 'section',
 }, ref) {
   return (
-    <Tag ref={ref as never} id={id} className={cn('px-6 md:px-10 lg:px-16 py-28 md:py-36', className)}>
+    <Tag ref={ref as never} id={id} className={cn('px-5 md:px-8 lg:px-10 py-20 md:py-24', className)}>
       <div className={cn('max-w-site mx-auto', innerClassName)}>{children}</div>
     </Tag>
   )

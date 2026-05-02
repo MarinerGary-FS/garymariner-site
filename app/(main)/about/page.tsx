@@ -93,7 +93,7 @@ export default function AboutPage() {
                 {['15+ Years in Operational Leadership', 'AI-Driven Transformation', 'Global Cross-Functional Teams', 'Strategic Communications'].map((item) => (
                   <div key={item} className="flex items-center gap-3">
                     <span className="w-1.5 h-1.5 rounded-full bg-gold/50 shrink-0" />
-                    <span className="text-xs font-sans text-white/50 tracking-wide">{item}</span>
+                    <span className="text-xs font-sans text-white/60 tracking-wide">{item}</span>
                   </div>
                 ))}
               </div>
@@ -143,7 +143,7 @@ export default function AboutPage() {
           </h2>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
           {differentiators.map((item, i) => (
             <Reveal key={item.title} delay={i * 100}>
               <div className="group flex flex-col gap-5 py-8 md:py-0 border-b border-border/30 md:border-b-0 last:border-b-0">
@@ -151,7 +151,7 @@ export default function AboutPage() {
                 <h3 className="font-display font-semibold text-lg text-white leading-snug">
                   {item.title}
                 </h3>
-                <p className="font-sans text-sm text-white/50 leading-[1.8]">
+                <p className="font-sans text-sm text-white/60 leading-[1.8]">
                   {item.description}
                 </p>
               </div>
@@ -202,7 +202,7 @@ export default function AboutPage() {
                     <h3 className="font-display font-semibold text-base text-white">
                       {p.title}
                     </h3>
-                    <p className="font-sans text-sm text-white/50 leading-[1.8]">
+                    <p className="font-sans text-sm text-white/60 leading-[1.8]">
                       {p.description}
                     </p>
                   </div>
@@ -214,7 +214,7 @@ export default function AboutPage() {
       </SectionWrapper>
 
       {/* CTA */}
-      <section className="relative px-6 md:px-10 lg:px-16 py-28 md:py-36 bg-background border-t border-border/40 overflow-hidden">
+      <section className="relative px-5 md:px-8 lg:px-10 py-20 md:py-24 bg-background border-t border-border/40 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-gold/[0.06] blur-[120px] pointer-events-none" />
         <div className="relative max-w-site mx-auto">
           <Reveal>

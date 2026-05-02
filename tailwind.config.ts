@@ -38,7 +38,7 @@ const config: Config = {
         'display-md': ['clamp(1.375rem, 2vw, 2rem)', { lineHeight: '1.28', letterSpacing: '-0.015em' }],
       },
       maxWidth: {
-        site: '1280px',
+        site: '1024px',
       },
       spacing: {
         section: '7rem',

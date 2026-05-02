@@ -20,7 +20,7 @@ export function PageHero({
   return (
     <section
       className={cn(
-        'relative px-6 md:px-10 lg:px-16 pt-36 pb-16 md:pt-44 md:pb-20 overflow-hidden bg-background',
+        'relative px-5 md:px-8 lg:px-10 pt-28 pb-12 md:pt-36 md:pb-16 overflow-hidden bg-background',
         className
       )}
     >
@@ -33,7 +33,7 @@ export function PageHero({
         {/* Eyebrow */}
         <div
           className={cn(
-            'flex items-center gap-3 mb-8',
+            'flex items-center gap-2 mb-4',
             isCenter && 'justify-center'
           )}
           style={{ animation: 'fadeUp 0.6s ease 0.05s both' }}
@@ -59,8 +59,8 @@ export function PageHero({
         {supporting && (
           <p
             className={cn(
-              'font-sans text-base md:text-lg text-white/55 leading-[1.85] mt-7',
-              isCenter ? 'max-w-2xl mx-auto' : 'max-w-2xl'
+              'font-sans text-base text-white/60 leading-[1.7] mt-4',
+              isCenter ? 'max-w-xl mx-auto' : 'max-w-xl'
             )}
             style={{ animation: 'fadeUp 0.75s ease 0.3s both' }}
           >
