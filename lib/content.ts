@@ -7,26 +7,25 @@ export const siteContent = {
       { label: 'Work', href: '/case-studies' },
       { label: 'Contact', href: '/contact' },
     ],
-    cta: { label: 'Start a Conversation', href: '/contact' },
+    cta: { label: 'Book a Consultation', href: '/contact' },
   },
 
   hero: {
-    eyebrow: 'AI Transformation & Communications Leader',
-    headline: 'AI Doesn\u2019t Fail Because of the Technology. It Fails Because Organizations Aren\u2019t Ready for It.',
+    eyebrow: 'AI Systems Architect for Business Operations',
+    headline: 'Most businesses don\u2019t have a marketing problem. They have a system problem.',
     supporting:
-      'I work in the gap between executive vision and operational reality \u2014 aligning AI, people, and communication so organizations don\u2019t just adopt technology, they change how they operate.',
-    tagline: 'Strategy grounded in operations. Implementation shaped by people.',
-    primaryCTA: { label: 'Explore My Work', href: '/case-studies' },
-    secondaryCTA: { label: 'Start a Conversation', href: '/contact' },
+      'I build AI-powered systems that turn operations into autonomous growth engines.',
+    tagline: 'Strategy grounded in operations. Systems built for measurable growth.',
+    primaryCTA: { label: 'See How This Works', href: '#system-flow' },
+    secondaryCTA: { label: 'View the Case Study', href: '/case-studies' },
   },
 
   authority: {
-    tagline: 'AI. People. Operations. Communication.',
+    tagline: 'Not a service. A system.',
     items: [
-      '15+ Years Operational Leadership',
-      'AI-Driven Transformation',
-      'Cross-Functional Communication',
-      'Measurable Impact',
+      'Systems over websites',
+      'Automation over effort',
+      'Outcomes over aesthetics',
     ],
   },
 
@@ -58,6 +57,29 @@ export const siteContent = {
         description: 'Design for long-term organizational health, not just the next quarter.',
       },
     ],
+  },
+
+  systemFlow: {
+    title: 'How the system gets built',
+    steps: [
+      {
+        label: 'Problem',
+        description: 'Disconnected tools. Manual processes. Lost revenue.',
+      },
+      {
+        label: 'Breakdown',
+        description: 'Map the friction, handoffs, ownership gaps, and places where execution slows down.',
+      },
+      {
+        label: 'System',
+        description: 'Unified AI + automation layer connected to the workflows that actually run the business.',
+      },
+      {
+        label: 'Outcome',
+        description: 'Faster ops. Higher conversions. Scalable growth.',
+      },
+    ],
+    closing: 'Skip a layer, and the system breaks.',
   },
 
   services: [
@@ -110,8 +132,10 @@ export const siteContent = {
   caseStudy: {
     label: 'Flagship Transformation',
     company: 'Digital Harmony',
-    title: 'From 500 Customers to 4,000 \u2014 While Cutting Agent Dependency 70%',
-    summary: 'AI-driven systems, structured workflows, and leadership collaboration transformed a global customer operation. 8x growth. 70% less dependency. A business model that no longer scales on headcount.',
+    hook: 'Digital Harmony didn\u2019t need another website. They needed a system.',
+    title: 'A customer operation rebuilt around AI-driven workflows and automation.',
+    summary: 'Disconnected support processes were limiting growth. The solution was a structured operating layer that connected AI workflows, multi-channel communication, and execution logic.',
+    systemBuilt: 'AI-driven workflows, multi-channel support systems, and operational logic that reduced dependency on manual labor.',
     quote: 'The real leverage is in systems, not headcount.',
     outcomes: [
       { value: '8x', label: 'Customer growth' },
@@ -119,13 +143,13 @@ export const siteContent = {
       { value: '$130K', label: 'Monthly revenue' },
     ],
     href: '/case-studies',
-    cta: 'Read the Full Story',
+    cta: 'Build a system like this',
   },
 
   philosophy: {
-    statement: 'The best systems do more than look modern.',
-    elaboration: 'They reduce friction. They improve decisions. They create space for growth.',
-    closing: 'I build systems that are intentional, scalable, and aligned with how organizations actually operate.',
+    statement: 'Websites don\u2019t scale. Systems do.',
+    elaboration: 'If it can\u2019t run without you, it\u2019s broken. Design without conversion is decoration. The best systems reduce friction before they add features.',
+    closing: 'I build systems that are intentional, scalable, and aligned with how businesses actually operate.',
     principles: [
       {
         title: 'Strategy Before Tools',
@@ -143,13 +167,14 @@ export const siteContent = {
   },
 
   finalCTA: {
-    headline: 'Navigating AI adoption, operational complexity, or the gap between strategy and execution?',
-    primaryCTA: { label: 'Start a Conversation', href: '/contact' },
-    secondaryCTA: { label: 'Explore My Work', href: '/case-studies' },
+    headline: 'If this feels different\u2026 it should.',
+    supporting: 'Most businesses don\u2019t need another website. They need a system that actually works.',
+    primaryCTA: { label: 'Apply This To Your Business', href: '/contact' },
+    secondaryCTA: { label: 'Build Your System', href: '/services#ai-systems' },
   },
 
   footer: {
-    tagline: 'AI Transformation & Communications Leader',
+    tagline: 'AI Systems Architect for Business Operations',
     location: 'Atlanta, GA',
     email: 'gary.mariner@gmail.com',
     links: [

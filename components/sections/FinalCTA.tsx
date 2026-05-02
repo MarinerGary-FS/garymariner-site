@@ -15,19 +15,21 @@ export function FinalCTA() {
           {/* Contained frame — creates intentionality and finality */}
           <div className="group max-w-3xl mx-auto rounded-2xl border border-gold/20 hover:border-gold/30 bg-surface/30 backdrop-blur-sm px-6 sm:px-10 md:px-16 py-12 md:py-20 flex flex-col items-center text-center gap-8 md:gap-10 transition-all duration-400 hover:shadow-[0_0_60px_rgba(201,168,76,0.06)]">
 
-            {/* Eyebrow */}
             <div className="flex items-center gap-3">
               <span className="w-6 h-px bg-gold/50" />
               <span className="text-xs font-sans text-white/35 uppercase tracking-[0.18em]">
-                What&apos;s Next
+                Conversion Bridge
               </span>
               <span className="w-6 h-px bg-gold/50" />
             </div>
 
-            {/* Headline — conversational and direct */}
             <h2 className="font-display font-bold text-display-xl text-white">
               {finalCTA.headline}
             </h2>
+
+            <p className="font-sans text-base md:text-lg text-white/60 leading-[1.8] max-w-xl">
+              {finalCTA.supporting}
+            </p>
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-center gap-4 pt-2">

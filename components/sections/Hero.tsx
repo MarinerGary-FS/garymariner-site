@@ -1,47 +1,26 @@
-import Image from 'next/image'
 import { Button } from '@/components/ui/Button'
-import { BookingButton } from '@/components/ui/BookingButton'
 import { siteContent } from '@/lib/content'
 
 export function Hero() {
   const { hero } = siteContent
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-x-hidden bg-background">
+    <section className="relative min-h-[88vh] flex items-center overflow-x-hidden bg-background">
       {/* Architectural grid — very subtle */}
       <div className="absolute inset-0 pointer-events-none bg-grid opacity-25" />
 
-      {/* Family crest — atmospheric right-side presence */}
-      <div className="absolute right-0 top-0 bottom-0 w-[55%] pointer-events-none select-none overflow-hidden">
-        <Image
-          src="/images/family-crest.jpg"
-          alt=""
-          fill
-          className="object-cover object-center opacity-[0.06]"
-          aria-hidden
-          priority
-        />
-        {/* Left fade — seamless blend into content side */}
-        <div className="absolute inset-y-0 left-0 w-[50%] bg-gradient-to-r from-background to-transparent" />
-        {/* Top / bottom softening */}
-        <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-background to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-background to-transparent" />
+      {/* Cinematic depth fields */}
+      <div className="absolute left-0 top-0 bottom-0 w-[55%] pointer-events-none">
+        <div className="absolute top-1/2 -translate-y-1/2 left-[-10%] w-[680px] h-[680px] rounded-full bg-gold/[0.04] blur-[130px]" />
       </div>
+      <div className="absolute -bottom-32 right-[8%] w-[640px] h-[520px] rounded-full bg-gold/[0.055] blur-[150px] pointer-events-none" />
+      <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none" />
 
-      {/* Left-side text area depth — subtle warm radial behind headline */}
-      <div className="absolute left-0 top-0 bottom-0 w-[45%] pointer-events-none">
-        <div className="absolute top-1/2 -translate-y-1/2 left-0 w-[600px] h-[600px] rounded-full bg-gold/[0.035] blur-[120px]" />
-      </div>
-
-      {/* Bottom-right structural glow */}
-      <div className="absolute -bottom-24 right-[10%] w-[500px] h-[500px] rounded-full bg-gold/[0.05] blur-[140px] pointer-events-none" />
-
-      <div className="relative w-full max-w-site mx-auto px-6 md:px-10 lg:px-16 pt-36 pb-20 md:pt-44 md:pb-28">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] xl:grid-cols-[1fr_460px] gap-14 lg:gap-16 items-center">
+      <div className="relative w-full max-w-site mx-auto px-6 md:px-10 lg:px-16 pt-28 pb-20 md:pt-32 md:pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_440px] xl:grid-cols-[minmax(0,1fr)_500px] gap-14 lg:gap-16 items-center">
 
           {/* Left: Content */}
           <div className="flex flex-col max-w-2xl">
-            {/* Eyebrow */}
             <div
               className="inline-flex items-center gap-3 mb-6 md:mb-10"
               style={{ animation: 'fadeUp 0.6s ease 0.05s both' }}
@@ -54,7 +33,7 @@ export function Hero() {
 
             {/* Headline */}
             <h1
-              className="font-display font-bold text-display-2xl text-white mb-7"
+              className="font-display font-bold text-display-lg lg:text-display-xl text-white mb-6 max-w-[760px]"
               style={{ animation: 'fadeUp 0.75s ease 0.18s both' }}
             >
               {hero.headline}
@@ -62,7 +41,7 @@ export function Hero() {
 
             {/* Supporting copy */}
             <p
-              className="font-sans text-base md:text-lg text-white/65 leading-[1.85] max-w-[540px] mb-6"
+              className="font-sans text-base md:text-lg text-white/65 leading-[1.75] max-w-[520px] mb-5"
               style={{ animation: 'fadeUp 0.75s ease 0.3s both' }}
             >
               {hero.supporting}
@@ -70,7 +49,7 @@ export function Hero() {
 
             {/* Proof tagline */}
             <div
-              className="flex items-center gap-3 mb-12"
+              className="flex items-center gap-3 mb-9"
               style={{ animation: 'fadeUp 0.75s ease 0.38s both' }}
             >
               <span className="w-5 h-px bg-gold/55 shrink-0" />
@@ -94,12 +73,11 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Right: Portrait */}
           <div
             className="hidden lg:block"
             style={{ animation: 'fadeIn 1.0s ease 0.45s both' }}
           >
-            <PortraitPanel />
+            <SystemSignal />
           </div>
         </div>
       </div>
@@ -110,65 +88,54 @@ export function Hero() {
   )
 }
 
-function PortraitPanel() {
+function SystemSignal() {
   return (
-    <div className="relative">
-      {/* Portrait container — 3:4 with object-position shifted up for upper-third eye alignment */}
-      <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden">
+    <div className="relative aspect-square">
+      <div className="absolute inset-4 rounded-full border border-gold/10 bg-gold/[0.015]" />
+      <div className="absolute inset-16 rounded-full border border-white/[0.06]" />
+      <div className="absolute inset-28 rounded-full border border-gold/20 bg-background/80 shadow-[0_0_80px_rgba(201,168,76,0.08)]" />
 
-        {/* Crest texture layer — extremely subtle, adds depth without competing */}
-        <Image
-          src="/images/family-crest.jpg"
-          alt=""
-          fill
-          className="object-cover object-center opacity-[0.10] scale-110"
-          aria-hidden
-        />
+      <div className="absolute left-10 right-10 top-1/2 h-px bg-gradient-to-r from-transparent via-gold/45 to-transparent" />
+      <div className="absolute top-10 bottom-10 left-1/2 w-px bg-gradient-to-b from-transparent via-gold/30 to-transparent" />
 
-        {/* Portrait — eyes in upper third via object-position */}
-        <Image
-          src="/images/gary-portrait.jpg"
-          alt="Gary L. Mariner II — AI Systems Architect for Business Operations"
-          fill
-          className="object-cover object-[center_15%] relative"
-          priority
-          sizes="(max-width: 1280px) 400px, 460px"
-        />
+      <div className="absolute left-2 top-[18%] h-px w-[42%] bg-gradient-to-r from-transparent to-white/15" />
+      <div className="absolute right-2 bottom-[24%] h-px w-[38%] bg-gradient-to-l from-transparent to-white/15" />
+      <div className="absolute left-[18%] bottom-10 h-[34%] w-px bg-gradient-to-t from-transparent to-white/10" />
 
-        {/* Tonal integration — pulls gray studio bg into the dark site */}
-        <div className="absolute inset-0 bg-background/12" />
+      <SignalNode className="left-[8%] top-[16%]" label="Ops" />
+      <SignalNode className="right-[4%] top-[38%]" label="AI" />
+      <SignalNode className="left-[20%] bottom-[8%]" label="CX" />
+      <SignalNode className="right-[18%] bottom-[14%]" label="Rev" />
 
-        {/* Bottom fade — removes Remini watermark and grounds the image */}
-        <div className="absolute bottom-0 left-0 right-0 h-[30%] bg-gradient-to-t from-background via-background/75 to-transparent" />
-
-        {/* Right edge blend */}
-        <div className="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-background/35 to-transparent" />
-
-        {/* Frame border */}
-        <div className="absolute inset-0 rounded-2xl border border-white/[0.07]" />
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="flex h-28 w-28 items-center justify-center rounded-full border border-gold/25 bg-surface/90 shadow-[0_0_48px_rgba(201,168,76,0.12)]">
+          <span className="font-display text-4xl font-bold text-gold-gradient">GM</span>
+        </div>
       </div>
 
-      {/* Corner brackets */}
-      <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-gold/50 rounded-tl-sm pointer-events-none" />
-      <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-gold/30 rounded-br-sm pointer-events-none" />
-      <div className="absolute -top-2 -right-2 w-5 h-5 border-t border-r border-white/10 rounded-tr-sm pointer-events-none" />
-
-      {/* Proof card — bottom left: revenue metric */}
       <MetricCard
-        position="absolute bottom-6 -left-4 xl:-left-8"
+        position="absolute bottom-8 -left-4 xl:-left-8"
         label="Monthly Revenue"
         value="$130K"
         subtext="Digital Harmony"
         delta="↑ from $75K"
       />
-
-      {/* Proof card — top right: reduction metric */}
       <MetricCard
         position="absolute top-8 -right-4 xl:-right-8"
         label="Agent Dependency"
         value="70%"
         subtext="Reduction"
       />
+    </div>
+  )
+}
+
+function SignalNode({ className, label }: { className: string; label: string }) {
+  return (
+    <div className={`absolute ${className} flex h-14 w-14 items-center justify-center rounded-full border border-white/[0.08] bg-surface/80 backdrop-blur-sm`}>
+      <span className="font-sans text-[10px] font-medium uppercase tracking-[0.16em] text-white/45">
+        {label}
+      </span>
     </div>
   )
 }

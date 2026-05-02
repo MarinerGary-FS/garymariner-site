@@ -14,17 +14,17 @@ export function CaseStudyPreview() {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           <div>
             <p className="text-xs font-sans text-white/30 uppercase tracking-[0.18em] mb-5">
-              Selected Work
+              Case Study Engine
             </p>
             <h2 className="font-display font-bold text-display-md text-white">
-              Transformation in Practice
+              Proof built as a conversion system.
             </h2>
           </div>
           <Link
             href="/case-studies"
             className="inline-flex items-center gap-2 text-sm font-sans text-white/40 hover:text-white/80 transition-colors duration-200 group self-start md:self-auto pb-1 border-b border-transparent hover:border-white/20"
           >
-            View all work
+            View full case study
             <span className="group-hover:translate-x-1 transition-transform duration-200">→</span>
           </Link>
         </div>
@@ -54,11 +54,30 @@ export function CaseStudyPreview() {
               <div className="flex flex-col gap-8">
                 <div>
                   <h3 className="font-display font-bold text-display-md text-white mb-5">
-                    {caseStudy.title}
+                    {caseStudy.hook}
                   </h3>
                   <p className="font-sans text-base text-white/60 leading-[1.8]">
                     {caseStudy.summary}
                   </p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="border-l border-gold/30 pl-5">
+                    <p className="text-[10px] font-sans font-medium text-white/30 uppercase tracking-[0.18em] mb-3">
+                      Breakdown
+                    </p>
+                    <p className="font-sans text-sm text-white/55 leading-[1.75]">
+                      Disconnected support workflows were forcing growth to depend on manual labor.
+                    </p>
+                  </div>
+                  <div className="border-l border-gold/30 pl-5">
+                    <p className="text-[10px] font-sans font-medium text-white/30 uppercase tracking-[0.18em] mb-3">
+                      System Built
+                    </p>
+                    <p className="font-sans text-sm text-white/55 leading-[1.75]">
+                      {caseStudy.systemBuilt}
+                    </p>
+                  </div>
                 </div>
 
                 <Button href={caseStudy.href} variant="ghost" size="md" className="self-start">

@@ -13,10 +13,10 @@ export function ProofSection() {
       {/* Section header */}
       <Reveal className="mb-16">
         <p className="text-xs font-sans text-white/30 uppercase tracking-[0.18em] mb-5">
-          Outcomes
+          Soft Exit
         </p>
         <h2 className="font-display font-bold text-display-lg text-white max-w-lg">
-          Outcomes Grounded in Execution
+          Credibility before the conversation.
         </h2>
         <p className="font-sans text-base text-white/60 leading-[1.8] mt-5 max-w-xl">
           {proof.intro}

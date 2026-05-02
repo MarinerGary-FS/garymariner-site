@@ -2,15 +2,12 @@
 
 import { useEffect, useRef } from 'react'
 import { Reveal } from '@/components/ui/Reveal'
+import { siteContent } from '@/lib/content'
 
-const stages = [
-  { label: 'Leadership', icon: CompassIcon },
-  { label: 'Communication', icon: BridgeIcon },
-  { label: 'AI Systems', icon: CircuitIcon },
-  { label: 'Execution', icon: TargetIcon },
-]
+const icons = [AlertIcon, BreakIcon, CircuitIcon, TargetIcon]
 
 export function SystemFlow() {
+  const { systemFlow } = siteContent
   const lineRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -37,11 +34,20 @@ export function SystemFlow() {
   }, [])
 
   return (
-    <section className="relative px-6 md:px-10 lg:px-16 py-32 md:py-44 bg-surface border-t border-border/40 overflow-hidden">
+    <section id="system-flow" className="relative px-6 md:px-10 lg:px-16 py-32 md:py-44 bg-background border-t border-border/40 overflow-hidden">
       {/* Ambient glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-gold/[0.025] blur-[120px] pointer-events-none" />
 
-      <div className="relative max-w-4xl mx-auto">
+      <div className="relative max-w-site mx-auto">
+        <Reveal className="mb-16 md:mb-20 max-w-2xl">
+          <p className="text-xs font-sans text-white/30 uppercase tracking-[0.18em] mb-5">
+            System Thinking
+          </p>
+          <h2 className="font-display font-bold text-display-lg text-white">
+            {systemFlow.title}
+          </h2>
+        </Reveal>
+
         {/* Flow diagram */}
         <div className="relative flex flex-col md:flex-row items-stretch gap-6 md:gap-0">
 
@@ -56,14 +62,16 @@ export function SystemFlow() {
             }}
           />
 
-          {stages.map((stage, i) => (
+          {systemFlow.steps.map((stage, i) => {
+            const Icon = icons[i]
+            return (
             <Reveal key={stage.label} delay={200 + i * 150} className="flex-1 relative z-10">
-              <div className="flex flex-col items-center text-center gap-5">
+              <div className="group flex h-full flex-col items-center text-center gap-5 px-4">
                 {/* Node */}
-                <div className="relative group">
+                <div className="relative">
                   <div className="absolute -inset-2 rounded-full bg-gold/[0.04] blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="relative w-20 h-20 rounded-full border border-gold/20 bg-background flex items-center justify-center shadow-[0_0_24px_rgba(201,168,76,0.05)] group-hover:border-gold/40 group-hover:shadow-[0_0_32px_rgba(201,168,76,0.10)] transition-all duration-400">
-                    <stage.icon className="w-7 h-7 text-gold/60 group-hover:text-gold/90 transition-colors duration-300" />
+                    <Icon className="w-7 h-7 text-gold/60 group-hover:text-gold/90 transition-colors duration-300" />
                   </div>
                   {/* Step indicator */}
                   <span className="absolute -top-0.5 -right-0.5 w-5 h-5 rounded-full bg-gold/10 border border-gold/25 flex items-center justify-center text-[9px] font-sans font-medium text-gold/70">
@@ -72,7 +80,7 @@ export function SystemFlow() {
                 </div>
 
                 {/* Mobile connector */}
-                {i < stages.length - 1 && (
+                {i < systemFlow.steps.length - 1 && (
                   <div className="md:hidden flex flex-col items-center gap-1">
                     <div className="w-px h-4 bg-gradient-to-b from-gold/25 to-transparent" />
                     <ChevronDown className="w-3 h-3 text-gold/30" />
@@ -80,18 +88,22 @@ export function SystemFlow() {
                 )}
 
                 {/* Label */}
-                <span className="font-display font-semibold text-sm text-white/80 tracking-wide">
+                <h3 className="font-display font-semibold text-lg text-white/85 tracking-wide">
                   {stage.label}
-                </span>
+                </h3>
+                <p className="font-sans text-sm leading-[1.75] text-white/48 max-w-[220px]">
+                  {stage.description}
+                </p>
               </div>
             </Reveal>
-          ))}
+            )
+          })}
         </div>
 
         {/* Tagline */}
         <Reveal delay={800}>
           <p className="text-center font-sans text-xs text-white/20 tracking-wider mt-14 md:mt-16">
-            Skip a layer, and the system breaks.
+            {systemFlow.closing}
           </p>
         </Reveal>
       </div>
@@ -109,24 +121,25 @@ function ChevronDown({ className }: { className?: string }) {
   )
 }
 
-function CompassIcon({ className }: { className?: string }) {
+function AlertIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="12" cy="12" r="10" />
-      <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" fill="currentColor" opacity="0.15" stroke="none" />
-      <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
+      <path d="M12 3 2.5 20h19L12 3Z" />
+      <path d="M12 9v5" />
+      <path d="M12 17h.01" />
     </svg>
   )
 }
 
-function BridgeIcon({ className }: { className?: string }) {
+function BreakIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M4 18h16" />
-      <path d="M4 18c0-6 4-10 8-10s8 4 8 10" />
-      <line x1="8" y1="18" x2="8" y2="13" />
-      <line x1="12" y1="18" x2="12" y2="8" />
-      <line x1="16" y1="18" x2="16" y2="13" />
+      <path d="M4 6h7" />
+      <path d="M13 6h7" />
+      <path d="M4 12h4" />
+      <path d="M10 12h10" />
+      <path d="M4 18h10" />
+      <path d="M16 18h4" />
     </svg>
   )
 }

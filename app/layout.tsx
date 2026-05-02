@@ -18,13 +18,13 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Gary L. Mariner II — AI Transformation & Communications Leader',
+  title: 'Gary L. Mariner II — AI Systems Architect for Business Operations',
   description:
-    'Bridging AI, people, and operations. Helping organizations navigate the intersection of technology, communication, and execution. Based in Atlanta, GA.',
+    'AI-powered systems for business operations, workflow clarity, and measurable growth. Based in Atlanta, GA.',
   openGraph: {
-    title: 'Gary L. Mariner II — AI Transformation & Communications Leader',
+    title: 'Gary L. Mariner II — AI Systems Architect for Business Operations',
     description:
-      'Bridging AI, people, and operations. Helping organizations navigate the intersection of technology, communication, and execution.',
+      'AI-powered systems for business operations, workflow clarity, and measurable growth.',
     url: 'https://garymariner.com',
     siteName: 'Gary L. Mariner II',
     type: 'website',
@@ -33,15 +33,15 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 600,
         height: 600,
-        alt: 'Gary L. Mariner II — AI Transformation & Communications Leader',
+        alt: 'Gary L. Mariner II — AI Systems Architect for Business Operations',
       },
     ],
   },
   twitter: {
     card: 'summary',
-    title: 'Gary L. Mariner II — AI Transformation & Communications Leader',
+    title: 'Gary L. Mariner II — AI Systems Architect for Business Operations',
     description:
-      'Bridging AI, people, and operations. Helping organizations navigate the intersection of technology, communication, and execution.',
+      'AI-powered systems for business operations, workflow clarity, and measurable growth.',
     images: ['/og-image.png'],
   },
   metadataBase: new URL('https://garymariner.com'),
