@@ -26,15 +26,7 @@ export function Reveal({ children, className, delay = 0, as: Tag = 'div', ...pro
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          const trigger = async () => {
-            const { gsap } = await import('gsap')
-            el.classList.add('is-visible')
-            gsap.fromTo(
-              el,
-              { autoAlpha: 0, y: 14 },
-              { autoAlpha: 1, y: 0, duration: 0.7, ease: 'power3.out' }
-            )
-          }
+          const trigger = () => el.classList.add('is-visible')
           if (delay > 0) {
             setTimeout(trigger, delay)
           } else {
@@ -43,7 +35,7 @@ export function Reveal({ children, className, delay = 0, as: Tag = 'div', ...pro
           observer.unobserve(el)
         }
       },
-      { threshold: 0.1 }
+      { rootMargin: '0px 0px -8% 0px', threshold: 0.01 }
     )
 
     observer.observe(el)

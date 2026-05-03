@@ -18,10 +18,10 @@ export function WhatIBuild() {
     <section className="system-section relative overflow-hidden bg-background px-5 py-12 md:px-8 md:py-16 lg:px-10">
       <div className="absolute inset-0 flow-wash" />
 
-      <div className="relative mx-auto max-w-site">
+      <div className="relative mx-auto w-full min-w-0 max-w-site">
         <div className="grid gap-4 lg:grid-cols-2">
           {services.map((service, index) => (
-            <Reveal key={service.title} delay={index * 120}>
+            <Reveal key={service.title} delay={index * 120} className="min-w-0">
               <article className="system-card noise-overlay group relative min-h-[300px] overflow-hidden rounded-xl border border-white/[0.08] bg-[#050505] transition-all duration-500 hover:scale-[1.01] hover:border-gold/25 hover:shadow-[0_22px_70px_rgba(0,0,0,0.42)] md:min-h-[360px]">
                 <ServiceVisual variant={index} />
                 <div className="absolute inset-x-4 bottom-4 md:inset-x-5 md:bottom-5">
@@ -29,10 +29,10 @@ export function WhatIBuild() {
                     <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-gold">
                       {service.tag}
                     </p>
-                    <h2 className="mt-3 font-display text-2xl font-bold leading-none text-white md:text-4xl">
+                    <h2 className="mt-3 break-words font-display text-2xl font-bold leading-none text-white md:text-4xl">
                       {service.title}
                     </h2>
-                    <p className="mt-2 max-w-md text-sm leading-6 text-white/60 md:text-base">
+                    <p className="mt-2 max-w-[18rem] break-words text-sm leading-6 text-white/60 md:max-w-md md:text-base">
                       {service.description}
                     </p>
                   </div>

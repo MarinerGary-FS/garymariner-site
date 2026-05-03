@@ -11,13 +11,13 @@ export function FinalCTA() {
       <div className="absolute left-1/2 top-1/2 h-[760px] w-[760px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/[0.07] blur-[140px]" />
       <div className="absolute inset-x-[10%] top-16 h-px bg-gradient-to-r from-transparent via-gold/25 to-transparent" />
 
-      <div className="relative mx-auto max-w-site">
+      <div className="relative mx-auto w-full min-w-0 max-w-site">
         <Reveal>
-          <div className="liquid-glass system-card noise-overlay mx-auto flex max-w-5xl flex-col items-center rounded-lg px-5 py-9 text-center md:px-10 md:py-12">
-            <h2 className="font-display text-4xl font-bold leading-[1.08] text-white md:text-5xl">
+          <div className="liquid-glass system-card noise-overlay mx-auto flex w-full max-w-5xl flex-col items-center rounded-lg px-5 py-8 text-center md:px-10 md:py-12">
+            <h2 className="max-w-[18rem] break-words font-display text-[2rem] font-bold leading-[1.12] text-white sm:max-w-full sm:text-4xl md:text-5xl">
               {finalCTA.headline}
             </h2>
-            <p className="mt-3 max-w-xl font-sans text-base leading-7 text-white/80">
+            <p className="mt-3 max-w-[18rem] break-words font-sans text-base leading-7 text-white/80 sm:max-w-xl">
               {finalCTA.supporting}
             </p>
 

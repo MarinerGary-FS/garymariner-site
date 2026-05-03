@@ -7,11 +7,11 @@ export function Hero() {
 
   return (
     <section
-      className="relative flex min-h-[820px] items-center overflow-hidden bg-background px-5 pb-8 pt-20 md:min-h-screen md:px-8 md:pt-24 lg:px-10"
+      className="relative flex items-start overflow-hidden bg-background px-5 pb-10 pt-24 md:min-h-screen md:items-center md:px-8 md:pb-8 md:pt-24 lg:px-10"
     >
       <SystemBackdrop />
 
-      <div className="relative z-10 mx-auto flex min-h-[650px] w-full max-w-[calc(100vw-2.5rem)] flex-col justify-center md:min-h-[calc(100vh-8rem)] md:max-w-site">
+      <div className="relative z-10 mx-auto flex w-full max-w-[calc(100vw-2.5rem)] flex-col justify-start md:min-h-[calc(100vh-8rem)] md:max-w-site md:justify-center">
         <div className="max-w-2xl md:pt-8">
           <div className="hero-animated mb-4 flex items-center gap-2" style={{ animationDelay: '80ms' }}>
             <span className="h-px w-10 bg-gold/70" />

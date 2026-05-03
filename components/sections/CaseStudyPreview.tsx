@@ -1,77 +1,29 @@
-'use client'
-
-import { useEffect, useRef } from 'react'
 import { Button } from '@/components/ui/Button'
 import { Reveal } from '@/components/ui/Reveal'
 import { siteContent } from '@/lib/content'
 
 export function CaseStudyPreview() {
   const { caseStudy } = siteContent
-  const sectionRef = useRef<HTMLElement>(null)
-
-  useEffect(() => {
-    const root = sectionRef.current
-    if (!root) return
-
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      root.querySelectorAll<HTMLElement>('.case-result').forEach((el) => {
-        el.style.opacity = '1'
-        el.style.transform = 'none'
-      })
-      return
-    }
-
-    let ctx: { revert: () => void } | undefined
-    const observer = new IntersectionObserver(
-      async ([entry]) => {
-        if (!entry.isIntersecting) return
-
-        const { gsap } = await import('gsap')
-        ctx = gsap.context(() => {
-          gsap.fromTo(
-            '.case-result',
-            { autoAlpha: 0, y: 14 },
-            {
-              autoAlpha: 1,
-              y: 0,
-              duration: 0.6,
-              ease: 'power3.out',
-              stagger: 0.1,
-            }
-          )
-        }, root)
-        observer.disconnect()
-      },
-      { threshold: 0.25 }
-    )
-
-    observer.observe(root)
-    return () => {
-      observer.disconnect()
-      ctx?.revert()
-    }
-  }, [])
 
   return (
     <section
-      ref={sectionRef}
       id="selected-work"
       className="system-section relative overflow-hidden bg-background px-5 py-12 md:px-8 md:py-16 lg:px-10"
     >
       <div className="absolute inset-0 flow-wash" />
       <div className="absolute left-1/2 top-0 h-full w-px bg-gradient-to-b from-transparent via-white/[0.08] to-transparent opacity-50" />
 
-      <div className="relative mx-auto grid max-w-site gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-8">
-        <Reveal className="max-w-xl">
+      <div className="relative mx-auto grid w-full min-w-0 max-w-site gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-8">
+        <Reveal className="min-w-0 max-w-xl">
           <p className="mb-4 font-sans text-xs font-medium uppercase tracking-[0.22em] text-gold">
             {caseStudy.company}
           </p>
-          <h2 className="max-w-2xl font-display text-4xl font-bold leading-[1.1] text-white md:text-5xl">
+          <h2 className="max-w-[18rem] break-words font-display text-[2rem] font-bold leading-[1.12] text-white sm:max-w-2xl sm:text-4xl md:text-5xl">
             {caseStudy.hook}
           </h2>
         </Reveal>
 
-        <Reveal delay={120}>
+        <Reveal delay={120} className="min-w-0">
           <div className="system-card noise-overlay relative min-h-[390px] overflow-hidden rounded-xl border border-white/[0.08] bg-[#040404] shadow-[0_24px_90px_rgba(0,0,0,0.42)] md:min-h-[480px]">
             <CaseBackdrop />
 
@@ -82,7 +34,7 @@ export function CaseStudyPreview() {
                     <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-white/36">
                       Build Logic
                     </p>
-                    <p className="mt-1.5 font-display text-base font-semibold text-white md:text-lg">
+                    <p className="mt-1.5 max-w-[18rem] break-words font-display text-base font-semibold text-white md:text-lg">
                       {caseStudy.systemBuilt}
                     </p>
                   </div>
@@ -91,7 +43,7 @@ export function CaseStudyPreview() {
                     external
                     variant="ghost"
                     size="sm"
-                    className="self-start sm:self-auto"
+                    className="w-full self-start sm:w-auto sm:self-auto"
                     trackingEvent="case_study_click"
                     trackingLabel={caseStudy.cta}
                   >
@@ -101,15 +53,17 @@ export function CaseStudyPreview() {
                 </div>
 
                 <div className="grid gap-3 sm:grid-cols-3">
-                  {caseStudy.outcomes.map((outcome) => (
-                    <div key={outcome.label} className="case-result">
-                      <p className="font-display text-2xl font-bold leading-none text-gold md:text-3xl">
+                  {caseStudy.outcomes.map((outcome, index) => (
+                    <Reveal key={outcome.label} delay={index * 70}>
+                      <div>
+                      <p className="max-w-[17rem] break-words font-display text-[1.7rem] font-bold leading-none text-gold md:text-3xl">
                         {outcome.value}
                       </p>
                       <p className="mt-2 text-xs leading-5 text-white/68">
                         {outcome.label}
                       </p>
-                    </div>
+                      </div>
+                    </Reveal>
                   ))}
                 </div>
               </div>
