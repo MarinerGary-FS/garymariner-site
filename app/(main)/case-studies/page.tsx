@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { PageHero } from '@/components/ui/PageHero'
+import { ArrowDown, ArrowUp, Bot, GitBranch, Inbox, Route, Zap } from 'lucide-react'
 import { SectionWrapper } from '@/components/ui/SectionWrapper'
 import { Reveal } from '@/components/ui/Reveal'
 import { Button } from '@/components/ui/Button'
@@ -17,47 +17,30 @@ const digitalHarmony = {
   company: 'Digital Harmony',
   industry: 'Global Customer Operations',
   engagement: 'AI Systems & Growth',
-  headline: 'From 500 Customers to 4,000 \u2014 While Cutting Agent Dependency 70%',
-  context:
-    'A global customer service operation with ~500 customers. The model was built on live agents \u2014 every new customer meant more staff, more cost, more complexity. Growth was becoming a liability.',
-  problem: {
-    body: 'The company needed to grow 8x without scaling the team 8x. The operation had no self-service infrastructure, inconsistent response times, and no structured approach to retention.',
-    signals: [
-      'Complete dependency on live agents',
-      'No AI or self-service infrastructure',
-      'Inconsistent response times across regions',
-      'Rising cost without proportional revenue',
-    ],
-  },
-  strategy: {
-    body: 'Working directly with the founder, the strategy was to redesign the entire operation \u2014 not patch it. Deploy AI chatbot systems, build multi-channel infrastructure, and turn reactive support into proactive customer experience.',
-    moves: [
-      'AI chatbot systems for frontline interactions',
-      'Multi-channel support (chat, social, SMS, email)',
-      'Automated ticketing, routing, and escalation',
-      'Self-service layers for routine inquiries',
-      'KPI tracking and performance visibility',
-    ],
-  },
-  execution: {
-    body: 'Implementation spanned the USA, France, and Pakistan. Close collaboration with the owner ensured every decision aligned with the business vision, not just operational convenience.',
-    items: [
-      'Deployed AI chatbot handling majority of frontline volume',
-      'Scaled from 500 to 4,000 customers without proportional headcount',
-      'Integrated automation without service disruption',
-      'Reduced agent dependency 70% through AI-assisted workflows',
-      'Built customer experience systems driving retention and upsell',
-    ],
-  },
-  results: [
-    { value: '8x', label: 'Customer growth', context: '500 to 4,000 through systems, not headcount' },
-    { value: '70%', label: 'Agent reduction', context: 'AI chatbot replaced manual handling' },
-    { value: '90%', label: 'CSAT increase', context: 'Faster, more consistent handling' },
-    { value: '$130K', label: 'Monthly revenue', context: 'Up from $75K' },
+  headline: 'Support load dropped 70%. Manual work was removed.',
+  subline: 'An AI system replaced the bottleneck and scaled output.',
+  problem: [
+    'Support requests were handled manually.',
+    'Response times were inconsistent.',
+    'Growth required hiring more staff.',
   ],
-  insight:
-    'They didn\u2019t need better tools. They needed a different operating model. The transformation worked because it started with how the organization operated \u2014 not what technology was available.',
-  quote: 'The real leverage is in systems, not headcount.',
+  system: [
+    { label: 'Intake', line: 'Requests enter a unified system layer.', icon: Inbox },
+    { label: 'AI Layer', line: 'AI intercepts and resolves common issues instantly.', icon: Bot },
+    { label: 'Workflow', line: 'Edge cases are routed automatically.', icon: Route },
+    { label: 'Output', line: 'Response time drops. Load decreases.', icon: Zap },
+  ],
+  results: [
+    { value: '70%', marker: '↓', label: 'Support Load Reduced', icon: ArrowDown },
+    { value: '90%', marker: '↑', label: 'Customer Satisfaction', icon: ArrowUp },
+    { value: '$130K/mo', marker: '', label: 'Revenue Output', icon: GitBranch },
+  ],
+  action: 'Most incoming requests were resolved without human intervention.',
+  meaning: [
+    'Systems replace effort.',
+    'Automation removes friction.',
+    'AI scales output without scaling cost.',
+  ],
 }
 
 // ─── Radco Data ─────────────────────────────────────────────────────────────
@@ -83,152 +66,250 @@ const radco = {
 export default function CaseStudiesPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Case Studies"
-        headline="Transformation in Practice"
-        supporting="Real engagements. Measurable outcomes. Built on systems design, workflow optimization, and strategic AI implementation."
-      />
-
       {/* ── Digital Harmony ─────────────────────────────────────────────── */}
-      <SectionWrapper className="bg-background" id="digital-harmony">
+      <SectionWrapper
+        className="relative overflow-hidden bg-background pt-24 md:pt-32 pb-14 md:pb-16"
+        innerClassName="max-w-[1120px]"
+        id="digital-harmony"
+      >
+        <div className="absolute inset-0 bg-grid opacity-[0.16]" />
+        <div className="absolute -right-24 top-24 h-72 w-72 rounded-full bg-gold/[0.055] blur-[110px]" />
+
         {/* Section label */}
-        <Reveal className="mb-12">
+        <div className="relative mb-9">
           <div className="flex flex-wrap items-center gap-3">
             <span className="text-xs font-sans font-medium text-gold uppercase tracking-[0.16em]">
-              {digitalHarmony.label}
+              Case Studies
             </span>
             <span className="w-1 h-1 rounded-full bg-white/15" />
             <span className="text-xs font-sans text-white/35 tracking-wide">
               {digitalHarmony.company}
             </span>
-            <span className="w-1 h-1 rounded-full bg-white/15" />
-            <span className="text-xs font-sans text-white/35 tracking-wide">
+            <span className="hidden sm:block w-1 h-1 rounded-full bg-white/15" />
+            <span className="hidden sm:inline text-xs font-sans text-white/35 tracking-wide">
               {digitalHarmony.industry}
             </span>
           </div>
-        </Reveal>
+        </div>
 
-        {/* Headline + context */}
-        <Reveal delay={60} className="mb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-10 lg:gap-20 items-start">
-            <h2 className="font-display font-bold text-display-xl text-white">
-              {digitalHarmony.headline}
-            </h2>
-            <p className="font-sans text-base text-white/60 leading-[1.85] lg:pt-2">
-              {digitalHarmony.context}
+        {/* Hero */}
+        <div className="relative">
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.08fr)_360px] gap-10 lg:gap-20 items-end">
+            <div className="min-w-0">
+              <p className="mb-5 text-xs font-sans font-medium uppercase tracking-[0.16em] text-white/32">
+                {digitalHarmony.label}
+              </p>
+              <h1 className="max-w-4xl font-display font-bold text-[clamp(2.2rem,7.2vw,7.25rem)] leading-[1.02] text-white">
+                {digitalHarmony.headline}
+              </h1>
+            </div>
+            <div className="min-w-0 lg:pb-3">
+              <p className="max-w-sm font-sans text-xl md:text-2xl font-medium leading-[1.25] text-white/68">
+                {digitalHarmony.subline}
+              </p>
+              <div className="mt-7 flex flex-col sm:flex-row lg:flex-col gap-3">
+                <Button href="https://www.marinernexus.com" external size="lg">
+                  Apply This System
+                </Button>
+                <Button href="https://www.marinernexus.com" external variant="ghost" size="lg">
+                  Enter Mariner Nexus
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </SectionWrapper>
+
+      <SectionWrapper
+        className="relative overflow-hidden bg-background py-14 md:py-18"
+        innerClassName="max-w-[1120px]"
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-[0.92fr_1.08fr] gap-10 lg:gap-16 items-center">
+          {/* Problem */}
+          <div>
+            <div className="min-w-0">
+              <p className="text-xs font-sans text-white/30 uppercase tracking-[0.15em] mb-7">
+                The Problem
+              </p>
+              <div className="space-y-5">
+                {digitalHarmony.problem.map((line) => (
+                  <p
+                    key={line}
+                    className="border-l border-white/14 pl-5 font-display text-xl md:text-3xl font-semibold leading-tight text-white"
+                  >
+                    {line}
+                  </p>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div className="relative min-h-[260px] min-w-0 overflow-hidden rounded-lg border border-white/10 bg-surface/70 p-6 md:p-8">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_24%,rgba(201,168,76,0.12),transparent_31%),linear-gradient(135deg,rgba(255,255,255,0.035),transparent_48%)]" />
+              <div className="relative h-[220px]">
+                <span className="absolute left-[7%] top-[18%] h-3 w-3 rounded-full bg-white/28 shadow-[0_0_24px_rgba(255,255,255,0.22)]" />
+                <span className="absolute left-[35%] top-[9%] h-2.5 w-2.5 rounded-full bg-gold/70 shadow-[0_0_28px_rgba(201,168,76,0.34)]" />
+                <span className="absolute left-[61%] top-[28%] h-4 w-4 rounded-full bg-white/20" />
+                <span className="absolute left-[82%] top-[13%] h-2 w-2 rounded-full bg-white/36" />
+                <span className="absolute left-[18%] top-[70%] h-4 w-4 rounded-full bg-white/18" />
+                <span className="absolute left-[47%] top-[62%] h-2 w-2 rounded-full bg-white/42" />
+                <span className="absolute left-[73%] top-[76%] h-3 w-3 rounded-full bg-gold/55" />
+                <span className="absolute left-[10%] top-[26%] h-px w-[31%] -rotate-12 bg-white/12" />
+                <span className="absolute left-[38%] top-[17%] h-px w-[30%] rotate-[19deg] bg-gold/25" />
+                <span className="absolute left-[60%] top-[38%] h-px w-[29%] -rotate-[30deg] bg-white/10" />
+                <span className="absolute left-[21%] top-[72%] h-px w-[27%] -rotate-[9deg] bg-white/10" />
+                <span className="absolute left-[48%] top-[68%] h-px w-[28%] rotate-[14deg] bg-gold/20" />
+                <span className="absolute bottom-2 left-0 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+                <span className="absolute right-4 top-5 hidden text-[10px] font-sans uppercase tracking-[0.2em] text-white/24 sm:block">
+                  Broken Flow
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </SectionWrapper>
+
+      <SectionWrapper
+        className="relative overflow-hidden bg-surface py-12 md:py-16 border-y border-border/40"
+        innerClassName="max-w-[1120px]"
+      >
+        {/* System */}
+        <Reveal className="mb-8">
+          <div className="flex items-end justify-between gap-8">
+            <p className="text-xs font-sans text-white/30 uppercase tracking-[0.15em]">
+              The System
             </p>
+            <span className="hidden md:block h-px flex-1 bg-gradient-to-r from-gold/25 to-transparent" />
           </div>
         </Reveal>
 
-        {/* Results — lead with proof */}
-        <Reveal delay={100}>
-          <div className="rounded-lg border border-border bg-surface overflow-hidden mb-16">
-            <div className="h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-border/50">
-              {digitalHarmony.results.map((r) => (
-                <div key={r.label} className="flex flex-col gap-4 px-6 md:px-8 py-12">
-                  <span className="font-display font-bold text-display-3xl text-gold-gradient leading-none">
-                    {r.value}
-                  </span>
-                  <div className="flex flex-col gap-1.5">
-                    <span className="font-sans text-sm font-medium text-white/75">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+          {digitalHarmony.system.map((block, index) => {
+            const Icon = block.icon
+            return (
+              <Reveal key={block.label} delay={index * 55}>
+                <div className="liquid-glass group h-full rounded-lg p-5 transition-transform duration-400 hover:scale-[1.02]">
+                  <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-md border border-white/10 bg-white/[0.035] text-gold">
+                    <Icon size={18} strokeWidth={1.8} />
+                  </div>
+                  <p className="mb-3 text-xs font-sans uppercase tracking-[0.14em] text-white/34">
+                    {block.label}
+                  </p>
+                  <p className="font-sans text-sm font-medium leading-snug text-white/72">
+                    {block.line}
+                  </p>
+                </div>
+              </Reveal>
+            )
+          })}
+        </div>
+      </SectionWrapper>
+
+      <SectionWrapper
+        className="relative overflow-hidden bg-background py-14 md:py-18"
+        innerClassName="max-w-[1120px]"
+      >
+        {/* Results */}
+        <Reveal className="mb-8">
+          <div className="flex items-center justify-between gap-6">
+            <p className="text-xs font-sans text-gold uppercase tracking-[0.16em]">
+              Results
+            </p>
+            <p className="text-xs font-sans text-white/38">Measured within months.</p>
+          </div>
+        </Reveal>
+
+        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-4 md:gap-5">
+          {digitalHarmony.results.map((r, index) => {
+            const Icon = r.icon
+            return (
+              <Reveal
+                key={r.label}
+                delay={index * 80}
+                className={index === 0 ? 'lg:row-span-2' : ''}
+              >
+                <div className="group relative flex h-full min-h-[220px] flex-col justify-between overflow-hidden rounded-lg border border-white/10 bg-surface p-6 md:p-8 transition-transform duration-400 hover:scale-[1.02]">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_8%,rgba(201,168,76,0.16),transparent_35%),linear-gradient(135deg,rgba(255,255,255,0.05),transparent_44%)] opacity-80" />
+                  <div className="relative flex items-center justify-between">
+                    <Icon size={22} strokeWidth={1.7} className="text-gold/75" />
+                    <span className="h-px w-20 bg-gradient-to-r from-transparent to-white/16" />
+                  </div>
+                  <div className="relative mt-12">
+                    <div className="flex items-start gap-3">
+                      <span className="font-display font-bold text-[clamp(3.75rem,13vw,10.5rem)] leading-[0.78] text-gold-gradient">
+                        {r.value}
+                      </span>
+                      {r.marker && (
+                        <span className="mt-2 font-display text-[clamp(2.75rem,6vw,5.5rem)] leading-none text-gold/70">
+                          {r.marker}
+                        </span>
+                      )}
+                    </div>
+                    <p className="mt-6 max-w-xs font-sans text-base md:text-xl font-semibold leading-tight text-white">
                       {r.label}
-                    </span>
-                    <span className="font-sans text-xs text-white/40 leading-[1.6]">
-                      {r.context}
-                    </span>
+                    </p>
                   </div>
                 </div>
-              ))}
+              </Reveal>
+            )
+          })}
+        </div>
+      </SectionWrapper>
+
+      <SectionWrapper
+        className="relative overflow-hidden bg-background pt-2 pb-14 md:pb-18"
+        innerClassName="max-w-[1120px]"
+      >
+        {/* System in action + meaning */}
+        <div className="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-6 lg:gap-12 items-start">
+          <Reveal>
+            <div className="rounded-lg border border-white/10 bg-surface/65 p-6 md:p-8">
+              <p className="text-xs font-sans text-white/30 uppercase tracking-[0.15em] mb-5">
+                System in Action
+              </p>
+              <p className="font-display text-3xl md:text-4xl font-semibold leading-tight text-white">
+                {digitalHarmony.action}
+              </p>
             </div>
-          </div>
-        </Reveal>
+          </Reveal>
 
-        {/* Problem / Strategy / Execution — structured narrative */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 lg:divide-x lg:divide-border/40">
-
-          {/* Problem */}
           <Reveal delay={80}>
-            <div className="flex flex-col gap-6 lg:pr-10 pb-12 lg:pb-0">
-              <div>
-                <p className="text-xs font-sans text-white/30 uppercase tracking-[0.15em] mb-4">
-                  The Problem
-                </p>
-                <p className="font-sans text-sm text-white/60 leading-[1.85] mb-6">
-                  {digitalHarmony.problem.body}
-                </p>
-              </div>
-              <ul className="flex flex-col gap-3">
-                {digitalHarmony.problem.signals.map((s) => (
-                  <li key={s} className="flex items-start gap-3">
-                    <span className="mt-[0.45em] w-1 h-1 rounded-full bg-white/20 shrink-0" />
-                    <span className="font-sans text-xs text-white/45 leading-[1.7]">{s}</span>
-                  </li>
+            <div className="lg:pt-10">
+              <p className="text-xs font-sans text-white/30 uppercase tracking-[0.15em] mb-5">
+                What This Means
+              </p>
+              <div className="space-y-4">
+                {digitalHarmony.meaning.map((line) => (
+                  <p
+                    key={line}
+                    className="font-display text-2xl md:text-3xl font-semibold leading-tight text-white/82"
+                  >
+                    {line}
+                  </p>
                 ))}
-              </ul>
-            </div>
-          </Reveal>
-
-          {/* Strategy */}
-          <Reveal delay={140}>
-            <div className="flex flex-col gap-6 lg:px-10 py-12 lg:py-0 border-t lg:border-0 border-border/30">
-              <div>
-                <p className="text-xs font-sans text-white/30 uppercase tracking-[0.15em] mb-4">
-                  The Strategy
-                </p>
-                <p className="font-sans text-sm text-white/60 leading-[1.85] mb-6">
-                  {digitalHarmony.strategy.body}
-                </p>
               </div>
-              <ul className="flex flex-col gap-3">
-                {digitalHarmony.strategy.moves.map((m) => (
-                  <li key={m} className="flex items-start gap-3">
-                    <span className="mt-[0.45em] w-1 h-1 rounded-full bg-gold/40 shrink-0" />
-                    <span className="font-sans text-xs text-white/60 leading-[1.7]">{m}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Reveal>
-
-          {/* Execution */}
-          <Reveal delay={200}>
-            <div className="flex flex-col gap-6 lg:pl-10 pt-12 lg:pt-0 border-t lg:border-0 border-border/30">
-              <div>
-                <p className="text-xs font-sans text-white/30 uppercase tracking-[0.15em] mb-4">
-                  The Execution
-                </p>
-                <p className="font-sans text-sm text-white/60 leading-[1.85] mb-6">
-                  {digitalHarmony.execution.body}
-                </p>
-              </div>
-              <ul className="flex flex-col gap-3">
-                {digitalHarmony.execution.items.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <span className="mt-[0.45em] w-1 h-1 rounded-full bg-white/20 shrink-0" />
-                    <span className="font-sans text-xs text-white/45 leading-[1.7]">{item}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
           </Reveal>
         </div>
 
-        {/* Insight / Pull quote */}
-        <Reveal delay={100}>
-          <div className="mt-16 pt-14 border-t border-border/40">
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-10 lg:gap-20 items-center">
-              <blockquote>
-                <p className="font-display font-bold text-display-lg text-white mb-6">
-                  &ldquo;{digitalHarmony.quote}&rdquo;
-                </p>
-                <p className="text-xs font-sans text-white/30 uppercase tracking-[0.15em]">
-                  Key Insight — Digital Harmony Transformation
-                </p>
-              </blockquote>
-              <p className="font-sans text-sm text-white/55 leading-[1.9]">
-                {digitalHarmony.insight}
-              </p>
+        {/* Conversion bridge */}
+        <Reveal delay={120}>
+          <div className="mt-10 md:mt-12 rounded-lg border border-gold/25 bg-[linear-gradient(135deg,rgba(201,168,76,0.105),rgba(255,255,255,0.025)_42%,rgba(255,255,255,0.01))] p-6 md:p-8 lg:p-10">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-7 lg:gap-10 items-center">
+              <h2 className="max-w-3xl font-display text-4xl md:text-display-lg font-bold leading-tight text-white">
+                If your business depends on manual work,
+                <br />
+                <span className="text-white/58">this is already costing you.</span>
+              </h2>
+              <div className="flex flex-col sm:flex-row lg:flex-col gap-3">
+                <Button href="https://www.marinernexus.com" external size="lg">
+                  Apply This System
+                </Button>
+                <Button href="https://www.marinernexus.com" external variant="ghost" size="lg">
+                  Enter Mariner Nexus
+                </Button>
+              </div>
             </div>
           </div>
         </Reveal>
@@ -290,25 +371,22 @@ export default function CaseStudiesPage() {
       </SectionWrapper>
 
       {/* CTA */}
-      <section className="relative px-5 md:px-8 lg:px-10 py-20 md:py-24 bg-background border-t border-border/40 overflow-hidden">
+      <section className="relative px-5 md:px-8 lg:px-10 py-14 md:py-18 bg-background border-t border-border/40 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-gold/[0.06] blur-[120px] pointer-events-none" />
         <div className="relative max-w-site mx-auto">
           <Reveal>
-            <div className="max-w-2xl">
-              <p className="text-xs font-sans text-white/30 uppercase tracking-[0.18em] mb-6">
-                What&apos;s Next
-              </p>
-              <h2 className="font-display font-bold text-display-xl text-white mb-8">
-                These outcomes came from systems thinking.
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-7 lg:gap-12 items-center">
+              <h2 className="max-w-3xl font-display text-4xl md:text-display-lg font-bold leading-tight text-white">
+                If your business depends on manual work,
                 <br />
-                <span className="text-white/55">Yours can too.</span>
+                <span className="text-white/58">this is already costing you.</span>
               </h2>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button href="/contact" size="lg">
-                  Start a Conversation
+              <div className="flex flex-col sm:flex-row lg:flex-col gap-3">
+                <Button href="https://www.marinernexus.com" external size="lg">
+                  Apply This System
                 </Button>
-                <Button href="/services" variant="ghost" size="lg">
-                  View Focus Areas
+                <Button href="https://www.marinernexus.com" external variant="ghost" size="lg">
+                  Enter Mariner Nexus
                 </Button>
               </div>
             </div>
