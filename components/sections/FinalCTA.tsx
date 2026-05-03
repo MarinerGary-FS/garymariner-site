@@ -6,22 +6,22 @@ export function FinalCTA() {
   const { finalCTA } = siteContent
 
   return (
-    <section className="relative overflow-hidden bg-background px-5 py-20 md:px-8 md:py-24 lg:px-10">
+    <section className="relative overflow-hidden bg-background px-5 py-14 md:px-8 md:py-16 lg:px-10">
       <div className="absolute inset-0 bg-grid opacity-15" />
       <div className="absolute left-1/2 top-1/2 h-[760px] w-[760px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/[0.07] blur-[140px]" />
       <div className="absolute inset-x-[10%] top-16 h-px bg-gradient-to-r from-transparent via-gold/25 to-transparent" />
 
       <div className="relative mx-auto max-w-site">
         <Reveal>
-          <div className="liquid-glass mx-auto flex max-w-5xl flex-col items-center rounded-lg px-5 py-10 text-center md:px-10 md:py-16">
-            <h2 className="font-display text-4xl font-bold leading-[1.05] text-white md:text-5xl lg:text-6xl">
+          <div className="liquid-glass mx-auto flex max-w-5xl flex-col items-center rounded-lg px-5 py-9 text-center md:px-10 md:py-12">
+            <h2 className="font-display text-4xl font-bold leading-[1.08] text-white md:text-5xl">
               {finalCTA.headline}
             </h2>
-            <p className="mt-4 max-w-xl font-sans text-base leading-7 text-white/80">
+            <p className="mt-3 max-w-xl font-sans text-base leading-7 text-white/80">
               {finalCTA.supporting}
             </p>
 
-            <div className="mt-6 flex w-full flex-col gap-2 sm:w-auto sm:flex-row">
+            <div className="mt-5 flex w-full flex-col gap-2 sm:w-auto sm:flex-row">
               <Button
                 href={finalCTA.primaryCTA.href}
                 external

@@ -32,13 +32,13 @@ export function SystemFlow() {
   }, [])
 
   return (
-    <section id="system-flow" className="relative overflow-hidden bg-background px-5 py-20 md:px-8 md:py-24 lg:px-10">
+    <section id="system-flow" className="relative overflow-hidden bg-background px-5 py-14 md:px-8 md:py-16 lg:px-10">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(201,168,76,0.065),transparent_34%)]" />
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
       <div className="relative mx-auto max-w-site">
-        <Reveal className="mx-auto mb-8 max-w-3xl text-center">
-          <h2 className="font-display text-[clamp(2rem,4vw,4rem)] font-bold leading-[1.05] text-white">
+        <Reveal className="mx-auto mb-6 max-w-3xl text-center">
+          <h2 className="font-display text-4xl font-bold leading-[1.08] text-white md:text-5xl">
             {systemFlow.title}
           </h2>
         </Reveal>
@@ -56,7 +56,7 @@ export function SystemFlow() {
 
           {systemFlow.steps.map((stage, i) => (
             <Reveal key={stage.label} delay={100 + i * 100} className="relative z-10">
-              <div className="liquid-glass group flex min-h-[210px] flex-col justify-between rounded-lg p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-gold/25 hover:bg-white/[0.04] md:min-h-[250px]">
+              <div className="liquid-glass group flex min-h-[178px] flex-col justify-between rounded-lg p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-gold/25 hover:bg-white/[0.04] md:min-h-[210px]">
                 <div className="flex items-start justify-between">
                   <span className="font-sans text-[10px] font-medium uppercase tracking-[0.22em] text-white/28">
                     0{i + 1}
@@ -65,7 +65,7 @@ export function SystemFlow() {
                 </div>
 
                 <div>
-                  <h3 className="font-display text-2xl font-semibold text-white md:text-3xl">
+                  <h3 className="font-display text-xl font-semibold text-white md:text-2xl">
                     {stage.label}
                   </h3>
                   <p className="mt-2 max-w-[16rem] font-sans text-sm leading-6 text-white/60">

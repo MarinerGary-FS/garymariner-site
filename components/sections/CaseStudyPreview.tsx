@@ -56,14 +56,14 @@ export function CaseStudyPreview() {
     <section
       ref={sectionRef}
       id="selected-work"
-      className="relative overflow-hidden bg-background px-5 py-20 md:px-8 md:py-24 lg:px-10"
+      className="relative overflow-hidden bg-background px-5 py-14 md:px-8 md:py-16 lg:px-10"
     >
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_32%,rgba(91,164,255,0.08),transparent_32%)]" />
 
       <div className="relative mx-auto grid max-w-site gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-8">
         <Reveal className="max-w-xl">
-          <p className="mb-5 font-sans text-xs font-medium uppercase tracking-[0.22em] text-gold">
+          <p className="mb-4 font-sans text-xs font-medium uppercase tracking-[0.22em] text-gold">
             {caseStudy.company}
           </p>
           <h2 className="max-w-2xl font-display text-4xl font-bold leading-[1.1] text-white md:text-5xl">
@@ -72,17 +72,17 @@ export function CaseStudyPreview() {
         </Reveal>
 
         <Reveal delay={120}>
-          <div className="relative min-h-[520px] overflow-hidden rounded-xl border border-white/[0.08] bg-[#040404] shadow-[0_24px_90px_rgba(0,0,0,0.42)]">
+          <div className="relative min-h-[440px] overflow-hidden rounded-xl border border-white/[0.08] bg-[#040404] shadow-[0_24px_90px_rgba(0,0,0,0.42)] md:min-h-[480px]">
             <CaseBackdrop />
 
             <div className="absolute inset-x-4 bottom-4 md:inset-x-5 md:bottom-5">
               <div className="liquid-glass rounded-lg p-4">
-                <div className="mb-4 flex flex-col gap-2 border-b border-white/[0.08] pb-4 sm:flex-row sm:items-end sm:justify-between">
+                <div className="mb-3 flex flex-col gap-2 border-b border-white/[0.08] pb-3 sm:flex-row sm:items-end sm:justify-between">
                   <div>
                     <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-white/36">
                       System Built
                     </p>
-                    <p className="mt-2 font-display text-lg font-semibold text-white">
+                    <p className="mt-1.5 font-display text-base font-semibold text-white md:text-lg">
                       {caseStudy.systemBuilt}
                     </p>
                   </div>

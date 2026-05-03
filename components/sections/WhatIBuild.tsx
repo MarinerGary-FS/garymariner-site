@@ -15,24 +15,24 @@ const services = [
 
 export function WhatIBuild() {
   return (
-    <section className="relative overflow-hidden bg-background px-5 py-20 md:px-8 md:py-24 lg:px-10">
+    <section className="relative overflow-hidden bg-background px-5 py-14 md:px-8 md:py-16 lg:px-10">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
       <div className="relative mx-auto max-w-site">
         <div className="grid gap-4 lg:grid-cols-2">
           {services.map((service, index) => (
             <Reveal key={service.title} delay={index * 120}>
-              <article className="group relative min-h-[400px] overflow-hidden rounded-xl border border-white/[0.08] bg-[#050505] transition-all duration-500 hover:-translate-y-0.5 hover:scale-[1.02] hover:border-gold/25 hover:shadow-[0_22px_70px_rgba(0,0,0,0.42)]">
+              <article className="group relative min-h-[320px] overflow-hidden rounded-xl border border-white/[0.08] bg-[#050505] transition-all duration-500 hover:-translate-y-0.5 hover:scale-[1.01] hover:border-gold/25 hover:shadow-[0_22px_70px_rgba(0,0,0,0.42)] md:min-h-[360px]">
                 <ServiceVisual variant={index} />
                 <div className="absolute inset-x-4 bottom-4 md:inset-x-5 md:bottom-5">
                   <div className="liquid-glass rounded-lg p-5">
                     <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-gold">
                       {service.tag}
                     </p>
-                    <h2 className="mt-3 font-display text-3xl font-bold leading-none text-white md:text-4xl">
+                    <h2 className="mt-3 font-display text-2xl font-bold leading-none text-white md:text-4xl">
                       {service.title}
                     </h2>
-                    <p className="mt-3 max-w-md text-sm leading-6 text-white/60 md:text-base">
+                    <p className="mt-2 max-w-md text-sm leading-6 text-white/60 md:text-base">
                       {service.description}
                     </p>
                   </div>

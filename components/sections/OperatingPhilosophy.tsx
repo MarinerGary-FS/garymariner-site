@@ -1,33 +1,63 @@
+import { Boxes, BrainCircuit, TrendingUp, Users } from 'lucide-react'
 import { Reveal } from '@/components/ui/Reveal'
-import { siteContent } from '@/lib/content'
 
 export function OperatingPhilosophy() {
-  const { philosophy } = siteContent
-
-  const statements = [
-    philosophy.statement,
-    ...philosophy.elaboration
-      .split('.')
-      .map((line) => line.trim())
-      .filter(Boolean)
-      .map((line) => `${line}.`),
+  const principles = [
+    {
+      title: 'Systems over software.',
+      icon: Boxes,
+    },
+    {
+      title: 'Intelligence over imitation.',
+      icon: BrainCircuit,
+    },
+    {
+      title: 'Leverage over headcount.',
+      icon: Users,
+    },
+    {
+      title: 'Growth by design.',
+      icon: TrendingUp,
+    },
   ]
 
   return (
-    <section className="relative overflow-hidden bg-background px-5 py-20 md:px-8 md:py-24 lg:px-10">
-      <div className="absolute inset-0 bg-grid opacity-15" />
-      <div className="absolute left-1/2 top-1/2 h-[720px] w-[720px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.045]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(201,168,76,0.07),transparent_36%)]" />
+    <section className="relative overflow-hidden border-y border-white/[0.06] bg-background px-5 py-14 md:px-8 md:py-16 lg:px-10">
+      <div className="absolute inset-0 bg-grid opacity-10" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(201,168,76,0.07),transparent_32%),radial-gradient(circle_at_82%_70%,rgba(88,166,255,0.065),transparent_30%)]" />
 
       <div className="relative mx-auto max-w-site">
-        <div className="mx-auto max-w-5xl">
-          {statements.map((statement, index) => (
-            <Reveal key={statement} delay={index * 90}>
-              <p className="border-t border-white/[0.08] py-5 font-display text-3xl font-bold leading-[1.05] text-white md:py-7 md:text-5xl lg:text-6xl">
-                {statement}
-              </p>
-            </Reveal>
-          ))}
+        <Reveal className="mb-5 flex items-center gap-3">
+          <span className="h-px w-8 bg-gold/70" />
+          <p className="text-[10px] font-medium uppercase tracking-[0.24em] text-gold">
+            03 / Philosophy
+          </p>
+        </Reveal>
+
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {principles.map((principle, index) => {
+            const Icon = principle.icon
+
+            return (
+              <Reveal key={principle.title} delay={index * 70}>
+                <article className="group relative min-h-[154px] overflow-hidden rounded-lg border border-white/[0.08] bg-white/[0.025] p-4 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-gold/25 hover:bg-white/[0.04]">
+                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-gold/70 via-sky-300/50 to-transparent opacity-80" />
+                  <div className="mb-8 flex items-center justify-between">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-md border border-white/[0.08] bg-black/30 text-gold">
+                      <Icon className="h-4 w-4" strokeWidth={1.5} />
+                    </span>
+                    <span className="font-sans text-[10px] font-medium uppercase tracking-[0.2em] text-white/28">
+                      0{index + 1}
+                    </span>
+                  </div>
+
+                  <h2 className="font-display text-xl font-semibold leading-[1.12] text-white md:text-2xl">
+                    {principle.title}
+                  </h2>
+                </article>
+              </Reveal>
+            )
+          })}
         </div>
       </div>
     </section>
