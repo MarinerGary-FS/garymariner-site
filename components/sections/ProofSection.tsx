@@ -9,11 +9,12 @@ export function ProofSection() {
   const [digitalHarmony, radco] = proof.cases
 
   return (
-    <SectionWrapper className="bg-background border-t border-border/40">
+    <SectionWrapper className="system-section overflow-hidden bg-background py-12 md:py-16">
+      <div className="absolute inset-0 flow-wash" />
       {/* Section header */}
       <Reveal className="mb-8">
         <p className="text-xs font-sans text-white/30 uppercase tracking-[0.18em] mb-5">
-          Soft Exit
+          Proof Layer
         </p>
         <h2 className="font-display font-bold text-display-lg text-white max-w-lg">
           Credibility before the conversation.
@@ -25,7 +26,7 @@ export function ProofSection() {
 
       {/* Digital Harmony — Primary */}
       <Reveal delay={50}>
-        <div className="rounded-lg border border-border bg-surface overflow-hidden mb-4">
+        <div className="system-card noise-overlay rounded-lg border border-white/[0.08] bg-surface overflow-hidden mb-4">
           <div className="flex items-center gap-3 px-5 md:px-6 pt-5 pb-4 border-b border-border/50">
             <h3 className="font-display font-semibold text-base text-white">
               {digitalHarmony.name}
@@ -55,7 +56,7 @@ export function ProofSection() {
 
       {/* Radco — Supporting */}
       <Reveal delay={150}>
-        <div className="rounded-lg border border-border/60 bg-surface/50 overflow-hidden">
+        <div className="system-card noise-overlay rounded-lg border border-border/60 bg-surface/50 overflow-hidden">
           <div className="flex items-center gap-3 px-5 md:px-6 pt-5 pb-4 border-b border-border/40">
             <h3 className="font-display font-semibold text-sm text-white/80">
               {radco.name}

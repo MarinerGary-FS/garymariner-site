@@ -31,13 +31,13 @@ export function Button({
   trackingLabel,
 }: ButtonProps) {
   const base =
-    'inline-flex items-center justify-center font-sans font-semibold tracking-wide transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background'
+    'inline-flex items-center justify-center font-sans font-semibold tracking-wide transition-all duration-500 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background'
 
   const variants = {
     primary:
-      'bg-gold text-background hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(201,168,76,0.25)] active:translate-y-0 active:shadow-[0_2px_8px_rgba(201,168,76,0.15)] active:bg-gold-dark',
+      'bg-gold text-background hover:scale-[1.015] hover:bg-gold-light hover:shadow-[0_10px_34px_rgba(201,168,76,0.28)] active:scale-[1.005] active:shadow-[0_2px_8px_rgba(201,168,76,0.15)] active:bg-gold-dark',
     ghost:
-      'border border-white/15 text-white hover:border-white/30 hover:bg-white/[0.04] hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(0,0,0,0.3)] active:translate-y-0 active:bg-white/[0.06]',
+      'border border-white/15 text-white hover:scale-[1.015] hover:border-white/30 hover:bg-white/[0.04] hover:shadow-[0_4px_18px_rgba(0,0,0,0.32)] active:scale-[1.005] active:bg-white/[0.06]',
     text: 'text-gold hover:text-gold-light underline-offset-4 hover:underline p-0 rounded-sm',
   }
 

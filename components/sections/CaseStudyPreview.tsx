@@ -56,10 +56,10 @@ export function CaseStudyPreview() {
     <section
       ref={sectionRef}
       id="selected-work"
-      className="relative overflow-hidden bg-background px-5 py-14 md:px-8 md:py-16 lg:px-10"
+      className="system-section relative overflow-hidden bg-background px-5 py-12 md:px-8 md:py-16 lg:px-10"
     >
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_32%,rgba(91,164,255,0.08),transparent_32%)]" />
+      <div className="absolute inset-0 flow-wash" />
+      <div className="absolute left-1/2 top-0 h-full w-px bg-gradient-to-b from-transparent via-white/[0.08] to-transparent opacity-50" />
 
       <div className="relative mx-auto grid max-w-site gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-8">
         <Reveal className="max-w-xl">
@@ -72,7 +72,7 @@ export function CaseStudyPreview() {
         </Reveal>
 
         <Reveal delay={120}>
-          <div className="relative min-h-[440px] overflow-hidden rounded-xl border border-white/[0.08] bg-[#040404] shadow-[0_24px_90px_rgba(0,0,0,0.42)] md:min-h-[480px]">
+          <div className="system-card noise-overlay relative min-h-[390px] overflow-hidden rounded-xl border border-white/[0.08] bg-[#040404] shadow-[0_24px_90px_rgba(0,0,0,0.42)] md:min-h-[480px]">
             <CaseBackdrop />
 
             <div className="absolute inset-x-4 bottom-4 md:inset-x-5 md:bottom-5">
@@ -80,7 +80,7 @@ export function CaseStudyPreview() {
                 <div className="mb-3 flex flex-col gap-2 border-b border-white/[0.08] pb-3 sm:flex-row sm:items-end sm:justify-between">
                   <div>
                     <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-white/36">
-                      System Built
+                      Build Logic
                     </p>
                     <p className="mt-1.5 font-display text-base font-semibold text-white md:text-lg">
                       {caseStudy.systemBuilt}
@@ -100,13 +100,13 @@ export function CaseStudyPreview() {
                   </Button>
                 </div>
 
-                <div className="grid gap-2 sm:grid-cols-3">
+                <div className="grid gap-3 sm:grid-cols-3">
                   {caseStudy.outcomes.map((outcome) => (
                     <div key={outcome.label} className="case-result">
                       <p className="font-display text-2xl font-bold leading-none text-gold md:text-3xl">
                         {outcome.value}
                       </p>
-                      <p className="mt-2 text-xs leading-5 text-white/60">
+                      <p className="mt-2 text-xs leading-5 text-white/68">
                         {outcome.label}
                       </p>
                     </div>

@@ -32,13 +32,13 @@ export function SystemFlow() {
   }, [])
 
   return (
-    <section id="system-flow" className="relative overflow-hidden bg-background px-5 py-14 md:px-8 md:py-16 lg:px-10">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(201,168,76,0.065),transparent_34%)]" />
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+    <section id="system-flow" className="system-section relative overflow-hidden bg-background px-5 py-12 md:px-8 md:py-16 lg:px-10">
+      <div className="absolute inset-0 flow-wash" />
+      <div className="absolute left-1/2 top-0 h-full w-px bg-gradient-to-b from-white/[0.08] via-gold/[0.08] to-transparent opacity-50" />
 
       <div className="relative mx-auto max-w-site">
-        <Reveal className="mx-auto mb-6 max-w-3xl text-center">
-          <h2 className="font-display text-4xl font-bold leading-[1.08] text-white md:text-5xl">
+        <Reveal className="mx-auto mb-6 max-w-[20rem] text-center sm:max-w-3xl">
+          <h2 className="font-display text-xl font-bold leading-[1.16] text-white sm:text-4xl md:text-5xl">
             {systemFlow.title}
           </h2>
         </Reveal>
@@ -56,7 +56,7 @@ export function SystemFlow() {
 
           {systemFlow.steps.map((stage, i) => (
             <Reveal key={stage.label} delay={100 + i * 100} className="relative z-10">
-              <div className="liquid-glass group flex min-h-[178px] flex-col justify-between rounded-lg p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-gold/25 hover:bg-white/[0.04] md:min-h-[210px]">
+              <div className="liquid-glass system-card noise-overlay group flex min-h-[160px] flex-col justify-between rounded-lg p-4 transition-all duration-500 hover:scale-[1.01] hover:border-gold/25 hover:bg-white/[0.04] md:min-h-[210px]">
                 <div className="flex items-start justify-between">
                   <span className="font-sans text-[10px] font-medium uppercase tracking-[0.22em] text-white/28">
                     0{i + 1}

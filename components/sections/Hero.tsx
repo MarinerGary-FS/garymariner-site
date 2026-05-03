@@ -1,78 +1,49 @@
-'use client'
-
-import { useEffect, useRef } from 'react'
 import { Button } from '@/components/ui/Button'
 import { siteContent } from '@/lib/content'
 
 export function Hero() {
   const { hero } = siteContent
-  const heroRef = useRef<HTMLElement>(null)
-
-  useEffect(() => {
-    const root = heroRef.current
-    if (!root) return
-
-    let ctx: { revert: () => void } | undefined
-
-    const run = async () => {
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        root.querySelectorAll<HTMLElement>('.hero-reveal').forEach((el) => {
-          el.style.opacity = '1'
-          el.style.transform = 'none'
-        })
-        return
-      }
-
-      const { gsap } = await import('gsap')
-      ctx = gsap.context(() => {
-        gsap.fromTo(
-          '.hero-reveal',
-          { autoAlpha: 0, y: 14 },
-          {
-            autoAlpha: 1,
-            y: 0,
-            duration: 0.85,
-            ease: 'power3.out',
-            stagger: 0.1,
-          }
-        )
-      }, root)
-    }
-
-    run()
-
-    return () => ctx?.revert()
-  }, [])
+  const headlineLines = hero.headline.split('\n')
 
   return (
     <section
-      ref={heroRef}
-      className="relative flex min-h-screen items-center overflow-hidden bg-background px-5 pb-8 pt-24 md:px-8 lg:px-10"
+      className="relative flex min-h-[820px] items-center overflow-hidden bg-background px-5 pb-8 pt-20 md:min-h-screen md:px-8 md:pt-24 lg:px-10"
     >
       <SystemBackdrop />
 
-      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-8rem)] w-full max-w-[calc(100vw-2.5rem)] flex-col justify-center md:max-w-site">
-        <div className="max-w-2xl">
-          <div className="hero-reveal mb-4 flex items-center gap-2">
+      <div className="relative z-10 mx-auto flex min-h-[650px] w-full max-w-[calc(100vw-2.5rem)] flex-col justify-center md:min-h-[calc(100vh-8rem)] md:max-w-site">
+        <div className="max-w-2xl md:pt-8">
+          <div className="hero-animated mb-4 flex items-center gap-2" style={{ animationDelay: '80ms' }}>
             <span className="h-px w-10 bg-gold/70" />
             <p className="text-xs font-medium uppercase tracking-[0.22em] text-gold">
               {hero.eyebrow}
             </p>
           </div>
 
-          <h1 className="hero-reveal max-w-2xl whitespace-pre-line break-words font-display text-[2.45rem] font-bold leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
-            {hero.headline}
+          <h1 className="max-w-2xl break-words font-display text-[2.4rem] font-bold leading-[1.04] tracking-tight text-white drop-shadow-[0_8px_42px_rgba(0,0,0,0.72)] sm:text-5xl md:text-6xl lg:text-7xl">
+            {headlineLines.map((line, index) => (
+              <span
+                key={line}
+                className="hero-animated block"
+                style={{ animationDelay: `${180 + index * 120}ms` }}
+              >
+                {line}
+              </span>
+            ))}
           </h1>
 
-          <p className="hero-reveal mt-4 max-w-[19rem] font-sans text-base leading-7 text-white/70 sm:max-w-md">
+          <p
+            className="hero-animated mt-4 max-w-[19rem] font-sans text-base leading-7 text-white/70 sm:max-w-md"
+            style={{ animationDelay: '460ms' }}
+          >
             {hero.supporting}
           </p>
 
-          <div className="hero-reveal mobile-hero-control mt-4 flex w-[calc(100vw-2.5rem)] max-w-[calc(100vw-2.5rem)] flex-col gap-2 sm:w-auto sm:max-w-full sm:flex-row">
+          <div className="mt-5 flex w-full max-w-full flex-col gap-2 sm:w-auto sm:flex-row">
             <Button
               href={hero.primaryCTA.href}
               size="lg"
-              className="w-full max-w-full sm:w-auto"
+              className="w-[calc(100vw-2.5rem)] max-w-full sm:w-auto"
               trackingEvent="hero_cta_click"
               trackingLabel={hero.primaryCTA.label}
             >
@@ -83,7 +54,7 @@ export function Hero() {
               href={hero.secondaryCTA.href}
               variant="ghost"
               size="lg"
-              className="w-full max-w-full sm:w-auto"
+              className="w-[calc(100vw-2.5rem)] max-w-full sm:w-auto"
               trackingEvent="selected_work_click"
               trackingLabel={hero.secondaryCTA.label}
             >
@@ -92,8 +63,8 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="pointer-events-none mobile-hero-control mt-6 grid w-[calc(100vw-2.5rem)] max-w-[calc(100vw-2.5rem)] gap-3 sm:w-full sm:max-w-full md:absolute md:bottom-10 md:left-0 md:right-0 md:mt-0 md:grid-cols-[minmax(220px,340px)_minmax(0,1fr)_minmax(220px,300px)] md:items-end">
-          <div className="hero-reveal liquid-glass pointer-events-auto rounded-lg p-4">
+        <div className="pointer-events-none mt-6 grid w-full max-w-full gap-3 sm:w-full sm:max-w-full md:absolute md:bottom-10 md:left-0 md:right-0 md:mt-0 md:grid-cols-[minmax(220px,340px)_minmax(0,1fr)_minmax(220px,300px)] md:items-end">
+          <div className="liquid-glass system-card noise-overlay pointer-events-auto rounded-lg p-4">
             <div className="grid grid-cols-1 gap-2 sm:grid-cols-3 sm:gap-2 md:gap-3">
               <ProofStat value="70%" marker="↓" label="Support Load" />
               <ProofStat value="90%" marker="↑" label="Satisfaction" />
@@ -101,18 +72,18 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="hidden md:block" />
+          <div className="hidden h-px bg-gradient-to-r from-gold/16 via-white/12 to-sky-300/16 md:block" />
 
           <a
             href="https://www.marinernexus.com"
             target="_blank"
             rel="noopener noreferrer"
             data-track-event="bridge_cta_click"
-            data-track-label="Enter the System"
-            className="hero-reveal liquid-glass pointer-events-auto group flex items-center justify-between gap-3 rounded-lg p-4 text-white transition-all duration-300 hover:border-gold/35 hover:bg-white/[0.04]"
+            data-track-label="Enter Mariner Nexus"
+            className="liquid-glass system-card noise-overlay pointer-events-auto group flex items-center justify-between gap-3 rounded-lg p-4 text-white transition-all duration-500 hover:scale-[1.015] hover:border-gold/35 hover:bg-white/[0.04]"
           >
-            <span className="font-display text-base font-semibold">Enter the System</span>
-            <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-gold transition-all duration-300 group-hover:translate-x-1 group-hover:border-gold/50">
+            <span className="relative z-10 font-display text-base font-semibold">Enter Mariner Nexus</span>
+            <span className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-gold transition-all duration-500 group-hover:translate-x-1 group-hover:border-gold/50 group-hover:bg-gold/[0.08]">
               <ArrowRight className="h-4 w-4" />
             </span>
           </a>
@@ -125,7 +96,7 @@ export function Hero() {
 function SystemBackdrop() {
   return (
     <div className="absolute inset-0 overflow-hidden">
-      <div className="absolute inset-0 bg-grid opacity-25" />
+      <div className="hero-drift absolute inset-[-2%] bg-grid opacity-25" />
       <div className="absolute inset-0 cinematic-vignette" />
       <div className="absolute left-1/2 top-1/2 h-[88vw] max-h-[920px] min-h-[520px] w-[88vw] min-w-[520px] max-w-[920px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-70 system-orbit" />
       <div className="absolute left-1/2 top-1/2 h-[54vw] max-h-[620px] min-h-[360px] w-[54vw] min-w-[360px] max-w-[620px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.07]" />

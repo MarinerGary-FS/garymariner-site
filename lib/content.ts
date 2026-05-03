@@ -16,8 +16,8 @@ export const siteContent = {
     supporting:
       'I design AI-powered operating systems that turn complexity into growth infrastructure.',
     tagline: 'Strategy grounded in operations. Systems built for measurable growth.',
-    primaryCTA: { label: 'See How This Works', href: '#system-flow' },
-    secondaryCTA: { label: 'View Selected Work', href: '#selected-work' },
+    primaryCTA: { label: 'See the System', href: '#system-flow' },
+    secondaryCTA: { label: 'View Proof', href: '#selected-work' },
   },
 
   authority: {
@@ -132,7 +132,7 @@ export const siteContent = {
   caseStudy: {
     label: 'Flagship Transformation',
     company: 'Digital Harmony',
-    hook: 'They didn\u2019t need more staff. They needed a system.',
+    hook: 'Support load dropped. Satisfaction rose. Revenue scaled.',
     title: 'A customer operation rebuilt around AI-driven workflows and automation.',
     problem: 'Growth was constrained by disconnected support workflows, manual handoffs, and customer experience friction.',
     summary: 'The solution was a structured operating layer that connected AI workflows, multi-channel communication, analytics, and execution logic.',
@@ -140,12 +140,12 @@ export const siteContent = {
     outcome: 'A leaner customer operation with faster response paths, stronger satisfaction, and revenue growth without proportional headcount.',
     quote: 'The real leverage is in systems, not headcount.',
     outcomes: [
-      { value: '70%', label: 'Reduction in live agent dependency' },
-      { value: '90%', label: 'Increase in customer satisfaction' },
-      { value: '$130K', label: 'Monthly revenue, up from $75K' },
+      { value: '70%', label: 'Support load dropped.' },
+      { value: '90%', label: 'Customer satisfaction increased.' },
+      { value: '$75K -> $130K/mo', label: 'Revenue scaled.' },
     ],
     href: 'https://www.marinernexus.com/',
-    cta: 'Build a system like this',
+    cta: 'See the Build Logic',
   },
 
   philosophy: {
@@ -172,7 +172,7 @@ export const siteContent = {
     headline: 'If this feels different, it should.',
     supporting: 'Most businesses don\u2019t need another website. They need a system that actually works.',
     primaryCTA: { label: 'Apply This To Your Business', href: 'https://www.marinernexus.com/' },
-    secondaryCTA: { label: 'Start Optimization', href: 'https://www.marinernexus.com/' },
+    secondaryCTA: { label: 'Enter Mariner Nexus', href: 'https://www.marinernexus.com/' },
   },
 
   footer: {
