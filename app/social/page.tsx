@@ -1,14 +1,14 @@
 import type { Metadata } from 'next'
-import { SocialContactCard } from './SocialContactCard'
+import { SocialPortal } from '@/components/social/SocialPortal'
 
 export const metadata: Metadata = {
-  title: 'Gary L. Mariner II — Digital Contact Card',
+  title: 'Gary L. Mariner II — AI Systems Architect',
   description:
-    'Save Gary L. Mariner II’s contact information, connect with Mariner Nexus, and book a consultation.',
+    'Enter the system. Gary L. Mariner II builds cinematic, high-performance digital ecosystems for brands, businesses, and individuals ready to scale.',
   openGraph: {
-    title: 'Gary L. Mariner II — Digital Contact Card',
+    title: 'Gary L. Mariner II — AI Systems Architect',
     description:
-      'Save Gary L. Mariner II’s contact information, connect with Mariner Nexus, and book a consultation.',
+      'A cinematic command-entry portal into Gary L. Mariner II’s ecosystem.',
     url: 'https://www.garymariner.com/social',
     siteName: 'Gary L. Mariner II',
     type: 'website',
@@ -17,5 +17,5 @@ export const metadata: Metadata = {
 }
 
 export default function SocialPage() {
-  return <SocialContactCard />
+  return <SocialPortal />
 }
