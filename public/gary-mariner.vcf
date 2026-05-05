@@ -1,0 +1,17 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Gary L. Mariner II
+N:Mariner;Gary;L.;II;
+ORG:Mariner Nexus
+TITLE:Founder & CTO
+TEL;TYPE=CELL,VOICE:+14048041250
+EMAIL;TYPE=WORK:gary@marinernexus.com
+EMAIL;TYPE=INTERNET:gary@undugufoundation.org
+URL;TYPE=Website:https://www.garymariner.com
+URL;TYPE=Business:https://www.marinernexus.com
+URL;TYPE=Undugu:https://www.undugu.org
+URL;TYPE=LinkedIn:https://www.linkedin.com/in/gary-mariner-ii/
+URL;TYPE=Instagram:https://www.instagram.com/theleodynasty/
+URL;TYPE=TikTok:https://www.tiktok.com/@theleodynasty
+NOTE:AI Systems Architect for Business Operations.
+END:VCARD
