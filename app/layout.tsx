@@ -19,13 +19,24 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Gary L. Mariner II — AI Systems Architect for Business Operations',
+  title: 'Gary L. Mariner II — AI Systems Architect',
   description:
-    'AI-powered systems for business operations, workflow clarity, and measurable growth. Based in Atlanta, GA.',
+    'AI transformation consultant, digital ecosystem architect, and business automation strategist building AI workflow automation, nonprofit digital infrastructure, and conversion-ready systems from Atlanta.',
+  keywords: [
+    'Gary L. Mariner II',
+    'AI Systems Architect',
+    'AI transformation consultant',
+    'digital ecosystem architect',
+    'business automation strategist',
+    'Mariner Nexus founder',
+    'Atlanta AI systems consultant',
+    'nonprofit digital infrastructure',
+    'AI workflow automation',
+  ],
   openGraph: {
-    title: 'Gary L. Mariner II — AI Systems Architect for Business Operations',
+    title: 'Gary L. Mariner II — AI Systems Architect',
     description:
-      'AI-powered systems for business operations, workflow clarity, and measurable growth.',
+      'AI workflow automation, digital infrastructure, and business operations architecture for modern organizations.',
     url: 'https://garymariner.com',
     siteName: 'Gary L. Mariner II',
     type: 'website',
@@ -40,9 +51,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary',
-    title: 'Gary L. Mariner II — AI Systems Architect for Business Operations',
+    title: 'Gary L. Mariner II — AI Systems Architect',
     description:
-      'AI-powered systems for business operations, workflow clarity, and measurable growth.',
+      'AI workflow automation, digital infrastructure, and business operations architecture for modern organizations.',
     images: ['/og-image.png'],
   },
   metadataBase: new URL('https://garymariner.com'),

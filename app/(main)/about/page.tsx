@@ -6,53 +6,53 @@ import { Button } from '@/components/ui/Button'
 import { siteContent } from '@/lib/content'
 
 export const metadata: Metadata = {
-  title: 'About — Gary L. Mariner II',
+  title: 'About Gary L. Mariner II — AI Systems Architect',
   description:
-    'AI Transformation & Communications Leader. 15+ years in operational leadership, cross-functional communication, and systems thinking.',
+    'Gary L. Mariner II designs AI systems, automation, digital infrastructure, and execution architecture for modern operators and organizations.',
 }
 
 const background = [
   {
     period: '15+ Years',
-    title: 'Frontline to Leadership',
+    title: 'Operations Before Architecture',
     description:
-      'Built and led teams across sales, customer operations, and business development. Learned what leadership decisions actually look like when they reach the people doing the work.',
+      'Built and led teams across sales, customer operations, property operations, and business development. The systems work is grounded in how execution actually happens.',
   },
   {
     period: 'Global',
-    title: 'The Communication Gap',
+    title: 'Communication as Infrastructure',
     description:
-      'Led operations spanning the USA, Europe, and Asia. The consistent lesson: most failure isn\u2019t competence or technology. It\u2019s communication. The strategy was sound. What was missing was the translation layer.',
+      'Led work spanning the USA, Europe, and Asia. The consistent lesson: many operational problems are communication and workflow problems before they are technology problems.',
   },
   {
     period: 'The Shift',
-    title: 'From Managing to Redesigning',
+    title: 'From Managing Work to Redesigning Work',
     description:
-      'When AI matured, the opportunity was clear: not new tools, but a rethinking of how organizations could be structured. Shifted from running operations to rebuilding them.',
+      'As AI matured, the opportunity became clear: not more tools, but better execution architecture. The focus shifted from running operations to rebuilding how operations scale.',
   },
   {
     period: 'Today',
-    title: 'AI + People + Communication',
+    title: 'AI Systems for Business Operations',
     description:
-      'Works where technology meets human behavior, and where leadership vision meets operational reality. Every engagement starts with understanding people.',
+      'Designs AI workflows, automation, CRM pathways, websites, and digital infrastructure around business outcomes, team behavior, and measurable operational improvement.',
   },
 ]
 
 const differentiators = [
   {
-    title: 'Translator Between Floors',
+    title: 'Operator-Level Translation',
     description:
-      'Most transformation fails because nobody translates between the executive room and the frontline. I do.',
+      'Translates executive goals into workflows, automations, content systems, and infrastructure teams can actually use.',
   },
   {
-    title: 'AI Serves People',
+    title: 'AI Applied to Real Work',
     description:
-      'Systems designed around the technology instead of the humans don\u2019t work. Full stop.',
+      'AI is used to reduce manual workload, improve consistency, and increase visibility. It is not used as a novelty layer.',
   },
   {
-    title: 'Three Disciplines. One Person.',
+    title: 'Strategy, Communication, Implementation',
     description:
-      'Communication. Operations. Technology. I bridge all three \u2014 that\u2019s where lasting change lives.',
+      'The work combines operational leadership, strategic communication, and technical execution into one accountable architecture process.',
   },
 ]
 
@@ -63,8 +63,8 @@ export default function AboutPage() {
     <>
       <PageHero
         eyebrow="About Gary"
-        headline="Built on Operations. Driven by Communication."
-        supporting="15+ years of operational leadership, now applied to AI transformation and the human side of organizational change."
+        headline="An operator who builds AI systems for execution."
+        supporting="Gary L. Mariner II helps organizations modernize operations through AI systems, automation, digital infrastructure, and practical implementation architecture."
       />
 
       {/* Bio narrative */}
@@ -79,18 +79,18 @@ export default function AboutPage() {
                   Gary L. Mariner II
                 </p>
                 <p className="text-sm font-sans text-gold/80 tracking-wide">
-                  AI Transformation & Communications Leader
+                  AI Systems Architect for Business Operations
                 </p>
               </div>
 
               <div className="divider" />
 
               <p className="font-sans text-sm text-white/45 leading-[1.85]">
-                Works at the intersection of AI, people, and operations \u2014 aligning technology with how teams actually work and communicate.
+                Builds the connective layer between strategy, websites, automation, AI workflows, CRM routing, and business operations.
               </p>
 
               <div className="flex flex-col gap-3 mt-2">
-                {['15+ Years in Operational Leadership', 'AI-Driven Transformation', 'Global Cross-Functional Teams', 'Strategic Communications'].map((item) => (
+                {['15+ Years in Operational Leadership', 'AI Workflow & Automation Strategy', 'Nonprofit and Customer Operations Systems', 'Conversion-Ready Digital Infrastructure'].map((item) => (
                   <div key={item} className="flex items-center gap-3">
                     <span className="w-1.5 h-1.5 rounded-full bg-gold/50 shrink-0" />
                     <span className="text-xs font-sans text-white/60 tracking-wide">{item}</span>
@@ -100,7 +100,7 @@ export default function AboutPage() {
 
               <div className="mt-4">
                 <Button href="/contact" size="sm">
-                  Start a Conversation
+                  Start the Architecture Review
                 </Button>
               </div>
             </div>
@@ -136,10 +136,10 @@ export default function AboutPage() {
       <SectionWrapper className="bg-surface border-t border-border/40">
         <Reveal className="mb-14">
           <p className="text-xs font-sans text-white/30 uppercase tracking-[0.18em] mb-5">
-            The Difference
+            Why Organizations Trust This Work
           </p>
           <h2 className="font-display font-bold text-display-lg text-white max-w-xl">
-            Why This Approach Works
+            Experience That Connects Strategy to Execution
           </h2>
         </Reveal>
 
@@ -167,10 +167,10 @@ export default function AboutPage() {
             Beyond Work
           </p>
           <h2 className="font-display font-bold text-display-lg text-white mb-8">
-            Systems thinking extends beyond business.
+            Systems thinking extends into community infrastructure.
           </h2>
           <p className="font-sans text-base text-white/55 leading-[1.85] mb-10">
-            I serve as Technology Committee Chair for the Undugu Society in Nairobi, helping integrate technology and AI into community-focused initiatives for street children and vulnerable youth. The same principles that transform organizations can serve the people who need them most.
+            I serve as Technology Committee Chair for the Undugu Society in Nairobi, helping integrate technology and AI into community-focused initiatives for street children and vulnerable youth. That work includes digital infrastructure, event pathways, community communication, and practical systems modernization.
           </p>
           <Button href="https://undugu.org" variant="text" size="sm" external>
             Learn about Undugu Society &rarr;
@@ -223,14 +223,14 @@ export default function AboutPage() {
                 What&apos;s Next
               </p>
               <h2 className="font-display font-bold text-display-xl text-white mb-10">
-                Interested in working together?
+                Need clearer systems behind the work?
               </h2>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button href="/contact" size="lg">
-                  Start a Conversation
+                  Start the Architecture Review
                 </Button>
                 <Button href="/case-studies" variant="ghost" size="lg">
-                  Explore My Work
+                  View Transformation Work
                 </Button>
               </div>
             </div>

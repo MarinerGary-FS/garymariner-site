@@ -5,23 +5,23 @@ import { BookingButton } from '@/components/ui/BookingButton'
 import { ContactForm } from '@/components/sections/ContactForm'
 
 export const metadata: Metadata = {
-  title: 'Contact — Gary L. Mariner II',
+  title: 'Start the Architecture Review — Gary L. Mariner II',
   description:
-    'Start a conversation about AI transformation, operations, communications, or organizational systems design.',
+    'Start an architecture review for AI workflow automation, digital infrastructure, operations modernization, CRM pathways, or conversion website systems.',
 }
 
 const expectations = [
   {
-    title: 'Clear Agenda',
-    description: 'Every consultation has a defined purpose. We focus on your business, your challenges, and what systems can realistically improve.',
+    title: 'Clear Operational Focus',
+    description: 'The conversation centers on where manual workload, disconnected tools, unclear workflows, or weak conversion pathways are costing the business.',
   },
   {
-    title: 'No Sales Pressure',
-    description: 'The goal of the first conversation is to determine whether there\'s a real fit — not to close a deal.',
+    title: 'Practical Fit Check',
+    description: 'The goal is to determine whether AI systems, automation, or digital infrastructure can create meaningful improvement.',
   },
   {
-    title: 'Actionable Outcome',
-    description: 'You\'ll leave the conversation with clarity on what\'s creating friction in your operations and what the path forward looks like.',
+    title: 'Actionable Next Step',
+    description: 'You leave with clearer diagnosis of the execution gap and a practical path for what should be built, connected, or simplified.',
   },
 ]
 
@@ -40,7 +40,7 @@ export default function ContactPage() {
           >
             <span className="w-6 h-px bg-gold/50" />
             <span className="text-xs font-sans font-medium text-gold/80 uppercase tracking-[0.18em]">
-              Let&apos;s Work Together
+              Architecture Review
             </span>
           </div>
 
@@ -48,13 +48,13 @@ export default function ContactPage() {
             className="font-display font-bold text-display-2xl text-white max-w-2xl mb-7"
             style={{ animation: 'fadeUp 0.75s ease 0.18s both' }}
           >
-            Start a Conversation.
+            Start the Architecture Review.
           </h1>
           <p
             className="font-sans text-base text-white/60 leading-[1.85] max-w-xl"
             style={{ animation: 'fadeUp 0.75s ease 0.3s both' }}
           >
-            Whether you&apos;re ready to move or just exploring what&apos;s possible — this is where it starts.
+            Bring the operational friction, digital infrastructure gap, or AI workflow opportunity. We will map what should become a system.
           </p>
         </div>
       </section>
@@ -75,13 +75,13 @@ export default function ContactPage() {
                     Book Directly
                   </p>
                   <h2 className="font-display font-bold text-display-md text-white leading-tight mb-3">
-                    Schedule a Consultation
+                    Apply This To Your Business
                   </h2>
                   <p className="font-sans text-sm text-white/60 leading-[1.8] mb-7">
-                    30 minutes. Focused on your business. No templates, no pitch decks — just a direct conversation about what you&apos;re trying to solve.
+                    30 minutes focused on your business. No templates, no pitch decks. Just a direct review of what you are trying to solve and what system could improve it.
                   </p>
                   <BookingButton size="md">
-                    Choose a Meeting Type →
+                    Start the Architecture Review
                   </BookingButton>
                 </div>
               </div>
@@ -138,7 +138,7 @@ export default function ContactPage() {
                   Send a Message
                 </p>
                 <p className="font-sans text-sm text-white/45 leading-[1.8]">
-                  Prefer to write first? Describe what you&apos;re working through and I&apos;ll respond directly.
+                  Prefer to write first? Describe the workflow, automation, website, CRM, or operations challenge and I&apos;ll respond directly.
                 </p>
               </div>
               <ContactForm />

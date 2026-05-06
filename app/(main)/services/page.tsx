@@ -5,71 +5,101 @@ import { Reveal } from '@/components/ui/Reveal'
 import { Button } from '@/components/ui/Button'
 
 export const metadata: Metadata = {
-  title: 'Focus Areas — Gary L. Mariner II',
+  title: 'Systems I Build — Gary L. Mariner II',
   description:
-    'AI Transformation Strategy, Digital Infrastructure, Operations & Workflow Design, and Strategic Communications. Built for organizational impact.',
+    'AI workflow architecture, website-to-CRM ecosystems, automation dashboards, conversion website systems, nonprofit infrastructure, and executive brand platforms.',
 }
 
 const domains = [
   {
     id: 'ai-systems',
     number: '01',
-    label: 'AI Transformation Strategy',
-    headline: 'Align AI to Your Organization',
+    label: 'AI Workflow Architecture',
+    headline: 'AI Systems for Operational Scale',
     summary:
-      'Most AI adoption fails not because of the technology, but because there\u2019s no strategy connecting it to how the organization actually operates.',
-    what: 'I map workflows, identify where AI creates real leverage, and design implementation strategy that fits your operations and your people.',
+      'Most AI adoption stalls because the tool is never connected to how work actually moves. The result is experimentation without operational lift.',
+    what: 'I map real workflows, identify where AI can remove manual work, and design practical implementation paths for intake, response, routing, analysis, and execution.',
     outcomes: [
-      'AI strategy tied to operational outcomes',
-      'Automation opportunities that reduce manual overhead',
-      'Workflow redesigns for speed and consistency',
+      'AI workflows tied to measurable business outcomes',
+      'Automation that reduces manual workload',
+      'More consistent execution across repeated processes',
     ],
-    for: 'Leaders who need AI strategy, not experimentation.',
+    for: 'Operators who need AI applied to real work, not another pilot.',
   },
   {
     id: 'digital-infrastructure',
     number: '02',
-    label: 'Digital Infrastructure',
-    headline: 'Infrastructure That Reflects Operational Maturity',
+    label: 'Website-to-CRM Ecosystems',
+    headline: 'Websites That Connect to the Business',
     summary:
-      'If your digital presence doesn\u2019t reflect your capabilities, you\u2019re leaving credibility and opportunity on the table.',
-    what: 'Modern digital infrastructure \u2014 websites, systems architecture, and tooling that are clean, scalable, and aligned with how the organization operates.',
+      'A website should not be an isolated brochure. It should capture demand, route intent, and support the operational process behind the offer.',
+    what: 'I design digital ecosystems that connect content, conversion paths, booking, CRM routing, follow-up, and reporting into one execution layer.',
     outcomes: [
-      'Digital presence that builds trust immediately',
-      'Architecture supporting real workflows',
-      'Scalable without unnecessary complexity',
+      'Conversion-ready digital infrastructure',
+      'Cleaner handoffs from visitor interest to business action',
+      'CRM and booking pathways that support scale',
     ],
-    for: 'Organizations whose digital presence no longer reflects their capabilities.',
+    for: 'Organizations whose website needs to function as a business engine.',
   },
   {
     id: 'operations',
     number: '03',
-    label: 'Operations & Workflow Design',
-    headline: 'Replace Friction with Structure',
+    label: 'Automation & Operational Dashboards',
+    headline: 'Make Work Visible, Repeatable, and Easier to Manage',
     summary:
-      'Operational friction compounds quietly until it becomes expensive. Unclear processes and fragmented communication create overhead that grows faster than the organization.',
-    what: 'I map how work actually flows, identify friction points, and redesign the processes and accountability structures that remove overhead.',
+      'Manual updates, unclear status, and fragmented tools create overhead that grows quietly until it slows the business.',
+    what: 'I structure automations, dashboards, and workflow visibility so teams can see what matters, reduce repetitive coordination, and act faster.',
     outcomes: [
       'Streamlined workflows with less manual intervention',
-      'Clearer accountability and faster decisions',
-      'Reduced overhead without adding headcount',
+      'Clearer ownership, status, and performance visibility',
+      'Reduced overhead without adding unnecessary headcount',
     ],
-    for: 'Organizations where manual processes and unclear ownership limit performance.',
+    for: 'Teams with too much manual coordination and too little operational visibility.',
   },
   {
     id: 'communications',
     number: '04',
-    label: 'Strategic Communications',
-    headline: 'Communication That Creates Alignment',
+    label: 'Conversion Website Systems',
+    headline: 'Premium Websites Built Around Proof and Action',
     summary:
-      'Misaligned teams, unclear messaging, and inconsistent stakeholder communication quietly erode performance and trust.',
-    what: 'Communication frameworks that create alignment, reduce friction, and give leadership the structure to operate at scale.',
+      'A strong digital presence must establish authority quickly, prove capability, and guide the visitor toward a clear next action.',
+    what: 'I build executive websites around positioning, proof, case studies, conversion pathways, analytics, and content architecture.',
     outcomes: [
-      'Internal systems that create team clarity',
-      'Stakeholder frameworks that build trust',
-      'Communication that scales with the organization',
+      'Clearer positioning and stronger immediate legitimacy',
+      'Case study-driven trust architecture',
+      'Lead capture and booking systems built into the experience',
     ],
-    for: 'Leadership teams where communication gaps limit growth.',
+    for: 'Founders, consultants, and organizations that need authority and conversion.',
+  },
+  {
+    id: 'nonprofit-infrastructure',
+    number: '05',
+    label: 'Nonprofit Digital Infrastructure',
+    headline: 'Digital Systems for Mission-Driven Operations',
+    summary:
+      'Nonprofit platforms often need to support donors, events, volunteers, partners, and community pathways without creating administrative drag.',
+    what: 'I connect website architecture, event check-ins, donation pathways, CRM routing, and communications into infrastructure that supports the mission.',
+    outcomes: [
+      'Cleaner community and donor journeys',
+      'Operational pathways for events, outreach, and CRM follow-up',
+      'Digital infrastructure that can expand with the organization',
+    ],
+    for: 'Community organizations and nonprofits modernizing how they engage and operate.',
+  },
+  {
+    id: 'executive-brand-platforms',
+    number: '06',
+    label: 'Executive Brand Platforms',
+    headline: 'Authority Platforms for Operators and Leaders',
+    summary:
+      'Executive brands need more than a polished bio. They need a platform that clarifies expertise, shows proof, and supports business development.',
+    what: 'I build positioning, content architecture, proof systems, social ecosystems, and consultation pathways for executive-level trust.',
+    outcomes: [
+      'Sharper executive positioning',
+      'More credible proof and thought leadership structure',
+      'A clear path from attention to consultation',
+    ],
+    for: 'Operators, founders, and leaders whose digital presence must create trust quickly.',
   },
 ]
 
@@ -100,9 +130,9 @@ export default function ServicesPage() {
   return (
     <>
       <PageHero
-        eyebrow="Focus Areas"
-        headline="Where Strategy Meets Implementation"
-        supporting="Four interconnected domains. Each focused on reducing friction, improving alignment, and building infrastructure that works."
+        eyebrow="Systems I Build"
+        headline="AI, automation, websites, and operations built as one execution layer."
+        supporting="Each system is designed to reduce friction, improve visibility, and turn digital infrastructure into measurable operational improvement."
       />
 
       {/* Why AI Fails — Authority section */}
@@ -110,11 +140,11 @@ export default function ServicesPage() {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-14 lg:gap-20 items-start">
           <Reveal>
             <div className="lg:sticky lg:top-36">
-              <p className="text-xs font-sans text-gold/70 uppercase tracking-[0.18em] mb-8">
-                A Point of View on AI
+                <p className="text-xs font-sans text-gold/70 uppercase tracking-[0.18em] mb-8">
+                Executive AI Clarity
               </p>
               <h2 className="font-display font-bold text-display-lg text-white leading-[1.1]">
-                Why Most AI Initiatives Fail — and What Actually Works
+                AI only creates value when it is connected to operations.
               </h2>
             </div>
           </Reveal>
@@ -126,7 +156,7 @@ export default function ServicesPage() {
                   What leaders get wrong
                 </h3>
                 <p className="font-sans text-sm text-white/55 leading-[1.85]">
-                  AI adoption starts with the technology \u2014 a vendor pitch, a competitor announcement. Leadership buys in. IT implements. Nothing changes. The organization wasn&apos;t ready, and nobody translated the strategy into something teams could use.
+                  AI adoption often starts with a vendor pitch or a competitor announcement. Leadership buys in. Tools are deployed. The work barely changes because the implementation was never tied to workflows, ownership, or business outcomes.
                 </p>
               </div>
             </Reveal>
@@ -137,7 +167,7 @@ export default function ServicesPage() {
                   Why it keeps happening
                 </h3>
                 <p className="font-sans text-sm text-white/55 leading-[1.85]">
-                  AI exposes every misalignment an organization has been tolerating. Broken handoffs. Unclear ownership. Communication that works at 50 people but collapses at 200. The technology doesn&apos;t create these problems \u2014 it makes them impossible to ignore.
+                  AI exposes broken handoffs, unclear ownership, and disconnected communication. The technology does not create those problems. It makes them expensive and visible.
                 </p>
               </div>
             </Reveal>
@@ -148,7 +178,7 @@ export default function ServicesPage() {
                   What actually works
                 </h3>
                 <p className="font-sans text-sm text-white/55 leading-[1.85]">
-                  Start with people and workflows, not tools. Map how work actually moves. Identify where communication breaks down. Then design AI that fits the reality of how your teams operate. Treat it as an organizational design problem, not a procurement exercise.
+                  Start with the business process. Map how work moves. Identify where manual effort, slow communication, or missing data creates friction. Then build AI workflows, automation, and infrastructure around that reality.
                 </p>
               </div>
             </Reveal>
@@ -269,11 +299,11 @@ export default function ServicesPage() {
                 Most engagements begin with a single conversation.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button href="/contact" size="lg">
-                  Start a Conversation
+                  <Button href="/contact" size="lg">
+                  Apply This To Your Business
                 </Button>
                 <Button href="/case-studies" variant="ghost" size="lg">
-                  Explore My Work
+                  View Transformation Work
                 </Button>
               </div>
             </div>

@@ -2,14 +2,34 @@ import { Reveal } from '@/components/ui/Reveal'
 
 const services = [
   {
-    tag: 'Architecture',
-    title: 'System Design',
-    description: 'Build the operating layer that connects everything.',
+    tag: 'AI Workflow Architecture',
+    title: 'AI workflows for operational scale.',
+    description: 'For operators carrying repetitive work. Maps AI to intake, response, routing, and execution so teams reduce manual workload.',
   },
   {
-    tag: 'Execution',
-    title: 'Automation + AI',
-    description: 'Remove manual friction and scale output.',
+    tag: 'Website-to-CRM Ecosystems',
+    title: 'Digital pathways that do not stop at the page.',
+    description: 'For organizations with disconnected lead capture. Connects websites, booking, CRM, and follow-up into a business engine.',
+  },
+  {
+    tag: 'Automation & Dashboards',
+    title: 'Operational visibility without extra coordination.',
+    description: 'For teams managing too many manual updates. Builds automation and dashboards that clarify ownership, status, and next action.',
+  },
+  {
+    tag: 'Conversion Website Systems',
+    title: 'Executive websites built to convert.',
+    description: 'For brands that need authority and demand capture. Turns case studies, offers, and proof into consultation-ready architecture.',
+  },
+  {
+    tag: 'Nonprofit Digital Infrastructure',
+    title: 'Community systems that route action.',
+    description: 'For mission-driven organizations. Connects events, donations, volunteers, CRM pathways, and communications into usable infrastructure.',
+  },
+  {
+    tag: 'Executive Brand Platforms',
+    title: 'Authority platforms for modern leaders.',
+    description: 'For executives and founders. Builds a premium digital presence around positioning, proof, trust, and clear conversion.',
   },
 ]
 
@@ -19,19 +39,28 @@ export function WhatIBuild() {
       <div className="absolute inset-0 flow-wash" />
 
       <div className="relative mx-auto max-w-site">
-        <div className="grid gap-4 lg:grid-cols-2">
+        <Reveal className="mb-10 max-w-3xl">
+          <p className="mb-4 font-sans text-xs font-medium uppercase tracking-[0.2em] text-gold">
+            Systems I Build
+          </p>
+          <h2 className="font-display text-4xl font-bold leading-[1.08] text-white md:text-5xl">
+            Strategy, execution, and systems implementation in one operating layer.
+          </h2>
+        </Reveal>
+
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <Reveal key={service.title} delay={index * 120}>
-              <article className="system-card noise-overlay group relative min-h-[300px] overflow-hidden rounded-xl border border-white/[0.08] bg-[#050505] transition-all duration-500 hover:scale-[1.01] hover:border-gold/25 hover:shadow-[0_22px_70px_rgba(0,0,0,0.42)] md:min-h-[360px]">
+              <article className="system-card noise-overlay group relative min-h-[320px] overflow-hidden rounded-xl border border-white/[0.08] bg-[#050505] transition-all duration-500 hover:scale-[1.01] hover:border-gold/25 hover:shadow-[0_22px_70px_rgba(0,0,0,0.42)]">
                 <ServiceVisual variant={index} />
                 <div className="absolute inset-x-4 bottom-4 md:inset-x-5 md:bottom-5">
                   <div className="liquid-glass rounded-lg p-5">
                     <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-gold">
                       {service.tag}
                     </p>
-                    <h2 className="mt-3 font-display text-2xl font-bold leading-none text-white md:text-4xl">
+                    <h3 className="mt-3 font-display text-2xl font-bold leading-tight text-white">
                       {service.title}
-                    </h2>
+                    </h3>
                     <p className="mt-2 max-w-md text-sm leading-6 text-white/60 md:text-base">
                       {service.description}
                     </p>
@@ -47,7 +76,7 @@ export function WhatIBuild() {
 }
 
 function ServiceVisual({ variant }: { variant: number }) {
-  const isExecution = variant === 1
+  const isExecution = variant % 2 === 1
 
   return (
     <div className="absolute inset-0">

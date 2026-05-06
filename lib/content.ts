@@ -3,21 +3,22 @@ export const siteContent = {
     name: 'Gary L. Mariner II',
     links: [
       { label: 'About', href: '/about' },
-      { label: 'Focus Areas', href: '/services' },
-      { label: 'Work', href: '/case-studies' },
+      { label: 'Systems', href: '/services' },
+      { label: 'Case Studies', href: '/case-studies' },
+      { label: 'Mariner Nexus', href: 'https://www.marinernexus.com/' },
       { label: 'Contact', href: '/contact' },
     ],
-    cta: { label: 'Build Your System', href: '/contact' },
+    cta: { label: 'Apply This To Your Business', href: '/contact' },
   },
 
   hero: {
-    eyebrow: 'AI Systems Architect',
-    headline: 'Business chaos is expensive.\nSystems make it scalable.',
+    eyebrow: 'Gary L. Mariner II',
+    headline: 'AI Systems Architecture for Modern Operators.',
     supporting:
-      'I design AI-powered operating systems that turn complexity into growth infrastructure.',
-    tagline: 'Strategy grounded in operations. Systems built for measurable growth.',
-    primaryCTA: { label: 'See the System', href: '#system-flow' },
-    secondaryCTA: { label: 'View Proof', href: '#selected-work' },
+      'I design and build digital ecosystems that connect websites, automation, AI workflows, and business operations into one scalable execution layer.',
+    tagline: 'Built from real operational experience across nonprofit systems, customer service automation, CRM workflows, property operations, and AI-powered business transformation.',
+    primaryCTA: { label: 'Apply This To Your Business', href: '/contact' },
+    secondaryCTA: { label: 'View Transformation Work', href: '#selected-work' },
   },
 
   authority: {
@@ -60,47 +61,47 @@ export const siteContent = {
   },
 
   systemFlow: {
-    title: 'This isn\u2019t web design. It\u2019s system architecture.',
+    title: 'Digital infrastructure should connect the work, not decorate it.',
     steps: [
       {
-        label: 'Chaos',
-        description: 'Disconnected tools. Manual processes.',
+        label: 'Operational Friction',
+        description: 'Disconnected tools, manual tasks, unclear ownership.',
       },
       {
-        label: 'Breakdown',
-        description: 'Identify friction and inefficiencies.',
+        label: 'Strategic Diagnosis',
+        description: 'Identify the real workflow, data, and execution gaps.',
       },
       {
-        label: 'System',
-        description: 'Build unified AI + automation layer.',
+        label: 'Execution Layer',
+        description: 'Build the website, CRM, automation, and AI workflow layer.',
       },
       {
-        label: 'Outcome',
-        description: 'Faster execution. Higher conversion.',
+        label: 'Business Outcome',
+        description: 'Less manual workload, clearer visibility, stronger conversion.',
       },
     ],
-    closing: 'Chaos \u2192 Breakdown \u2192 System \u2192 Outcome',
+    closing: 'Friction \u2192 Diagnosis \u2192 Execution Layer \u2192 Outcome',
   },
 
   services: [
     {
-      title: 'AI Transformation Strategy',
-      description: 'Aligning AI adoption with how your organization actually operates \u2014 not how vendors think it should.',
+      title: 'AI Workflow Architecture',
+      description: 'AI workflows mapped to real operational tasks so teams reduce manual workload and improve consistency.',
       href: '/services#ai-systems',
     },
     {
-      title: 'Digital Infrastructure',
-      description: 'Systems, platforms, and digital presence that reflect operational maturity.',
+      title: 'Website-to-CRM Ecosystems',
+      description: 'Conversion websites connected to intake, routing, booking, CRM, and follow-up infrastructure.',
       href: '/services#digital-infrastructure',
     },
     {
-      title: 'Operations & Workflow Design',
-      description: 'Restructuring how work flows \u2014 reducing friction and clarifying ownership.',
+      title: 'Automation & Operational Dashboards',
+      description: 'Automation, reporting, and dashboards that make work visible and reduce repetitive coordination.',
       href: '/services#operations',
     },
     {
-      title: 'Strategic Communications',
-      description: 'Communication systems that create alignment between leadership, teams, and stakeholders.',
+      title: 'Conversion Website Systems',
+      description: 'Premium digital platforms built to communicate authority, capture demand, and support business operations.',
       href: '/services#communications',
     },
   ],
@@ -139,6 +140,7 @@ export const siteContent = {
       },
     ],
   },
+
   proof: {
     intro: 'Transformation measured in outcomes, not slide decks.',
     cases: [
@@ -166,11 +168,11 @@ export const siteContent = {
   caseStudy: {
     label: 'Flagship Transformation',
     company: 'Digital Harmony',
-    hook: 'Support load dropped. Satisfaction rose. Revenue scaled.',
-    title: 'A customer operation rebuilt around AI-driven workflows and automation.',
+    hook: 'A customer operation rebuilt around AI workflows, automation, and measurable growth.',
+    title: 'Digital Harmony became a leaner, faster customer operation.',
     problem: 'Growth was constrained by disconnected support workflows, manual handoffs, and customer experience friction.',
     summary: 'The solution was a structured operating layer that connected AI workflows, multi-channel communication, analytics, and execution logic.',
-    systemBuilt: 'AI chatbot + automation workflows',
+    systemBuilt: 'AI chatbot, workflow routing, multi-channel support, analytics',
     outcome: 'A leaner customer operation with faster response paths, stronger satisfaction, and revenue growth without proportional headcount.',
     quote: 'The real leverage is in systems, not headcount.',
     outcomes: [
@@ -179,7 +181,7 @@ export const siteContent = {
       { value: '$75K -> $130K/mo', label: 'Revenue scaled.' },
     ],
     href: 'https://www.marinernexus.com/',
-    cta: 'See the Build Logic',
+    cta: 'Build a System Like This',
   },
 
   philosophy: {
@@ -203,8 +205,8 @@ export const siteContent = {
   },
 
   finalCTA: {
-    headline: 'If this feels different, it should.',
-    supporting: 'Most businesses don\u2019t need another website. They need a system that actually works.',
+    headline: 'Start with the business problem. Build the system around it.',
+    supporting: 'If your organization is carrying manual workload, unclear workflows, or disconnected digital infrastructure, the next step is an architecture review.',
     primaryCTA: { label: 'Apply This To Your Business', href: 'https://www.marinernexus.com/' },
     secondaryCTA: { label: 'Enter Mariner Nexus', href: 'https://www.marinernexus.com/' },
   },
@@ -215,8 +217,9 @@ export const siteContent = {
     email: 'gary.mariner@gmail.com',
     links: [
       { label: 'About', href: '/about' },
-      { label: 'Focus Areas', href: '/services' },
-      { label: 'Work', href: '/case-studies' },
+      { label: 'Systems', href: '/services' },
+      { label: 'Case Studies', href: '/case-studies' },
+      { label: 'Mariner Nexus', href: 'https://www.marinernexus.com/' },
       { label: 'Contact', href: '/contact' },
     ],
     social: [{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/gary-mariner-ii/' }],

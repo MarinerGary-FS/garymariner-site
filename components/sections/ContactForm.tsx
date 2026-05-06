@@ -104,10 +104,11 @@ export function ContactForm() {
 
       {/* Message */}
       <div className="flex flex-col gap-2">
-        <label className="text-xs font-sans text-white/40 uppercase tracking-[0.14em]">
+        <label htmlFor="message" className="text-xs font-sans text-white/40 uppercase tracking-[0.14em]">
           Message <span className="text-white/20">(required)</span>
         </label>
         <textarea
+          id="message"
           name="message"
           value={form.message}
           onChange={handleChange}
@@ -126,7 +127,7 @@ export function ContactForm() {
           disabled={status === 'submitting'}
           className={status === 'submitting' ? 'opacity-60 pointer-events-none' : ''}
         >
-          {status === 'submitting' ? 'Sending…' : 'Send Message'}
+          {status === 'submitting' ? 'Sending...' : 'Start the Architecture Review'}
         </Button>
 
         {status === 'error' && (
@@ -152,12 +153,13 @@ interface FieldProps {
 function Field({ label, name, type, placeholder, value, onChange, required }: FieldProps) {
   return (
     <div className="flex flex-col gap-2">
-      <label className="text-xs font-sans text-white/40 uppercase tracking-[0.14em]">
+      <label htmlFor={name} className="text-xs font-sans text-white/40 uppercase tracking-[0.14em]">
         {label}
         {required && <span className="text-white/20 ml-1">(required)</span>}
       </label>
       <input
         type={type}
+        id={name}
         name={name}
         value={value}
         onChange={onChange}

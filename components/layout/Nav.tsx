@@ -57,6 +57,7 @@ export function Nav() {
               <Link
                 key={link.href}
                 href={link.href}
+                {...(link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                 className="relative text-sm font-sans text-white/60 hover:text-white transition-colors duration-300 tracking-wide after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-px after:bg-gold/40 hover:after:w-full after:transition-all after:duration-300"
               >
                 {link.label}
@@ -111,6 +112,7 @@ export function Nav() {
             <Link
               key={link.href}
               href={link.href}
+              {...(link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
               onClick={() => setMenuOpen(false)}
               className={cn(
                 'text-2xl font-display font-semibold text-white/80 hover:text-white transition-all duration-300',

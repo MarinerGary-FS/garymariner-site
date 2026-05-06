@@ -5,9 +5,9 @@ import { Reveal } from '@/components/ui/Reveal'
 import { Button } from '@/components/ui/Button'
 
 export const metadata: Metadata = {
-  title: 'Case Studies — Gary L. Mariner II',
+  title: 'Case Studies — AI Systems Transformation Dossiers',
   description:
-    'Real transformations in AI systems implementation, operations optimization, and digital infrastructure design. Digital Harmony and Radco.',
+    'Executive transformation dossiers covering AI workflow automation, operational improvement, Digital Harmony, Radco, and scalable digital infrastructure.',
 }
 
 // ─── Digital Harmony Data ─────────────────────────────────────────────────
@@ -17,13 +17,15 @@ const digitalHarmony = {
   company: 'Digital Harmony',
   industry: 'Global Customer Operations',
   engagement: 'AI Systems & Growth',
-  headline: 'Support load dropped 70%. Manual work was removed.',
-  subline: 'An AI system replaced the bottleneck and scaled output.',
-  problem: [
-    'Support requests were handled manually.',
-    'Response times were inconsistent.',
-    'Growth required hiring more staff.',
+  headline: 'Digital Harmony: AI-driven customer operations transformation.',
+  subline: 'Support load dropped 70%, satisfaction increased 90%, and revenue scaled from $75K to $130K/month.',
+  situation: [
+    'Support requests depended on manual response paths.',
+    'Customer experience varied by channel and agent availability.',
+    'Growth required more headcount instead of better infrastructure.',
   ],
+  diagnosis:
+    'The real business problem was not customer demand. It was a fragmented support operation with too many manual handoffs, inconsistent routing, and no scalable AI-assisted resolution layer.',
   system: [
     { label: 'Intake', line: 'Requests enter a unified system layer.', icon: Inbox },
     { label: 'AI Layer', line: 'AI intercepts and resolves common issues instantly.', icon: Bot },
@@ -35,12 +37,14 @@ const digitalHarmony = {
     { value: '90%', marker: '↑', label: 'Customer Satisfaction', icon: ArrowUp },
     { value: '$130K/mo', marker: '', label: 'Revenue Output', icon: GitBranch },
   ],
-  action: 'Most incoming requests were resolved without human intervention.',
-  meaning: [
-    'Systems replace effort.',
-    'Automation removes friction.',
-    'AI scales output without scaling cost.',
-  ],
+  built:
+    'A structured AI customer operations layer connecting chatbot logic, workflow routing, multi-channel support, analytics, and escalation paths.',
+  execution:
+    'Chatbot implementation, automated workflows, channel routing, support triage logic, customer service process redesign, and performance visibility.',
+  outcome:
+    'A leaner customer operation with faster response paths, stronger satisfaction, and revenue growth without proportional headcount.',
+  scalability:
+    'The same operating layer can expand into deeper CRM integration, knowledge base automation, analytics dashboards, QA workflows, and AI-assisted retention systems.',
 }
 
 // ─── Radco Data ─────────────────────────────────────────────────────────────
@@ -51,10 +55,18 @@ const radco = {
   industry: 'Property Operations',
   engagement: 'Operational Restructuring',
   headline: 'From 80% Occupancy and 360 Open Work Orders to Operational Clarity',
-  context:
-    'A multi-property portfolio underperforming on occupancy and maintenance. Leadership assumed they needed more people. The real issue was how work was structured.',
-  strategy:
-    'Mapped how work actually flowed, identified bottlenecks, and redesigned the systems governing leasing and maintenance. The goal: clarity, not capacity.',
+  situation:
+    'A multi-property portfolio was underperforming on occupancy and maintenance. Open work orders had accumulated, leasing momentum was weak, and operational visibility was limited.',
+  diagnosis:
+    'The issue looked like a staffing problem, but the deeper problem was workflow clarity: leasing, maintenance, accountability, and communication were not structured tightly enough to support execution.',
+  systemBuilt:
+    'A clearer operational rhythm for leasing, maintenance prioritization, ownership, communication, and backlog reduction.',
+  execution:
+    'Workflow mapping, maintenance triage, communication cadence, leasing accountability, and operational performance tracking.',
+  outcome:
+    'Occupancy increased from roughly 80% to 93%, pre-leasing reached 96%, and work orders fell from 360 to 23.',
+  scalability:
+    'The same operating discipline can expand into dashboards, automated maintenance routing, CRM reporting, resident communication workflows, and portfolio-level performance intelligence.',
   results: [
     { value: '93%', label: 'Portfolio occupancy', context: 'Up from ~80%, pre-leasing reached 96%' },
     { value: '94%', label: 'Backlog reduction', context: '360 work orders reduced to 23' },
@@ -94,24 +106,24 @@ export default function CaseStudiesPage() {
 
         {/* Hero */}
         <div className="relative">
-          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.08fr)_360px] gap-10 lg:gap-20 items-end">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1.08fr)_340px] lg:items-end lg:gap-14">
             <div className="min-w-0">
-              <p className="mb-5 text-xs font-sans font-medium uppercase tracking-[0.16em] text-white/32">
+              <p className="mb-4 text-xs font-sans font-medium uppercase tracking-[0.16em] text-white/32">
                 {digitalHarmony.label}
               </p>
-              <h1 className="max-w-4xl font-display font-bold text-[clamp(2.2rem,7.2vw,7.25rem)] leading-[1.02] text-white">
+              <h1 className="max-w-[20rem] break-words font-display text-[2rem] font-bold leading-[1.08] text-white sm:max-w-3xl sm:text-[clamp(2.5rem,4.4vw,4.35rem)] sm:leading-[1.04]">
                 {digitalHarmony.headline}
               </h1>
             </div>
             <div className="min-w-0 lg:pb-3">
-              <p className="max-w-sm font-sans text-xl md:text-2xl font-medium leading-[1.25] text-white/68">
+              <p className="max-w-[19rem] break-words font-sans text-base font-medium leading-7 text-white/68 sm:max-w-sm md:text-lg">
                 {digitalHarmony.subline}
               </p>
-              <div className="mt-7 flex flex-col sm:flex-row lg:flex-col gap-3">
-                <Button href="https://www.marinernexus.com" external size="lg">
-                  Apply This System
+              <div className="mt-6 flex max-w-full flex-col gap-3 sm:flex-row lg:flex-col">
+                <Button href="https://www.marinernexus.com" external size="lg" className="w-[calc(100vw-3rem)] max-w-full sm:w-auto lg:w-full">
+                  Build a System Like This
                 </Button>
-                <Button href="https://www.marinernexus.com" external variant="ghost" size="lg">
+                <Button href="https://www.marinernexus.com" external variant="ghost" size="lg" className="w-[calc(100vw-3rem)] max-w-full sm:w-auto lg:w-full">
                   Enter Mariner Nexus
                 </Button>
               </div>
@@ -121,21 +133,21 @@ export default function CaseStudiesPage() {
       </SectionWrapper>
 
       <SectionWrapper
-        className="relative overflow-hidden bg-background py-14 md:py-18"
+        className="relative overflow-hidden bg-background py-14 md:py-[4.5rem]"
         innerClassName="max-w-[1120px]"
       >
         <div className="grid grid-cols-1 lg:grid-cols-[0.92fr_1.08fr] gap-10 lg:gap-16 items-center">
-          {/* Problem */}
+          {/* Situation */}
           <div>
             <div className="min-w-0">
               <p className="text-xs font-sans text-white/30 uppercase tracking-[0.15em] mb-7">
-                The Problem
+                Situation
               </p>
               <div className="space-y-5">
-                {digitalHarmony.problem.map((line) => (
+                {digitalHarmony.situation.map((line) => (
                   <p
                     key={line}
-                    className="border-l border-white/14 pl-5 font-display text-xl md:text-3xl font-semibold leading-tight text-white"
+                    className="max-w-[19rem] break-words border-l border-white/14 pl-5 font-display text-base font-semibold leading-snug text-white sm:max-w-none md:text-2xl"
                   >
                     {line}
                   </p>
@@ -145,7 +157,7 @@ export default function CaseStudiesPage() {
           </div>
 
           <div>
-            <div className="relative min-h-[260px] min-w-0 overflow-hidden rounded-lg border border-white/10 bg-surface/70 p-6 md:p-8">
+            <div className="relative min-h-[260px] min-w-0 max-w-[calc(100vw-3rem)] overflow-hidden rounded-lg border border-white/10 bg-surface/70 p-6 md:max-w-none md:p-8">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_24%,rgba(201,168,76,0.12),transparent_31%),linear-gradient(135deg,rgba(255,255,255,0.035),transparent_48%)]" />
               <div className="relative h-[220px]">
                 <span className="absolute left-[7%] top-[18%] h-3 w-3 rounded-full bg-white/28 shadow-[0_0_24px_rgba(255,255,255,0.22)]" />
@@ -178,7 +190,7 @@ export default function CaseStudiesPage() {
         <Reveal className="mb-8">
           <div className="flex items-end justify-between gap-8">
             <p className="text-xs font-sans text-white/30 uppercase tracking-[0.15em]">
-              The System
+              System Built
             </p>
             <span className="hidden md:block h-px flex-1 bg-gradient-to-r from-gold/25 to-transparent" />
           </div>
@@ -207,7 +219,7 @@ export default function CaseStudiesPage() {
       </SectionWrapper>
 
       <SectionWrapper
-        className="relative overflow-hidden bg-background py-14 md:py-18"
+        className="relative overflow-hidden bg-background py-14 md:py-[4.5rem]"
         innerClassName="max-w-[1120px]"
       >
         {/* Results */}
@@ -235,18 +247,18 @@ export default function CaseStudiesPage() {
                     <Icon size={22} strokeWidth={1.7} className="text-gold/75" />
                     <span className="h-px w-20 bg-gradient-to-r from-transparent to-white/16" />
                   </div>
-                  <div className="relative mt-12">
+                  <div className="relative mt-10">
                     <div className="flex items-start gap-3">
-                      <span className="font-display font-bold text-[clamp(3.75rem,13vw,10.5rem)] leading-[0.78] text-gold-gradient">
+                      <span className="font-display text-[clamp(3rem,9vw,7rem)] font-bold leading-[0.85] text-gold-gradient">
                         {r.value}
                       </span>
                       {r.marker && (
-                        <span className="mt-2 font-display text-[clamp(2.75rem,6vw,5.5rem)] leading-none text-gold/70">
+                        <span className="mt-2 font-display text-[clamp(2rem,4.5vw,3.75rem)] leading-none text-gold/70">
                           {r.marker}
                         </span>
                       )}
                     </div>
-                    <p className="mt-6 max-w-xs font-sans text-base md:text-xl font-semibold leading-tight text-white">
+                    <p className="mt-5 max-w-xs font-sans text-sm font-semibold leading-tight text-white md:text-lg">
                       {r.label}
                     </p>
                   </div>
@@ -258,18 +270,18 @@ export default function CaseStudiesPage() {
       </SectionWrapper>
 
       <SectionWrapper
-        className="relative overflow-hidden bg-background pt-2 pb-14 md:pb-18"
+        className="relative overflow-hidden bg-background pt-2 pb-14 md:pb-[4.5rem]"
         innerClassName="max-w-[1120px]"
       >
-        {/* System in action + meaning */}
+        {/* Dossier details */}
         <div className="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-6 lg:gap-12 items-start">
           <Reveal>
             <div className="rounded-lg border border-white/10 bg-surface/65 p-6 md:p-8">
               <p className="text-xs font-sans text-white/30 uppercase tracking-[0.15em] mb-5">
-                System in Action
+                Strategic Diagnosis
               </p>
-              <p className="font-display text-3xl md:text-4xl font-semibold leading-tight text-white">
-                {digitalHarmony.action}
+              <p className="font-display text-2xl font-semibold leading-snug text-white md:text-3xl">
+                {digitalHarmony.diagnosis}
               </p>
             </div>
           </Reveal>
@@ -277,17 +289,13 @@ export default function CaseStudiesPage() {
           <Reveal delay={80}>
             <div className="lg:pt-10">
               <p className="text-xs font-sans text-white/30 uppercase tracking-[0.15em] mb-5">
-                What This Means
+                Transformation Dossier
               </p>
               <div className="space-y-4">
-                {digitalHarmony.meaning.map((line) => (
-                  <p
-                    key={line}
-                    className="font-display text-2xl md:text-3xl font-semibold leading-tight text-white/82"
-                  >
-                    {line}
-                  </p>
-                ))}
+                <DossierLine label="System Built" value={digitalHarmony.built} />
+                <DossierLine label="Execution Layer" value={digitalHarmony.execution} />
+                <DossierLine label="Business Outcome" value={digitalHarmony.outcome} />
+                <DossierLine label="Scalability Layer" value={digitalHarmony.scalability} />
               </div>
             </div>
           </Reveal>
@@ -297,16 +305,16 @@ export default function CaseStudiesPage() {
         <Reveal delay={120}>
           <div className="mt-10 md:mt-12 rounded-lg border border-gold/25 bg-[linear-gradient(135deg,rgba(201,168,76,0.105),rgba(255,255,255,0.025)_42%,rgba(255,255,255,0.01))] p-6 md:p-8 lg:p-10">
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-7 lg:gap-10 items-center">
-              <h2 className="max-w-3xl font-display text-4xl md:text-display-lg font-bold leading-tight text-white">
+              <h2 className="max-w-3xl font-display text-3xl font-bold leading-tight text-white md:text-4xl">
                 If your business depends on manual work,
                 <br />
                 <span className="text-white/58">this is already costing you.</span>
               </h2>
               <div className="flex flex-col sm:flex-row lg:flex-col gap-3">
-                <Button href="https://www.marinernexus.com" external size="lg">
-                  Apply This System
+                <Button href="https://www.marinernexus.com" external size="lg" className="w-[calc(100vw-3rem)] max-w-full sm:w-auto lg:w-full">
+                  Build a System Like This
                 </Button>
-                <Button href="https://www.marinernexus.com" external variant="ghost" size="lg">
+                <Button href="https://www.marinernexus.com" external variant="ghost" size="lg" className="w-[calc(100vw-3rem)] max-w-full sm:w-auto lg:w-full">
                   Enter Mariner Nexus
                 </Button>
               </div>
@@ -336,15 +344,15 @@ export default function CaseStudiesPage() {
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-14 lg:gap-20 items-start">
           <Reveal>
             <div className="flex flex-col gap-6">
-              <h2 className="font-display font-bold text-display-md text-white">
+              <h2 className="font-display text-3xl font-bold leading-tight text-white md:text-4xl">
                 {radco.headline}
               </h2>
-              <p className="font-sans text-sm text-white/55 leading-[1.85]">
-                {radco.context}
-              </p>
-              <p className="font-sans text-sm text-white/55 leading-[1.85]">
-                {radco.strategy}
-              </p>
+              <DossierLine label="Situation" value={radco.situation} />
+              <DossierLine label="Strategic Diagnosis" value={radco.diagnosis} />
+              <DossierLine label="System Built" value={radco.systemBuilt} />
+              <DossierLine label="Execution Layer" value={radco.execution} />
+              <DossierLine label="Business Outcome" value={radco.outcome} />
+              <DossierLine label="Scalability Layer" value={radco.scalability} />
               <div className="border-l border-gold/25 pl-5 mt-2">
                 <p className="font-display font-semibold text-base text-white/75 leading-snug">
                   &ldquo;{radco.quote}&rdquo;
@@ -358,7 +366,7 @@ export default function CaseStudiesPage() {
               <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
               {radco.results.map((r) => (
                 <div key={r.label} className="flex flex-col gap-3 px-8 py-8 border-b border-border/30 last:border-0">
-                  <span className="font-display font-bold text-display-lg text-white/85 leading-none">
+                  <span className="font-display text-4xl font-bold leading-none text-white/85 md:text-5xl">
                     {r.value}
                   </span>
                   <span className="font-sans text-sm text-white/60">{r.label}</span>
@@ -371,21 +379,21 @@ export default function CaseStudiesPage() {
       </SectionWrapper>
 
       {/* CTA */}
-      <section className="relative px-5 md:px-8 lg:px-10 py-14 md:py-18 bg-background border-t border-border/40 overflow-hidden">
+      <section className="relative px-5 md:px-8 lg:px-10 py-14 md:py-[4.5rem] bg-background border-t border-border/40 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-gold/[0.06] blur-[120px] pointer-events-none" />
         <div className="relative max-w-site mx-auto">
           <Reveal>
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-7 lg:gap-12 items-center">
-              <h2 className="max-w-3xl font-display text-4xl md:text-display-lg font-bold leading-tight text-white">
+              <h2 className="max-w-3xl font-display text-3xl font-bold leading-tight text-white md:text-4xl">
                 If your business depends on manual work,
                 <br />
                 <span className="text-white/58">this is already costing you.</span>
               </h2>
               <div className="flex flex-col sm:flex-row lg:flex-col gap-3">
-                <Button href="https://www.marinernexus.com" external size="lg">
-                  Apply This System
+                <Button href="https://www.marinernexus.com" external size="lg" className="w-[calc(100vw-3rem)] max-w-full sm:w-auto lg:w-full">
+                  Build a System Like This
                 </Button>
-                <Button href="https://www.marinernexus.com" external variant="ghost" size="lg">
+                <Button href="https://www.marinernexus.com" external variant="ghost" size="lg" className="w-[calc(100vw-3rem)] max-w-full sm:w-auto lg:w-full">
                   Enter Mariner Nexus
                 </Button>
               </div>
@@ -394,5 +402,18 @@ export default function CaseStudiesPage() {
         </div>
       </section>
     </>
+  )
+}
+
+function DossierLine({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="border-l border-gold/20 pl-5">
+      <p className="mb-2 font-sans text-[10px] font-medium uppercase tracking-[0.16em] text-gold/60">
+        {label}
+      </p>
+      <p className="font-sans text-sm leading-[1.75] text-white/60">
+        {value}
+      </p>
+    </div>
   )
 }
