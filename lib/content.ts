@@ -105,6 +105,40 @@ export const siteContent = {
     },
   ],
 
+  proofBeforePhilosophy: {
+    title: 'Proof Before Philosophy',
+    intro: 'The strategy is grounded in operational work: customer support automation, nonprofit infrastructure, conversion websites, and AI workflow planning.',
+    cards: [
+      {
+        title: 'Operational Automation',
+        problem: 'Support volume depended too heavily on live agents and manual response paths.',
+        solution: 'Implemented chatbot logic, workflow routing, and AI-assisted customer service automation.',
+        result: 'Reduced live agent dependency by 70% while improving customer satisfaction by 90%.',
+        href: '/case-studies#digital-harmony',
+      },
+      {
+        title: 'Nonprofit Digital Infrastructure',
+        problem: 'Community pathways needed cleaner intake, event check-ins, CRM routing, and donation flow visibility.',
+        solution: 'Built Undugu.org infrastructure around digital engagement, operational routing, and community action.',
+        result: 'Created a clearer platform for events, giving, outreach, and technology committee execution.',
+        href: 'https://undugu.org',
+      },
+      {
+        title: 'Conversion Website Systems',
+        problem: 'Many websites look credible but do not move visitors into a business process.',
+        solution: 'Designed case study-driven websites, social link ecosystems, lead capture, and booking architecture.',
+        result: 'Turned brand presence into a conversion-ready digital ecosystem.',
+        href: '/case-studies',
+      },
+      {
+        title: 'AI Transformation Strategy',
+        problem: 'Organizations adopt AI tools without redesigning the workflows those tools must support.',
+        solution: 'Mapped Microsoft Copilot and AI workflow strategy to internal process modernization.',
+        result: 'Created practical paths for operations intelligence, automation, and scalable execution.',
+        href: '/services#ai-systems',
+      },
+    ],
+  },
   proof: {
     intro: 'Transformation measured in outcomes, not slide decks.',
     cases: [
