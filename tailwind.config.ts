@@ -39,15 +39,15 @@ const config: Config = {
         },
       },
       fontFamily: {
-        display: ['var(--font-syne)', 'sans-serif'],
-        sans: ['var(--font-inter)', 'sans-serif'],
+        display: ['var(--font-newsreader)', 'Georgia', 'serif'],
+        sans: ['var(--font-ibm-plex-sans)', 'Inter', 'system-ui', 'sans-serif'],
       },
       fontSize: {
-        'display-3xl': ['clamp(3.75rem, 8vw, 7rem)', { lineHeight: '1.18', letterSpacing: '-0.04em' }],
-        'display-2xl': ['clamp(2.75rem, 5.5vw, 5rem)', { lineHeight: '1.2', letterSpacing: '-0.03em' }],
-        'display-xl': ['clamp(2.25rem, 4.5vw, 4rem)', { lineHeight: '1.2', letterSpacing: '-0.025em' }],
-        'display-lg': ['clamp(1.75rem, 3vw, 2.75rem)', { lineHeight: '1.22', letterSpacing: '-0.02em' }],
-        'display-md': ['clamp(1.375rem, 2vw, 2rem)', { lineHeight: '1.28', letterSpacing: '-0.015em' }],
+        'display-3xl': ['3.75rem', { lineHeight: '1', letterSpacing: '0' }],
+        'display-2xl': ['2.75rem', { lineHeight: '1.04', letterSpacing: '0' }],
+        'display-xl': ['2.25rem', { lineHeight: '1.08', letterSpacing: '0' }],
+        'display-lg': ['1.75rem', { lineHeight: '1.14', letterSpacing: '0' }],
+        'display-md': ['1.375rem', { lineHeight: '1.24', letterSpacing: '0' }],
       },
       maxWidth: {
         site: '1024px',

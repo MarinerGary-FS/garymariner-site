@@ -28,13 +28,27 @@
       linear-gradient(180deg, #05070A 0%, #11151B 100%);
     color: #F3F1EC;
     overflow-x: hidden;
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+    text-rendering: optimizeLegibility;
   }
 
   h1,
-  h2,
-  h3,
+  h2 {
+    font-family: var(--font-newsreader), Georgia, serif;
+    font-weight: 600;
+    letter-spacing: 0;
+  }
+
+  h3 {
+    letter-spacing: 0;
+  }
+
   p {
     overflow-wrap: break-word;
+  }
+
+  p {
+    letter-spacing: 0;
   }
 
   ::selection {

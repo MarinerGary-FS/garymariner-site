@@ -1,20 +1,20 @@
 import type { Metadata, Viewport } from 'next'
-import { Syne, Inter } from 'next/font/google'
+import { IBM_Plex_Sans, Newsreader } from 'next/font/google'
 import Script from 'next/script'
 import { EventTracker } from '@/components/analytics/EventTracker'
 import './globals.css'
 
-const syne = Syne({
+const newsreader = Newsreader({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
-  variable: '--font-syne',
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-newsreader',
   display: 'swap',
 })
 
-const inter = Inter({
+const ibmPlexSans = IBM_Plex_Sans({
   subsets: ['latin'],
   weight: ['400', '500', '600'],
-  variable: '--font-inter',
+  variable: '--font-ibm-plex-sans',
   display: 'swap',
 })
 
@@ -66,7 +66,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${syne.variable} ${inter.variable}`}>
+    <html lang="en" className={`${newsreader.variable} ${ibmPlexSans.variable}`}>
       <body className="bg-background text-white font-sans antialiased">
         <EventTracker />
         <main>{children}</main>

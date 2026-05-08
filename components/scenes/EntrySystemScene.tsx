@@ -14,7 +14,7 @@ export function EntrySystemScene() {
           <DisplayStatement as="h1" size="hero">
             {scene.title}
           </DisplayStatement>
-          <p className="mt-10 max-w-[20rem] font-sans text-lg leading-8 text-white/68 md:max-w-[760px] md:text-xl md:leading-9">
+          <p className="mt-10 max-w-[20rem] font-sans text-[1.0625rem] leading-8 text-white/66 md:max-w-[700px] md:text-[1.25rem] md:leading-9">
             {scene.statement}
           </p>
         </div>

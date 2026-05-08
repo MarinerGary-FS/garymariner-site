@@ -9,7 +9,7 @@ export function ThoughtFragment({ children, className }: ThoughtFragmentProps) {
   return (
     <span
       className={cn(
-        'inline-flex border-l border-white/14 pl-4 text-sm leading-6 text-white/52',
+        'inline-flex border-l border-white/14 pl-4 font-sans text-sm leading-6 text-white/50',
         className
       )}
     >

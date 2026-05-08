@@ -17,10 +17,10 @@ export function DisplayStatement({
   return (
     <Tag
       className={cn(
-        'w-[calc(100vw-2.5rem)] max-w-full overflow-hidden font-display font-semibold text-[#F3F1EC] text-balance sm:w-auto',
-        size === 'hero' && 'text-[clamp(2.65rem,10vw,9.4rem)] leading-[0.96] sm:leading-[0.92]',
-        size === 'large' && 'text-[clamp(2.7rem,6vw,6.7rem)] leading-[0.95]',
-        size === 'medium' && 'text-[clamp(2.2rem,4.5vw,4.8rem)] leading-[1.02]',
+        'w-[calc(100vw-2.5rem)] max-w-[22rem] text-balance font-display font-semibold text-[#F3F1EC] sm:w-auto sm:max-w-full',
+        size === 'hero' && 'text-[2.55rem] leading-[1.02] sm:text-[5.6rem] sm:leading-[0.94] lg:text-[8.15rem]',
+        size === 'large' && 'text-[2.45rem] leading-[1.04] sm:text-[4.65rem] lg:text-[6.25rem]',
+        size === 'medium' && 'text-[2.2rem] leading-[1.08] sm:text-[3.8rem] lg:text-[4.75rem]',
         className
       )}
     >
