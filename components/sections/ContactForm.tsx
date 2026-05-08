@@ -2,11 +2,9 @@
 
 import { useState } from 'react'
 import { Button } from '@/components/ui/Button'
+import { garyContact } from '@/lib/vcard'
 
 type Status = 'idle' | 'submitting' | 'success' | 'error'
-
-// Replace with your form endpoint (e.g. Formspree: https://formspree.io/f/YOUR_ID)
-const FORM_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID'
 
 export function ContactForm() {
   const [status, setStatus] = useState<Status>('idle')
@@ -22,22 +20,20 @@ export function ContactForm() {
     e.preventDefault()
     setStatus('submitting')
 
-    try {
-      const res = await fetch(FORM_ENDPOINT, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(form),
-      })
+    const subject = encodeURIComponent(`Alignment inquiry from ${form.name}`)
+    const body = encodeURIComponent(
+      [
+        `Name: ${form.name}`,
+        `Email: ${form.email}`,
+        `Company / Organization: ${form.company || 'Not provided'}`,
+        '',
+        form.message,
+      ].join('\n')
+    )
 
-      if (res.ok) {
-        setStatus('success')
-        setForm({ name: '', email: '', company: '', message: '' })
-      } else {
-        setStatus('error')
-      }
-    } catch {
-      setStatus('error')
-    }
+    window.location.href = `mailto:${garyContact.primaryEmail}?subject=${subject}&body=${body}`
+    setStatus('success')
+    setForm({ name: '', email: '', company: '', message: '' })
   }
 
   if (status === 'success') {
@@ -48,19 +44,19 @@ export function ContactForm() {
           <div className="flex items-center gap-3">
             <span className="w-6 h-px bg-gold/60" />
             <span className="text-xs font-sans text-gold uppercase tracking-[0.18em]">
-              Message Received
+              Message prepared
             </span>
           </div>
           <h3 className="font-display font-bold text-display-md text-white">
-            Thank you for reaching out.
+            Your message is ready.
           </h3>
           <p className="font-sans text-sm text-white/55 leading-[1.85]">
-            I&apos;ll review your message and be in touch shortly. If you have
-            a time-sensitive need, you&apos;re welcome to book directly.
+            Your email client should open with the context filled in. If it does not, email
+            {` ${garyContact.primaryEmail} `}directly.
           </p>
           <div className="mt-2">
             <Button href="https://cal.com/garymariner" size="sm" external>
-              Book a Consultation
+              Begin a conversation
             </Button>
           </div>
         </div>
@@ -112,7 +108,7 @@ export function ContactForm() {
           name="message"
           value={form.message}
           onChange={handleChange}
-          placeholder="Tell me about your business, the challenge you're facing, and what you're hoping to solve."
+          placeholder="Describe the system, workflow, or execution gap you are trying to solve."
           required
           rows={5}
           className="w-full bg-surface border border-border rounded-lg px-4 py-3.5 font-sans text-sm text-white/80 placeholder:text-white/20 leading-[1.7] focus:outline-none focus:border-gold/40 focus:ring-1 focus:ring-gold/20 transition-colors duration-200 resize-none"
@@ -127,7 +123,7 @@ export function ContactForm() {
           disabled={status === 'submitting'}
           className={status === 'submitting' ? 'opacity-60 pointer-events-none' : ''}
         >
-          {status === 'submitting' ? 'Sending...' : 'Start the Architecture Review'}
+          {status === 'submitting' ? 'Preparing...' : 'Explore alignment'}
         </Button>
 
         {status === 'error' && (

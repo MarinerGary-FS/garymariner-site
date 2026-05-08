@@ -11,6 +11,7 @@ export const garyContact = {
   foundationSite: 'https://www.undugu.org',
   vcardPath: '/gary-mariner.vcf',
   socialUrl: 'https://www.garymariner.com/social',
+  networkUrl: 'https://www.garymariner.com/network',
 }
 
 export const socialChannels = [
@@ -66,6 +67,11 @@ export const contactRows = [
     label: 'GaryMariner.com',
     value: 'garymariner.com',
     href: garyContact.website,
+  },
+  {
+    label: 'Mariner Nexus',
+    value: 'marinernexus.com',
+    href: garyContact.businessSite,
   },
   {
     label: 'Undugu.org',

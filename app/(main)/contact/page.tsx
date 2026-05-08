@@ -5,22 +5,22 @@ import { BookingButton } from '@/components/ui/BookingButton'
 import { ContactForm } from '@/components/sections/ContactForm'
 
 export const metadata: Metadata = {
-  title: 'Start the Architecture Review — Gary L. Mariner II',
+  title: 'Explore Alignment — Gary L. Mariner II',
   description:
-    'Start an architecture review for AI workflow automation, digital infrastructure, operations modernization, CRM pathways, or conversion website systems.',
+    'Begin a controlled conversation about AI transformation, systems architecture, operational clarity, and intelligent execution.',
 }
 
 const expectations = [
   {
-    title: 'Clear Operational Focus',
+    title: 'Operational clarity',
     description: 'The conversation centers on where manual workload, disconnected tools, unclear workflows, or weak conversion pathways are costing the business.',
   },
   {
-    title: 'Practical Fit Check',
+    title: 'Strategic fit',
     description: 'The goal is to determine whether AI systems, automation, or digital infrastructure can create meaningful improvement.',
   },
   {
-    title: 'Actionable Next Step',
+    title: 'Intelligent next step',
     description: 'You leave with clearer diagnosis of the execution gap and a practical path for what should be built, connected, or simplified.',
   },
 ]
@@ -40,7 +40,7 @@ export default function ContactPage() {
           >
             <span className="w-6 h-px bg-gold/50" />
             <span className="text-xs font-sans font-medium text-gold/80 uppercase tracking-[0.18em]">
-              Architecture Review
+              Controlled invitation
             </span>
           </div>
 
@@ -48,13 +48,13 @@ export default function ContactPage() {
             className="font-display font-bold text-display-2xl text-white max-w-2xl mb-7"
             style={{ animation: 'fadeUp 0.75s ease 0.18s both' }}
           >
-            Start the Architecture Review.
+            Explore alignment.
           </h1>
           <p
             className="font-sans text-base text-white/60 leading-[1.85] max-w-xl"
             style={{ animation: 'fadeUp 0.75s ease 0.3s both' }}
           >
-            Bring the operational friction, digital infrastructure gap, or AI workflow opportunity. We will map what should become a system.
+            Bring the operational friction, digital infrastructure gap, or AI workflow opportunity. We will identify whether the vision needs a system, a conversation, or a clearer execution path.
           </p>
         </div>
       </section>
@@ -72,16 +72,16 @@ export default function ContactPage() {
                 <div className="h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
                 <div className="p-8">
                   <p className="text-xs font-sans text-gold/70 uppercase tracking-[0.16em] mb-4">
-                    Book Directly
+                    Direct conversation
                   </p>
                   <h2 className="font-display font-bold text-display-md text-white leading-tight mb-3">
-                    Apply This To Your Business
+                    Begin with the business problem.
                   </h2>
                   <p className="font-sans text-sm text-white/60 leading-[1.8] mb-7">
-                    30 minutes focused on your business. No templates, no pitch decks. Just a direct review of what you are trying to solve and what system could improve it.
+                    A focused conversation about what you are trying to solve, what is creating friction, and whether intelligent infrastructure can move the work forward.
                   </p>
                   <BookingButton size="md">
-                    Start the Architecture Review
+                    Begin a conversation
                   </BookingButton>
                 </div>
               </div>
@@ -91,7 +91,7 @@ export default function ContactPage() {
             <Reveal delay={80}>
               <div className="flex flex-col gap-6">
                 <p className="text-xs font-sans text-white/30 uppercase tracking-[0.18em]">
-                  What to Expect
+                  What to expect
                 </p>
                 {expectations.map((item, i) => (
                   <div key={item.title} className="flex gap-5">
@@ -124,7 +124,7 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   className="text-xs font-sans text-white/40 hover:text-gold transition-colors duration-200 tracking-wide"
                 >
-                  Connect →
+                  Connect
                 </a>
               </div>
             </Reveal>
@@ -135,7 +135,7 @@ export default function ContactPage() {
             <div className="flex flex-col gap-6">
               <div>
                 <p className="text-xs font-sans text-white/30 uppercase tracking-[0.18em] mb-4">
-                  Send a Message
+                  Start with context
                 </p>
                 <p className="font-sans text-sm text-white/45 leading-[1.8]">
                   Prefer to write first? Describe the workflow, automation, website, CRM, or operations challenge and I&apos;ll respond directly.

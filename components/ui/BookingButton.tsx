@@ -148,7 +148,7 @@ export function BookingButton({
               <div className="flex items-start justify-between mb-8">
                 <div>
                   <p className="text-xs font-sans text-cyan/70 uppercase tracking-[0.16em] mb-2">
-                    Book a Consultation
+                    Controlled invitation
                   </p>
                   <h2 className="font-display font-bold text-xl text-white leading-tight">
                     What type of conversation fits best?

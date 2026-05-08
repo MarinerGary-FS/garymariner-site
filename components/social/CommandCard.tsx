@@ -13,7 +13,7 @@ type CommandCardProps = {
   detail: string
   cta: string
   icon: ElementType
-  accent: 'blue' | 'red' | 'silver'
+  accent: 'blue' | 'cyan' | 'sapphire' | 'silver'
   href?: string
   onClick?: () => void
 }
@@ -127,9 +127,9 @@ export function CommandCard({
   )
 }
 
-export function CommandGrid({ children }: { children: ReactNode }) {
+export function CommandGrid({ children, id }: { children: ReactNode; id?: string }) {
   return (
-    <section className="mx-auto grid w-full max-w-6xl gap-3 px-5 md:grid-cols-2 md:px-8 lg:gap-4 lg:px-10">
+    <section id={id} className="mx-auto grid w-full max-w-6xl gap-3 px-5 md:grid-cols-2 md:px-8 lg:gap-4 lg:px-10">
       {children}
     </section>
   )

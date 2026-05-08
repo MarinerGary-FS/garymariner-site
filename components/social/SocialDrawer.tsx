@@ -21,15 +21,15 @@ export function SocialDrawer({ onClose }: SocialDrawerProps) {
   }, [onClose])
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 px-4 pb-4 sm:absolute sm:inset-x-auto sm:bottom-8 sm:right-8 sm:w-[28rem] sm:px-0 sm:pb-0">
-      <section className="social-drawer rounded-3xl border border-white/12 bg-[#080a0d]/92 p-4 shadow-[0_26px_100px_rgba(0,0,0,0.58)] backdrop-blur-2xl">
+    <div className="fixed inset-x-0 bottom-0 z-40 px-4 pb-4 sm:inset-x-auto sm:bottom-8 sm:right-8 sm:w-[28rem] sm:px-0 sm:pb-0">
+      <section className="social-drawer max-h-[calc(100vh-2rem)] overflow-y-auto rounded-3xl border border-white/12 bg-[#080a0d]/92 p-4 shadow-[0_26px_100px_rgba(0,0,0,0.58)] backdrop-blur-2xl sm:max-h-[calc(100vh-4rem)]">
         <div className="flex items-start justify-between gap-4">
           <div>
             <p className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-blue-100/58">
-              Open Channels
+              Ecosystem channels
             </p>
             <h2 className="mt-2 font-display text-2xl font-semibold tracking-normal text-white">
-              Follow the Signal
+              Route with context
             </h2>
           </div>
           <button

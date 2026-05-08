@@ -2,13 +2,13 @@ import type { Metadata } from 'next'
 import { SocialPortal } from '@/components/social/SocialPortal'
 
 export const metadata: Metadata = {
-  title: 'Gary L. Mariner II — AI Systems Architect',
+  title: 'Gary L. Mariner II — Executive Ecosystem Gateway',
   description:
-    'Enter the system. Gary L. Mariner II builds cinematic, high-performance digital ecosystems for brands, businesses, and individuals ready to scale.',
+    'A controlled ecosystem entry point for Gary L. Mariner II: executive AI transformation, systems architecture, implementation depth, and human-centered impact.',
   openGraph: {
-    title: 'Gary L. Mariner II — AI Systems Architect',
+    title: 'Gary L. Mariner II — Executive Ecosystem Gateway',
     description:
-      'A cinematic command-entry portal into Gary L. Mariner II’s ecosystem.',
+      'A cinematic, executive entry point into Gary L. Mariner II’s connected ecosystem.',
     url: 'https://www.garymariner.com/social',
     siteName: 'Gary L. Mariner II',
     type: 'website',

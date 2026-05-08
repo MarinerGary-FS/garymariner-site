@@ -1,65 +1,23 @@
 'use client'
 
-import { useCallback, useEffect, useState } from 'react'
-import { BriefcaseBusiness, Layers3, Radio, UserPlus } from 'lucide-react'
+import { useEffect, useState } from 'react'
+import { Layers3, Radio } from 'lucide-react'
 import { gsap } from 'gsap'
 import { CommandCard, CommandGrid } from '@/components/social/CommandCard'
 import { IdentityBackdrop } from '@/components/social/IdentityBackdrop'
 import { SocialDrawer } from '@/components/social/SocialDrawer'
 import { SocialHero } from '@/components/social/SocialHero'
-import { VCardModal } from '@/components/social/VCardModal'
+import { socialCommands, socialProof } from '@/lib/social-config'
 import { garyContact } from '@/lib/vcard'
 import { trackEvent } from '@/lib/analytics'
 
-const commands = [
-  {
-    label: 'Start a Build',
-    eyebrow: 'System Build',
-    description: 'For websites, digital ecosystems, automation, AI systems, and brand infrastructure.',
-    detail: 'Bring the idea, the pressure, or the chaos. We turn it into a premium operating system.',
-    cta: 'Build With Me',
-    href: '/contact',
-    icon: BriefcaseBusiness,
-    accent: 'blue',
-    event: 'social_start_build_click',
-  },
-  {
-    label: 'Enter Mariner Nexus',
-    eyebrow: 'Execution Layer',
-    description: 'For implementation depth, systems work, and transformation proof.',
-    detail: 'Case-study depth and execution capability now live inside the Mariner Nexus layer.',
-    cta: 'Enter Nexus',
-    href: 'https://www.marinernexus.com/case-studies',
-    icon: Layers3,
-    accent: 'red',
-    event: 'social_explore_work_click',
-  },
-  {
-    label: 'Save My Contact',
-    eyebrow: 'Direct Signal',
-    description: 'Open the contact system for phone, email, websites, and social profiles.',
-    detail: 'Save the vCard when you are ready to stay connected beyond the page.',
-    cta: 'Add to Contacts',
-    icon: UserPlus,
-    accent: 'silver',
-    event: 'social_vcard_open',
-  },
-  {
-    label: 'Follow the Signal',
-    eyebrow: 'Live Channels',
-    description: 'Open the private channel drawer for social, business, and impact links.',
-    detail: 'LinkedIn, Instagram, TikTok, Mariner Nexus, and Undugu stay hidden until intent is clear.',
-    cta: 'Open Channels',
-    icon: Radio,
-    accent: 'blue',
-    event: 'social_drawer_open',
-  },
-] as const
+const commandIcons = {
+  layers: Layers3,
+  radio: Radio,
+}
 
 export function SocialPortal() {
-  const [isVCardOpen, setIsVCardOpen] = useState(false)
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
-  const [copyState, setCopyState] = useState<'idle' | 'copied'>('idle')
 
   useEffect(() => {
     if (!isDrawerOpen) return
@@ -82,27 +40,6 @@ export function SocialPortal() {
     return () => context.revert()
   }, [isDrawerOpen])
 
-  const handleShare = useCallback(async () => {
-    trackEvent({ event: 'share_contact_click', label: 'Share Contact', href: garyContact.socialUrl })
-
-    try {
-      if (navigator.share) {
-        await navigator.share({
-          title: garyContact.name,
-          text: `${garyContact.name}, ${garyContact.role}.`,
-          url: garyContact.socialUrl,
-        })
-        return
-      }
-
-      await navigator.clipboard.writeText(garyContact.socialUrl)
-      setCopyState('copied')
-      window.setTimeout(() => setCopyState('idle'), 2200)
-    } catch {
-      setCopyState('idle')
-    }
-  }, [])
-
   return (
     <main className="social-portal relative min-h-screen overflow-hidden bg-[#030405] text-white">
       <IdentityBackdrop />
@@ -111,13 +48,36 @@ export function SocialPortal() {
         <SocialHero />
 
         <div className="relative z-10 pb-7">
-          <CommandGrid>
-            {commands.map((command) => {
+          <section
+            aria-label="Selected proof"
+            className="mx-auto mb-4 grid w-full max-w-6xl gap-2 px-5 sm:grid-cols-3 md:px-8 lg:px-10"
+          >
+            {socialProof.map((item) => (
+              <div
+                key={item.label}
+                className="border-y border-white/[0.07] bg-white/[0.018] px-4 py-3 backdrop-blur-sm sm:border-x sm:first:border-l sm:last:border-r"
+              >
+                <p className="font-display text-xl font-semibold leading-none text-white sm:text-2xl">
+                  {item.value}
+                </p>
+                <p className="mt-2 text-[0.66rem] font-semibold uppercase leading-4 tracking-[0.14em] text-white/42">
+                  {item.label}
+                </p>
+              </div>
+            ))}
+          </section>
+
+          <CommandGrid id="ecosystem-routes">
+            {socialCommands.map((command) => {
+              const Icon = commandIcons[command.icon]
+              const { icon: _icon, ...cardCommand } = command
+
               if ('href' in command) {
                 return (
                   <CommandCard
                     key={command.label}
-                    {...command}
+                    {...cardCommand}
+                    icon={Icon}
                     onClick={() =>
                       trackEvent({
                         event: command.event,
@@ -132,14 +92,11 @@ export function SocialPortal() {
               return (
                 <CommandCard
                   key={command.label}
-                  {...command}
+                  {...cardCommand}
+                  icon={Icon}
                   onClick={() => {
                     trackEvent({ event: command.event, label: command.label })
-                    if (command.label === 'Save My Contact') {
-                      setIsVCardOpen(true)
-                    } else {
-                      setIsDrawerOpen(true)
-                    }
+                    setIsDrawerOpen(true)
                   }}
                 />
               )
@@ -147,7 +104,7 @@ export function SocialPortal() {
           </CommandGrid>
 
           <p className="mx-auto mt-6 max-w-[19rem] text-center text-[0.64rem] font-medium uppercase leading-5 tracking-[0.12em] text-white/38 sm:max-w-2xl sm:text-xs sm:tracking-[0.18em]">
-            Systems built across brands, organizations, and high-growth environments.
+            Strategic identity, execution depth, human impact, and public intelligence remain connected.
           </p>
         </div>
 
@@ -165,13 +122,6 @@ export function SocialPortal() {
       </div>
 
       {isDrawerOpen && <SocialDrawer onClose={() => setIsDrawerOpen(false)} />}
-      {isVCardOpen && (
-        <VCardModal
-          copyState={copyState}
-          onShare={handleShare}
-          onClose={() => setIsVCardOpen(false)}
-        />
-      )}
     </main>
   )
 }

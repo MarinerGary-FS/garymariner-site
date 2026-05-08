@@ -20,7 +20,7 @@ export const homeScenes: HomeScene[] = [
     label: 'Entry into the system',
     title: 'Vision needs intelligent execution.',
     statement:
-      'Gary Mariner translates executive intent, operational systems, AI adoption, and human movement.',
+      'Executive intent, operational systems, AI adoption, and human movement need a shared architecture.',
     body:
       'This is the executive intelligence layer: a calm environment for translating complexity into systems that can actually move.',
     fragments: [
