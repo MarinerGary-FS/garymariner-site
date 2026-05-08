@@ -9,21 +9,33 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: '#000000',
+        background: '#05070A',
         surface: {
-          DEFAULT: '#080808',
-          raised: '#101010',
-          elevated: '#171717',
+          DEFAULT: '#11151B',
+          raised: '#171C23',
+          elevated: '#242B35',
+        },
+        sapphire: {
+          DEFAULT: '#5B7FFF',
+          light: '#9DB0FF',
+          dark: '#2F4EA8',
+          muted: '#5B7FFF1A',
+        },
+        cyan: {
+          DEFAULT: '#58C4DD',
+          light: '#9EE7F4',
+          dark: '#237D94',
+          muted: '#58C4DD1A',
         },
         gold: {
-          DEFAULT: '#C9A84C',
-          light: '#D4B86A',
-          dark: '#A8892E',
-          muted: '#C9A84C1A',
+          DEFAULT: '#5B7FFF',
+          light: '#9DB0FF',
+          dark: '#2F4EA8',
+          muted: '#5B7FFF1A',
         },
         border: {
-          DEFAULT: '#222222',
-          subtle: '#1A1A1A',
+          DEFAULT: '#242B35',
+          subtle: '#171C23',
         },
       },
       fontFamily: {

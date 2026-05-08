@@ -4,7 +4,9 @@
 
 @layer base {
   :root {
-    --gold: #C9A84C;
+    --accent: #5B7FFF;
+    --accent-cyan: #58C4DD;
+    --gold: var(--accent);
     /* Standard easing — used across all transitions for consistency */
     --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
     --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -21,14 +23,23 @@
   }
 
   body {
-    background-color: #000000;
-    color: #ffffff;
+    background:
+      radial-gradient(circle at 50% 0%, rgba(91,127,255,0.08), transparent 45%),
+      linear-gradient(180deg, #05070A 0%, #11151B 100%);
+    color: #F3F1EC;
     overflow-x: hidden;
   }
 
+  h1,
+  h2,
+  h3,
+  p {
+    overflow-wrap: break-word;
+  }
+
   ::selection {
-    background-color: #C9A84C33;
-    color: #ffffff;
+    background-color: rgba(91, 127, 255, 0.28);
+    color: #F3F1EC;
   }
 }
 
@@ -46,9 +57,9 @@
     transform: translateY(0);
   }
 
-  /* Gold gradient text */
+  /* Sapphire/cyan gradient text */
   .text-gold-gradient {
-    background: linear-gradient(135deg, #D4B86A 0%, #C9A84C 50%, #A8892E 100%);
+    background: linear-gradient(135deg, #9DB0FF 0%, #5B7FFF 48%, #58C4DD 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -62,9 +73,50 @@
     background-size: 64px 64px;
   }
 
+  .executive-scene {
+    background-color: #05070A;
+  }
+
+  .ambient-light {
+    background:
+      radial-gradient(circle at 18% 14%, rgba(91, 127, 255, 0.16), transparent 34%),
+      radial-gradient(circle at 82% 30%, rgba(88, 196, 221, 0.08), transparent 30%),
+      radial-gradient(circle at 48% 92%, rgba(91, 127, 255, 0.055), transparent 36%);
+    animation: ambientDrift 28s cubic-bezier(0.25, 0.1, 0.25, 1) infinite alternate;
+    transform-origin: center;
+    will-change: transform, opacity;
+  }
+
+  .depth-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 96px 96px;
+    mask-image: linear-gradient(to bottom, transparent 0%, black 18%, black 74%, transparent 100%);
+    transform: perspective(900px) rotateX(62deg) translateY(-12%);
+    transform-origin: top;
+  }
+
+  .infrastructure-field {
+    background:
+      linear-gradient(115deg, transparent 0 22%, rgba(255,255,255,0.055) 22.08%, transparent 22.25% 100%),
+      linear-gradient(68deg, transparent 0 58%, rgba(91,127,255,0.06) 58.08%, transparent 58.25% 100%),
+      linear-gradient(145deg, transparent 0 72%, rgba(88,196,221,0.052) 72.08%, transparent 72.22% 100%);
+    background-size: 560px 420px, 620px 520px, 740px 640px;
+    animation: infrastructureDrift 36s linear infinite;
+  }
+
+  .noise-field {
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(255,255,255,0.06) 0 1px, transparent 1.3px),
+      radial-gradient(circle at 70% 55%, rgba(255,255,255,0.035) 0 1px, transparent 1.3px);
+    background-size: 23px 29px, 37px 41px;
+    mix-blend-mode: screen;
+  }
+
   .liquid-glass {
     background:
-      radial-gradient(circle at 18% 0%, rgba(201, 168, 76, 0.055), transparent 32%),
+      radial-gradient(circle at 18% 0%, rgba(91, 127, 255, 0.055), transparent 32%),
       linear-gradient(135deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.012));
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
@@ -77,11 +129,11 @@
 
   .brand-glass {
     background:
-      linear-gradient(135deg, rgba(212, 175, 55, 0.09), rgba(255, 255, 255, 0.025) 42%, rgba(255, 255, 255, 0.012)),
+      linear-gradient(135deg, rgba(91, 127, 255, 0.09), rgba(255, 255, 255, 0.025) 42%, rgba(255, 255, 255, 0.012)),
       rgba(4, 4, 4, 0.78);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(212, 175, 55, 0.18);
+    border: 1px solid rgba(91, 127, 255, 0.18);
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.08),
       inset 0 -1px 0 rgba(0, 0, 0, 0.5),
@@ -91,14 +143,14 @@
   .cinematic-vignette {
     background:
       radial-gradient(ellipse at 24% 46%, rgba(0, 0, 0, 0.74), transparent 38%),
-      radial-gradient(circle at 50% 20%, rgba(201, 168, 76, 0.08), transparent 32%),
+      radial-gradient(circle at 50% 20%, rgba(91, 127, 255, 0.08), transparent 32%),
       radial-gradient(circle at 74% 44%, rgba(86, 166, 255, 0.08), transparent 34%),
       linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%);
   }
 
   .system-orbit {
     background:
-      conic-gradient(from 90deg, transparent 0deg, rgba(201, 168, 76, 0.28) 74deg, transparent 112deg, rgba(90, 172, 255, 0.22) 205deg, transparent 270deg),
+      conic-gradient(from 90deg, transparent 0deg, rgba(91, 127, 255, 0.24) 74deg, transparent 112deg, rgba(88, 196, 221, 0.20) 205deg, transparent 270deg),
       radial-gradient(circle, rgba(255, 255, 255, 0.055), transparent 60%);
     animation: orbitRotate 24s linear infinite;
   }
@@ -125,7 +177,7 @@
     inset-inline: 0;
     top: 0;
     height: 1px;
-    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.05), rgba(201, 168, 76, 0.16), rgba(255, 255, 255, 0.05), transparent);
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.05), rgba(91, 127, 255, 0.16), rgba(255, 255, 255, 0.05), transparent);
     pointer-events: none;
   }
 
@@ -136,7 +188,7 @@
     top: -24px;
     width: 1px;
     height: 88px;
-    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.11), rgba(201, 168, 76, 0.12), transparent);
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.11), rgba(88, 196, 221, 0.12), transparent);
     pointer-events: none;
     opacity: 0.65;
   }
@@ -144,7 +196,7 @@
   .flow-wash {
     background:
       linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.03), transparent),
-      radial-gradient(circle at 50% 0%, rgba(201, 168, 76, 0.055), transparent 34%),
+      radial-gradient(circle at 50% 0%, rgba(91, 127, 255, 0.055), transparent 34%),
       radial-gradient(circle at 85% 40%, rgba(88, 166, 255, 0.05), transparent 32%);
   }
 
@@ -158,7 +210,7 @@
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(circle at 18% 0%, rgba(201, 168, 76, 0.08), transparent 30%),
+      radial-gradient(circle at 18% 0%, rgba(91, 127, 255, 0.08), transparent 30%),
       radial-gradient(circle at 84% 20%, rgba(88, 166, 255, 0.07), transparent 28%),
       linear-gradient(135deg, rgba(255, 255, 255, 0.045), transparent 42%);
     pointer-events: none;
@@ -338,7 +390,7 @@
 
   .divider-gold {
     height: 1px;
-    background: linear-gradient(to right, transparent, #C9A84C44 30%, #C9A84C44 70%, transparent);
+    background: linear-gradient(to right, transparent, rgba(91, 127, 255, 0.30) 30%, rgba(88, 196, 221, 0.24) 70%, transparent);
   }
 }
 
@@ -354,6 +406,26 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes ambientDrift {
+  0% {
+    opacity: 0.72;
+    transform: translate3d(-1.2%, -0.6%, 0) scale(1);
+  }
+  100% {
+    opacity: 0.92;
+    transform: translate3d(1.1%, 0.8%, 0) scale(1.035);
+  }
+}
+
+@keyframes infrastructureDrift {
+  from {
+    background-position: 0 0, 0 0, 0 0;
+  }
+  to {
+    background-position: 560px 420px, -620px 520px, 740px -640px;
   }
 }
 
@@ -447,6 +519,11 @@
   .hero-animated {
     opacity: 1;
     transform: none;
+    animation: none;
+  }
+
+  .ambient-light,
+  .infrastructure-field {
     animation: none;
   }
 }

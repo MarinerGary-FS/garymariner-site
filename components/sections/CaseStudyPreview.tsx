@@ -125,7 +125,7 @@ function CaseBackdrop() {
   return (
     <div className="absolute inset-0">
       <div className="absolute inset-0 bg-grid opacity-20" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_22%,rgba(201,168,76,0.13),transparent_25%),radial-gradient(circle_at_75%_40%,rgba(88,166,255,0.12),transparent_26%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_22%,rgba(91,127,255,0.13),transparent_25%),radial-gradient(circle_at_75%_40%,rgba(88,196,221,0.12),transparent_26%)]" />
       <div className="absolute left-[12%] top-[15%] h-[320px] w-[320px] rounded-full border border-gold/15" />
       <div className="absolute left-[22%] top-[25%] h-px w-[56%] rotate-12 bg-gradient-to-r from-gold/30 via-white/18 to-transparent" />
       <div className="absolute right-[12%] top-[22%] h-24 w-48 rounded-lg border border-white/[0.07] bg-white/[0.025] backdrop-blur-[2px]" />

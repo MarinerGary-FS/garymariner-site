@@ -1,28 +1,12 @@
 import type { Metadata } from 'next'
-import { Hero } from '@/components/sections/Hero'
-import { SystemFlow } from '@/components/sections/SystemFlow'
-import { CaseStudyPreview } from '@/components/sections/CaseStudyPreview'
-import { OperatingPhilosophy } from '@/components/sections/OperatingPhilosophy'
-import { WhatIBuild } from '@/components/sections/WhatIBuild'
-import { FinalCTA } from '@/components/sections/FinalCTA'
-import { ProofBeforePhilosophy } from '@/components/sections/ProofBeforePhilosophy'
+import { HomeExperience } from '@/components/experience/HomeExperience'
 
 export const metadata: Metadata = {
-  title: 'Gary L. Mariner II — AI Systems Architecture for Modern Operators',
+  title: 'Gary L. Mariner II — Executive AI Systems Architecture',
   description:
-    'AI systems architecture for modern operators: websites, automation, AI workflows, CRM pathways, and business operations connected into one scalable execution layer.',
+    'An executive intelligence environment for AI transformation, systems architecture, operational clarity, and human-centered execution.',
 }
 
 export default function HomePage() {
-  return (
-    <>
-      <Hero />
-      <ProofBeforePhilosophy />
-      <SystemFlow />
-      <CaseStudyPreview />
-      <OperatingPhilosophy />
-      <WhatIBuild />
-      <FinalCTA />
-    </>
-  )
+  return <HomeExperience />
 }

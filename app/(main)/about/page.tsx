@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { PageHero } from '@/components/ui/PageHero'
 import { SectionWrapper } from '@/components/ui/SectionWrapper'
 import { Reveal } from '@/components/ui/Reveal'
@@ -74,6 +75,19 @@ export default function AboutPage() {
           {/* Left — sticky identity block */}
           <Reveal>
             <div className="lg:sticky lg:top-36 flex flex-col gap-6">
+              <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-surface/50">
+                <Image
+                  src="/images/gary-studio-97.jpg"
+                  alt="Gary L. Mariner II"
+                  width={1214}
+                  height={1618}
+                  className="aspect-[4/5] w-full object-cover opacity-90 saturate-[0.86]"
+                  sizes="(min-width: 1024px) 320px, 100vw"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/62 via-transparent to-transparent" />
+              </div>
+
               <div>
                 <p className="font-display font-bold text-display-md text-white leading-tight mb-2">
                   Gary L. Mariner II

@@ -44,7 +44,7 @@ export function ProofBeforePhilosophy() {
         <Reveal delay={120}>
           <div className="mb-5 grid gap-5 lg:grid-cols-[1.06fr_0.94fr] lg:items-stretch">
             <div className="brand-glass relative min-h-[310px] overflow-hidden rounded-sm p-6">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(201,168,76,0.13),transparent_24%),linear-gradient(135deg,rgba(255,255,255,0.035),transparent_44%)]" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(91,127,255,0.13),transparent_24%),linear-gradient(135deg,rgba(255,255,255,0.035),transparent_44%)]" />
               <div className="absolute left-[-9%] top-[16%] h-px w-[76%] rotate-[-8deg] bg-gradient-to-r from-transparent via-gold/60 to-transparent" />
               <div className="absolute bottom-[19%] right-[-8%] h-px w-[74%] rotate-[-8deg] bg-gradient-to-r from-transparent via-gold/42 to-transparent" />
               <div className="relative z-10 flex h-full flex-col justify-between">

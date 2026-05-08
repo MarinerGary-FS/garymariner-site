@@ -73,7 +73,7 @@ export function Hero() {
 
           <div className="hero-animated relative hidden min-h-[560px] lg:block" style={{ animationDelay: '260ms' }}>
             <div className="absolute inset-y-3 right-[-8%] w-[104%] overflow-hidden rounded-sm border border-gold/20 bg-[#070707] shadow-[0_40px_140px_rgba(0,0,0,0.62)]">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_68%_28%,rgba(212,175,55,0.12),transparent_24%),linear-gradient(135deg,#050505_0%,#101112_44%,#020202_100%)]" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_68%_28%,rgba(91,127,255,0.12),transparent_24%),linear-gradient(135deg,#05070A_0%,#11151B_44%,#05070A_100%)]" />
               <div className="absolute inset-10 border border-white/[0.055]" />
               <div className="absolute left-[17%] top-[17%] h-[340px] w-[340px] rounded-[2rem] border border-gold/25" />
               <div className="absolute left-[18%] top-[20%] font-display text-[9rem] font-bold leading-none tracking-[-0.08em] text-gold/55">
@@ -136,7 +136,7 @@ export function Hero() {
 function HeroBackdrop() {
   return (
     <div className="absolute inset-0 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(201,168,76,0.10),transparent_26%),linear-gradient(135deg,#030303_0%,#090909_48%,#000000_100%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(91,127,255,0.10),transparent_26%),linear-gradient(135deg,#05070A_0%,#11151B_48%,#05070A_100%)]" />
       <div className="hero-drift absolute inset-[-2%] bg-grid opacity-[0.13]" />
       <div className="absolute right-[-10rem] top-20 h-[34rem] w-[34rem] rounded-[3rem] border border-gold/[0.08] opacity-70 lg:hidden" />
       <div className="absolute right-[-2.5rem] top-36 font-display text-[9rem] font-bold leading-none tracking-[-0.08em] text-gold/[0.08] lg:hidden">

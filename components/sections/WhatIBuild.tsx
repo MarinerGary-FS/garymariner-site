@@ -84,8 +84,8 @@ function ServiceVisual({ variant }: { variant: number }) {
       <div
         className={
           isExecution
-            ? 'absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(88,166,255,0.14),transparent_32%),radial-gradient(circle_at_28%_50%,rgba(201,168,76,0.08),transparent_30%)]'
-            : 'absolute inset-0 bg-[radial-gradient(circle_at_38%_30%,rgba(201,168,76,0.14),transparent_30%),radial-gradient(circle_at_72%_56%,rgba(88,166,255,0.08),transparent_32%)]'
+            ? 'absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(88,196,221,0.14),transparent_32%),radial-gradient(circle_at_28%_50%,rgba(91,127,255,0.08),transparent_30%)]'
+            : 'absolute inset-0 bg-[radial-gradient(circle_at_38%_30%,rgba(91,127,255,0.14),transparent_30%),radial-gradient(circle_at_72%_56%,rgba(88,196,221,0.08),transparent_32%)]'
         }
       />
       <div className="system-orbit absolute left-1/2 top-[38%] h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-60" />

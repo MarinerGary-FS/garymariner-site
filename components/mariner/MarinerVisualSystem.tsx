@@ -47,7 +47,7 @@ export function MarinerVisualSystem({
       ref={rootRef}
       className="relative min-h-screen overflow-hidden bg-[#050505] text-[#f8fafc]"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(59,130,246,0.28),transparent_36%),radial-gradient(circle_at_82%_78%,rgba(239,68,68,0.18),transparent_42%),radial-gradient(circle_at_50%_42%,rgba(212,175,55,0.08),transparent_32%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(91,127,255,0.24),transparent_36%),radial-gradient(circle_at_82%_78%,rgba(88,196,221,0.13),transparent_42%),radial-gradient(circle_at_50%_42%,rgba(255,255,255,0.045),transparent_32%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_var(--cursor-x,50%)_var(--cursor-y,35%),rgba(255,255,255,0.08),transparent_24%)]" />
 
       {showGrid && (

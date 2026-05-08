@@ -8,7 +8,7 @@ export const siteContent = {
       { label: 'Mariner Nexus', href: 'https://www.marinernexus.com/' },
       { label: 'Contact', href: '/contact' },
     ],
-    cta: { label: 'Apply This To Your Business', href: '/contact' },
+    cta: { label: 'Begin a conversation', href: '/contact' },
   },
 
   hero: {
@@ -17,7 +17,7 @@ export const siteContent = {
     supporting:
       'I design and build digital ecosystems that connect websites, automation, AI workflows, and business operations into one scalable execution layer.',
     tagline: 'Built from real operational experience across nonprofit systems, customer service automation, CRM workflows, property operations, and AI-powered business transformation.',
-    primaryCTA: { label: 'Apply This To Your Business', href: '/contact' },
+    primaryCTA: { label: 'Begin a conversation', href: '/contact' },
     secondaryCTA: { label: 'View Transformation Work', href: '#selected-work' },
   },
 
@@ -207,8 +207,8 @@ export const siteContent = {
   finalCTA: {
     headline: 'Start with the business problem. Build the system around it.',
     supporting: 'If your organization is carrying manual workload, unclear workflows, or disconnected digital infrastructure, the next step is an architecture review.',
-    primaryCTA: { label: 'Apply This To Your Business', href: 'https://www.marinernexus.com/' },
-    secondaryCTA: { label: 'Enter Mariner Nexus', href: 'https://www.marinernexus.com/' },
+    primaryCTA: { label: 'Begin a conversation', href: '/contact' },
+    secondaryCTA: { label: 'Enter the ecosystem', href: 'https://www.marinernexus.com/' },
   },
 
   footer: {

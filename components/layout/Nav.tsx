@@ -38,7 +38,7 @@ export function Nav() {
           {/* Logo */}
           <Link
             href="/"
-            className="shrink-0 flex items-center transition-all duration-200 rounded-lg ring-1 ring-gold/30 shadow-[0_0_14px_rgba(201,168,76,0.18)] hover:ring-gold/50 hover:shadow-[0_0_20px_rgba(201,168,76,0.28)]"
+            className="shrink-0 flex items-center transition-all duration-200 rounded-lg ring-1 ring-sapphire/30 shadow-[0_0_14px_rgba(91,127,255,0.18)] hover:ring-cyan/45 hover:shadow-[0_0_20px_rgba(88,196,221,0.22)]"
             aria-label="Gary L. Mariner II — Home"
           >
             <Image
@@ -46,7 +46,7 @@ export function Nav() {
               alt="Gary L. Mariner II"
               width={40}
               height={40}
-              className="rounded-lg"
+              className="rounded-lg [filter:hue-rotate(185deg)_saturate(1.35)_brightness(1.08)]"
               priority
             />
           </Link>
@@ -58,7 +58,7 @@ export function Nav() {
                 key={link.href}
                 href={link.href}
                 {...(link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                className="relative text-sm font-sans text-white/60 hover:text-white transition-colors duration-300 tracking-wide after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-px after:bg-gold/40 hover:after:w-full after:transition-all after:duration-300"
+                className="relative text-sm font-sans text-white/60 hover:text-white transition-colors duration-300 tracking-wide after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-px after:bg-cyan/45 hover:after:w-full after:transition-all after:duration-300"
               >
                 {link.label}
               </Link>
@@ -74,7 +74,7 @@ export function Nav() {
 
           {/* Mobile menu toggle */}
           <button
-            className="md:hidden flex flex-col justify-center items-center gap-[5px] w-10 h-10 -m-1 p-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60 rounded-md"
+            className="md:hidden flex flex-col justify-center items-center gap-[5px] w-10 h-10 -m-1 p-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sapphire/60 rounded-md"
             onClick={() => setMenuOpen((v) => !v)}
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           >

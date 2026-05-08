@@ -158,10 +158,10 @@ export default function CaseStudiesPage() {
 
           <div>
             <div className="relative min-h-[260px] min-w-0 max-w-[calc(100vw-3rem)] overflow-hidden rounded-lg border border-white/10 bg-surface/70 p-6 md:max-w-none md:p-8">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_24%,rgba(201,168,76,0.12),transparent_31%),linear-gradient(135deg,rgba(255,255,255,0.035),transparent_48%)]" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_24%,rgba(91,127,255,0.12),transparent_31%),linear-gradient(135deg,rgba(255,255,255,0.035),transparent_48%)]" />
               <div className="relative h-[220px]">
                 <span className="absolute left-[7%] top-[18%] h-3 w-3 rounded-full bg-white/28 shadow-[0_0_24px_rgba(255,255,255,0.22)]" />
-                <span className="absolute left-[35%] top-[9%] h-2.5 w-2.5 rounded-full bg-gold/70 shadow-[0_0_28px_rgba(201,168,76,0.34)]" />
+                <span className="absolute left-[35%] top-[9%] h-2.5 w-2.5 rounded-full bg-sapphire/70 shadow-[0_0_28px_rgba(91,127,255,0.34)]" />
                 <span className="absolute left-[61%] top-[28%] h-4 w-4 rounded-full bg-white/20" />
                 <span className="absolute left-[82%] top-[13%] h-2 w-2 rounded-full bg-white/36" />
                 <span className="absolute left-[18%] top-[70%] h-4 w-4 rounded-full bg-white/18" />
@@ -242,7 +242,7 @@ export default function CaseStudiesPage() {
                 className={index === 0 ? 'lg:row-span-2' : ''}
               >
                 <div className="group relative flex h-full min-h-[220px] flex-col justify-between overflow-hidden rounded-lg border border-white/10 bg-surface p-6 md:p-8 transition-transform duration-400 hover:scale-[1.02]">
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_8%,rgba(201,168,76,0.16),transparent_35%),linear-gradient(135deg,rgba(255,255,255,0.05),transparent_44%)] opacity-80" />
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_8%,rgba(91,127,255,0.16),transparent_35%),linear-gradient(135deg,rgba(255,255,255,0.05),transparent_44%)] opacity-80" />
                   <div className="relative flex items-center justify-between">
                     <Icon size={22} strokeWidth={1.7} className="text-gold/75" />
                     <span className="h-px w-20 bg-gradient-to-r from-transparent to-white/16" />
@@ -303,7 +303,7 @@ export default function CaseStudiesPage() {
 
         {/* Conversion bridge */}
         <Reveal delay={120}>
-          <div className="mt-10 md:mt-12 rounded-lg border border-gold/25 bg-[linear-gradient(135deg,rgba(201,168,76,0.105),rgba(255,255,255,0.025)_42%,rgba(255,255,255,0.01))] p-6 md:p-8 lg:p-10">
+          <div className="mt-10 md:mt-12 rounded-lg border border-sapphire/25 bg-[linear-gradient(135deg,rgba(91,127,255,0.105),rgba(255,255,255,0.025)_42%,rgba(255,255,255,0.01))] p-6 md:p-8 lg:p-10">
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-7 lg:gap-10 items-center">
               <h2 className="max-w-3xl font-display text-3xl font-bold leading-tight text-white md:text-4xl">
                 If your business depends on manual work,

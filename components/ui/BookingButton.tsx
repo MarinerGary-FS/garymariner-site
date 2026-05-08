@@ -40,14 +40,14 @@ export function BookingButton({
   const [selected, setSelected] = useState<MeetingType | null>(null)
 
   const base =
-    'inline-flex items-center justify-center font-sans font-semibold tracking-wide transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60'
+    'inline-flex items-center justify-center font-sans font-semibold tracking-wide transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sapphire/60'
 
   const variants = {
     primary:
-      'bg-gold text-background hover:bg-gold-light hover:-translate-y-px hover:shadow-[0_6px_24px_rgba(201,168,76,0.30)] active:translate-y-0 active:shadow-none active:bg-gold-dark',
+      'bg-sapphire text-[#05070A] hover:bg-sapphire-light hover:-translate-y-px hover:shadow-[0_6px_24px_rgba(91,127,255,0.30)] active:translate-y-0 active:shadow-none active:bg-sapphire-dark',
     ghost:
       'border border-white/20 text-white hover:border-white/35 hover:bg-white/[0.04] active:bg-white/[0.08]',
-    text: 'text-gold hover:text-gold-light underline-offset-4 hover:underline p-0',
+    text: 'text-cyan hover:text-cyan-light underline-offset-4 hover:underline p-0',
   }
 
   const sizes = {
@@ -141,14 +141,13 @@ export function BookingButton({
 
           {/* Panel */}
           <div className="relative w-full sm:max-w-lg bg-[#111111] border border-white/10 rounded-t-lg sm:rounded-lg shadow-2xl shadow-black/80 overflow-hidden max-h-[90vh] overflow-y-auto">
-            {/* Gold top accent */}
-            <div className="h-px w-full bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
+            <div className="h-px w-full bg-gradient-to-r from-transparent via-sapphire/50 to-cyan/30" />
 
             <div className="px-6 pt-8 pb-6 sm:px-8 sm:pt-10 sm:pb-8">
               {/* Header */}
               <div className="flex items-start justify-between mb-8">
                 <div>
-                  <p className="text-xs font-sans text-gold/70 uppercase tracking-[0.16em] mb-2">
+                  <p className="text-xs font-sans text-cyan/70 uppercase tracking-[0.16em] mb-2">
                     Book a Consultation
                   </p>
                   <h2 className="font-display font-bold text-xl text-white leading-tight">
@@ -178,7 +177,7 @@ export function BookingButton({
                       className={cn(
                         'w-full text-left rounded-xl border p-5 transition-all duration-200 group',
                         isSelected
-                          ? 'border-gold/50 bg-gold/[0.07]'
+                          ? 'border-sapphire/50 bg-sapphire/[0.07]'
                           : 'border-white/8 bg-white/[0.02] hover:border-white/15 hover:bg-white/[0.04]'
                       )}
                     >
@@ -192,7 +191,7 @@ export function BookingButton({
                         <span className={cn(
                           'shrink-0 text-xs font-sans px-2.5 py-1 rounded-full border transition-colors duration-200',
                           isSelected
-                            ? 'border-gold/40 text-gold/90 bg-gold/10'
+                            ? 'border-sapphire/40 text-sapphire-light bg-sapphire/10'
                             : 'border-white/10 text-white/35'
                         )}>
                           {type.duration}
@@ -206,10 +205,10 @@ export function BookingButton({
                         'mt-3 flex items-center gap-2 transition-all duration-200',
                         isSelected ? 'opacity-100' : 'opacity-0'
                       )}>
-                        <div className="w-3.5 h-3.5 rounded-full border-2 border-gold bg-gold/20 flex items-center justify-center">
-                          <div className="w-1.5 h-1.5 rounded-full bg-gold" />
+                        <div className="w-3.5 h-3.5 rounded-full border-2 border-sapphire bg-sapphire/20 flex items-center justify-center">
+                          <div className="w-1.5 h-1.5 rounded-full bg-sapphire" />
                         </div>
-                        <span className="text-xs font-sans text-gold/70">Selected</span>
+                        <span className="text-xs font-sans text-cyan/70">Selected</span>
                       </div>
                     </button>
                   )
@@ -225,7 +224,7 @@ export function BookingButton({
                   className={cn(
                     'flex-1 inline-flex items-center justify-center gap-2 font-sans font-semibold text-sm rounded-lg px-6 py-3.5 transition-all duration-200',
                     selected
-                      ? 'bg-gold text-background hover:bg-gold-light hover:-translate-y-px hover:shadow-[0_6px_24px_rgba(201,168,76,0.25)]'
+                      ? 'bg-sapphire text-[#05070A] hover:bg-sapphire-light hover:-translate-y-px hover:shadow-[0_6px_24px_rgba(91,127,255,0.25)]'
                       : 'bg-white/5 text-white/25 cursor-not-allowed'
                   )}
                 >

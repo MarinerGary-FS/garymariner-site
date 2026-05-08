@@ -17,7 +17,7 @@ export function Footer() {
               alt="Gary L. Mariner II"
               width={56}
               height={56}
-              className="rounded-xl shrink-0 ring-1 ring-gold/25 shadow-[0_0_18px_rgba(201,168,76,0.16)]"
+              className="rounded-xl shrink-0 ring-1 ring-sapphire/25 shadow-[0_0_18px_rgba(91,127,255,0.16)] [filter:hue-rotate(185deg)_saturate(1.35)_brightness(1.08)]"
             />
             <div className="flex flex-col gap-1.5">
               <span className="font-display font-bold text-sm text-white tracking-tight">
@@ -60,7 +60,7 @@ export function Footer() {
                 href={s.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs font-sans text-white/40 hover:text-gold transition-colors duration-200 tracking-wide"
+                className="text-xs font-sans text-white/40 hover:text-cyan transition-colors duration-200 tracking-wide"
               >
                 {s.label}
               </Link>

@@ -48,7 +48,7 @@ export function SystemFlow() {
             ref={lineRef}
             className="absolute left-[10%] right-[10%] top-1/2 z-0 hidden h-px origin-left md:block"
             style={{
-              background: 'linear-gradient(90deg, rgba(201,168,76,0.08), rgba(201,168,76,0.7), rgba(94,174,255,0.36), rgba(201,168,76,0.08))',
+              background: 'linear-gradient(90deg, rgba(91,127,255,0.08), rgba(91,127,255,0.62), rgba(88,196,221,0.40), rgba(91,127,255,0.08))',
               transform: 'scaleX(0)',
               transition: 'transform 1.25s cubic-bezier(0.16, 1, 0.3, 1)',
             }}
@@ -61,7 +61,7 @@ export function SystemFlow() {
                   <span className="font-sans text-[10px] font-medium uppercase tracking-[0.22em] text-white/28">
                     0{i + 1}
                   </span>
-                  <span className="flex h-3 w-3 rounded-full bg-gold/70 shadow-[0_0_22px_rgba(201,168,76,0.55)]" />
+                  <span className="flex h-3 w-3 rounded-full bg-sapphire/70 shadow-[0_0_22px_rgba(91,127,255,0.50)]" />
                 </div>
 
                 <div>
