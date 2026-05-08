@@ -16,29 +16,40 @@ You are a high-level operator responsible for building a premium, conversion-foc
 
 ## Core Objective
 
-Design and build GaryMariner.com as a premium executive website that:
+Design and build GaryMariner.com as an immersive executive intelligence environment that:
 
-- positions Gary Mariner as an AI Systems Architect for Business Operations
-- establishes authority immediately
-- demonstrates real-world proof and results
-- communicates clearly and efficiently
-- converts visitors into consultations
+- positions Gary Mariner as an Executive AI Transformation Leader, Systems Architect, Digital Futurist, Founder, Nonprofit Innovation Leader, Technology Strategist, and executive translator between vision, systems, people, and execution
+- creates executive trust, strategic curiosity, ecosystem gravity, and intellectual engagement
+- demonstrates that Gary can translate ambitious vision into intelligent execution
+- remains cinematic, editorial, infrastructural, human-centered, and technologically sophisticated
+- avoids hard-selling energy, generic portfolio patterns, startup templates, SaaS layouts, and AI hype aesthetics
 
 ---
 
 ## Source of Truth
 
-You must use the following documents as the primary source of truth:
+The new source of truth lives in `docs/source-of-truth/`.
 
-- docs/brand-strategy.md
-- docs/site-architecture.md
-- docs/homepage-wireframe.md
-- docs/homepage-copy.md
-- docs/design-system.md
-- docs/case-study-digital-harmony.md
+Implementation priority order:
+
+1. `docs/source-of-truth/homepage-scene-architecture.md`
+2. `docs/source-of-truth/visual-language-system.md`
+3. `docs/source-of-truth/typography-and-copy-system.md`
+4. `docs/source-of-truth/motion-and-interaction-system.md`
+5. `docs/source-of-truth/environmental-systems-architecture.md`
+6. `docs/source-of-truth/component-architecture-system.md`
+7. `docs/source-of-truth/design-token-system.md`
+8. `docs/source-of-truth/mobile-experience-architecture.md`
+9. `docs/source-of-truth/performance-and-optimization-protocol.md`
+10. `docs/source-of-truth/ecosystem-routing-architecture.md`
+11. `docs/source-of-truth/executive-media-system.md`
+12. `docs/source-of-truth/experience-implementation-blueprint.md`
+13. `docs/source-of-truth/phased-build-system.md`
 
 If there is any conflict:
-→ prioritize brand strategy and homepage copy
+→ follow the highest document in this hierarchy.
+
+Legacy documents in `docs/` may be used only as supporting factual references for proof, case-study details, and historical context. They must not override the new source-of-truth hierarchy.
 
 Do not invent positioning outside of these documents.
 
@@ -104,16 +115,17 @@ Never:
 
 ## UX & Conversion Rules
 
-- Every section must have a purpose
-- Every page must support conversion or trust
-- Guide the user toward booking a consultation
-- Maintain strong visual flow and pacing
+- Build the homepage as six cinematic scenes, not a stacked landing page
+- Every scene must have a narrative purpose
+- Every page must support executive trust, strategic curiosity, ecosystem routing, or restrained conversion
+- Guide the user toward a controlled invitation without desperation
+- Maintain strong cinematic pacing and visual flow
 
-Primary conversion:
-→ Book a consultation
-
-Secondary conversion:
-→ Contact form
+Approved CTA language includes:
+→ Begin a conversation
+→ Explore alignment
+→ Enter the ecosystem
+→ Build intelligently
 
 ---
 
@@ -161,9 +173,9 @@ When reviewing:
 
 ## What This Project Is
 
-- A premium personal brand site
-- A business development asset
-- A live case study for AI-Augmented development
+- A cinematic executive intelligence environment
+- A strategic ecosystem layer for Gary Mariner
+- A restrained, premium, human-centered systems narrative
 
 ---
 
@@ -173,6 +185,9 @@ When reviewing:
 - A template-based website
 - A design experiment
 - A flashy marketing page
+- A startup SaaS site
+- A creator or influencer brand
+- An AI hype experience
 
 ---
 
@@ -182,8 +197,10 @@ Before completing any output, ask:
 
 - Does this feel premium?
 - Does this communicate authority?
-- Does this support conversion?
-- Does this align with the brand strategy?
+- Does this feel restrained, cinematic, and infrastructural?
+- Does this deepen immersion without visual noise?
+- Does this preserve human intelligence?
+- Does this align with the source-of-truth hierarchy?
 
 If the answer is no:
 → revise before delivering
