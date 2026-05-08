@@ -2,10 +2,8 @@ export const siteContent = {
   nav: {
     name: 'Gary L. Mariner II',
     links: [
-      { label: 'About', href: '/about' },
-      { label: 'Systems', href: '/services' },
-      { label: 'Case Studies', href: '/case-studies' },
       { label: 'Mariner Nexus', href: 'https://www.marinernexus.com/' },
+      { label: 'Undugu Foundation', href: 'https://www.undugu.org/' },
       { label: 'Contact', href: '/contact' },
     ],
     cta: { label: 'Begin a conversation', href: '/contact' },
@@ -87,22 +85,22 @@ export const siteContent = {
     {
       title: 'AI Workflow Architecture',
       description: 'AI workflows mapped to real operational tasks so teams reduce manual workload and improve consistency.',
-      href: '/services#ai-systems',
+      href: 'https://www.marinernexus.com/services',
     },
     {
       title: 'Website-to-CRM Ecosystems',
       description: 'Conversion websites connected to intake, routing, booking, CRM, and follow-up infrastructure.',
-      href: '/services#digital-infrastructure',
+      href: 'https://www.marinernexus.com/services',
     },
     {
       title: 'Automation & Operational Dashboards',
       description: 'Automation, reporting, and dashboards that make work visible and reduce repetitive coordination.',
-      href: '/services#operations',
+      href: 'https://www.marinernexus.com/services',
     },
     {
       title: 'Conversion Website Systems',
       description: 'Premium digital platforms built to communicate authority, capture demand, and support business operations.',
-      href: '/services#communications',
+      href: 'https://www.marinernexus.com/services',
     },
   ],
 
@@ -115,7 +113,7 @@ export const siteContent = {
         problem: 'Support volume depended too heavily on live agents and manual response paths.',
         solution: 'Implemented chatbot logic, workflow routing, and AI-assisted customer service automation.',
         result: 'Reduced live agent dependency by 70% while improving customer satisfaction by 90%.',
-        href: '/case-studies#digital-harmony',
+        href: 'https://www.marinernexus.com/case-studies',
       },
       {
         title: 'Nonprofit Digital Infrastructure',
@@ -129,14 +127,14 @@ export const siteContent = {
         problem: 'Many websites look credible but do not move visitors into a business process.',
         solution: 'Designed case study-driven websites, social link ecosystems, lead capture, and booking architecture.',
         result: 'Turned brand presence into a conversion-ready digital ecosystem.',
-        href: '/case-studies',
+        href: 'https://www.marinernexus.com/case-studies',
       },
       {
         title: 'AI Transformation Strategy',
         problem: 'Organizations adopt AI tools without redesigning the workflows those tools must support.',
         solution: 'Mapped Microsoft Copilot and AI workflow strategy to internal process modernization.',
         result: 'Created practical paths for operations intelligence, automation, and scalable execution.',
-        href: '/services#ai-systems',
+        href: 'https://www.marinernexus.com/services',
       },
     ],
   },
@@ -212,14 +210,13 @@ export const siteContent = {
   },
 
   footer: {
-    tagline: 'AI Systems Architect for Business Operations',
+    tagline: 'Executive intelligence layer',
     location: 'Atlanta, GA',
     email: 'gary.mariner@gmail.com',
     links: [
-      { label: 'About', href: '/about' },
-      { label: 'Systems', href: '/services' },
-      { label: 'Case Studies', href: '/case-studies' },
       { label: 'Mariner Nexus', href: 'https://www.marinernexus.com/' },
+      { label: 'Undugu Foundation', href: 'https://www.undugu.org/' },
+      { label: 'Black Relativity', href: '/social' },
       { label: 'Contact', href: '/contact' },
     ],
     social: [{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/gary-mariner-ii/' }],

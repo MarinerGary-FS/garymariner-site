@@ -80,10 +80,12 @@ export function SocialHero() {
             <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
           <Link
-            href="/case-studies"
+            href="https://www.marinernexus.com/case-studies"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/12 bg-white/[0.045] px-5 text-sm font-semibold text-white backdrop-blur-xl transition duration-300 hover:border-red-200/30 hover:bg-white/[0.075]"
           >
-            Explore the Work
+            Enter Mariner Nexus
             <ArrowUpRight className="h-4 w-4 text-white/45 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-white" />
           </Link>
         </div>
