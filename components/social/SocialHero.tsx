@@ -7,7 +7,7 @@ import { gsap } from 'gsap'
 import { ArrowUpRight } from 'lucide-react'
 import { socialHero } from '@/lib/social-config'
 
-export function SocialHero() {
+export function SocialHero({ onEnterEcosystem }: { onEnterEcosystem: () => void }) {
   const imageRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
@@ -66,13 +66,14 @@ export function SocialHero() {
         </p>
 
         <div className="mt-6 grid gap-3 sm:mx-auto sm:max-w-md sm:grid-cols-2 md:mx-0" data-hero-reveal>
-          <Link
-            href="#ecosystem-routes"
+          <button
+            type="button"
+            onClick={onEnterEcosystem}
             className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-white px-5 text-sm font-bold text-black shadow-[0_18px_60px_rgba(255,255,255,0.16)] transition duration-300 hover:bg-blue-100"
           >
             {socialHero.primaryCta}
             <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </Link>
+          </button>
           <Link
             href="https://www.marinernexus.com/case-studies"
             target="_blank"

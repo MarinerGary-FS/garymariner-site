@@ -129,7 +129,11 @@ export function CommandCard({
 
 export function CommandGrid({ children, id }: { children: ReactNode; id?: string }) {
   return (
-    <section id={id} className="mx-auto grid w-full max-w-6xl gap-3 px-5 md:grid-cols-2 md:px-8 lg:gap-4 lg:px-10">
+    <section
+      id={id}
+      tabIndex={id ? -1 : undefined}
+      className="mx-auto grid w-full max-w-6xl scroll-mt-8 gap-3 px-5 outline-none md:grid-cols-2 md:px-8 lg:scroll-mt-10 lg:gap-4 lg:px-10"
+    >
       {children}
     </section>
   )

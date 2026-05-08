@@ -3,11 +3,50 @@
 import { useCallback, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Check, Download, ExternalLink, Mail, Phone, Share2 } from 'lucide-react'
+import { Check, Download, ExternalLink, Share2 } from 'lucide-react'
 import { IdentityBackdrop } from '@/components/social/IdentityBackdrop'
-import { contactRows, garyContact, socialChannels } from '@/lib/vcard'
+import { garyContact, socialChannels } from '@/lib/vcard'
 import { socialProof } from '@/lib/social-config'
 import { trackEvent } from '@/lib/analytics'
+
+const networkPathways = [
+  {
+    eyebrow: 'Executive identity',
+    label: 'GaryMariner.com',
+    description: 'Strategic context for the work, the operating philosophy, and the executive narrative.',
+    href: garyContact.website,
+    cta: 'Open identity layer',
+  },
+  {
+    eyebrow: 'Execution depth',
+    label: 'Mariner Nexus',
+    description: 'Systems architecture, AI transformation, implementation capability, and venture-building proof.',
+    href: garyContact.businessSite,
+    cta: 'View execution layer',
+  },
+  {
+    eyebrow: 'Human systems',
+    label: 'Undugu Foundation',
+    description: 'Nonprofit innovation, community infrastructure, and the human-centered layer behind the ecosystem.',
+    href: garyContact.foundationSite,
+    cta: 'Open impact layer',
+  },
+]
+
+const networkSignals = [
+  {
+    label: 'AI transformation',
+    value: 'Executive vision translated into usable systems.',
+  },
+  {
+    label: 'Systems architecture',
+    value: 'Operational complexity shaped into clear execution paths.',
+  },
+  {
+    label: 'Human-centered strategy',
+    value: 'Technology decisions grounded in people, adoption, and trust.',
+  },
+]
 
 export function NetworkingPortal() {
   const [copyState, setCopyState] = useState<'idle' | 'copied'>('idle')
@@ -38,9 +77,9 @@ export function NetworkingPortal() {
     <main className="relative min-h-screen overflow-hidden bg-[#030405] text-white">
       <IdentityBackdrop />
 
-      <section className="relative z-10 mx-auto flex min-h-screen w-full max-w-6xl flex-col px-5 py-8 sm:px-8 lg:px-10">
-        <div className="grid flex-1 items-center gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
-          <div className="mx-auto w-full max-w-[22rem] lg:mx-0">
+      <section className="relative z-10 mx-auto flex min-h-screen w-full max-w-full flex-col px-5 py-8 sm:max-w-6xl sm:px-8 lg:px-10">
+        <div className="grid min-w-0 flex-1 items-center gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
+          <div className="w-full max-w-[350px] sm:mx-auto sm:max-w-[22rem] lg:mx-0">
             <div className="relative aspect-[4/5]">
               <div className="absolute -inset-4 rounded-[2rem] bg-[conic-gradient(from_160deg,rgba(91,127,255,0.22),rgba(255,255,255,0.08),rgba(88,196,221,0.12),rgba(91,127,255,0.22))] opacity-70 blur-2xl" />
               <div className="absolute inset-0 rounded-[2rem] border border-white/12 bg-[linear-gradient(145deg,rgba(255,255,255,0.13),rgba(255,255,255,0.025))] shadow-[0_36px_120px_rgba(0,0,0,0.5)] backdrop-blur-xl" />
@@ -59,7 +98,7 @@ export function NetworkingPortal() {
             </div>
           </div>
 
-          <div>
+          <div className="w-full min-w-0 max-w-[350px] sm:max-w-full">
             <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-blue-100/62">
               Private networking card
             </p>
@@ -71,39 +110,48 @@ export function NetworkingPortal() {
               Executive AI transformation, systems architecture, and human-centered execution.
             </p>
             <p className="mt-4 max-w-2xl text-sm leading-7 text-white/58 sm:text-base">
-              Save the direct contact layer, then move through the ecosystem with context:
-              GaryMariner.com, Mariner Nexus, Undugu, and public channels.
+              Save the contact card for private follow-up. Use this page as a curated
+              gateway into the work, proof, ecosystem, and public channels.
             </p>
 
-            <div className="mt-7 grid gap-3 sm:grid-cols-[1fr_auto]">
-              <a
-                href={garyContact.vcardPath}
-                download
-                onClick={() =>
-                  trackEvent({
-                    event: 'network_save_contact_click',
-                    label: 'Save Contact',
-                    href: garyContact.vcardPath,
-                  })
-                }
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-white px-5 text-sm font-bold text-black shadow-[0_18px_60px_rgba(255,255,255,0.16)] transition hover:bg-blue-100"
-              >
-                <Download className="h-4 w-4" />
-                Save contact
-              </a>
-              <button
-                type="button"
-                onClick={handleShare}
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/12 bg-white/[0.045] px-5 text-sm font-semibold text-white backdrop-blur-xl transition hover:border-blue-200/35 hover:bg-white/[0.08]"
-              >
-                {copyState === 'copied' ? <Check className="h-4 w-4 text-blue-200" /> : <Share2 className="h-4 w-4" />}
-                {copyState === 'copied' ? 'Copied' : 'Share'}
-              </button>
+            <div className="mt-7 rounded-2xl border border-blue-100/18 bg-[linear-gradient(145deg,rgba(255,255,255,0.105),rgba(255,255,255,0.028))] p-4 shadow-[0_24px_90px_rgba(0,0,0,0.28)] backdrop-blur-xl sm:p-5">
+              <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-blue-100/68">
+                Private follow-up
+              </p>
+              <p className="mt-2 max-w-xl text-sm leading-6 text-white/62">
+                Download the contact card to add the private contact layer to your phone.
+                The page itself keeps the visible experience focused on context.
+              </p>
+              <div className="mt-4 grid gap-3 sm:grid-cols-[1fr_auto]">
+                <a
+                  href={garyContact.vcardPath}
+                  download
+                  onClick={() =>
+                    trackEvent({
+                      event: 'network_save_contact_click',
+                      label: 'Save Contact',
+                      href: garyContact.vcardPath,
+                    })
+                  }
+                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-white px-5 text-sm font-bold text-black shadow-[0_18px_60px_rgba(255,255,255,0.16)] transition hover:bg-blue-100"
+                >
+                  <Download className="h-4 w-4" />
+                  Save contact
+                </a>
+                <button
+                  type="button"
+                  onClick={handleShare}
+                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/12 bg-white/[0.045] px-5 text-sm font-semibold text-white backdrop-blur-xl transition hover:border-blue-200/35 hover:bg-white/[0.08]"
+                >
+                  {copyState === 'copied' ? <Check className="h-4 w-4 text-blue-200" /> : <Share2 className="h-4 w-4" />}
+                  {copyState === 'copied' ? 'Copied' : 'Share'}
+                </button>
+              </div>
             </div>
 
             <section
               aria-label="Selected proof"
-              className="mt-7 grid gap-2 sm:grid-cols-3"
+              className="mt-7 grid min-w-0 gap-2 sm:grid-cols-3"
             >
               {socialProof.map((item) => (
                 <div
@@ -122,21 +170,36 @@ export function NetworkingPortal() {
           </div>
         </div>
 
-        <div className="relative z-10 grid gap-4 pb-6 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="relative z-10 grid min-w-0 max-w-[350px] gap-4 pb-6 sm:max-w-full lg:grid-cols-[1.1fr_0.9fr]">
           <section className="rounded-2xl border border-white/[0.075] bg-white/[0.026] p-4 backdrop-blur-xl sm:p-5">
             <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-blue-100/58">
-              Direct contact
+              Start here
             </p>
-            <div className="mt-4 grid gap-2 sm:grid-cols-2">
-              {contactRows.map((row) => (
-                <ContactLink key={row.label} {...row} />
+            <div className="mt-4 grid gap-2">
+              {networkPathways.map((pathway) => (
+                <NetworkPathway key={pathway.label} {...pathway} />
               ))}
             </div>
           </section>
 
           <section className="rounded-2xl border border-white/[0.075] bg-white/[0.026] p-4 backdrop-blur-xl sm:p-5">
             <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-blue-100/58">
-              Ecosystem channels
+              Networking context
+            </p>
+            <div className="mt-4 grid gap-2">
+              {networkSignals.map((signal) => (
+                <div
+                  key={signal.label}
+                  className="rounded-xl border border-white/[0.065] bg-white/[0.03] px-4 py-3"
+                >
+                  <p className="text-sm font-semibold text-white">{signal.label}</p>
+                  <p className="mt-1 text-sm leading-6 text-white/54">{signal.value}</p>
+                </div>
+              ))}
+            </div>
+
+            <p className="mt-5 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-blue-100/58">
+              Public channels
             </p>
             <div className="mt-4 grid gap-2">
               {socialChannels.map((channel) => (
@@ -167,25 +230,38 @@ export function NetworkingPortal() {
   )
 }
 
-function ContactLink({ label, value, href }: { label: string; value: string; href: string }) {
-  const Icon = label.includes('Email') ? Mail : label === 'Phone' ? Phone : ExternalLink
-
+function NetworkPathway({
+  eyebrow,
+  label,
+  description,
+  href,
+  cta,
+}: {
+  eyebrow: string
+  label: string
+  description: string
+  href: string
+  cta: string
+}) {
   return (
     <Link
       href={href}
-      target={href.startsWith('http') ? '_blank' : undefined}
-      rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-      className="group flex min-h-16 items-center gap-3 rounded-xl border border-white/[0.065] bg-white/[0.03] p-3 transition hover:border-blue-200/25 hover:bg-white/[0.06]"
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={() => trackEvent({ event: 'network_pathway_click', label, href })}
+      className="group flex min-h-24 items-center justify-between gap-4 rounded-xl border border-white/[0.065] bg-white/[0.03] p-4 transition hover:border-blue-200/25 hover:bg-white/[0.06]"
     >
-      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/[0.055] text-white/62 group-hover:text-blue-100">
-        <Icon className="h-4 w-4" />
-      </span>
       <span className="min-w-0">
         <span className="block text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-white/34">
-          {label}
+          {eyebrow}
         </span>
-        <span className="mt-1 block break-words text-sm font-medium text-white/78">{value}</span>
+        <span className="mt-1 block text-base font-semibold text-white/88">{label}</span>
+        <span className="mt-2 block text-sm leading-6 text-white/52">{description}</span>
+        <span className="mt-3 block text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-blue-100/62">
+          {cta}
+        </span>
       </span>
+      <ExternalLink className="h-4 w-4 shrink-0 text-white/30 transition group-hover:text-blue-100" />
     </Link>
   )
 }

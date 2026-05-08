@@ -19,6 +19,17 @@ const commandIcons = {
 export function SocialPortal() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
 
+  const handleEnterEcosystem = () => {
+    trackEvent({ event: 'social_enter_ecosystem_click', label: 'Enter the ecosystem' })
+
+    const routes = document.getElementById('ecosystem-routes')
+    if (!routes) return
+
+    routes.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    window.history.replaceState(null, '', '#ecosystem-routes')
+    routes.focus({ preventScroll: true })
+  }
+
   useEffect(() => {
     if (!isDrawerOpen) return
 
@@ -45,7 +56,7 @@ export function SocialPortal() {
       <IdentityBackdrop />
 
       <div className="relative z-10 flex min-h-screen flex-col">
-        <SocialHero />
+        <SocialHero onEnterEcosystem={handleEnterEcosystem} />
 
         <div className="relative z-10 pb-7">
           <section
