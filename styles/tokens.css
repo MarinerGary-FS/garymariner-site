@@ -1,0 +1,131 @@
+:root {
+  color-scheme: dark;
+
+  /* Core palette: RGB channels allow Tailwind opacity modifiers. */
+  --gm-bg-void-rgb: 7 9 13;
+  --gm-bg-graphite-rgb: 11 15 21;
+  --gm-bg-elevated-rgb: 17 23 33;
+  --gm-bg-carbon-rgb: 23 28 35;
+  --gm-bg-steel-rgb: 36 43 53;
+  --gm-text-primary-rgb: 245 247 250;
+  --gm-text-secondary-rgb: 174 185 200;
+  --gm-text-muted-rgb: 114 128 148;
+  --gm-cyan-rgb: 92 225 230;
+  --gm-sapphire-rgb: 68 120 255;
+  --gm-sapphire-light-rgb: 157 176 255;
+  --gm-sapphire-dark-rgb: 47 78 168;
+  --gm-platinum-rgb: 219 228 239;
+  --gm-gold-rgb: 216 189 122;
+  --gm-gold-light-rgb: 235 216 169;
+  --gm-gold-dark-rgb: 148 119 61;
+  --gm-emerald-rgb: 73 214 162;
+  --gm-ember-rgb: 143 77 77;
+
+  --gm-bg-void: rgb(var(--gm-bg-void-rgb));
+  --gm-bg-graphite: rgb(var(--gm-bg-graphite-rgb));
+  --gm-bg-elevated: rgb(var(--gm-bg-elevated-rgb));
+  --gm-text-primary: rgb(var(--gm-text-primary-rgb));
+  --gm-text-secondary: rgb(var(--gm-text-secondary-rgb));
+  --gm-text-muted: rgb(var(--gm-text-muted-rgb));
+  --gm-cyan: rgb(var(--gm-cyan-rgb));
+  --gm-sapphire: rgb(var(--gm-sapphire-rgb));
+  --gm-platinum: rgb(var(--gm-platinum-rgb));
+  --gm-gold: rgb(var(--gm-gold-rgb));
+  --gm-emerald: rgb(var(--gm-emerald-rgb));
+
+  --gm-surface-glass: rgb(18 27 39 / 0.58);
+  --gm-surface-glass-strong: rgb(18 27 39 / 0.78);
+  --gm-border-soft: rgb(var(--gm-platinum-rgb) / 0.12);
+  --gm-border-active: rgb(var(--gm-cyan-rgb) / 0.48);
+  --gm-focus: rgb(var(--gm-cyan-rgb));
+
+  --gm-gradient-environment:
+    radial-gradient(circle at 18% 12%, rgb(var(--gm-sapphire-rgb) / 0.12), transparent 34%),
+    radial-gradient(circle at 82% 28%, rgb(var(--gm-cyan-rgb) / 0.07), transparent 32%),
+    linear-gradient(180deg, var(--gm-bg-void) 0%, var(--gm-bg-graphite) 100%);
+  --gm-gradient-glass:
+    linear-gradient(135deg, rgb(255 255 255 / 0.075), transparent 34%),
+    radial-gradient(circle at 80% 0%, rgb(var(--gm-cyan-rgb) / 0.08), transparent 38%);
+  --gm-gradient-legacy:
+    linear-gradient(110deg, rgb(var(--gm-gold-rgb) / 0.95), rgb(var(--gm-platinum-rgb) / 0.92));
+
+  --gm-font-display: var(--font-geist-sans), Arial, sans-serif;
+  --gm-font-body: var(--font-geist-sans), Arial, sans-serif;
+  --gm-font-mono: var(--font-geist-mono), "SFMono-Regular", Consolas, monospace;
+  --gm-font-editorial: var(--font-newsreader), Georgia, serif;
+
+  --gm-text-xs: 0.75rem;
+  --gm-text-sm: 0.875rem;
+  --gm-text-base: 1rem;
+  --gm-text-lg: 1.125rem;
+  --gm-text-xl: 1.375rem;
+  --gm-text-2xl: 1.75rem;
+  --gm-text-3xl: 2.25rem;
+  --gm-text-4xl: 2.75rem;
+  --gm-text-hero: 3.5rem;
+
+  --gm-leading-tight: 1.04;
+  --gm-leading-heading: 1.12;
+  --gm-leading-body: 1.7;
+  --gm-leading-relaxed: 1.85;
+
+  --gm-space-1: 0.25rem;
+  --gm-space-2: 0.5rem;
+  --gm-space-3: 0.75rem;
+  --gm-space-4: 1rem;
+  --gm-space-5: 1.25rem;
+  --gm-space-6: 1.5rem;
+  --gm-space-8: 2rem;
+  --gm-space-10: 2.5rem;
+  --gm-space-12: 3rem;
+  --gm-space-16: 4rem;
+  --gm-space-20: 5rem;
+  --gm-space-24: 6rem;
+  --gm-space-32: 8rem;
+  --gm-section-space: 6rem;
+
+  --gm-grid-columns: 4;
+  --gm-grid-gap: 1rem;
+  --gm-page-gutter: 1.25rem;
+  --gm-container-max: 90rem;
+  --gm-reading-max: 46rem;
+
+  --gm-radius-sm: 0.25rem;
+  --gm-radius-md: 0.375rem;
+  --gm-radius-lg: 0.5rem;
+  --gm-blur-glass: 18px;
+  --gm-shadow-depth: 0 28px 90px rgb(0 0 0 / 0.38);
+  --gm-shadow-light: 0 0 40px rgb(var(--gm-cyan-rgb) / 0.12);
+
+  --gm-duration-micro: 180ms;
+  --gm-duration-module: 420ms;
+  --gm-duration-reveal: 760ms;
+  --gm-duration-environment: 24s;
+  --gm-ease-standard: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --gm-ease-expressive: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --gm-z-environment: 0;
+  --gm-z-content: 10;
+  --gm-z-overlay: 30;
+  --gm-z-navigation: 50;
+}
+
+@media (min-width: 48rem) {
+  :root {
+    --gm-grid-columns: 6;
+    --gm-grid-gap: 1.25rem;
+    --gm-page-gutter: 2rem;
+    --gm-section-space: 8rem;
+    --gm-text-hero: 4.75rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  :root {
+    --gm-grid-columns: 12;
+    --gm-grid-gap: 1.5rem;
+    --gm-page-gutter: 3rem;
+    --gm-section-space: 10rem;
+    --gm-text-hero: 6rem;
+  }
+}

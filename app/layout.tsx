@@ -1,7 +1,9 @@
 import type { Metadata, Viewport } from 'next'
-import { IBM_Plex_Sans, Newsreader } from 'next/font/google'
+import { Geist, Geist_Mono, Newsreader } from 'next/font/google'
 import Script from 'next/script'
 import { EventTracker } from '@/components/analytics/EventTracker'
+import { createMetadata } from '@/lib/metadata'
+import '@/styles/tokens.css'
 import './globals.css'
 
 const newsreader = Newsreader({
@@ -11,15 +13,20 @@ const newsreader = Newsreader({
   display: 'swap',
 })
 
-const ibmPlexSans = IBM_Plex_Sans({
+const geistSans = Geist({
   subsets: ['latin'],
-  weight: ['400', '500', '600'],
-  variable: '--font-ibm-plex-sans',
+  variable: '--font-geist-sans',
   display: 'swap',
 })
 
-export const metadata: Metadata = {
-  title: 'Gary L. Mariner II — AI Systems Architect',
+const geistMono = Geist_Mono({
+  subsets: ['latin'],
+  variable: '--font-geist-mono',
+  display: 'swap',
+})
+
+export const metadata: Metadata = createMetadata({
+  title: 'Gary L. Mariner II | Executive AI Systems Architect',
   description:
     'AI transformation consultant, digital ecosystem architect, and business automation strategist building AI workflow automation, nonprofit digital infrastructure, and conversion-ready systems from Atlanta.',
   keywords: [
@@ -33,31 +40,7 @@ export const metadata: Metadata = {
     'nonprofit digital infrastructure',
     'AI workflow automation',
   ],
-  openGraph: {
-    title: 'Gary L. Mariner II — AI Systems Architect',
-    description:
-      'AI workflow automation, digital infrastructure, and business operations architecture for modern organizations.',
-    url: 'https://garymariner.com',
-    siteName: 'Gary L. Mariner II',
-    type: 'website',
-    images: [
-      {
-        url: '/og-image.png',
-        width: 600,
-        height: 600,
-        alt: 'Gary L. Mariner II — AI Systems Architect for Business Operations',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary',
-    title: 'Gary L. Mariner II — AI Systems Architect',
-    description:
-      'AI workflow automation, digital infrastructure, and business operations architecture for modern organizations.',
-    images: ['/og-image.png'],
-  },
-  metadataBase: new URL('https://garymariner.com'),
-}
+})
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -66,10 +49,13 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${newsreader.variable} ${ibmPlexSans.variable}`}>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${newsreader.variable}`}>
       <body className="bg-background text-white font-sans antialiased">
+        <a className="gm-skip-link" href="#main-content">
+          Skip to content
+        </a>
         <EventTracker />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         {/* Cal.com embed — loaded after interactive, no layout impact */}
         <Script
           id="cal-embed"

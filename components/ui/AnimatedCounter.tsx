@@ -22,6 +22,24 @@ export function AnimatedCounter({ value, className }: AnimatedCounterProps) {
     const el = ref.current
     if (!el || hasAnimated) return
 
+    function animateValue(start: number, end: number, duration: number) {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        setDisplayed(value)
+        return
+      }
+
+      const startTime = performance.now()
+      function step(currentTime: number) {
+        const elapsed = currentTime - startTime
+        const progress = Math.min(elapsed / duration, 1)
+        const eased = 1 - Math.pow(1 - progress, 3)
+        const current = Math.round(start + (end - start) * eased)
+        setDisplayed(`${prefix}${current}${suffix}`)
+        if (progress < 1) requestAnimationFrame(step)
+      }
+      requestAnimationFrame(step)
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !hasAnimated) {
@@ -35,29 +53,7 @@ export function AnimatedCounter({ value, className }: AnimatedCounterProps) {
 
     observer.observe(el)
     return () => observer.disconnect()
-  }, [num, hasAnimated])
-
-  function animateValue(start: number, end: number, duration: number) {
-    // Respect prefers-reduced-motion
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      setDisplayed(value)
-      return
-    }
-
-    const startTime = performance.now()
-    function step(currentTime: number) {
-      const elapsed = currentTime - startTime
-      const progress = Math.min(elapsed / duration, 1)
-      // Ease out cubic
-      const eased = 1 - Math.pow(1 - progress, 3)
-      const current = Math.round(start + (end - start) * eased)
-      setDisplayed(`${prefix}${current}${suffix}`)
-      if (progress < 1) {
-        requestAnimationFrame(step)
-      }
-    }
-    requestAnimationFrame(step)
-  }
+  }, [hasAnimated, num, prefix, suffix, value])
 
   return (
     <span ref={ref} className={className}>

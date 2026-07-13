@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { BookingButton } from '@/components/ui/BookingButton'
@@ -10,6 +10,7 @@ import { cn } from '@/lib/utils'
 export function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const menuButtonRef = useRef<HTMLButtonElement>(null)
   const { nav } = siteContent
 
   useEffect(() => {
@@ -18,10 +19,25 @@ export function Nav() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : ''
-    return () => { document.body.style.overflow = '' }
+    if (!menuOpen) return
+
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => { document.body.style.overflow = previousOverflow }
+  }, [menuOpen])
+
+  useEffect(() => {
+    if (!menuOpen) return
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') return
+      setMenuOpen(false)
+      menuButtonRef.current?.focus()
+    }
+
+    document.addEventListener('keydown', closeOnEscape)
+    return () => document.removeEventListener('keydown', closeOnEscape)
   }, [menuOpen])
 
   return (
@@ -34,7 +50,7 @@ export function Nav() {
             : 'bg-transparent'
         )}
       >
-        <div className="max-w-site mx-auto px-5 md:px-8 lg:px-10 h-16 md:h-[4.5rem] flex items-center justify-between">
+        <div className="gm-container flex h-16 items-center justify-between md:h-[4.5rem]">
           {/* Logo */}
           <Link
             href="/"
@@ -52,7 +68,7 @@ export function Nav() {
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav aria-label="Primary navigation" className="hidden items-center gap-6 lg:flex">
             {nav.links.map((link) => (
               <Link
                 key={link.href}
@@ -66,7 +82,7 @@ export function Nav() {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden md:flex items-center">
+          <div className="hidden items-center lg:flex">
             <BookingButton size="sm" trackingEvent="booking_cta_click" trackingLabel={nav.cta.label}>
               {nav.cta.label}
             </BookingButton>
@@ -74,9 +90,12 @@ export function Nav() {
 
           {/* Mobile menu toggle */}
           <button
-            className="md:hidden flex flex-col justify-center items-center gap-[5px] w-10 h-10 -m-1 p-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sapphire/60 rounded-md"
+            ref={menuButtonRef}
+            className="-m-1 flex h-10 w-10 flex-col items-center justify-center gap-[5px] rounded-md p-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sapphire/60 lg:hidden"
             onClick={() => setMenuOpen((v) => !v)}
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
           >
             <span
               className={cn(
@@ -101,13 +120,11 @@ export function Nav() {
       </header>
 
       {/* Mobile menu overlay */}
-      <div
-        className={cn(
-          'fixed inset-0 z-40 bg-background flex flex-col px-6 pt-24 pb-12 transition-all duration-300 md:hidden',
-          menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-        )}
+      {menuOpen ? <div
+        id="mobile-navigation"
+        className="fixed inset-0 z-40 flex flex-col bg-background px-6 pb-12 pt-24 lg:hidden"
       >
-        <nav className="flex flex-col gap-8 flex-1">
+        <nav aria-label="Mobile navigation" className="flex flex-1 flex-col gap-8">
           {nav.links.map((link, i) => (
             <Link
               key={link.href}
@@ -116,9 +133,9 @@ export function Nav() {
               onClick={() => setMenuOpen(false)}
               className={cn(
                 'text-2xl font-display font-semibold text-white/80 hover:text-white transition-all duration-300',
-                menuOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+                'gm-motion-enter'
               )}
-              style={{ transitionDelay: menuOpen ? `${i * 60}ms` : '0ms' }}
+              style={{ animationDelay: `${i * 60}ms` }}
             >
               {link.label}
             </Link>
@@ -128,16 +145,16 @@ export function Nav() {
           size="lg"
           className={cn(
             'w-full justify-center transition-all duration-300',
-            menuOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+            'gm-motion-enter'
           )}
-          style={{ transitionDelay: menuOpen ? `${nav.links.length * 60 + 60}ms` : '0ms' } as React.CSSProperties}
+          style={{ animationDelay: `${nav.links.length * 60 + 60}ms` } as React.CSSProperties}
           onClick={() => setMenuOpen(false)}
           trackingEvent="booking_cta_click"
           trackingLabel={nav.cta.label}
         >
           {nav.cta.label}
         </BookingButton>
-      </div>
+      </div> : null}
     </>
   )
 }

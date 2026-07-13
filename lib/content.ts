@@ -2,9 +2,11 @@ export const siteContent = {
   nav: {
     name: 'Gary L. Mariner II',
     links: [
-      { label: 'Mariner Nexus', href: 'https://www.marinernexus.com/' },
-      { label: 'Undugu Foundation', href: 'https://www.undugu.org/' },
-      { label: 'Contact', href: '/contact' },
+      { label: 'Origin', href: '/#origin' },
+      { label: 'Systems', href: '/#systems' },
+      { label: 'Decisions', href: '/#decisions' },
+      { label: 'Field Notes', href: '/#field-notes' },
+      { label: 'Nexus', href: '/#nexus' },
     ],
     cta: { label: 'Begin a conversation', href: '/contact' },
   },

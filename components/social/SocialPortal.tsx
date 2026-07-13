@@ -81,14 +81,13 @@ export function SocialPortal() {
           <CommandGrid id="ecosystem-routes">
             {socialCommands.map((command) => {
               const Icon = commandIcons[command.icon]
-              const { icon: _icon, ...cardCommand } = command
+              const cardCommand = { ...command, icon: Icon }
 
               if ('href' in command) {
                 return (
                   <CommandCard
                     key={command.label}
                     {...cardCommand}
-                    icon={Icon}
                     onClick={() =>
                       trackEvent({
                         event: command.event,
@@ -104,7 +103,6 @@ export function SocialPortal() {
                 <CommandCard
                   key={command.label}
                   {...cardCommand}
-                  icon={Icon}
                   onClick={() => {
                     trackEvent({ event: command.event, label: command.label })
                     setIsDrawerOpen(true)

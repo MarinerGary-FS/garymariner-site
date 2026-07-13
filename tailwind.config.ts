@@ -9,38 +9,40 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: '#05070A',
+        background: 'rgb(var(--gm-bg-void-rgb) / <alpha-value>)',
         surface: {
-          DEFAULT: '#11151B',
-          raised: '#171C23',
-          elevated: '#242B35',
+          DEFAULT: 'rgb(var(--gm-bg-graphite-rgb) / <alpha-value>)',
+          raised: 'rgb(var(--gm-bg-carbon-rgb) / <alpha-value>)',
+          elevated: 'rgb(var(--gm-bg-elevated-rgb) / <alpha-value>)',
         },
         sapphire: {
-          DEFAULT: '#5B7FFF',
-          light: '#9DB0FF',
-          dark: '#2F4EA8',
-          muted: '#5B7FFF1A',
+          DEFAULT: 'rgb(var(--gm-sapphire-rgb) / <alpha-value>)',
+          light: 'rgb(var(--gm-sapphire-light-rgb) / <alpha-value>)',
+          dark: 'rgb(var(--gm-sapphire-dark-rgb) / <alpha-value>)',
+          muted: 'rgb(var(--gm-sapphire-rgb) / 0.1)',
         },
         cyan: {
-          DEFAULT: '#58C4DD',
-          light: '#9EE7F4',
-          dark: '#237D94',
-          muted: '#58C4DD1A',
+          DEFAULT: 'rgb(var(--gm-cyan-rgb) / <alpha-value>)',
+          light: 'rgb(var(--gm-platinum-rgb) / <alpha-value>)',
+          dark: 'rgb(var(--gm-cyan-rgb) / 0.72)',
+          muted: 'rgb(var(--gm-cyan-rgb) / 0.1)',
         },
         gold: {
-          DEFAULT: '#5B7FFF',
-          light: '#9DB0FF',
-          dark: '#2F4EA8',
-          muted: '#5B7FFF1A',
+          DEFAULT: 'rgb(var(--gm-gold-rgb) / <alpha-value>)',
+          light: 'rgb(var(--gm-gold-light-rgb) / <alpha-value>)',
+          dark: 'rgb(var(--gm-gold-dark-rgb) / <alpha-value>)',
+          muted: 'rgb(var(--gm-gold-rgb) / 0.1)',
         },
         border: {
-          DEFAULT: '#242B35',
-          subtle: '#171C23',
+          DEFAULT: 'rgb(var(--gm-platinum-rgb) / 0.12)',
+          subtle: 'rgb(var(--gm-platinum-rgb) / 0.08)',
         },
       },
       fontFamily: {
-        display: ['var(--font-newsreader)', 'Georgia', 'serif'],
-        sans: ['var(--font-ibm-plex-sans)', 'Inter', 'system-ui', 'sans-serif'],
+        display: ['var(--gm-font-display)'],
+        sans: ['var(--gm-font-body)'],
+        mono: ['var(--gm-font-mono)'],
+        editorial: ['var(--gm-font-editorial)'],
       },
       fontSize: {
         'display-3xl': ['3.75rem', { lineHeight: '1', letterSpacing: '0' }],
@@ -50,14 +52,15 @@ const config: Config = {
         'display-md': ['1.375rem', { lineHeight: '1.24', letterSpacing: '0' }],
       },
       maxWidth: {
-        site: '1024px',
+        site: 'var(--gm-container-max)',
+        reading: 'var(--gm-reading-max)',
       },
       spacing: {
         section: '7rem',
         'section-sm': '5rem',
       },
       transitionDuration: {
-        '400': '400ms',
+        '400': 'var(--gm-duration-module)',
       },
       animation: {
         'fade-up': 'fadeUp 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards',
