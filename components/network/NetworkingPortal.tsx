@@ -91,7 +91,8 @@ export function NetworkingPortal() {
   async function share() {
     if (sharing) return
     setMessage('')
-    setManualShare(false)
+    setManualShare(true)
+    setMessage('You can also select and copy the page address below.')
     setSharing(true)
     const outcome = await shareNetworkLink({
       share: navigator.share ? (data) => navigator.share(data) : undefined,
@@ -106,6 +107,8 @@ export function NetworkingPortal() {
   }
 
   async function copyLink() {
+    setManualShare(true)
+    setMessage('Select and copy the page address below, or wait for clipboard confirmation.')
     const outcome = await shareNetworkLink({
       writeText: navigator.clipboard?.writeText ? (value) => navigator.clipboard.writeText(value) : undefined,
     })
