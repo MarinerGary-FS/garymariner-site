@@ -2,17 +2,17 @@ import type { Metadata } from 'next'
 import { NetworkingPortal } from '@/components/network/NetworkingPortal'
 
 export const metadata: Metadata = {
-  title: 'Gary L. Mariner II — Networking Gateway',
+  title: 'Gary L. Mariner II — Stay Connected',
   description:
-    'A private networking gateway for Gary L. Mariner II with curated ecosystem links and a vCard download.',
+    'Save Gary’s contact card, continue a conversation, or explore alignment with Mariner Nexus.',
   robots: {
     index: false,
     follow: false,
   },
   openGraph: {
-    title: 'Gary L. Mariner II — Networking Gateway',
+    title: 'Gary L. Mariner II — Stay Connected',
     description:
-      'Curated networking context and ecosystem links for Gary L. Mariner II.',
+      'Save Gary’s contact card and continue the conversation.',
     url: 'https://www.garymariner.com/network',
     siteName: 'Gary L. Mariner II',
     type: 'website',
