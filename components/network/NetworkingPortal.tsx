@@ -1,267 +1,200 @@
 'use client'
 
-import { useCallback, useState } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { Check, Download, ExternalLink, Share2 } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
+import { ArrowDown, ArrowUpRight, Layers3, Radio, Share2 } from 'lucide-react'
+import { CommandCard, CommandGrid } from '@/components/social/CommandCard'
 import { IdentityBackdrop } from '@/components/social/IdentityBackdrop'
-import { garyContact, socialChannels } from '@/lib/vcard'
-import { socialProof } from '@/lib/social-config'
-import { trackEvent } from '@/lib/analytics'
+import { SocialDrawer } from '@/components/social/SocialDrawer'
+import { SocialHero, socialPrimaryAction, socialSecondaryAction } from '@/components/social/SocialHero'
+import { socialHero } from '@/lib/social-config'
+import type { KeyboardEvent } from 'react'
 
-const networkPathways = [
-  {
-    eyebrow: 'Executive identity',
-    label: 'GaryMariner.com',
-    description: 'Strategic context for the work, the operating philosophy, and the executive narrative.',
-    href: garyContact.website,
-    cta: 'Open identity layer',
-  },
-  {
-    eyebrow: 'Execution depth',
-    label: 'Mariner Nexus',
-    description: 'Systems architecture, AI transformation, implementation capability, and venture-building proof.',
-    href: garyContact.businessSite,
-    cta: 'View execution layer',
-  },
-  {
-    eyebrow: 'Human systems',
-    label: 'Undugu Foundation',
-    description: 'Nonprofit innovation, community infrastructure, and the human-centered layer behind the ecosystem.',
-    href: garyContact.foundationSite,
-    cta: 'Open impact layer',
-  },
-]
+const networkEmail = 'gary.mariner@gmail.com'
+const networkEmailHref = `mailto:${networkEmail}?subject=${encodeURIComponent('Great connecting — Gary Mariner')}`
+function closeOnEscape(event: KeyboardEvent<HTMLElement>, open: boolean, onClose: () => void) {
+  if (event.key !== 'Escape' || event.defaultPrevented || !open) return
+  event.preventDefault()
+  event.stopPropagation()
+  onClose()
+}
+import styles from './network.module.css'
 
-const networkSignals = [
-  {
-    label: 'AI transformation',
-    value: 'Executive vision translated into usable systems.',
-  },
-  {
-    label: 'Systems architecture',
-    value: 'Operational complexity shaped into clear execution paths.',
-  },
-  {
-    label: 'Human-centered strategy',
-    value: 'Technology decisions grounded in people, adoption, and trust.',
-  },
-]
-
-export function NetworkingPortal() {
-  const [copyState, setCopyState] = useState<'idle' | 'copied'>('idle')
-
-  const handleShare = useCallback(async () => {
-    const url = garyContact.networkUrl
-    trackEvent({ event: 'network_share_click', label: 'Share Network Card', href: url })
-
-    try {
-      if (navigator.share) {
-        await navigator.share({
-          title: garyContact.name,
-          text: `${garyContact.name}, ${garyContact.role}.`,
-          url,
-        })
-        return
-      }
-
-      await navigator.clipboard.writeText(url)
-      setCopyState('copied')
-      window.setTimeout(() => setCopyState('idle'), 2200)
-    } catch {
-      setCopyState('idle')
-    }
-  }, [])
-
-  return (
-    <main className="relative min-h-screen overflow-hidden bg-[#030405] text-white">
-      <IdentityBackdrop />
-
-      <section className="relative z-10 mx-auto flex min-h-screen w-full max-w-full flex-col px-5 py-8 sm:max-w-6xl sm:px-8 lg:px-10">
-        <div className="grid min-w-0 flex-1 items-center gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
-          <div className="w-full max-w-[350px] sm:mx-auto sm:max-w-[22rem] lg:mx-0">
-            <div className="relative aspect-[4/5]">
-              <div className="absolute -inset-4 rounded-[2rem] bg-[conic-gradient(from_160deg,rgba(91,127,255,0.22),rgba(255,255,255,0.08),rgba(88,196,221,0.12),rgba(91,127,255,0.22))] opacity-70 blur-2xl" />
-              <div className="absolute inset-0 rounded-[2rem] border border-white/12 bg-[linear-gradient(145deg,rgba(255,255,255,0.13),rgba(255,255,255,0.025))] shadow-[0_36px_120px_rgba(0,0,0,0.5)] backdrop-blur-xl" />
-              <div className="absolute inset-3 overflow-hidden rounded-[1.45rem] border border-white/10 bg-black">
-                <Image
-                  src="/images/gary-portrait.jpg"
-                  alt="Gary L. Mariner II"
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 352px, 80vw"
-                  className="object-cover object-[center_15%]"
-                />
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_48%,rgba(0,0,0,0.68)_100%)]" />
-              </div>
-              <div className="absolute bottom-8 left-8 right-8 h-px bg-gradient-to-r from-transparent via-white/45 to-transparent" />
-            </div>
-          </div>
-
-          <div className="w-full min-w-0 max-w-[350px] sm:max-w-full">
-            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-blue-100/62">
-              Private networking card
-            </p>
-            <h1 className="mt-3 font-display text-[2.7rem] font-semibold leading-[0.96] tracking-normal text-white sm:text-[4.4rem] lg:text-[5.4rem]">
-              Gary L.
-              <span className="block">Mariner II</span>
-            </h1>
-            <p className="mt-5 max-w-2xl text-[1.06rem] font-semibold leading-7 text-white sm:text-[1.28rem] sm:leading-8">
-              Executive AI transformation, systems architecture, and human-centered execution.
-            </p>
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-white/58 sm:text-base">
-              Save the contact card for private follow-up. Use this page as a curated
-              gateway into the work, proof, ecosystem, and public channels.
-            </p>
-
-            <div className="mt-7 rounded-2xl border border-blue-100/18 bg-[linear-gradient(145deg,rgba(255,255,255,0.105),rgba(255,255,255,0.028))] p-4 shadow-[0_24px_90px_rgba(0,0,0,0.28)] backdrop-blur-xl sm:p-5">
-              <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-blue-100/68">
-                Private follow-up
-              </p>
-              <p className="mt-2 max-w-xl text-sm leading-6 text-white/62">
-                Download the contact card to add the private contact layer to your phone.
-                The page itself keeps the visible experience focused on context.
-              </p>
-              <div className="mt-4 grid gap-3 sm:grid-cols-[1fr_auto]">
-                <a
-                  href={garyContact.vcardPath}
-                  download
-                  onClick={() =>
-                    trackEvent({
-                      event: 'network_save_contact_click',
-                      label: 'Save Contact',
-                      href: garyContact.vcardPath,
-                    })
-                  }
-                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-white px-5 text-sm font-bold text-black shadow-[0_18px_60px_rgba(255,255,255,0.16)] transition hover:bg-blue-100"
-                >
-                  <Download className="h-4 w-4" />
-                  Save contact
-                </a>
-                <button
-                  type="button"
-                  onClick={handleShare}
-                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/12 bg-white/[0.045] px-5 text-sm font-semibold text-white backdrop-blur-xl transition hover:border-blue-200/35 hover:bg-white/[0.08]"
-                >
-                  {copyState === 'copied' ? <Check className="h-4 w-4 text-blue-200" /> : <Share2 className="h-4 w-4" />}
-                  {copyState === 'copied' ? 'Copied' : 'Share'}
-                </button>
-              </div>
-            </div>
-
-            <section
-              aria-label="Selected proof"
-              className="mt-7 grid min-w-0 gap-2 sm:grid-cols-3"
-            >
-              {socialProof.map((item) => (
-                <div
-                  key={item.label}
-                  className="border-y border-white/[0.07] bg-white/[0.018] px-4 py-3 backdrop-blur-sm sm:border-x"
-                >
-                  <p className="font-display text-xl font-semibold leading-none text-white sm:text-2xl">
-                    {item.value}
-                  </p>
-                  <p className="mt-2 text-[0.66rem] font-semibold uppercase leading-4 tracking-[0.14em] text-white/42">
-                    {item.label}
-                  </p>
-                </div>
-              ))}
-            </section>
-          </div>
-        </div>
-
-        <div className="relative z-10 grid min-w-0 max-w-[350px] gap-4 pb-6 sm:max-w-full lg:grid-cols-[1.1fr_0.9fr]">
-          <section className="rounded-2xl border border-white/[0.075] bg-white/[0.026] p-4 backdrop-blur-xl sm:p-5">
-            <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-blue-100/58">
-              Start here
-            </p>
-            <div className="mt-4 grid gap-2">
-              {networkPathways.map((pathway) => (
-                <NetworkPathway key={pathway.label} {...pathway} />
-              ))}
-            </div>
-          </section>
-
-          <section className="rounded-2xl border border-white/[0.075] bg-white/[0.026] p-4 backdrop-blur-xl sm:p-5">
-            <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-blue-100/58">
-              Networking context
-            </p>
-            <div className="mt-4 grid gap-2">
-              {networkSignals.map((signal) => (
-                <div
-                  key={signal.label}
-                  className="rounded-xl border border-white/[0.065] bg-white/[0.03] px-4 py-3"
-                >
-                  <p className="text-sm font-semibold text-white">{signal.label}</p>
-                  <p className="mt-1 text-sm leading-6 text-white/54">{signal.value}</p>
-                </div>
-              ))}
-            </div>
-
-            <p className="mt-5 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-blue-100/58">
-              Public channels
-            </p>
-            <div className="mt-4 grid gap-2">
-              {socialChannels.map((channel) => (
-                <Link
-                  key={channel.label}
-                  href={channel.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() =>
-                    trackEvent({ event: channel.event, label: channel.label, href: channel.href })
-                  }
-                  className="group flex min-h-12 items-center justify-between rounded-xl border border-white/[0.065] bg-white/[0.03] px-4 py-3 text-white/74 transition hover:border-blue-200/30 hover:bg-white/[0.07] hover:text-white"
-                >
-                  <span>
-                    <span className="block text-sm font-semibold">{channel.label}</span>
-                    <span className="mt-1 block text-[0.64rem] font-semibold uppercase tracking-[0.14em] text-white/32">
-                      {channel.type}
-                    </span>
-                  </span>
-                  <ExternalLink className="h-4 w-4 text-white/30 transition group-hover:text-blue-100" />
-                </Link>
-              ))}
-            </div>
-          </section>
-        </div>
-      </section>
-    </main>
-  )
+export const networkUrl = 'https://www.garymariner.com/network'
+type SharePlatform = {
+  share?: (data: ShareData) => Promise<void>
+  writeText?: (value: string) => Promise<void>
 }
 
-function NetworkPathway({
-  eyebrow,
-  label,
-  description,
-  href,
-  cta,
-}: {
-  eyebrow: string
-  label: string
-  description: string
-  href: string
-  cta: string
-}) {
+// Outcomes describe observable browser operations, never delivery or contact import.
+export async function shareNetworkLink(platform: SharePlatform): Promise<'native' | 'copied' | 'cancelled' | 'manual'> {
+  if (platform.share) {
+    try {
+      await platform.share({ title: 'Gary L. Mariner II', url: networkUrl })
+      return 'native'
+    } catch (error) {
+      return typeof error === 'object' && error !== null && 'name' in error && error.name === 'AbortError'
+        ? 'cancelled' : 'manual'
+    }
+  }
+  if (!platform.writeText) return 'manual'
+  try {
+    await platform.writeText(networkUrl)
+    return 'copied'
+  } catch {
+    return 'manual'
+  }
+}
+
+const personalChannels = [
+  { label: 'LinkedIn', type: 'Gary Mariner II', href: 'https://www.linkedin.com/in/gary-mariner-ii/' },
+  { label: 'Instagram', type: '@theleodynasty', href: 'https://www.instagram.com/theleodynasty/' },
+  { label: 'TikTok', type: '@theleodynasty', href: 'https://www.tiktok.com/@theleodynasty' },
+] as const
+
+const networkHero = {
+  ...socialHero,
+  body: 'A controlled entry point into the public ecosystem: implementation depth through Mariner Nexus and curated personal connections.',
+}
+
+type Panel = 'exchange' | 'social'
+
+export function NetworkingPortal() {
+  const [panel, setPanel] = useState<Panel | null>(null)
+  const [message, setMessage] = useState('')
+  const [manualShare, setManualShare] = useState(false)
+  const [sharing, setSharing] = useState(false)
+  const triggerRef = useRef<HTMLElement | null>(null)
+  const closeRef = useRef<HTMLButtonElement>(null)
+  const addressRef = useRef<HTMLInputElement>(null)
+  const keyboardExitRef = useRef(false)
+
+  useEffect(() => {
+    if (panel) closeRef.current?.focus({ preventScroll: true })
+  }, [panel])
+
+  function dismiss(restoreFocus = true) {
+    setPanel(null)
+    if (restoreFocus) triggerRef.current?.focus()
+  }
+
+  function show(next: Panel, trigger: HTMLElement) {
+    triggerRef.current = trigger
+    setPanel((previous) => previous === next ? null : next)
+  }
+
+  function enterEcosystem() {
+    const routes = document.getElementById('network-ecosystem')
+    routes?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' })
+    routes?.focus({ preventScroll: true })
+  }
+
+  async function share() {
+    if (sharing) return
+    setMessage('')
+    setManualShare(false)
+    setSharing(true)
+    const outcome = await shareNetworkLink({
+      share: navigator.share ? (data) => navigator.share(data) : undefined,
+      writeText: navigator.clipboard?.writeText ? (value) => navigator.clipboard.writeText(value) : undefined,
+    })
+    setSharing(false)
+    if (outcome === 'copied') setMessage('Link copied. You can paste it into a message.')
+    if (outcome === 'manual') {
+      setMessage('Sharing is unavailable here. Select and copy the page address below.')
+      setManualShare(true)
+    }
+  }
+
+  async function copyLink() {
+    const outcome = await shareNetworkLink({
+      writeText: navigator.clipboard?.writeText ? (value) => navigator.clipboard.writeText(value) : undefined,
+    })
+    setManualShare(outcome !== 'copied')
+    setMessage(outcome === 'copied' ? 'Link copied. You can paste it into a message.' : 'Select and copy the page address below.')
+  }
+
   return (
-    <Link
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      onClick={() => trackEvent({ event: 'network_pathway_click', label, href })}
-      className="group flex min-h-24 items-center justify-between gap-4 rounded-xl border border-white/[0.065] bg-white/[0.03] p-4 transition hover:border-blue-200/25 hover:bg-white/[0.06]"
-    >
-      <span className="min-w-0">
-        <span className="block text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-white/34">
-          {eyebrow}
-        </span>
-        <span className="mt-1 block text-base font-semibold text-white/88">{label}</span>
-        <span className="mt-2 block text-sm leading-6 text-white/52">{description}</span>
-        <span className="mt-3 block text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-blue-100/62">
-          {cta}
-        </span>
-      </span>
-      <ExternalLink className="h-4 w-4 shrink-0 text-white/30 transition group-hover:text-blue-100" />
-    </Link>
+    <div className={`${styles.root} social-portal relative min-h-screen overflow-hidden bg-[#030405] text-white`}
+      onFocusCapture={(event) => {
+        if (!panel || event.target === triggerRef.current) return
+        const drawer = document.getElementById(`network-${panel}`)
+        if (drawer && !drawer.contains(event.target)) dismiss(false)
+      }}>
+      <IdentityBackdrop />
+      <div className="relative z-10 flex min-h-screen flex-col">
+        <SocialHero content={networkHero} onEnterEcosystem={enterEcosystem} secondaryHref="https://www.marinernexus.com/start" respectReducedMotion
+          additionalActions={<>
+            <a href="/network/gary-mariner.vcf" download="Gary-Mariner.vcf" className={socialPrimaryAction}>
+              Save My Contact <ArrowDown className="h-4 w-4" aria-hidden="true" />
+            </a>
+            <button type="button" className={socialSecondaryAction} aria-expanded={panel === 'exchange'} aria-controls="network-exchange"
+              onClick={(event) => show('exchange', event.currentTarget)}
+              onKeyDown={(event) => closeOnEscape(event, panel === 'exchange', () => dismiss())}>
+              Exchange With Me <ArrowUpRight className="h-4 w-4 text-white/45" aria-hidden="true" />
+            </button>
+          </>} />
+
+        <div className="relative z-10 pb-7">
+          <CommandGrid id="network-ecosystem">
+            <CommandCard label="Enter Mariner Nexus" eyebrow="Execution & transformation"
+              description="Implementation depth, systems work, and operational proof live in the execution layer."
+              detail="Mariner Nexus shows how strategic systems thinking becomes digital infrastructure."
+              cta="Build intelligently" href="https://www.marinernexus.com/start" icon={Layers3} accent="sapphire" respectReducedMotion />
+            <CommandCard label="Social Connections" eyebrow="Personal connections"
+              description="Connect through LinkedIn, Instagram, and TikTok."
+              detail="Choose a personal channel and continue the conversation at your pace."
+              cta="Open channels" icon={Radio} accent="cyan" expanded={panel === 'social'} controls="network-social" respectReducedMotion
+              onClick={(event) => show('social', event.currentTarget)}
+              onKeyDown={(event) => closeOnEscape(event, panel === 'social', () => dismiss())} />
+          </CommandGrid>
+
+          <div className={styles.utility}>
+            <a href={networkEmailHref} className={styles.emailLink}>Prefer email? Continue in your own app <ArrowUpRight size={16} aria-hidden="true" /></a>
+            <p className={styles.privacy}>You choose what to share and send it yourself. Opening your email app does not send a message.
+              This page does not submit or store your details, sync contacts, or enroll you in marketing.</p>
+            <div className={styles.utilityActions}>
+              <button type="button" className={socialSecondaryAction} onClick={share} disabled={sharing}>
+                {sharing ? 'Sharing…' : 'Share this page'} <Share2 size={16} aria-hidden="true" />
+              </button>
+              <button type="button" className={socialSecondaryAction} onClick={copyLink}>Copy link</button>
+              <a href="https://www.garymariner.com/" className={styles.emailLink}>Explore GaryMariner.com <ArrowUpRight size={16} aria-hidden="true" /></a>
+            </div>
+            <p role="status" aria-atomic="true" className={styles.status}>{message}</p>
+            {manualShare && <div className={styles.manualShare}>
+              <label htmlFor="network-address">Network page address</label>
+              <input id="network-address" ref={addressRef} type="url" value={networkUrl} readOnly spellCheck={false} />
+              <button type="button" className={socialSecondaryAction} onClick={() => { addressRef.current?.focus(); addressRef.current?.select() }}>Select address</button>
+            </div>}
+          </div>
+        </div>
+
+        <footer className="relative z-10 mx-auto mt-auto flex w-full max-w-6xl flex-col items-center justify-between gap-2 border-t border-white/[0.06] px-5 py-4 text-xs font-medium text-white/42 sm:flex-row sm:px-8 lg:px-10">
+          <span>© Gary L. Mariner II</span>
+          <a href="https://www.marinernexus.com/start" target="_blank" rel="noopener noreferrer" className="transition hover:text-blue-100">Built with Mariner Nexus</a>
+        </footer>
+      </div>
+
+      {panel && <SocialDrawer key={panel} id={`network-${panel}`} className={styles.drawerBackdrop} closeRef={closeRef}
+        onClose={() => dismiss()} trackClicks={false} channels={personalChannels} announceNewTab
+        eyebrow={panel === 'exchange' ? 'Continue the conversation' : 'Personal connections'}
+        title={panel === 'exchange' ? 'Exchange With Me' : 'Connect in your own way.'}
+        closeLabel={panel === 'exchange' ? 'Close contact exchange' : 'Close Social Connections'}
+        onKeyDown={(event) => {
+          keyboardExitRef.current = event.key === 'Tab'
+          closeOnEscape(event, true, () => dismiss())
+        }}
+        onFocusLeave={(event) => {
+          const next = event.relatedTarget
+          if (next instanceof Node && !event.currentTarget.contains(next) && (next !== triggerRef.current || keyboardExitRef.current)) dismiss(false)
+          keyboardExitRef.current = false
+        }}>
+        {panel === 'exchange' ? <div className={styles.exchangeContent}>
+          <p>Share your name, preferred contact details, and where we met. Mention a personal connection, business interest, or collaboration if you’d like.</p>
+          <a href={networkEmailHref} className={socialPrimaryAction}>Open your email app <ArrowUpRight size={16} aria-hidden="true" /></a>
+          <p>You choose what to share and send it yourself. Opening your email app does not send a message.</p>
+          <a href={`mailto:${networkEmail}`} className={styles.emailLink}>{networkEmail}</a>
+        </div> : undefined}
+      </SocialDrawer>}
+    </div>
   )
 }
