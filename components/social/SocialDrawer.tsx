@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
+import type { FocusEventHandler, KeyboardEventHandler, ReactNode, RefObject } from 'react'
 import Link from 'next/link'
 import { ExternalLink, X } from 'lucide-react'
 import { socialChannels } from '@/lib/vcard'
@@ -8,50 +9,65 @@ import { trackEvent } from '@/lib/analytics'
 
 type SocialDrawerProps = {
   onClose: () => void
+  channels?: ReadonlyArray<{ label: string; href: string; type: string; event?: string }>
+  title?: string
+  eyebrow?: string
+  children?: ReactNode
+  id?: string
+  className?: string
+  closeRef?: RefObject<HTMLButtonElement | null>
+  onKeyDown?: KeyboardEventHandler<HTMLElement>
+  onFocusLeave?: FocusEventHandler<HTMLElement>
+  trackClicks?: boolean
+  closeLabel?: string
+  announceNewTab?: boolean
 }
 
-export function SocialDrawer({ onClose }: SocialDrawerProps) {
+export function SocialDrawer({ onClose, channels = socialChannels, title = 'Route with context', eyebrow = 'Ecosystem channels', children, id, className, closeRef, onKeyDown, onFocusLeave, trackClicks = true, closeLabel = 'Close social channels', announceNewTab = false }: SocialDrawerProps) {
   useEffect(() => {
+    if (onKeyDown) return
     const handleKey = (event: KeyboardEvent) => {
       if (event.key === 'Escape') onClose()
     }
 
     window.addEventListener('keydown', handleKey)
     return () => window.removeEventListener('keydown', handleKey)
-  }, [onClose])
+  }, [onClose, onKeyDown])
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 px-4 pb-4 sm:inset-x-auto sm:bottom-8 sm:right-8 sm:w-[28rem] sm:px-0 sm:pb-0">
-      <section className="social-drawer max-h-[calc(100vh-2rem)] overflow-y-auto rounded-3xl border border-white/12 bg-[#080a0d]/92 p-4 shadow-[0_26px_100px_rgba(0,0,0,0.58)] backdrop-blur-2xl sm:max-h-[calc(100vh-4rem)]">
+    <div className={`fixed inset-x-0 bottom-0 z-40 px-4 pb-4 sm:inset-x-auto sm:bottom-8 sm:right-8 sm:w-[28rem] sm:px-0 sm:pb-0${className ? ` ${className}` : ''}`}>
+      <section id={id} aria-labelledby={id ? `${id}-title` : undefined} onKeyDown={onKeyDown} onBlur={onFocusLeave} className="social-drawer max-h-[calc(100vh-2rem)] overflow-y-auto rounded-3xl border border-white/12 bg-[#080a0d]/92 p-4 shadow-[0_26px_100px_rgba(0,0,0,0.58)] backdrop-blur-2xl sm:max-h-[calc(100vh-4rem)]">
         <div className="flex items-start justify-between gap-4">
           <div>
             <p className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-blue-100/58">
-              Ecosystem channels
+              {eyebrow}
             </p>
-            <h2 className="mt-2 font-display text-2xl font-semibold tracking-normal text-white">
-              Route with context
+            <h2 id={id ? `${id}-title` : undefined} className="mt-2 font-display text-2xl font-semibold tracking-normal text-white">
+              {title}
             </h2>
           </div>
           <button
             type="button"
+            ref={closeRef}
             onClick={onClose}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-white/58 transition hover:border-white/20 hover:text-white"
-            aria-label="Close social channels"
+            className={`flex ${closeRef ? 'h-12 w-12' : 'h-10 w-10'} items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-white/58 transition hover:border-white/20 hover:text-white`}
+            aria-label={closeLabel}
           >
             <X className="h-4 w-4" />
           </button>
         </div>
 
-        <div className="mt-4 grid gap-2">
-          {socialChannels.map((channel) => (
+        {children ?? <div className="mt-4 grid gap-2">
+          {channels.map((channel) => (
             <Link
               key={channel.label}
               href={channel.href}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() =>
-                trackEvent({ event: channel.event, label: channel.label, href: channel.href })
-              }
+              aria-label={announceNewTab ? `${channel.label} ${channel.type} (opens in a new tab)` : undefined}
+              onClick={() => {
+                if (trackClicks && channel.event) trackEvent({ event: channel.event, label: channel.label, href: channel.href })
+              }}
               className="group flex min-h-14 items-center justify-between rounded-2xl border border-white/[0.075] bg-white/[0.035] px-4 py-3 text-white/74 transition duration-300 hover:border-blue-200/30 hover:bg-white/[0.07] hover:text-white"
               data-social-icon
             >
@@ -64,7 +80,7 @@ export function SocialDrawer({ onClose }: SocialDrawerProps) {
               <ExternalLink className="h-4 w-4 text-white/30 transition group-hover:text-blue-100" />
             </Link>
           ))}
-        </div>
+        </div>}
       </section>
     </div>
   )

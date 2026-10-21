@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
-import type { ElementType, MouseEvent as ReactMouseEvent, ReactNode } from 'react'
+import type { ElementType, KeyboardEventHandler, MouseEvent as ReactMouseEvent, ReactNode } from 'react'
 import Link from 'next/link'
 import { gsap } from 'gsap'
 import { ArrowUpRight } from 'lucide-react'
@@ -15,7 +15,11 @@ type CommandCardProps = {
   icon: ElementType
   accent: 'blue' | 'cyan' | 'sapphire' | 'silver'
   href?: string
-  onClick?: () => void
+  onClick?: (event: ReactMouseEvent<HTMLElement>) => void
+  expanded?: boolean
+  controls?: string
+  onKeyDown?: KeyboardEventHandler<HTMLButtonElement>
+  respectReducedMotion?: boolean
 }
 
 export function CommandCard({
@@ -28,10 +32,15 @@ export function CommandCard({
   accent,
   href,
   onClick,
+  expanded,
+  controls,
+  onKeyDown,
+  respectReducedMotion = false,
 }: CommandCardProps) {
   const cardRef = useRef<HTMLAnchorElement | HTMLButtonElement | null>(null)
 
   const handleMove = (event: ReactMouseEvent<HTMLElement>) => {
+    if (respectReducedMotion && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
     const target = cardRef.current
     if (!target) return
 
@@ -49,6 +58,7 @@ export function CommandCard({
   }
 
   const handleLeave = () => {
+    if (respectReducedMotion && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
     const target = cardRef.current
     if (!target) return
 
@@ -116,6 +126,9 @@ export function CommandCard({
   return (
     <button
       type="button"
+      aria-expanded={expanded}
+      aria-controls={controls}
+      onKeyDown={onKeyDown}
       ref={(node) => {
         cardRef.current = node
       }}
