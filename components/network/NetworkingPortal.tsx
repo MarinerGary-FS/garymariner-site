@@ -1,12 +1,11 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { ArrowDown, ArrowUpRight, Layers3, Radio, Share2 } from 'lucide-react'
-import { CommandCard, CommandGrid } from '@/components/social/CommandCard'
+import { ArrowDown, ArrowUpRight, Share2 } from 'lucide-react'
+import Image from 'next/image'
 import { IdentityBackdrop } from '@/components/social/IdentityBackdrop'
 import { SocialDrawer } from '@/components/social/SocialDrawer'
-import { SocialHero, socialPrimaryAction, socialSecondaryAction } from '@/components/social/SocialHero'
-import { socialHero } from '@/lib/social-config'
+import { socialPrimaryAction, socialSecondaryAction } from '@/components/social/SocialHero'
 import type { KeyboardEvent } from 'react'
 import { NetworkExchange } from './NetworkExchange'
 import { emptyExchangeDraft } from '@/lib/network-exchange-handoff'
@@ -54,11 +53,6 @@ const personalChannels = [
   { label: 'TikTok', type: '@theleodynasty', href: 'https://www.tiktok.com/@theleodynasty' },
 ] as const
 
-const networkHero = {
-  ...socialHero,
-  body: 'A controlled entry point into the public ecosystem: implementation depth through Mariner Nexus and curated personal connections.',
-}
-
 type Panel = 'exchange' | 'social'
 
 export function NetworkingPortal() {
@@ -86,12 +80,6 @@ export function NetworkingPortal() {
     triggerRef.current = trigger
     if (next === 'exchange') setInvitation(false)
     setPanel((previous) => previous === next ? null : next)
-  }
-
-  function enterEcosystem() {
-    const routes = document.getElementById('network-ecosystem')
-    routes?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' })
-    routes?.focus({ preventScroll: true })
   }
 
   async function share() {
@@ -130,50 +118,55 @@ export function NetworkingPortal() {
         if (drawer && !drawer.contains(event.target)) dismiss(false)
       }}>
       <IdentityBackdrop />
-      <div className="relative z-10 flex min-h-screen flex-col">
-        <SocialHero content={networkHero} onEnterEcosystem={enterEcosystem} secondaryHref="https://www.marinernexus.com/start" respectReducedMotion
-          additionalActions={<>
-            <a href="/network/gary-mariner.vcf" download="Gary-Mariner.vcf" className={socialPrimaryAction}
-              aria-expanded={panel === 'exchange' && invitation} aria-controls="network-exchange"
-              onClick={(event) => {
-                triggerRef.current = event.currentTarget
-                setInvitation(true)
-                setPanel('exchange')
-              }}
-              onKeyDown={(event) => closeOnEscape(event, panel === 'exchange' && invitation, () => dismiss())}>
-              Save My Contact <ArrowDown className="h-4 w-4" aria-hidden="true" />
-            </a>
-            <button type="button" className={socialSecondaryAction} aria-expanded={panel === 'exchange'} aria-controls="network-exchange"
-              onClick={(event) => show('exchange', event.currentTarget)}
-              onKeyDown={(event) => closeOnEscape(event, panel === 'exchange', () => dismiss())}>
-              Exchange With Me <ArrowUpRight className="h-4 w-4 text-white/45" aria-hidden="true" />
-            </button>
-          </>} />
+      <div className={styles.roomContent}>
+        <header className={styles.masthead}>
+          <a href="https://www.garymariner.com/" aria-label="Gary Mariner home">Gary Mariner</a>
+          <span>Let’s stay connected.</span>
+        </header>
 
-        <div className="relative z-10 pb-7">
-          <CommandGrid id="network-ecosystem">
-            <CommandCard label="Enter Mariner Nexus" eyebrow="Execution & transformation"
-              description="Implementation depth, systems work, and operational proof live in the execution layer."
-              detail="Mariner Nexus shows how strategic systems thinking becomes digital infrastructure."
-              cta="Build intelligently" href="https://www.marinernexus.com/start" icon={Layers3} accent="sapphire" respectReducedMotion />
-            <CommandCard label="Social Connections" eyebrow="Personal connections"
-              description="Connect through LinkedIn, Instagram, and TikTok."
-              detail="Choose a personal channel and continue the conversation at your pace."
-              cta="Open channels" icon={Radio} accent="cyan" expanded={panel === 'social'} controls="network-social" respectReducedMotion
-              onClick={(event) => show('social', event.currentTarget)}
-              onKeyDown={(event) => closeOnEscape(event, panel === 'social', () => dismiss())} />
-          </CommandGrid>
+        <section className={styles.signalRoom} aria-labelledby="network-title">
+          <div className={styles.portraitField}>
+            <Image src="/images/gary-portrait.jpg" alt="Gary L. Mariner II" width={2048} height={3072} priority
+              sizes="(min-width: 1600px) 840px, (min-width: 960px) 56vw, (min-width: 640px) 440px, 86vw" />
+          </div>
+          <div className={styles.portraitAtmosphere} aria-hidden="true" />
 
-          <div className={styles.utility}>
-            <a href={networkEmailHref} className={styles.emailLink}>Prefer email? Continue in your own app <ArrowUpRight size={16} aria-hidden="true" /></a>
-            <p className={styles.privacy}>You choose what to share and send it yourself. Opening your email app does not send a message.
-              This page does not submit or store your details, sync contacts, or enroll you in marketing.</p>
+          <div className={styles.identity}>
+            <p className={styles.eyebrow}>Good to meet you.</p>
+            <h1 id="network-title" className={styles.name}>Gary L.<span>Mariner II</span></h1>
+            <p className={styles.personal}>Father. Husband. Builder.</p>
+            <p className={styles.positioning}>Technology, ideas &amp; good conversation.</p>
+
+            <div className={styles.connectionThreshold}>
+              <a href="/network/gary-mariner.vcf" download="Gary-Mariner.vcf" className={`${socialPrimaryAction} ${styles.saveContact}`}
+                aria-expanded={panel === 'exchange' && invitation} aria-controls="network-exchange"
+                onClick={(event) => {
+                  triggerRef.current = event.currentTarget
+                  setInvitation(true)
+                  setPanel('exchange')
+                }}
+                onKeyDown={(event) => closeOnEscape(event, panel === 'exchange' && invitation, () => dismiss())}>
+                <span>Save My Contact</span><ArrowDown size={20} aria-hidden="true" />
+              </a>
+              <div className={styles.secondaryPaths}>
+                <button type="button" aria-expanded={panel === 'social'} aria-controls="network-social"
+                  onClick={(event) => show('social', event.currentTarget)}
+                  onKeyDown={(event) => closeOnEscape(event, panel === 'social', () => dismiss())}>
+                  Social Connections <ArrowUpRight size={18} aria-hidden="true" />
+                </button>
+                <a href="https://www.marinernexus.com/start" target="_blank" rel="noopener noreferrer">
+                  Explore Mariner Nexus <ArrowUpRight size={18} aria-hidden="true" />
+                  <span className={styles.srOnly}> (opens in a new tab)</span>
+                </a>
+              </div>
+              <p className={styles.thresholdNote}>Keep in touch, on your terms.</p>
+            </div>
+
             <div className={styles.utilityActions}>
-              <button type="button" className={socialSecondaryAction} onClick={share} disabled={sharing}>
-                {sharing ? 'Sharing…' : 'Share this page'} <Share2 size={16} aria-hidden="true" />
+              <button type="button" className={styles.utilityButton} onClick={share} disabled={sharing}>
+                <Share2 size={15} aria-hidden="true" /> {sharing ? 'Sharing…' : 'Share'}
               </button>
-              <button type="button" className={socialSecondaryAction} onClick={copyLink}>Copy link</button>
-              <a href="https://www.garymariner.com/" className={styles.emailLink}>Explore GaryMariner.com <ArrowUpRight size={16} aria-hidden="true" /></a>
+              <button type="button" className={styles.utilityButton} onClick={copyLink}>Copy Link</button>
             </div>
             <p role="status" aria-atomic="true" className={styles.status}>{message}</p>
             {manualShare && <div className={styles.manualShare}>
@@ -182,11 +175,12 @@ export function NetworkingPortal() {
               <button type="button" className={socialSecondaryAction} onClick={() => { addressRef.current?.focus(); addressRef.current?.select() }}>Select address</button>
             </div>}
           </div>
-        </div>
+        </section>
 
-        <footer className="relative z-10 mx-auto mt-auto flex w-full max-w-6xl flex-col items-center justify-between gap-2 border-t border-white/[0.06] px-5 py-4 text-xs font-medium text-white/42 sm:flex-row sm:px-8 lg:px-10">
+        <footer className={styles.footer}>
           <span>© Gary L. Mariner II</span>
-          <a href="https://www.marinernexus.com/start" target="_blank" rel="noopener noreferrer" className="transition hover:text-blue-100">Built with Mariner Nexus</a>
+          <a href={networkEmailHref}>Prefer email?<span className={styles.srOnly}> Opens your email app; you send the message yourself.</span></a>
+          <span>No automatic collection. Just connection.</span>
         </footer>
       </div>
 

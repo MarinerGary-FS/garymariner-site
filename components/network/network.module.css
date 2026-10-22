@@ -45,3 +45,73 @@
   from { opacity: 1; transform: translate3d(0, 18px, 0) scale(.98); }
   to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
 }
+
+/* Signal Room: a portrait field and a clear contact threshold, rather than a card stack. */
+.root { isolation: isolate; background: #030405; }
+.root :global(.social-mesh), .root :global(.social-grid), .root :global(.social-particles) { animation: none; will-change: auto; }
+.roomContent { position: relative; z-index: 1; min-height: 100svh; display: flex; flex-direction: column; }
+.masthead { position: relative; z-index: 3; width: calc(100% - 96px); max-width: 1440px; margin: 0 auto; min-height: 88px; display: flex; justify-content: space-between; align-items: center; gap: 24px; border-bottom: 1px solid rgb(185 198 212 / .2); }
+.masthead a { display: inline-flex; align-items: center; min-height: 48px; font-size: 12px; text-transform: uppercase; letter-spacing: .18em; color: #f5f7fa; }
+.masthead > span { font-family: var(--font-newsreader), Georgia, serif; font-size: 20px; color: #b4d9dd; }
+.signalRoom { position: relative; width: calc(100% - 96px); max-width: 1440px; margin: 0 auto; flex: 1; min-height: max(700px, calc(100svh - 168px)); }
+.portraitField { position: absolute; z-index: 0; top: 0; right: -5%; width: min(60%, 840px); pointer-events: none; mask-image: linear-gradient(90deg, transparent 0%, #000 20%, #000 82%, transparent 100%), linear-gradient(0deg, transparent 0%, #000 24%, #000 100%); mask-composite: intersect; }
+.portraitField img { display: block; width: 100%; height: auto; }
+.portraitAtmosphere { position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(90deg, #030405 0%, rgb(3 4 5 / .72) 30%, transparent 58%), linear-gradient(0deg, #030405 0%, transparent 28%); }
+.identity { position: relative; z-index: 2; width: 52%; max-width: 650px; padding: clamp(74px, 9vh, 144px) 0 44px; }
+.eyebrow { font-size: 12px; line-height: 1.6; text-transform: uppercase; letter-spacing: .18em; color: #b4d9dd; }
+.name { margin: 20px 0 24px; font-family: var(--font-newsreader), Georgia, serif; font-size: clamp(80px, 8.3vw, 124px); font-weight: 500; line-height: .9; letter-spacing: -.025em; color: #f5f7fa; }
+.name span { display: block; }
+.personal { font-size: 18px; line-height: 1.6; color: #f5f7fa; }
+.positioning { margin-top: 4px; font-size: 16px; line-height: 1.6; color: #b9c6d4; }
+.connectionThreshold { margin-top: 36px; max-width: 500px; padding-top: 24px; border-top: 1px solid #71899d; position: relative; }
+.connectionThreshold::before { position: absolute; content: ''; width: 48px; height: 2px; top: -1px; left: 0; background: #b4d9dd; }
+.saveContact { width: 100%; min-height: 60px; justify-content: space-between; padding: 16px 24px; font-size: 17px; box-shadow: 0 18px 60px rgb(255 255 255 / .1); }
+.secondaryPaths { margin-top: 14px; display: grid; grid-template-columns: 1fr; }
+.secondaryPaths > :is(a,button) { display: flex; min-height: 54px; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 2px; background: transparent; border: 0; border-bottom: 1px solid rgb(185 198 212 / .22); text-align: left; font-size: 15px; line-height: 1.5; color: #e1e8f2; transition: color 180ms var(--ease-out-expo), border-color 180ms var(--ease-out-expo); }
+.secondaryPaths > :is(a,button):hover { color: #b4d9dd; border-color: #b4d9dd; }
+.thresholdNote { margin-top: 16px; color: #b9c6d4; font-size: 13px; line-height: 1.6; }
+.utilityActions { margin-top: 20px; gap: 22px; }
+.utilityActions .utilityButton { display: inline-flex; min-height: 44px; padding: 8px 0; gap: 8px; align-items: center; background: transparent; border: 0; color: #b9c6d4; font-size: 13px; text-decoration: underline; text-underline-offset: 4px; }
+.utilityButton:hover { color: #f5f7fa; }
+.status { max-width: 480px; }
+.footer { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 24px; width: calc(100% - 96px); max-width: 1440px; margin: auto auto 0; min-height: 80px; border-top: 1px solid rgb(185 198 212 / .16); color: #aebdce; font-size: 12px; line-height: 1.6; }
+.footer a { display: inline-flex; min-height: 44px; align-items: center; text-decoration: underline; text-underline-offset: 4px; }
+@media (min-width: 1800px) {
+  .identity { padding-top: clamp(160px, 17vh, 260px); }
+  .portraitField { right: -40px; }
+  .connectionThreshold { margin-top: 48px; }
+}
+@media (max-width: 959px) {
+  .masthead, .signalRoom, .footer { width: calc(100% - 64px); }
+  .masthead { min-height: 76px; }
+  .signalRoom { min-height: 0; }
+  .portraitField { top: 0; right: -5%; width: 440px; max-width: 78vw; }
+  .portraitAtmosphere { background: linear-gradient(0deg, #030405 0%, #030405 25%, transparent 74%); }
+  .identity { width: 100%; max-width: none; padding-top: 390px; padding-bottom: 24px; }
+  .name { font-size: 82px; margin-top: 12px; }
+  .connectionThreshold { max-width: 520px; margin-top: 26px; }
+  .footer { min-height: 72px; }
+  .footer > span:last-child { display: none; }
+}
+@media (max-width: 639px) {
+  .masthead, .signalRoom, .footer { width: calc(100% - 40px); }
+  .masthead { min-height: 64px; gap: 12px; }
+  .masthead a { font-size: 10px; letter-spacing: .12em; }
+  .masthead > span { font-size: 16px; }
+  .portraitField { top: 0; right: -12%; width: 86vw; max-width: 360px; }
+  .identity { padding-top: clamp(250px, 76vw, 310px); padding-bottom: 20px; }
+  .eyebrow { font-size: 10px; letter-spacing: .16em; }
+  .name { font-size: clamp(54px, 16.2vw, 68px); line-height: .92; margin: 10px 0 16px; }
+  .personal { font-size: 15px; }
+  .positioning { font-size: 14px; }
+  .connectionThreshold { margin-top: 22px; padding-top: 20px; }
+  .saveContact { min-height: 56px; padding: 14px 20px; font-size: 16px; }
+  .secondaryPaths { margin-top: 8px; }
+  .secondaryPaths > :is(a,button) { min-height: 50px; font-size: 14px; }
+  .thresholdNote { font-size: 12px; margin-top: 12px; }
+  .utilityActions { margin-top: 12px; }
+  .footer { min-height: 62px; font-size: 11px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .secondaryPaths > :is(a,button) { transition: none; }
+}
