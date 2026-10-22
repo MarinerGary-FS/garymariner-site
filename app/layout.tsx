@@ -1,22 +1,8 @@
 import type { Metadata, Viewport } from 'next'
-import { IBM_Plex_Sans, Newsreader } from 'next/font/google'
 import Script from 'next/script'
 import { EventTracker } from '@/components/analytics/EventTracker'
 import './globals.css'
-
-const newsreader = Newsreader({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-newsreader',
-  display: 'swap',
-})
-
-const ibmPlexSans = IBM_Plex_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '600'],
-  variable: '--font-ibm-plex-sans',
-  display: 'swap',
-})
+import './fonts.css'
 
 export const metadata: Metadata = {
   title: 'Gary L. Mariner II — AI Systems Architect',
@@ -66,7 +52,11 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${newsreader.variable} ${ibmPlexSans.variable}`}>
+    <html lang="en">
+      <head>
+        <link rel="preload" href="/fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+      </head>
       <body className="bg-background text-white font-sans antialiased">
         <EventTracker />
         <main>{children}</main>
