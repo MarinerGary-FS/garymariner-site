@@ -1,4 +1,4 @@
-.root :where(a, button, input):focus-visible { outline: 3px solid #93c5fd; outline-offset: 4px; }
+.root :where(a, button, input, textarea, [tabindex]):focus-visible { outline: 3px solid #93c5fd; outline-offset: 4px; }
 .root button:disabled { opacity: .7; cursor: progress; }
 .utility { position: relative; max-width: 1152px; margin: 16px auto 0; padding: 0 20px; }
 .emailLink { display: inline-flex; min-height: 48px; align-items: center; gap: 8px; color: #f5f7fa; font-size: 14px; line-height: 1.6; text-decoration: underline; text-underline-offset: 4px; overflow-wrap: anywhere; }
@@ -20,4 +20,28 @@
 @media (prefers-reduced-motion: reduce) {
   .root *, .root *::before, .root *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
   .root :global(.social-pathway) { transform: none !important; }
+}
+
+/* The existing SocialDrawer owns the glass shell; these are network-only contents. */
+.drawerBackdrop :global(.social-drawer) { scroll-padding: 16px; animation-name: networkGlassSettle; }
+.drawerBackdrop :global([data-social-icon]) > span > span:last-child { color: #b9c6d4; }
+.drawerBackdrop :global(.social-drawer) > div:first-child p { color: #b9c6d4; }
+.exchangeForm { display: grid; gap: 16px; margin-top: 16px; }
+.exchangePrivacy { color: #c6d1df; font-size: 14px; line-height: 1.65; }
+.field { display: grid; gap: 8px; min-width: 0; }
+.field label { font-size: 14px; font-weight: 600; color: #f5f7fa; }
+.field input, .field textarea { width: 100%; min-width: 0; min-height: 48px; padding: 12px; color: #f5f7fa; background: rgb(255 255 255 / .035); border: 1px solid #71899d; border-radius: 16px; font-size: 16px; line-height: 1.5; }
+.field textarea { resize: vertical; }
+.field input[aria-invalid=true], .field textarea[aria-invalid=true] { border-color: #fecaca; }
+.fieldError, .errorSummary { color: #fecaca; font-size: 14px; line-height: 1.6; }
+.errorSummary { border-left: 2px solid #fecaca; padding: 8px 12px; }
+.errorSummary a { text-decoration: underline; text-underline-offset: 3px; }
+.exchangeActions { display: grid; gap: 12px; }
+.exchangeForm button, .exchangeContent button { min-height: 48px; }
+@media (min-width: 390px) { .exchangeActions { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* Keep newly focused controls visible during the inherited entrance movement. */
+@keyframes networkGlassSettle {
+  from { opacity: 1; transform: translate3d(0, 18px, 0) scale(.98); }
+  to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
 }

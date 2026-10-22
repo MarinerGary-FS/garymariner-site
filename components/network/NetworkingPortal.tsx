@@ -8,6 +8,9 @@ import { SocialDrawer } from '@/components/social/SocialDrawer'
 import { SocialHero, socialPrimaryAction, socialSecondaryAction } from '@/components/social/SocialHero'
 import { socialHero } from '@/lib/social-config'
 import type { KeyboardEvent } from 'react'
+import { NetworkExchange } from './NetworkExchange'
+import { emptyExchangeDraft } from '@/lib/network-exchange-handoff'
+import type { ExchangeDraft } from '@/lib/network-exchange-handoff'
 
 const networkEmail = 'gary.mariner@gmail.com'
 const networkEmailHref = `mailto:${networkEmail}?subject=${encodeURIComponent('Great connecting — Gary Mariner')}`
@@ -60,6 +63,8 @@ type Panel = 'exchange' | 'social'
 
 export function NetworkingPortal() {
   const [panel, setPanel] = useState<Panel | null>(null)
+  const [invitation, setInvitation] = useState(false)
+  const [draft, setDraft] = useState<ExchangeDraft>({ ...emptyExchangeDraft })
   const [message, setMessage] = useState('')
   const [manualShare, setManualShare] = useState(false)
   const [sharing, setSharing] = useState(false)
@@ -79,6 +84,7 @@ export function NetworkingPortal() {
 
   function show(next: Panel, trigger: HTMLElement) {
     triggerRef.current = trigger
+    if (next === 'exchange') setInvitation(false)
     setPanel((previous) => previous === next ? null : next)
   }
 
@@ -127,7 +133,14 @@ export function NetworkingPortal() {
       <div className="relative z-10 flex min-h-screen flex-col">
         <SocialHero content={networkHero} onEnterEcosystem={enterEcosystem} secondaryHref="https://www.marinernexus.com/start" respectReducedMotion
           additionalActions={<>
-            <a href="/network/gary-mariner.vcf" download="Gary-Mariner.vcf" className={socialPrimaryAction}>
+            <a href="/network/gary-mariner.vcf" download="Gary-Mariner.vcf" className={socialPrimaryAction}
+              aria-expanded={panel === 'exchange' && invitation} aria-controls="network-exchange"
+              onClick={(event) => {
+                triggerRef.current = event.currentTarget
+                setInvitation(true)
+                setPanel('exchange')
+              }}
+              onKeyDown={(event) => closeOnEscape(event, panel === 'exchange' && invitation, () => dismiss())}>
               Save My Contact <ArrowDown className="h-4 w-4" aria-hidden="true" />
             </a>
             <button type="button" className={socialSecondaryAction} aria-expanded={panel === 'exchange'} aria-controls="network-exchange"
@@ -180,7 +193,7 @@ export function NetworkingPortal() {
       {panel && <SocialDrawer key={panel} id={`network-${panel}`} className={styles.drawerBackdrop} closeRef={closeRef}
         onClose={() => dismiss()} trackClicks={false} channels={personalChannels} announceNewTab
         eyebrow={panel === 'exchange' ? 'Continue the conversation' : 'Personal connections'}
-        title={panel === 'exchange' ? 'Exchange With Me' : 'Connect in your own way.'}
+        title={panel === 'exchange' ? invitation ? 'Keep the conversation going.' : 'Exchange Details' : 'Connect in your own way.'}
         closeLabel={panel === 'exchange' ? 'Close contact exchange' : 'Close Social Connections'}
         onKeyDown={(event) => {
           keyboardExitRef.current = event.key === 'Tab'
@@ -191,12 +204,7 @@ export function NetworkingPortal() {
           if (next instanceof Node && !event.currentTarget.contains(next) && (next !== triggerRef.current || keyboardExitRef.current)) dismiss(false)
           keyboardExitRef.current = false
         }}>
-        {panel === 'exchange' ? <div className={styles.exchangeContent}>
-          <p>Share your name, preferred contact details, and where we met. Mention a personal connection, business interest, or collaboration if you’d like.</p>
-          <a href={networkEmailHref} className={socialPrimaryAction}>Open your email app <ArrowUpRight size={16} aria-hidden="true" /></a>
-          <p>You choose what to share and send it yourself. Opening your email app does not send a message.</p>
-          <a href={`mailto:${networkEmail}`} className={styles.emailLink}>{networkEmail}</a>
-        </div> : undefined}
+        {panel === 'exchange' ? <NetworkExchange invitation={invitation} onExchange={() => setInvitation(false)} onDismiss={() => dismiss()} draft={draft} onDraft={setDraft} /> : undefined}
       </SocialDrawer>}
     </div>
   )
